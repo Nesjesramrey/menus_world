@@ -8,8 +8,8 @@ body {
 
 .container {
   position: relative;
-  width: 320px;
-  margin: 100px auto 0 auto;
+  width: 100px;
+  margin: 33px auto 0 auto;
   -webkit-perspective: 1000px;
           perspective: 1000px;
 }
@@ -20,8 +20,8 @@ body {
   height: 100%;
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
-  -webkit-animation: rotate360 60s infinite forwards linear;
-          animation: rotate360 60s infinite forwards linear;
+  -webkit-animation: rotate360 45s infinite forwards linear;
+          animation: rotate360 45s infinite forwards linear;
 }
 
 .carousel__face {
