@@ -1,0 +1,49 @@
+.container {
+    width: 1600px;
+    margin: 5px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.card-menu{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width: 350px;
+    height: 100px;
+    background: rgb(214,167,54);
+    //background: linear-gradient(90deg, rgba(214,167,54,1) 24%, rgba(255,158,0,0.9528186274509804) 61%);   
+    //background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+    color: white;
+    margin: 5px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.card-menu:hover{
+    box-shadow: 2px 2px 2px gray;
+}
+.name-food{
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.description-food{
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+}
+
+.card-info-menu{
+    width: 350px;
+    height: 100px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    margin: 10px;
+    padding:5px;
+    border: 1px solid;
+    border-radius: 5px;
+
+}
