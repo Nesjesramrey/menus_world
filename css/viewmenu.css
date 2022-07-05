@@ -1,0 +1,127 @@
+body {
+  background-color: #f5f5f5;
+}
+
+p {
+  margin: 0px;
+  padding: 0px;
+}
+
+.logo {
+  width: 40px;
+}
+
+.focusStyle:focus{
+box-shadow: 0px 0px 5px 2px #ff7b2c;
+}
+
+.col {
+  padding: 0px;
+  margin: 0px;
+}
+
+.textDark {
+  color: #32324d;
+}
+
+.textGray {
+  color: #8e8ea9;
+}
+
+.title {
+  margin: 0px;
+  background-color: #ff7b2c;
+  color: #ffffff;
+  padding: 6px;
+}
+
+.imgSection {
+  border-radius: 6px;
+  margin: 7px 7px 0px 7px;
+}
+
+.imgDishes {
+  border-radius: 6px;
+}
+
+.dishDescription {
+  background-color: #fff;
+  border: 1px solid #8e8ea9;
+  border-radius: 6px;
+  margin: 7px 7px 0px 7px;
+}
+
+.divImgProfile {
+  width: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-right: 5px;
+}
+
+.imgProfile {
+  width: 40px;
+  height: 40px;
+  border-radius: 100px;
+}
+
+.divComment {
+  background-color: #ffffff;
+  border: 1px solid #8e8ea9;
+  padding: 2px;
+  border-radius: 6px;
+  margin: 7px 7px 0px 7px;
+  display: flex;
+  flex-direction: row;
+}
+
+.spacing13{
+  margin-bottom: 13px;
+}
+
+#textOtherRec{
+  margin-top: 7px;
+  margin-bottom: 10px;
+  background-color: #ff7b2c;
+  font-size: 18px;
+  color: #fff;
+}
+
+#colCardsRecomendations{
+  display: flex;
+  flex-direction: row;
+}
+
+.cardRecommendations {
+  border: 1px solid #8e8ea9;
+  margin: 7px 7px 0px 7px;
+  border-radius: 6px;
+  background-color: #fff;
+  max-width: 45%;
+  padding: 7px;
+}
+
+.cardRecommendations:hover{
+  transition-duration: 700ms;
+  transform: scale(1.02);
+}
+
+.imgRecommPhoto{
+  border-radius: 6px;
+}
+
+.foot{
+  background-color: #c2c2c2;
+  height: 100px;
+margin-top: 20px;
+}
+
+
+/*For dev only*/
+
+/* .col {
+  border: 1px solid green;
+}
+.row {
+  border: 2px solid red;
+} */
