@@ -4,8 +4,8 @@ body {
 
 .search-box {
   position: relative;
-  width: 100%;
-  margin: 10px;
+  width: 600px;
+  margin: 100px;
 }
 
 .search-form {
@@ -36,11 +36,12 @@ body {
   height: 34px;
   width: 80px;
   font-size: 14px;
-  color: #555;
+  color: #151313;
   text-align: center;
   line-height: 4px;
   border-width: 0;
-  background-color: #cbf3ee;
+  border-radius: 10px;
+  background-color: #d6a736;
   cursor: pointer;
 }
 /*# sourceMappingURL=search.css.map */
