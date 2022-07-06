@@ -4,15 +4,15 @@
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   margin: 16px;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   font-family: "Roboto", "Helvetica Neue";
 }
 
@@ -33,17 +33,5 @@ p {
   font-family: "Roboto", sans-serif;
   width: 300px;
   border-radius: 10px;
-}
-
-.button_form {
-  margin-top: 50px;
-  background-color: #fb7b05;
-  border-radius: 10px;
-  width: 300px;
-}
-
-.instructions {
-  margin-top: 30px;
-  width: 400px;
 }
 /*# sourceMappingURL=form_menu.css.map */

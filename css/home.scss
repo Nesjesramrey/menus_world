@@ -1,12 +1,11 @@
 .container {
-    background: rgb(23, 23, 23);    
-    display: flex;
-    height: 696px;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .child {
-    color: #FB7B05;
-    font-size: 2rem
-  }
+  display: flex;
+  height: 696px;
+  justify-content: center;
+  align-items: center;
+}
+
+.child {
+  color: #fb7b05;
+  font-size: 2rem;
+}
