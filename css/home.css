@@ -1,5 +1,4 @@
 .container {
-  background: #171717;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -13,7 +12,7 @@
 }
 
 .child {
-  color: #FB7B05;
+  color: #fb7b05;
   font-size: 2rem;
 }
 /*# sourceMappingURL=home.css.map */
