@@ -28,9 +28,3 @@ p {
 .label_form {
   font-family: "Roboto", sans-serif;
 }
-
-.input_form {
-  font-family: "Roboto", sans-serif;
-  width: 300px;
-  border-radius: 10px;
-}
