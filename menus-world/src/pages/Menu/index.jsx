@@ -24,7 +24,7 @@ export default function Menu() {
     <div className="card-menu" key={index}>
       <div className="name-food">{dish.dishName}</div>
       <p className="description-food">{dish.description}</p>
-      <p className="description-food">{dish.price}</p>
+      <p className="description-food">$ {dish.price}</p>
     </div>
   );
 
