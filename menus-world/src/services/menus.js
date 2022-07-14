@@ -1,4 +1,5 @@
 const generateConfig = (body) => {
+  console.log(JSON.stringify(body));
   return {
     method: "POST",
     headers: {
@@ -10,11 +11,7 @@ const generateConfig = (body) => {
 
 export const create = async (body) => {
   const requestConfig = generateConfig(body);
-  const response = await fetch(
-    //"mongodb+srv://nesjesramrey:Nestor26021982@cluster0.ysrig89.mongodb.net/?retryWrites=true&w=majority",
-    "https://poised-shift-162315-default-rtdb.firebaseio.com/.json",
-    requestConfig
-  );
+  const response = await fetch("http://localhost:8000/menu", requestConfig);
   const data = await response.json();
   return data;
 };
