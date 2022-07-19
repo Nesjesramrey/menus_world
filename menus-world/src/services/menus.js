@@ -17,47 +17,37 @@ export const create = async (body) => {
 };
 
 export const retrieve = async (id) => {
-  const response = await fetch(
-    `https://poised-shift-162315-default-rtdb.firebaseio.com/${id}.json`
-  );
+  const response = await fetch(`http://localhost:8000/menu/${id}`);
   const data = await response.json();
   return data;
 };
 
 export const list = async () => {
-  const response = await fetch(
-    `https://poised-shift-162315-default-rtdb.firebaseio.com/.json`
-  );
+  const response = await fetch(`http://localhost:8000/menu`);
   const data = await response.json();
   return data;
 };
 
 export const update = async (id, body) => {
-  const response = await fetch(
-    `https://poised-shift-162315-default-rtdb.firebaseio.com/${id}.json`,
-    {
-      method: "PATCH",
-      headers: {
-        "Content-Type": "Application/JSON",
-      },
-      body: JSON.stringify(body),
-    }
-  );
+  const response = await fetch(`http://localhost:8000/menu/${id}`, {
+    method: "PATCH",
+    headers: {
+      "Content-Type": "Application/JSON",
+    },
+    body: JSON.stringify(body),
+  });
   const data = await response.json();
   return data;
 };
 
 export const deleteDish = async (id, body) => {
-  const response = await fetch(
-    `https://poised-shift-162315-default-rtdb.firebaseio.com/${id}.json`,
-    {
-      method: "DELETE",
-      headers: {
-        "Content-Type": "Application/JSON",
-      },
-      body: JSON.stringify(body),
-    }
-  );
+  const response = await fetch(`http://localhost:8000/menu/${id}`, {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "Application/JSON",
+    },
+    body: JSON.stringify(body),
+  });
   console.log(response.status);
   console.log(body);
   const data = await response.json();

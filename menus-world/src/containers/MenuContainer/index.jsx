@@ -6,7 +6,7 @@ export default function MenuContainer() {
     <div className="Menu-container">
       <div className="Menu-container-2">
         <div className="Menu-container-nav">
-          <nav>
+          <nav className="navContainer">
             <Link to="entries">Entradas</Link>
             <Link to="profiles">Cortes</Link>
             <Link to="about">Bebidas</Link>

@@ -10,28 +10,29 @@
 .card-menu {
   display: flex;
   flex-direction: column;
-  width: 300px;
+  width: 350px;
   height: 100px;
-  background: #d6a736;
+  border-style: none;
   color: #0b0b0e;
   margin: 5px;
   padding: 10px;
   border-radius: 5px;
+  background: rgb(236, 229, 229);
 }
 
 .card-menu:hover {
-  box-shadow: 2px 2px 2px gray;
+  box-shadow: 2px 2px 2px 2px #87620b;
 }
 
 .name-food {
   font-family: "Roboto", sans-serif;
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: bold;
 }
 
 .description-food {
   font-family: "Roboto", sans-serif;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
 }
 
 .card-info-menu {
@@ -45,4 +46,5 @@
   border: 1px solid;
   border-radius: 5px;
   list-style-type: none;
+  color: white;
 }

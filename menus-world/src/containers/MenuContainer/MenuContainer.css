@@ -1,52 +1,15 @@
-.App-container {
-  height: 100%;
-  width: 100%;
+.Menu-container-nav {
+  margin: 20px;
+  font-family: "Roboto", sans-serif;
 }
 
-.App-container-2 {
-  height: 100%;
-  width: 100%;
-  display: flex;
-}
-
-.App-container-nav {
-  width: 150px;
-  height: 100%;
-  box-sizing: border-box;
-}
-
-.App-container-nav > nav {
-  height: 100%;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  background-color: rgb(0, 72, 187);
-  box-shadow: 4px 12px 46px -10px rgba(56, 56, 56, 0.75);
-  -webkit-box-shadow: 4px 12px 46px -10px rgba(56, 56, 56, 0.75);
-  -moz-box-shadow: 4px 12px 46px -10px rgba(56, 56, 56, 0.75);
-}
-
-.Menu-container-nav > nav > a {
-  font-size: large;
-  font-weight: bold;
-  padding: 10px 15px;
-  color: white;
+a {
   text-decoration: none;
-}
-
-.Menu-container-nav > nav > a:hover {
-  color: rgb(199, 199, 199);
-  text-decoration: underline;
-}
-
-.Menu-container-content {
-  width: calc(100% - 150px);
-  height: 100%;
-  display: flex;
-  justify-content: center;
-}
-
-.Content-container {
-  display: flex;
-  width: calc(100% - 300px);
+  color: black;
+  margin: 5px;
+  font-size: 16px;
+  border: 1px solid;
+  padding: 5px;
+  border-radius: 5px;
+  background: rgb(236, 229, 229);
 }
