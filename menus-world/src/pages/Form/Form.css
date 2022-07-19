@@ -1,23 +1,16 @@
 .container {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
   flex-direction: column;
   margin: 16px;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+  text-align: center;
   font-family: "Roboto", "Helvetica Neue";
 }
 
 p {
   text-align: center;
+  display: flex;
+  justify-content: center;
 }
 
 .title {
@@ -27,4 +20,15 @@ p {
 
 .label_form {
   font-family: "Roboto", sans-serif;
+}
+
+.btn {
+  margin-top: 10px;
+  border-radius: 10px;
+  height: 30px;
+  background-color: #fb7b05;
+}
+
+li {
+  list-style: none;
 }
