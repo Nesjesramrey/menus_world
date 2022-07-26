@@ -32,7 +32,7 @@ export default function Form() {
       isEmpty(description) ||
       isEmpty(price)
     ) {
-      toast.error("Llena el form!!!!");
+      toast.error("Favor de llenar la forma completa!!!!");
       return;
     }
 
@@ -45,7 +45,7 @@ export default function Form() {
 
     try {
       await createMenu(data);
-      toast.success("Todo fine!!");
+      toast.success("Gracias, se registro con exito!!");
       cleanForm();
     } catch (error) {
       console.error(error);
@@ -53,81 +53,95 @@ export default function Form() {
   };
 
   return (
-    <div className="container">
-      <h1 className="title">MENU'S WORLD</h1>
-      <h2 className="subtitle">Formulario de registro</h2>
-      <p>Hola aqui puedes registrar tu menu</p>
+    <div className="mainContainer">
+      <div className="container">
+        <p className="title">MENU'S WORLD</p>
+        <h2 className="subtitle">Formulario de registro de su platillo</h2>
+        <p>Ingresa tus datos aqui </p>
 
-      <form onSubmit={handleSubmit}>
-        <label className="label_form">Platillo:</label>
-        <Input
-          type="text"
-          className="input_form"
-          placeholder=""
-          id="meal"
-          name="meal"
-          value={dishName}
-          callback={(e) => setDishName(e.target.value)}
+        <form onSubmit={handleSubmit}>
+          <label className="label_form">Platillo:</label>
+          <Input
+            type="text"
+            className="input_form"
+            placeholder=""
+            id="meal"
+            name="meal"
+            value={dishName}
+            callback={(e) => setDishName(e.target.value)}
+          />
+
+          <label className="label_form">Categoria del platillo:</label>
+          <Input
+            type="text"
+            className="input_form"
+            placeholder=""
+            id="meal"
+            name="meal"
+            value={category}
+            callback={(e) => setCategory(e.target.value)}
+          />
+
+          <label className="label_form">Descripcion:</label>
+          <Input
+            type="text"
+            className="input_form"
+            placeholder=""
+            id="meal"
+            name="meal"
+            value={description}
+            callback={(e) => setDescription(e.target.value)}
+          />
+
+          <label className="label_form">Precio:</label>
+          <Input
+            type="text"
+            className="input_form"
+            placeholder=""
+            id="meal"
+            name="meal"
+            value={price}
+            callback={(e) => setPrice(e.target.value)}
+          />
+
+          <button type="submit" className="btn btnbutton_form">
+            Registrar platillo
+          </button>
+          <div className="instructions">
+            <ul>
+              <li>
+                <strong>Platillo:</strong> Nombre del platillo como aparece en
+                su carta
+              </li>
+              <li>
+                <strong>Categoria del latillo:</strong> Aqui tienes que
+                especificar si es una entreda, corte, postre, bebida o las
+                categorias que ya tengas definidas
+              </li>
+              <li>
+                <strong>Descripcion:</strong> Aqui puedes describir los
+                ingredientes principales asi como los gramajes de tus platillos
+              </li>
+              <li>
+                <strong>Precio:</strong> Precio incluyendo los impuestos
+                aplicables de tu localidad
+              </li>
+            </ul>
+          </div>
+        </form>
+      </div>
+      <div className="containerImg">
+        <img
+          src="https://static-sevilla.abc.es/media/gurmesevilla/2012/01/comida-rapida-casera.jpg"
+          alt="Placeholder"
+          width="1200"
         />
-
-        <label className="label_form">Categoria del platillo:</label>
-        <Input
-          type="text"
-          className="input_form"
-          placeholder=""
-          id="meal"
-          name="meal"
-          value={category}
-          callback={(e) => setCategory(e.target.value)}
-        />
-
-        <label className="label_form">Descripcion:</label>
-        <Input
-          type="text"
-          className="input_form"
-          placeholder=""
-          id="meal"
-          name="meal"
-          value={description}
-          callback={(e) => setDescription(e.target.value)}
-        />
-
-        <label className="label_form">Precio:</label>
-        <Input
-          type="text"
-          className="input_form"
-          placeholder=""
-          id="meal"
-          name="meal"
-          value={price}
-          callback={(e) => setPrice(e.target.value)}
-        />
-
-        <button type="submit" className="btn btnbutton_form">
-          Registrar platillo
-        </button>
-        <div className="instructions">
-          <ul>
-            <li>
-              <strong>Platillo:</strong> Nombre del platillo como aparece en su
-              carta
-            </li>
-            <li>
-              <strong>Categoria del latillo:</strong> Aqui tienes que
-              especificar si es una entreda, corte, postre, bebida o las
-              categorias que ya tengas definidas
-            </li>
-            <li>
-              <strong>Descripcion:</strong> Aqui puedes describir los
-              ingredientes principales asi como los gramajes de tus platillos
-            </li>
-            <li>
-              <strong>Precio:</strong> Precio incluyendo los impuestos
-              aplicables de tu localidad
-            </li>
-          </ul>
-        </div>
-      </form>
+        <p className="description-food">
+          El descubrimiento de un nuevo plato es de más provecho para la
+          humanidad que el descubrimiento de una estrella. (Jean Anthelme
+          Brillat-Savarin)
+        </p>
+      </div>
       <ToastContainer />
     </div>
   );
