@@ -16,7 +16,7 @@ export default function Home() {
         </h2>
 
         <button type="button" className="btn-home">
-          Buscar un platillo
+          Ir al menu
         </button>
 
         <button type="button" className="btn-home">

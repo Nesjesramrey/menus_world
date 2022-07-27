@@ -19,6 +19,13 @@ export default function MenuEdit() {
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
 
+  const cleanForm = () => {
+    setDishName("");
+    setCategory("");
+    setDescription("");
+    setPrice("");
+  };
+
   // RRD
   const { id } = useParams();
   //console.log(id);
@@ -27,7 +34,6 @@ export default function MenuEdit() {
   useEffect(() => {
     const getMenu = async () => {
       const data = await retrieveDish(id);
-      console.log(data);
       setDishName(data.dishName);
       setCategory(data.category);
       setDescription(data.description);
@@ -48,7 +54,7 @@ export default function MenuEdit() {
       isEmpty(description) ||
       isEmpty(price)
     ) {
-      toast.error("Favor de capturar el rubro a modiicar");
+      toast.error("Favor de capturar el rubro a modificar");
       return;
     }
 
@@ -62,6 +68,7 @@ export default function MenuEdit() {
     try {
       await updateDish(id, data);
       toast.success("Gracias se ha modificado el platillo");
+      cleanForm();
       navigate(`/menu/edit/${id}`);
     } catch (error) {
       toast.error("Algo salió mal");
@@ -71,7 +78,7 @@ export default function MenuEdit() {
 
   return (
     <div>
-      <h2>Edit</h2>
+      <h2>Introducir los datos del platillo para actualizar</h2>
       {isLoading ? (
         <p>Cargando...</p>
       ) : (
@@ -83,7 +90,7 @@ export default function MenuEdit() {
             placeholder=""
             id="meal"
             name="meal"
-            value={dishName}
+            value={dishName || ""}
             callback={(e) => setDishName(e.target.value)}
           />
 
@@ -94,7 +101,7 @@ export default function MenuEdit() {
             placeholder=""
             id="meal"
             name="meal"
-            value={description}
+            value={description || ""}
             callback={(e) => setDescription(e.target.value)}
           />
 
@@ -105,7 +112,7 @@ export default function MenuEdit() {
             placeholder=""
             id="meal"
             name="meal"
-            value={price}
+            value={price || ""}
             callback={(e) => setPrice(e.target.value)}
           />
           <label className="label_form">Selecciona una categoria:</label>
@@ -113,7 +120,7 @@ export default function MenuEdit() {
             type="text"
             className="select_form"
             placeholder=""
-            value={category}
+            value={category || ""}
             callback={(e) => setCategory(e.target.value)}
           />
           <button type="submit" className="btn-7 btnbutton_form">

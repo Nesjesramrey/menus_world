@@ -17,6 +17,7 @@ import DrinksNoAlc from "./pages/Menu/DrinksNoAlc";
 import DrinksAlc from "./pages/Menu/DrinksAlc";
 import Desserts from "./pages/Menu/Desserts";
 import MenuEdit from "./pages/Menu/Edit";
+import DishDelete from "./pages/Menu/Delete";
 import Form from "./pages/Form";
 
 function App() {
@@ -36,6 +37,7 @@ function App() {
           <Route path="bebidasalcoholicas" element={<DrinksAlc />} />
           <Route path="postres" element={<Desserts />} />
           <Route path="edit/:id" element={<MenuEdit />} />
+          <Route path="delete/:id" element={<DishDelete />} />
         </Route>
         <Route path="/formulario" element={<Form />} />
       </Routes>

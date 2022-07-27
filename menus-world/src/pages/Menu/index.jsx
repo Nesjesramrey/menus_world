@@ -30,8 +30,11 @@ export default function Menu() {
       <div className="name-food">{dish.description}</div>
       <div className="name-food">$ {dish.price}</div>
 
-      <button className="btn-3" onClick={() => navigate(`edit/${dish._id}`)}>
+      <button className="btn-7" onClick={() => navigate(`edit/${dish._id}`)}>
         Editar
+      </button>
+      <button className="btn-7" onClick={() => navigate(`delete/${dish._id}`)}>
+        Eliminar
       </button>
     </div>
   );
