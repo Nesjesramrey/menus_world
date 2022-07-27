@@ -28,6 +28,14 @@ export const list = async () => {
   return data;
 };
 
+export const sublist = async (category) => {
+  const response = await fetch(
+    `http://localhost:8000/menu/submenu?category=${category}`
+  );
+  const data = await response.json();
+  return data;
+};
+
 export const update = async (id, body) => {
   const response = await fetch(`http://localhost:8000/menu/${id}`, {
     method: "PATCH",
