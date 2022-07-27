@@ -8,6 +8,7 @@ import MenuContainer from "./containers/MenuContainer";
 import Home from "./pages/Home";
 import Menu from "./pages/Menu";
 import Form from "./pages/Form";
+import Detail from "./pages/Detail"
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route index element={<Menu />} />
         </Route>
         <Route path="/formulario" element={<Form />} />
+        <Route path="/detalle" element={<Detail />} />
       </Routes>
     </div>
   );
