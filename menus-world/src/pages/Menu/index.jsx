@@ -1,11 +1,15 @@
 import { useEffect, useState } from "react";
 import { list as listDishes } from "../../../src/services/menus";
+import { useNavigate } from "react-router-dom";
 
 import "./Menu.css";
 
 export default function Menu() {
   // Local state
   const [dishes, setDishes] = useState([]);
+
+  // RRD
+  const navigate = useNavigate();
 
   useEffect(() => {
     const list = async () => {
@@ -25,6 +29,10 @@ export default function Menu() {
       <div className="name-food">{dish.dishName}</div>
       <div className="name-food">{dish.description}</div>
       <div className="name-food">$ {dish.price}</div>
+
+      <button className="btn-3" onClick={() => navigate(`edit/${dish._id}`)}>
+        Editar
+      </button>
     </div>
   );
 

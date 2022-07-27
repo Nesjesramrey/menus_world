@@ -15,11 +15,11 @@ export default function Home() {
           los menu
         </h2>
 
-        <button type="button" className="btn search-meal">
+        <button type="button" className="btn-home">
           Buscar un platillo
         </button>
 
-        <button type="button" className="btn register">
+        <button type="button" className="btn-home">
           Registrarme
         </button>
       </div>

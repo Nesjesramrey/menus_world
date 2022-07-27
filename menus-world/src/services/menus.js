@@ -17,7 +17,7 @@ export const create = async (body) => {
 };
 
 export const retrieve = async (id) => {
-  const response = await fetch(`http://localhost:8000/menu/${id}`);
+  const response = await fetch(`http://localhost:8000/menu/edit?_id=${id}`);
   const data = await response.json();
   return data;
 };
@@ -37,7 +37,7 @@ export const sublist = async (category) => {
 };
 
 export const update = async (id, body) => {
-  const response = await fetch(`http://localhost:8000/menu/${id}`, {
+  const response = await fetch(`http://localhost:8000/menu/edit?_id=${id}`, {
     method: "PATCH",
     headers: {
       "Content-Type": "Application/JSON",

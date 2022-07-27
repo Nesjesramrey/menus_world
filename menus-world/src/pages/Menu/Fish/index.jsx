@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { sublist as listDishes } from "../../../src/services/menus";
+import { sublist as listDishes } from "../../../services/menus";
 
 import "./Fish.css";
 

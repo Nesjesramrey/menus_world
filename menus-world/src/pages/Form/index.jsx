@@ -101,7 +101,7 @@ export default function Form() {
             value={category}
             callback={(e) => setCategory(e.target.value)}
           />
-          <button type="submit" className="btn btnbutton_form">
+          <button type="submit" className="btn-7 btnbutton_form">
             Registrar platillo
           </button>
           <div className="instructions">

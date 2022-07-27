@@ -1,15 +1,15 @@
 import { useEffect, useState } from "react";
-import { sublist as listDishes } from "../../services/menus";
+import { sublist as listDishes } from "../../../services/menus";
 
-import "./DrinksNoAlc.css";
+import "./Desserts.css";
 
-export default function DrinksNoAlc() {
+export default function Desserts() {
   // Local state
   const [dishes, setDishes] = useState([]);
 
   useEffect(() => {
     const list = async () => {
-      const data = await listDishes("Bebidas no alcoholicas");
+      const data = await listDishes("Postres");
       const parsedDishes = Object.keys(data).map((key) => {
         return { id: key, ...data[key] };
       });

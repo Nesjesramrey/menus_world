@@ -1,15 +1,15 @@
 import { useEffect, useState } from "react";
-import { sublist as listDishes } from "../../../src/services/menus";
+import { sublist as listDishes } from "../../../services/menus";
 
-import "./Entries.css";
+import "./Meat_cut.css";
 
-export default function Entries() {
+export default function MeatCut() {
   // Local state
   const [dishes, setDishes] = useState([]);
 
   useEffect(() => {
     const list = async () => {
-      const data = await listDishes("Entradas");
+      const data = await listDishes("Cortes");
       const parsedDishes = Object.keys(data).map((key) => {
         return { id: key, ...data[key] };
       });
