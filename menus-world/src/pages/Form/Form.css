@@ -14,7 +14,7 @@ body {
   width: 500px;
   align-items: flex-start;
   text-align: start;
-  margin: 10px;
+  margin-left: 30px;
   font-family: "Roboto", "Helvetica Neue";
   justify-content: space-between;
 }
@@ -22,6 +22,7 @@ body {
 p {
   text-align: center;
   display: flex;
+  font-size: 18px;
 }
 
 .title {
@@ -33,7 +34,8 @@ p {
 .label_form {
   font-family: "Roboto", sans-serif;
   text-align: start;
-  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 20px;
 }
 
 .btn {
@@ -57,7 +59,8 @@ p {
   font: normal normal bold 20px arial;
   color: #ffffff;
   text-decoration: none;
-  margin-top: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .btn:hover .btn:focus {
@@ -98,6 +101,11 @@ li {
   text-align: justify;
 }
 
+.instructions-form {
+  margin-top: 10px;
+  font-size: 18px;
+}
+
 .containerImg {
   margin-top: 20px;
   text-align: center;
@@ -106,6 +114,6 @@ li {
   font-family: "Roboto";
   font-size: 2rem;
   font-weight: 700;
-  margin-left: 300px;
+  margin-left: 150px;
   text-align: center;
 }

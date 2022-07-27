@@ -5,6 +5,7 @@ import { create as createMenu } from "../../services/menus";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Input from "../../../src/components/Input/index";
+import Select from "../../components/Select/index";
 
 import "./Form.css";
 
@@ -71,17 +72,6 @@ export default function Form() {
             callback={(e) => setDishName(e.target.value)}
           />
 
-          <label className="label_form">Categoria del platillo:</label>
-          <Input
-            type="text"
-            className="input_form"
-            placeholder=""
-            id="meal"
-            name="meal"
-            value={category}
-            callback={(e) => setCategory(e.target.value)}
-          />
-
           <label className="label_form">Descripcion:</label>
           <Input
             type="text"
@@ -103,30 +93,35 @@ export default function Form() {
             value={price}
             callback={(e) => setPrice(e.target.value)}
           />
-
+          <label className="label_form">Selecciona una categoria:</label>
+          <Select
+            type="text"
+            className="select_form"
+            placeholder=""
+            value={category}
+            callback={(e) => setCategory(e.target.value)}
+          />
           <button type="submit" className="btn btnbutton_form">
             Registrar platillo
           </button>
           <div className="instructions">
-            <ul>
-              <li>
-                <strong>Platillo:</strong> Nombre del platillo como aparece en
-                su carta
-              </li>
-              <li>
-                <strong>Categoria del latillo:</strong> Aqui tienes que
-                especificar si es una entreda, corte, postre, bebida o las
-                categorias que ya tengas definidas
-              </li>
-              <li>
-                <strong>Descripcion:</strong> Aqui puedes describir los
-                ingredientes principales asi como los gramajes de tus platillos
-              </li>
-              <li>
-                <strong>Precio:</strong> Precio incluyendo los impuestos
-                aplicables de tu localidad
-              </li>
-            </ul>
+            <div className="instructions-form">
+              <strong>Platillo:</strong> Nombre del platillo como aparece en su
+              carta
+            </div>
+            <div className="instructions-form">
+              <strong>Descripcion:</strong> Aqui puedes describir los
+              ingredientes principales asi como los gramajes de tus platillos
+            </div>
+            <div className="instructions-form">
+              <strong>Precio:</strong> Precio incluyendo los impuestos
+              aplicables de tu localidad
+            </div>
+            <div className="instructions-form">
+              <strong>Categoria del platillo:</strong> Aqui tienes que
+              especificar si es una entrada, corte, postre, bebida o las
+              categorias que ya tengas definidas
+            </div>
           </div>
         </form>
       </div>
