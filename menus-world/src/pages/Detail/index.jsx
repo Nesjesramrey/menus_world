@@ -49,7 +49,7 @@ export default function Detail(){
           <div className="row">
             <div className='col col-12 col-md-6'>{ImgDish(1)}</div>
             <div className='col col-12 col-md-6'>
-              <div>
+              <div className="boxDish">
                 <div>{DishDescription(1)}</div>
                 <div>{TableRatings(1)}</div>
               </div>
