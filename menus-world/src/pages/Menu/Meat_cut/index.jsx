@@ -1,19 +1,15 @@
 import { useEffect, useState } from "react";
-import { list as listDishes } from "../../../src/services/menus";
-import { useNavigate } from "react-router-dom";
+import { sublist as listDishes } from "../../../services/menus";
 
-import "./Menu.css";
+import "./Meat_cut.css";
 
-export default function Menu() {
+export default function MeatCut() {
   // Local state
   const [dishes, setDishes] = useState([]);
 
-  // RRD
-  const navigate = useNavigate();
-
   useEffect(() => {
     const list = async () => {
-      const data = await listDishes();
+      const data = await listDishes("Cortes");
       const parsedDishes = Object.keys(data).map((key) => {
         return { id: key, ...data[key] };
       });
@@ -29,13 +25,6 @@ export default function Menu() {
       <div className="name-food">{dish.dishName}</div>
       <div className="name-food">{dish.description}</div>
       <div className="name-food">$ {dish.price}</div>
-
-      <button className="btn-7" onClick={() => navigate(`edit/${dish._id}`)}>
-        Editar
-      </button>
-      <button className="btn-7" onClick={() => navigate(`delete/${dish._id}`)}>
-        Eliminar
-      </button>
     </div>
   );
 

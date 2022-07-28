@@ -1,4 +1,11 @@
-.container {
+.container-home {
+  display: flex;
+  flex-direction: row;
+  background-color: rgba(60, 48, 93, 0.848);
+  height: 1200px;
+}
+
+.container-home-menu {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -16,19 +23,90 @@
   font-family: "Roboto", "Helvetica Neue";
 }
 
-p {
+img {
+  width: 800px;
+  margin: 30px;
+}
+.title-home {
+  font-size: 2.5rem;
+  color: rgb(233, 223, 223);
+}
+
+.p-home {
   text-align: center;
+  font-size: 18px;
+  color: rgb(233, 223, 223);
+}
+.btn-home {
+  background: linear-gradient(
+    0deg,
+    rgba(255, 151, 0, 1) 0%,
+    rgba(251, 75, 2, 1) 100%
+  );
+  line-height: 42px;
+  padding: 0;
+  border: none;
+  position: relative;
+  display: block;
+  margin-top: 15px;
+  width: 300px;
+  height: 35px;
+  font-size: 20px;
 }
 
-.title {
-  color: #fb7b05;
-  font-size: 1.5rem;
+.btn-home:before,
+.btn-home:after {
+  position: absolute;
+  content: "";
+  right: 0;
+  bottom: 0;
+  background: rgba(251, 75, 2, 1);
+  box-shadow: -7px -7px 20px 0px rgba(255, 255, 255, 0.9),
+    -4px -4px 5px 0px rgba(255, 255, 255, 0.9),
+    7px 7px 20px 0px rgba(0, 0, 0, 0.2), 4px 4px 5px 0px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
 }
-
-.button {
-  background-color: #fb7b05;
-  font-size: 1rem;
-  border-radius: 10px;
-  margin: 10px;
-  width: 200px;
+.btn-home:before {
+  height: 0%;
+  width: 2px;
+}
+.btn-home:after {
+  width: 0%;
+  height: 2px;
+}
+.btn-home:hover {
+  color: rgb(253, 245, 242);
+  background: transparent;
+}
+.btn-home:hover:before {
+  height: 100%;
+}
+.btn-home:hover:after {
+  width: 100%;
+}
+.btn-home:before,
+.btn-home:after {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+  background: rgba(251, 75, 2, 1);
+  box-shadow: -7px -7px 20px 0px rgba(255, 255, 255, 0.9),
+    -4px -4px 5px 0px rgba(255, 255, 255, 0.9),
+    7px 7px 20px 0px rgba(0, 0, 0, 0.2), 4px 4px 5px 0px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+.btn-home:before {
+  width: 2px;
+  height: 0%;
+}
+.btn-home:after {
+  height: 2px;
+  width: 0%;
+}
+.btn-home:hover:before {
+  height: 100%;
+}
+.btn-home:hover:after {
+  width: 100%;
 }

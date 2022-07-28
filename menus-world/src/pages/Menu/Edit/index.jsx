@@ -1,16 +1,19 @@
-import { useState } from "react";
-import { create as createMenu } from "../../services/menus";
+import { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import {
+  retrieve as retrieveDish,
+  update as updateDish,
+} from "../../../services/menus";
 
 // Toastify
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Input from "../../../src/components/Input/index";
-import Select from "../../components/Select/index";
+import Input from "../../../components/Input";
+import Select from "../../../../src/components/Select";
 
-import "./Form.css";
-
-export default function Form() {
+export default function MenuEdit() {
   // Local state
+  const [isLoading, setIsLoading] = useState(true);
   const [dishName, setDishName] = useState("");
   const [category, setCategory] = useState("");
   const [description, setDescription] = useState("");
@@ -23,6 +26,24 @@ export default function Form() {
     setPrice("");
   };
 
+  // RRD
+  const { id } = useParams();
+  //console.log(id);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const getMenu = async () => {
+      const data = await retrieveDish(id);
+      setDishName(data.dishName);
+      setCategory(data.category);
+      setDescription(data.description);
+      setPrice(data.price);
+      setIsLoading(false);
+    };
+
+    getMenu();
+  }, [id]);
+
   const isEmpty = (value) => !value;
 
   const handleSubmit = async (event) => {
@@ -33,7 +54,7 @@ export default function Form() {
       isEmpty(description) ||
       isEmpty(price)
     ) {
-      toast.error("Favor de llenar la forma completa!!!!");
+      toast.error("Favor de capturar el rubro a modificar");
       return;
     }
 
@@ -45,21 +66,22 @@ export default function Form() {
     };
 
     try {
-      await createMenu(data);
-      toast.success("Gracias, se registro con exito!!");
+      await updateDish(id, data);
+      toast.success("Gracias se ha modificado el platillo");
       cleanForm();
+      navigate(`/menu/edit/${id}`);
     } catch (error) {
+      toast.error("Algo salió mal");
       console.error(error);
     }
   };
 
   return (
-    <div className="mainContainer">
-      <div className="container">
-        <p className="title">MENU'S WORLD</p>
-        <h2 className="subtitle">Formulario de registro de su platillo</h2>
-        <p>Ingresa tus datos aqui </p>
-
+    <div>
+      <h2>Introducir los datos del platillo para actualizar</h2>
+      {isLoading ? (
+        <p>Cargando...</p>
+      ) : (
         <form onSubmit={handleSubmit}>
           <label className="label_form">Platillo:</label>
           <Input
@@ -68,7 +90,7 @@ export default function Form() {
             placeholder=""
             id="meal"
             name="meal"
-            value={dishName}
+            value={dishName || ""}
             callback={(e) => setDishName(e.target.value)}
           />
 
@@ -79,7 +101,7 @@ export default function Form() {
             placeholder=""
             id="meal"
             name="meal"
-            value={description}
+            value={description || ""}
             callback={(e) => setDescription(e.target.value)}
           />
 
@@ -90,7 +112,7 @@ export default function Form() {
             placeholder=""
             id="meal"
             name="meal"
-            value={price}
+            value={price || ""}
             callback={(e) => setPrice(e.target.value)}
           />
           <label className="label_form">Selecciona una categoria:</label>
@@ -98,45 +120,14 @@ export default function Form() {
             type="text"
             className="select_form"
             placeholder=""
-            value={category}
+            value={category || ""}
             callback={(e) => setCategory(e.target.value)}
           />
           <button type="submit" className="btn-7 btnbutton_form">
-            Registrar platillo
+            Modificar platillo
           </button>
-          <div className="instructions">
-            <div className="instructions-form">
-              <strong>Platillo:</strong> Nombre del platillo como aparece en su
-              carta
-            </div>
-            <div className="instructions-form">
-              <strong>Descripcion:</strong> Aqui puedes describir los
-              ingredientes principales asi como los gramajes de tus platillos
-            </div>
-            <div className="instructions-form">
-              <strong>Precio:</strong> Precio incluyendo los impuestos
-              aplicables de tu localidad
-            </div>
-            <div className="instructions-form">
-              <strong>Categoria del platillo:</strong> Aqui tienes que
-              especificar si es una entrada, corte, postre, bebida o las
-              categorias que ya tengas definidas
-            </div>
-          </div>
         </form>
-      </div>
-      <div className="containerImg">
-        <img
-          src="https://static-sevilla.abc.es/media/gurmesevilla/2012/01/comida-rapida-casera.jpg"
-          alt="Placeholder"
-          width="1200"
-        />
-        <p className="description-food">
-          El descubrimiento de un nuevo plato es de más provecho para la
-          humanidad que el descubrimiento de una estrella. (Jean Anthelme
-          Brillat-Savarin)
-        </p>
-      </div>
+      )}
       <ToastContainer />
     </div>
   );
