@@ -1,0 +1,30 @@
+#textOtherRec {
+	margin-top: 7px;
+	margin-bottom: 10px;
+	background-color: #ff7b2c;
+	font-size: 18px;
+	color: #fff;
+}
+
+#colCardsRecomendations {
+	display: flex;
+	flex-direction: row;
+}
+
+.cardRecommendations {
+	border: 1px solid #8e8ea9;
+	margin: 7px 7px 0px 7px;
+	border-radius: 6px;
+	background-color: #fff;
+	width: 45%;
+	padding: 7px;
+}
+
+.cardRecommendations:hover {
+	transition-duration: 700ms;
+	transform: scale(1.02);
+}
+
+.imgRecommPhoto {
+	border-radius: 6px;
+}

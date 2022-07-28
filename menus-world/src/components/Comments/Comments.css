@@ -1,0 +1,39 @@
+p {
+	margin: 0px;
+	padding: 0px;
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	justify-content: flex-start;
+}
+
+.divImgProfile {
+	width: 44px;
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	margin-right: 5px;
+}
+
+.imgProfile {
+	width: 40px;
+	height: 40px;
+	border-radius: 100px;
+}
+
+.divComment {
+	background-color: #ffffff;
+	border: 1px solid #8e8ea9;
+	padding: 2px;
+	border-radius: 6px;
+	margin: 7px 7px 0px 7px;
+	display: flex;
+}
+
+#textOtherRec {
+	margin-top: 7px;
+	margin-bottom: 10px;
+	background-color: #ff7b2c;
+	font-size: 18px;
+	color: #fff;
+}

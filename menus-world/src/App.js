@@ -19,6 +19,7 @@ import Desserts from "./pages/Menu/Desserts";
 import MenuEdit from "./pages/Menu/Edit";
 import DishDelete from "./pages/Menu/Delete";
 import Form from "./pages/Form";
+import Detail from "./pages/Detail"
 
 function App() {
   return (
@@ -40,6 +41,7 @@ function App() {
           <Route path="delete/:id" element={<DishDelete />} />
         </Route>
         <Route path="/formulario" element={<Form />} />
+        <Route path="/detalle" element={<Detail />} />
       </Routes>
     </div>
   );
