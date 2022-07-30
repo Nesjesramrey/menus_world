@@ -56,7 +56,7 @@ export default function Form() {
   return (
     <div className="mainContainer">
       <div className="container">
-        <p className="title">MENU'S WORLD</p>
+        <p className="title-form">MENU'S WORLD</p>
         <h2 className="subtitle">Formulario de registro de su platillo</h2>
         <p>Ingresa tus datos aqui </p>
 
@@ -101,7 +101,7 @@ export default function Form() {
             value={category}
             callback={(e) => setCategory(e.target.value)}
           />
-          <button type="submit" className="btn-7 btnbutton_form">
+          <button type="submit" className="btn-7 button_form">
             Registrar platillo
           </button>
           <div className="instructions">
