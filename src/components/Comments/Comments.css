@@ -30,6 +30,16 @@ p {
 	display: flex;
 }
 
+.userDate {
+	display: flex;
+	flex-direction: row;
+}
+
+.userSpace {
+	margin-right: 7px;
+}
+
+
 #textOtherRec {
 	margin-top: 7px;
 	margin-bottom: 10px;

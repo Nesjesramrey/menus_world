@@ -1,6 +1,14 @@
-.description { 
-  background-color: white;
-  margin-left: auto;
+.description {
+	background-color: #fff;
+	margin-left: auto;
 	margin-right: auto;
-  width: 90%;
+	width: 90%;
+	height: 50%;
+}
+
+.bottomSection { 
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	margin-top: 7px;
 }

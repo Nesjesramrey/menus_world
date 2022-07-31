@@ -23,10 +23,10 @@
   font-family: "Roboto", "Helvetica Neue";
 }
 
-img {
+/* img {
   width: 800px;
   margin: 30px;
-}
+} */
 .title-home {
   font-size: 2.5rem;
   color: rgb(233, 223, 223);
