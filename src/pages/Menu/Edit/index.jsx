@@ -86,7 +86,7 @@ export default function MenuEdit() {
           <label className="label_form">Platillo:</label>
           <Input
             type="text"
-            className="input_form"
+            className="form-login"
             placeholder=""
             id="meal"
             name="meal"
@@ -97,7 +97,7 @@ export default function MenuEdit() {
           <label className="label_form">Descripcion:</label>
           <Input
             type="text"
-            className="input_form"
+            className="form-login"
             placeholder=""
             id="meal"
             name="meal"

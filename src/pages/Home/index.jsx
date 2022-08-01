@@ -27,7 +27,11 @@ export default function Home() {
           Ir al menu
         </button>
 
-        <button type="button" className="btn-home">
+        <button
+          type="button"
+          className="btn-home"
+          onClick={() => navigate(`registro`)}
+        >
           Registrarme
         </button>
       </div>
