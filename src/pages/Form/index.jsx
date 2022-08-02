@@ -55,7 +55,7 @@ export default function Form() {
 
   return (
     <div className="mainContainer">
-      <div className="container">
+      <div className="container-form">
         <p className="title-form">MENU'S WORLD</p>
         <h2 className="subtitle">Formulario de registro de su platillo</h2>
         <p>Ingresa tus datos aqui </p>

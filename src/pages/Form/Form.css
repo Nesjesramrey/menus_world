@@ -8,7 +8,7 @@ body {
   justify-content: center;
 }
 
-.container {
+.container-form {
   display: flex;
   flex-direction: column;
   width: 500px;

@@ -68,10 +68,10 @@ export default function Login() {
             Ingresar
           </button>
           <p>
-            <a className="register" href="/registro">
+            <a className="btn btn-primary" href="/registro">
               Registrarte{" "}
             </a>
-            <a className="register" href="/">
+            <a className="btn btn-primary" href="/">
               Home{" "}
             </a>
           </p>

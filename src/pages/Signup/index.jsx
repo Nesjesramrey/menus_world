@@ -85,10 +85,29 @@ export default function Signup() {
                     value={password}
                     callback={(e) => setPassword(e.target.value)}
                   />
+                  <div className="select-child">
+                    <select
+                      type="text"
+                      className="select_form"
+                      placeholder=""
+                      value="userType"
+                      onChange=""
+                    >
+                      <option value="Select">Selecciona una categoria</option>
+                      <option value="Comensal">Cliente</option>
+                      <option value="Administador restaurant">
+                        Administador
+                      </option>
+                    </select>
+                  </div>
                 </div>
                 <div className="d-flex flex-row align-items-center justify-content-between">
-                  <a href="/login">Login</a>
-                  <a href="/">Home</a>
+                  <a className="btn btn-primary" href="/login">
+                    Login
+                  </a>
+                  <a className="btn btn-primary" href="/">
+                    Home
+                  </a>
                   <button type="submit" className="btn btn-primary">
                     Create Account
                   </button>
