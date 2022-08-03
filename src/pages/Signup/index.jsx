@@ -50,7 +50,7 @@ export default function Signup() {
   return (
     <div className="container">
       <div className="row justify-content-center">
-        <div className="col-6 col-md-12 ">
+        <div className="col-10 col-md-12 ">
           <div className="card">
             <h2 className="card-title text-center">Registro</h2>
             <div className="card-body py-md-4">
@@ -102,7 +102,7 @@ export default function Signup() {
                   <div className="select-child">
                     <select
                       type="text"
-                      className="select_signup"
+                      className="select-signup col-12"
                       placeholder=""
                       value={userType}
                       onChange={(e) => setUserType(e.target.value)}
@@ -116,13 +116,13 @@ export default function Signup() {
                   </div>
                 </div>
                 <div className="d-flex flex-row align-items-center justify-content-between">
-                  <a className="btn-login" href="/login">
+                  <a className="btn-signup " href="/login">
                     Login
                   </a>
-                  <a className="btn-login" href="/">
+                  <a className="btn-signup" href="/">
                     Home
                   </a>
-                  <button type="submit" className="btn-login">
+                  <button type="submit" className="btn-signup">
                     Create Account
                   </button>
                 </div>
