@@ -1,0 +1,39 @@
+@import url("https://fonts.googleapis.com/css?family=PT+Sans");
+
+body {
+  background: rgba(60, 48, 93, 0.848);
+  font-family: "PT Sans", sans-serif;
+}
+h2 {
+  padding-top: 1.5rem;
+}
+
+.card {
+  border: 0.4rem solid rgba(60, 48, 93, 0.848);
+  top: 10%;
+}
+.form-control {
+  background-color: rgba(60, 48, 93, 0.848);
+  padding: 20px;
+  padding: 25px 15px;
+  margin-bottom: 1.3rem;
+}
+
+.form-control:focus {
+  color: #000000;
+  background-color: #ffffff;
+  border: 3px solid #da5767;
+  outline: 0;
+  box-shadow: none;
+}
+
+.btn {
+  padding: 0.6rem 1.2rem;
+  background: #da5767;
+  border: 2px solid #da5767;
+}
+.btn-primary:hover {
+  background-color: #df8c96;
+  border-color: #df8c96;
+  transition: 0.3s;
+}
