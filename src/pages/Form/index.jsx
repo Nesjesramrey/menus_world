@@ -74,13 +74,15 @@ export default function Form() {
   });
 
   return (
-    <div className="mainContainer">
+    <div className="container">
       <div className="container-form">
         <p className="title-form">MENU'S WORLD</p>
-        <h2 className="subtitle">Formulario de registro de su platillo</h2>
+        <h2 className="subtitle col-8">
+          Formulario de registro de su platillo
+        </h2>
         <p>Ingresa tus datos aqui </p>
 
-        <form onSubmit={handleSubmit}>
+        <form className="form-menu" onSubmit={handleSubmit}>
           <label className="label_form">Platillo:</label>
           <Input
             type="text"
@@ -117,9 +119,7 @@ export default function Form() {
             <div className="dropArea" {...getRootProps()}>
               <p className="text">Arrastra la imagen de tu producto</p>
             </div>
-            <div className="content-image">
-              {imagen}
-            </div>
+            <div className="content-image">{imagen}</div>
           </div>
           <label className="label_form">Selecciona una categoria:</label>
           <Select
@@ -129,7 +129,7 @@ export default function Form() {
             value={category}
             callback={(e) => setCategory(e.target.value)}
           />
-          <button type="submit" className="btn-7 button_form">
+          <button type="submit" className="btn-register-menu">
             Registrar platillo
           </button>
           <div className="instructions">
@@ -153,11 +153,11 @@ export default function Form() {
           </div>
         </form>
       </div>
-      <div className="containerImg">
+      <div className="container-Img">
         <img
           src="https://static-sevilla.abc.es/media/gurmesevilla/2012/01/comida-rapida-casera.jpg"
           alt="Placeholder"
-          width="1200"
+          width="800px"
         />
         <p className="description-food">
           El descubrimiento de un nuevo plato es de más provecho para la
@@ -169,4 +169,3 @@ export default function Form() {
     </div>
   );
 }
-
