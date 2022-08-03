@@ -61,3 +61,4 @@ export const deleteDish = async (id, body) => {
   const data = await response.json();
   return data;
 };
+

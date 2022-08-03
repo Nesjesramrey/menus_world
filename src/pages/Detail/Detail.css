@@ -14,6 +14,7 @@
 .container {
 	margin: 0px;
 	padding: 0px;
+	background-color: #f5f5f5;
 }
 
 #colCardsRecommendations {
@@ -24,45 +25,54 @@
 }
 
 .boxDish {
-	height: 100%;
-	width: 100%;
+	width: calc(100% - 14px);
+	height: calc(100% - 7px);
+	margin: 7px 7px 0px 7px;
+	border-radius: 6px;
+	background-color: #fff;
 	display: flex;
 	flex-direction: column;
-	justify-content: space-evenly;
+	justify-content: space-between;
+	border: 1px solid #8e8ea9;
 }
 
+#textOtherRec {
+	margin-top: 7px;
+	margin-bottom: 10px;
+	background-color: #ff7b2c;
+	font-size: 18px;
+	color: #fff;
+	padding: 3px;
+}
 
-
-
-
-
+.footer {
+	background-color: gray;
+	width: 100%;
+}
 
 /* only for development */
-
-.row {
-	/* border: 1px solid red; */
+/* .row {
+	border: 1px solid red;
 	margin: 0px;
-	padding: 0px;
-	width: 100%;
+	padding: 0px !important;
 }
 
 .col {
-	/* border: 1px solid green; */
+	border: 1px solid rgb(36, 0, 128);
 	margin: 0px;
 	padding: 0px;
 }
 
-/* .container {
+.container {
 	background-color: aqua;
 	margin: 0px;
-} */
+}
 
 .container-fluid {
-	/* background-color: rgb(32, 201, 201); */
 	background-color: #f5f5f5;
 	margin: 0px;
 }
 
-/* div {
+div {
 	border: 1px solid orange;
 } */

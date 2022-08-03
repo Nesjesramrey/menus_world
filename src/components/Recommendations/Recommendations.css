@@ -1,16 +1,3 @@
-#textOtherRec {
-	margin-top: 7px;
-	margin-bottom: 10px;
-	background-color: #ff7b2c;
-	font-size: 18px;
-	color: #fff;
-}
-
-#colCardsRecomendations {
-	display: flex;
-	flex-direction: row;
-}
-
 .cardRecommendations {
 	border: 1px solid #8e8ea9;
 	margin: 7px 7px 0px 7px;
@@ -27,4 +14,11 @@
 
 .imgRecommPhoto {
 	border-radius: 6px;
+}
+
+.contentCardRecommendations { 
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }

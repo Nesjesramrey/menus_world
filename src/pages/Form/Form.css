@@ -185,7 +185,7 @@ cursor: pointer;
   width: 230px;
   height:180px;
   border-radius: 5px;
-=======
+
 @media only screen and (min-width: 320px) and (max-width: 680px) {
   .containerImg {
     display: none;
@@ -206,4 +206,5 @@ cursor: pointer;
     margin-top: 10px;
     font-size: 18px;
   }
+}
 }
