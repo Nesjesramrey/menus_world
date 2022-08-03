@@ -14,6 +14,7 @@
 .container {
 	margin: 0px;
 	padding: 0px;
+	background-color: #f5f5f5;
 }
 
 #colCardsRecommendations {
@@ -31,11 +32,8 @@
 	background-color: #fff;
 	display: flex;
 	flex-direction: column;
-	justify-content: space-evenly;
-}
-
-.row {
-	width: 100%;
+	justify-content: space-between;
+	border: 1px solid #8e8ea9;
 }
 
 #textOtherRec {
@@ -53,15 +51,14 @@
 }
 
 /* only for development */
-.row {
+/* .row {
 	border: 1px solid red;
 	margin: 0px;
 	padding: 0px !important;
-	width: 100%;
 }
 
 .col {
-	border: 1px solid green;
+	border: 1px solid rgb(36, 0, 128);
 	margin: 0px;
 	padding: 0px;
 }
@@ -72,11 +69,10 @@
 }
 
 .container-fluid {
-	background-color: rgb(32, 201, 201);
 	background-color: #f5f5f5;
 	margin: 0px;
 }
 
 div {
 	border: 1px solid orange;
-}
+} */

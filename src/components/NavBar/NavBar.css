@@ -1,0 +1,13 @@
+.topNavBar {
+  max-width: 1290px;
+  padding: 0px;
+  background-color: white;
+  color: green;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.nav-0 {
+  padding: 0px;
+  margin-bottom: 7px;
+}
