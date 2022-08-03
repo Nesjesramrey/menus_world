@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { useEffect, useState } from 'react';
 
 // Components
+import NavBar from '../../components/NavBar'
 import ImgDish from '../../components/ImgDish';
 import DishDescription from '../../components/DishDescription';
 import CreateComments from '../../components/Comments';
@@ -36,7 +37,7 @@ export default function Detail() {
 	let img = 'https://images2.imgbox.com/66/db/s8TI4LcF_o.jpg';
 	let data = {
 		title: 'Ensalada de pollo',
-		description: 'Rica ensada de pollo, inlcuye bebida de 300 mL',
+		description: 'Rica ensada de pollo, tiene 100 gr de pollo, lechuga, 3 ingredientes a elejir (aceitunas, elote, panela, queso, cutones), inlcuye bebida de 300 mL',
 		price: 78,
 		rating: 4.3,
 	};
@@ -134,54 +135,46 @@ export default function Detail() {
 	getRatings(platillos);
 
 	return (
-		<div className="container-fluid">
+		<div className="container-fluid g-0">
+			{NavBar(1)}
 			<div className="container g-5">
-				<main>
-					<div className="row">
-						<div className="col col-12 title text-center">
-							<h2>Calificaciones del platillo</h2>
-						</div>
+
+				<main className="row">
+					<div className="col col-12 title text-center">
+						<h2>Calificaciones del platillo</h2>
 					</div>
 
 					{/* photo and description */}
-					<div className="row">
-						<div className="col col-12 col-md-6 g-0">{ImgDish(img)}</div>
-						<div className="col col-12 col-md-6 g-0">
-							<div className="boxDish">
-								{DishDescription(data)}
-								{TableRatings(values, 1)}
-							</div>
+					<div className="col col-12 col-md-6 g-0">{ImgDish(img)}</div>
+					<div className="col col-12 col-md-6 g-0">
+						<div className="boxDish">
+							{DishDescription(data)}
+							{TableRatings(values, 1)}
 						</div>
 					</div>
 				</main>
 
-				<section>
+				<section className="row">
 					{/*- - - - Comments section - - - -*/}
-					<div className="row">
-						<div className="col col-12 col-md-6 g-0">
-							{AddComment(1)}
-							{listComments}
-						</div>
+					<div className="col col-12 col-md-6 g-0">
+						{AddComment(1)}
+						{listComments}
+					</div>
 
-						{/*- - - - Reommendations - - - -*/}
-						<div className="col col-12 col-md-6 text-center g-0">
-							<div>
-								<h5 id="textOtherRec" className="text-center">
-									Otras recomendaciones
-								</h5>
-							</div>
-							<div id="colCardsRecommendations">{Recomendation(1)}</div>
+					{/*- - - - Reommendations - - - -*/}
+					<div className="col col-12 col-md-6 text-center g-0">
+						<div>
+							<h5 id="textOtherRec" className="text-center">
+								Otras recomendaciones
+							</h5>
 						</div>
+						<div id="colCardsRecommendations">
+							{Recomendation(1)}
+							{Recomendation(2)}
+							</div>
 					</div>
 				</section>
 
-				<footer>
-					<div className="row footer">
-						<div className="col col-12 col-md-4 g-0">logo</div>
-						<div className="col col-12 col-md-4 g-0">Sobre Nosotros</div>
-						<div className="col col-12 col-md-4 g-0">Redes</div>
-					</div>
-				</footer>
 			</div>
 		</div>
 	);
