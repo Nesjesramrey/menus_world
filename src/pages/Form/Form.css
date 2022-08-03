@@ -1,11 +1,6 @@
-body {
-  background-color: aliceblue;
-}
-
-.mainContainer {
+.container {
   display: flex;
   flex-direction: row;
-  justify-content: center;
 }
 
 .container-form {
@@ -19,16 +14,14 @@ body {
   justify-content: space-between;
 }
 
-p {
-  text-align: center;
-  display: flex;
-  font-size: 18px;
-}
-
 .title-form {
   color: #fb7b05;
   font-size: 2.5rem;
   font-weight: bold;
+}
+
+.form-menu {
+  background-color: white;
 }
 
 .label_form {
@@ -49,84 +42,6 @@ p {
   margin-bottom: 10px;
 }
 
-.btn-7 {
-  background: linear-gradient(
-    0deg,
-    rgba(255, 151, 0, 1) 0%,
-    rgba(251, 75, 2, 1) 100%
-  );
-  line-height: 42px;
-  padding: 0;
-  border: none;
-  position: relative;
-  display: block;
-  margin-top: 15px;
-  width: 300px;
-  height: 35px;
-  font-size: 20px;
-}
-
-.btn-7:before,
-.btn-7:after {
-  position: absolute;
-  content: "";
-  right: 0;
-  bottom: 0;
-  background: rgba(251, 75, 2, 1);
-  box-shadow: -7px -7px 20px 0px rgba(255, 255, 255, 0.9),
-    -4px -4px 5px 0px rgba(255, 255, 255, 0.9),
-    7px 7px 20px 0px rgba(0, 0, 0, 0.2), 4px 4px 5px 0px rgba(0, 0, 0, 0.3);
-  transition: all 0.3s ease;
-}
-.btn-7:before {
-  height: 0%;
-  width: 2px;
-}
-.btn-7:after {
-  width: 0%;
-  height: 2px;
-}
-.btn-7:hover {
-  color: rgba(251, 75, 2, 1);
-  background: transparent;
-}
-.btn-7:hover:before {
-  height: 100%;
-}
-.btn-7:hover:after {
-  width: 100%;
-}
-.btn-7 span:before,
-.btn-7 span:after {
-  position: absolute;
-  content: "";
-  left: 0;
-  top: 0;
-  background: rgba(251, 75, 2, 1);
-  box-shadow: -7px -7px 20px 0px rgba(255, 255, 255, 0.9),
-    -4px -4px 5px 0px rgba(255, 255, 255, 0.9),
-    7px 7px 20px 0px rgba(0, 0, 0, 0.2), 4px 4px 5px 0px rgba(0, 0, 0, 0.3);
-  transition: all 0.3s ease;
-}
-.btn-7 span:before {
-  width: 2px;
-  height: 0%;
-}
-.btn-7 span:after {
-  height: 2px;
-  width: 0%;
-}
-.btn-7 span:hover:before {
-  height: 100%;
-}
-.btn-7 span:hover:after {
-  width: 100%;
-}
-
-li {
-  list-style: none;
-}
-
 .instructions {
   align-self: flex-start;
   width: 500px;
@@ -138,8 +53,8 @@ li {
   font-size: 18px;
 }
 
-.containerImg {
-  margin-top: 20px;
+.container-Img {
+  margin: 20px;
   text-align: center;
 }
 .description-food {
@@ -149,45 +64,62 @@ li {
   margin-left: 150px;
   text-align: center;
 }
-.container-image{
+.btn-register-menu {
+  padding: 4px;
+  border-radius: 8px;
+  background-color: #fff;
+  border: 2px solid #ff7b2c;
+  font-weight: bold;
+  margin: 3px;
+  width: 150px;
+  text-decoration: none;
+  color: black;
+}
+
+.btn-register-menu:hover {
+  background-color: #ff7b2c;
+  color: #fff;
+}
+
+.container-image {
   display: flex;
   width: 570px;
   height: 200px;
 }
-.dropArea{
-  display:flex;
+.dropArea {
+  display: flex;
   place-items: center;
   background-color: #ffff;
   width: 240px;
   height: 200px;
 }
-.content-image{
+.content-image {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 280px;
 }
-.text{
-border: dotted #555 3px;
-width: 240px;
-height: 180px;
-display: flex;
-align-items: center;
-justify-content: center;
-flex-direction: column;
-border-radius: 15px;
-cursor: pointer;
+.text {
+  border: dotted #555 3px;
+  width: 240px;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 15px;
+  cursor: pointer;
 }
-.text:hover{
+.text:hover {
   border: 3px solid #555;
 }
-.image{
+.image {
   width: 230px;
-  height:180px;
+  height: 180px;
   border-radius: 5px;
-
+}
 @media only screen and (min-width: 320px) and (max-width: 680px) {
-  .containerImg {
+  .container-Img {
     display: none;
   }
   .title-form {
@@ -206,5 +138,4 @@ cursor: pointer;
     margin-top: 10px;
     font-size: 18px;
   }
-}
 }

@@ -9,7 +9,7 @@ export default function Input({
   type = "text",
 }) {
   return (
-    <div className="form-child">
+    <div className="">
       <input
         type={type}
         className={className}
