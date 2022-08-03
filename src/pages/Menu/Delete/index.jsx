@@ -36,7 +36,7 @@ export default function DishDelete() {
       {!dish ? (
         <p>Cargando</p>
       ) : (
-        <div>
+        <div className="card-info-delete">
           <p>{dish.dishName}</p>
           <p>{dish.description}</p>
           <p>{dish.price}</p>
@@ -51,3 +51,4 @@ export default function DishDelete() {
     </div>
   );
 }
+

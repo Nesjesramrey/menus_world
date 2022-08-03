@@ -25,7 +25,7 @@ export default function Menu() {
   }, []);
 
   const buildMenu = (dish, index) => (
-    <div className="card-menu" key={index}>
+    <div className="card-menus" key={index}>
       <div className="name-food">{dish.dishName}</div>
       <div className="name-food">{dish.description}</div>
       <div className="name-food">$ {dish.price}</div>
@@ -57,3 +57,4 @@ export default function Menu() {
     </div>
   );
 }
+

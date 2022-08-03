@@ -13,31 +13,38 @@ const generateConfig = (body) => {
 
 export const create = async (body) => {
   const requestConfig = generateConfig(body);
-  const response = await fetch(`${URL}/menu`, requestConfig);
+  const response = await fetch(`${URL}/users`, requestConfig);
+  const data = await response.json();
+  return data;
+};
+
+export const login = async (body) => {
+  const requestConfig = generateConfig(body);
+  const response = await fetch(`${URL}/users/login`, requestConfig);
   const data = await response.json();
   return data;
 };
 
 export const retrieve = async (id) => {
-  const response = await fetch(`${URL}/menu/edit?_id=${id}`);
+  const response = await fetch(`${URL}/users/edit?_id=${id}`);
   const data = await response.json();
   return data;
 };
 
 export const list = async () => {
-  const response = await fetch(`${URL}/menu`);
+  const response = await fetch(`${URL}/users`);
   const data = await response.json();
   return data;
 };
 
 export const sublist = async (category) => {
-  const response = await fetch(`${URL}/menu/submenu?category=${category}`);
+  const response = await fetch(`${URL}/users/subuser?category=${category}`);
   const data = await response.json();
   return data;
 };
 
 export const update = async (id, body) => {
-  const response = await fetch(`${URL}/menu/edit?_id=${id}`, {
+  const response = await fetch(`${URL}/users/edit?_id=${id}`, {
     method: "PATCH",
     headers: {
       "Content-Type": "Application/JSON",
@@ -48,8 +55,8 @@ export const update = async (id, body) => {
   return data;
 };
 
-export const deleteDish = async (id, body) => {
-  const response = await fetch(`${URL}/menu/${id}`, {
+export const deleteUser = async (id, body) => {
+  const response = await fetch(`${URL}/users/${id}`, {
     method: "DELETE",
     headers: {
       "Content-Type": "Application/JSON",
@@ -61,4 +68,3 @@ export const deleteDish = async (id, body) => {
   const data = await response.json();
   return data;
 };
-

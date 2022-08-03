@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useDropzone } from "react-dropzone";
 import { create as createMenu } from "../../services/menus";
 
 // Toastify
@@ -52,11 +53,30 @@ export default function Form() {
       console.error(error);
     }
   };
+  let [files, setFiles] = useState([]);
+  const { getRootProps } = useDropzone({
+    accept: "image/*",
+    onDrop: (acceptedFiles) => {
+      setFiles(
+        acceptedFiles.map((file) =>
+          Object.assign(file, {
+            preview: URL.createObjectURL(file),
+          })
+        )
+      );
+      console.log(acceptedFiles);
+    },
+  });
+  const imagen = files.map((file) => {
+    return (
+      <img key={file.name} src={file.preview} alt="img" className="image" />
+    );
+  });
 
   return (
     <div className="mainContainer">
-      <div className="container">
-        <p className="title">MENU'S WORLD</p>
+      <div className="container-form">
+        <p className="title-form">MENU'S WORLD</p>
         <h2 className="subtitle">Formulario de registro de su platillo</h2>
         <p>Ingresa tus datos aqui </p>
 
@@ -93,6 +113,14 @@ export default function Form() {
             value={price}
             callback={(e) => setPrice(e.target.value)}
           />
+          <div className="container-image">
+            <div className="dropArea" {...getRootProps()}>
+              <p className="text">Arrastra la imagen de tu producto</p>
+            </div>
+            <div className="content-image">
+              {imagen}
+            </div>
+          </div>
           <label className="label_form">Selecciona una categoria:</label>
           <Select
             type="text"
@@ -101,7 +129,7 @@ export default function Form() {
             value={category}
             callback={(e) => setCategory(e.target.value)}
           />
-          <button type="submit" className="btn-7 btnbutton_form">
+          <button type="submit" className="btn-7 button_form">
             Registrar platillo
           </button>
           <div className="instructions">
@@ -141,3 +169,4 @@ export default function Form() {
     </div>
   );
 }
+

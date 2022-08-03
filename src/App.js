@@ -6,6 +6,8 @@ import MenuContainer from "./containers/MenuContainer";
 
 //Components
 import Home from "./pages/Home";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
 import Menu from "./pages/Menu";
 import Entries from "./pages/Menu/Entries";
 import Salads from "./pages/Menu/Salads";
@@ -19,13 +21,15 @@ import Desserts from "./pages/Menu/Desserts";
 import MenuEdit from "./pages/Menu/Edit";
 import DishDelete from "./pages/Menu/Delete";
 import Form from "./pages/Form";
-import Detail from "./pages/Detail"
+import Detail from "./pages/Detail";
 
 function App() {
   return (
     <div className="App">
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/registro" element={<Signup />} />
         <Route path="/menu" element={<MenuContainer />}>
           <Route index element={<Menu />} />
           <Route path="entradas" element={<Entries />} />
@@ -48,3 +52,4 @@ function App() {
 }
 
 export default App;
+
