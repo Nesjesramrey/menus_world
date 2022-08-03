@@ -1,4 +1,4 @@
-const URL = "http://localhost:8080";
+const URL = "http://localhost:8000";
 
 const generateConfig = (body) => {
   console.log(JSON.stringify(body));
@@ -61,4 +61,3 @@ export const deleteDish = async (id, body) => {
   const data = await response.json();
   return data;
 };
-
