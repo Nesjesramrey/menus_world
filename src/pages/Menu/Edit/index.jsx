@@ -5,6 +5,8 @@ import {
   update as updateDish,
 } from "../../../services/menus";
 
+import "./Edit.css";
+
 // Toastify
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -77,57 +79,59 @@ export default function MenuEdit() {
   };
 
   return (
-    <div>
-      <h2>Introducir los datos del platillo para actualizar</h2>
-      {isLoading ? (
-        <p>Cargando...</p>
-      ) : (
-        <form onSubmit={handleSubmit}>
-          <label className="label_form">Platillo:</label>
-          <Input
-            type="text"
-            className="input_form"
-            placeholder=""
-            id="meal"
-            name="meal"
-            value={dishName || ""}
-            callback={(e) => setDishName(e.target.value)}
-          />
+    <div className="mainContainer">
+      <div className="container-form">
+        <h2>Introducir los datos del platillo para actualizar</h2>
+        {isLoading ? (
+          <p>Cargando...</p>
+        ) : (
+          <form onSubmit={handleSubmit}>
+            <label className="label_form">Platillo:</label>
+            <Input
+              type="text"
+              className="input_form"
+              placeholder=""
+              id="meal"
+              name="meal"
+              value={dishName || ""}
+              callback={(e) => setDishName(e.target.value)}
+            />
 
-          <label className="label_form">Descripcion:</label>
-          <Input
-            type="text"
-            className="input_form"
-            placeholder=""
-            id="meal"
-            name="meal"
-            value={description || ""}
-            callback={(e) => setDescription(e.target.value)}
-          />
+            <label className="label_form">Descripcion:</label>
+            <Input
+              type="text"
+              className="input_form"
+              placeholder=""
+              id="meal"
+              name="meal"
+              value={description || ""}
+              callback={(e) => setDescription(e.target.value)}
+            />
 
-          <label className="label_form">Precio:</label>
-          <Input
-            type="text"
-            className="input_form"
-            placeholder=""
-            id="meal"
-            name="meal"
-            value={price || ""}
-            callback={(e) => setPrice(e.target.value)}
-          />
-          <label className="label_form">Selecciona una categoria:</label>
-          <Select
-            type="text"
-            className="select_form"
-            placeholder=""
-            value={category || ""}
-            callback={(e) => setCategory(e.target.value)}
-          />
-          <button type="submit" className="btn-7 btnbutton_form">
-            Modificar platillo
-          </button>
-        </form>
-      )}
+            <label className="label_form">Precio:</label>
+            <Input
+              type="text"
+              className="input_form"
+              placeholder=""
+              id="meal"
+              name="meal"
+              value={price || ""}
+              callback={(e) => setPrice(e.target.value)}
+            />
+            <label className="label_form">Selecciona una categoria:</label>
+            <Select
+              type="text"
+              className="select_form"
+              placeholder=""
+              value={category || ""}
+              callback={(e) => setCategory(e.target.value)}
+            />
+            <button type="submit" className="btn-7 btnbutton_form">
+              Modificar platillo
+            </button>
+          </form>
+        )}
+      </div>
       <ToastContainer />
     </div>
   );

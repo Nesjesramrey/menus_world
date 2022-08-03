@@ -1,3 +1,7 @@
+body {
+  background-color: rgba(60, 48, 93, 0.848);
+}
+
 .container-home {
   display: flex;
   flex-direction: row;
@@ -109,4 +113,10 @@ img {
 }
 .btn-home:hover:after {
   width: 100%;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+  img {
+    display: none;
+  }
 }

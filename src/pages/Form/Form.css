@@ -8,7 +8,7 @@ body {
   justify-content: center;
 }
 
-.container {
+.container-form {
   display: flex;
   flex-direction: column;
   width: 500px;
@@ -25,7 +25,7 @@ p {
   font-size: 18px;
 }
 
-.title {
+.title-form {
   color: #fb7b05;
   font-size: 2.5rem;
   font-weight: bold;
@@ -36,6 +36,17 @@ p {
   text-align: start;
   margin-bottom: 10px;
   font-size: 20px;
+}
+
+.input_form {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.5rem;
+  text-align: vertical;
+  width: 500px;
+  height: 100px;
+  border-radius: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .btn-7 {
@@ -137,4 +148,25 @@ li {
   font-weight: 700;
   margin-left: 150px;
   text-align: center;
+}
+@media only screen and (min-width: 320px) and (max-width: 680px) {
+  .containerImg {
+    display: none;
+  }
+  .title-form {
+    margin-top: 16px;
+  }
+  .input_form {
+    width: 350px;
+  }
+  .instructions {
+    align-self: flex-start;
+    width: 350px;
+    text-align: justify;
+  }
+
+  .instructions-form {
+    margin-top: 10px;
+    font-size: 18px;
+  }
 }
