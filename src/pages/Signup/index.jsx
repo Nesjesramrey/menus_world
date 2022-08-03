@@ -12,11 +12,14 @@ export default function Signup() {
   // Local state
   const [username, setUserName] = useState("");
   const [email, setEmail] = useState("");
+  const [restaurant, setRestaurant] = useState("");
   const [password, setPassword] = useState("");
+  const [userType, setUserType] = useState("");
 
   const cleanForm = () => {
     setUserName("");
     setEmail("");
+    setRestaurant("");
     setPassword("");
   };
 
@@ -47,11 +50,11 @@ export default function Signup() {
   return (
     <div className="container">
       <div className="row justify-content-center">
-        <div className="col-md-5">
+        <div className="col-6 col-md-12 ">
           <div className="card">
-            <h2 className="card-title text-center">Register</h2>
+            <h2 className="card-title text-center">Registro</h2>
             <div className="card-body py-md-4">
-              <form _lpchecked="1" onSubmit={handleSubmit}>
+              <form className="form-signup col-10" onSubmit={handleSubmit}>
                 <div className="form-group">
                   <Input
                     type="text"
@@ -68,6 +71,17 @@ export default function Signup() {
                     type="email"
                     className="form-control"
                     placeholder="Email"
+                    id="meal"
+                    name="meal"
+                    value={restaurant}
+                    callback={(e) => setRestaurant(e.target.value)}
+                  />
+                </div>
+                <div className="form-group">
+                  <Input
+                    type="text"
+                    className="form-control"
+                    placeholder="Nombre del Restaurante"
                     id="meal"
                     name="meal"
                     value={email}
@@ -88,10 +102,10 @@ export default function Signup() {
                   <div className="select-child">
                     <select
                       type="text"
-                      className="select_form"
+                      className="select_signup"
                       placeholder=""
-                      value="userType"
-                      onChange=""
+                      value={userType}
+                      onChange={(e) => setUserType(e.target.value)}
                     >
                       <option value="Select">Selecciona una categoria</option>
                       <option value="Comensal">Cliente</option>
@@ -102,13 +116,13 @@ export default function Signup() {
                   </div>
                 </div>
                 <div className="d-flex flex-row align-items-center justify-content-between">
-                  <a className="btn btn-primary" href="/login">
+                  <a className="btn-login" href="/login">
                     Login
                   </a>
-                  <a className="btn btn-primary" href="/">
+                  <a className="btn-login" href="/">
                     Home
                   </a>
-                  <button type="submit" className="btn btn-primary">
+                  <button type="submit" className="btn-login">
                     Create Account
                   </button>
                 </div>

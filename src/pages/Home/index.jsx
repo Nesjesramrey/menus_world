@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <div className="container-home">
       <img
-        src="https://enlacocina.telemesa.es/wp-content/uploads/2021/04/%C2%BFQue-se-hace-con-el-desperdicio-de-alimentos-de-hoteles-1024x576.jpg.webp"
+        src="https://www.lifeder.com/wp-content/uploads/2018/04/Nuestra-comida-deberia-ser-nuestra-medicina-y-nuestra-medicina-deberia-ser-nuestra-comida.-min.jpg"
         alt="cabecera"
       ></img>
       <div className="container-home-menu">
@@ -35,11 +35,6 @@ export default function Home() {
           Registrarme
         </button>
       </div>
-      <img
-        src="https://www.lifeder.com/wp-content/uploads/2018/04/Nuestra-comida-deberia-ser-nuestra-medicina-y-nuestra-medicina-deberia-ser-nuestra-comida.-min.jpg"
-        alt="footer"
-      ></img>
     </div>
   );
 }
-

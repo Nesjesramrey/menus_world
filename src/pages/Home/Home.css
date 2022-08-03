@@ -1,7 +1,3 @@
-body {
-  background-color: rgba(60, 48, 93, 0.848);
-}
-
 .container-home {
   display: flex;
   flex-direction: row;
@@ -27,10 +23,6 @@ body {
   font-family: "Roboto", "Helvetica Neue";
 }
 
-img {
-  width: 800px;
-  margin: 30px;
-}
 .title-home {
   font-size: 2.5rem;
   color: rgb(233, 223, 223);
@@ -120,4 +112,3 @@ img {
     display: none;
   }
 }
-

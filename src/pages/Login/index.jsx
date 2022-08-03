@@ -42,41 +42,48 @@ export default function Login() {
   };
 
   return (
-    <div className="container-login">
-      <div className="form-login">
-        <form onSubmit={handleSubmit}>
-          <h5>Formulario Login</h5>
-          <Input
-            type="text"
-            className="controls"
-            placeholder="Usuario"
-            id="meal"
-            name="meal"
-            value={email || ""}
-            callback={(e) => setEmail(e.target.value)}
-          />
-          <Input
-            type="password"
-            className="controls"
-            placeholder="Password"
-            id="meal"
-            name="meal"
-            value={password || ""}
-            callback={(e) => setPassword(e.target.value)}
-          />
-          <button type="submit" className="btn-7 button_form">
-            Ingresar
-          </button>
-          <p>
-            <a className="btn btn-primary" href="/registro">
-              Registrarte{" "}
-            </a>
-            <a className="btn btn-primary" href="/">
-              Home{" "}
-            </a>
-          </p>
-          <p className="forget-password">¿Olvidastes tu Contraseña?</p>
-        </form>
+    <div className="container">
+      <div className="row justify-content-center">
+        <div className="col-8 col-md-12 ">
+          <div className="card">
+            <h2 className="card-title text-center">Login</h2>
+            <div className="card-body py-md-4">
+              <form className="form-login col-10" onSubmit={handleSubmit}>
+                <h5>Formulario Login</h5>
+                <Input
+                  type="text"
+                  className="controls"
+                  placeholder="Usuario"
+                  id="meal"
+                  name="meal"
+                  value={email || ""}
+                  callback={(e) => setEmail(e.target.value)}
+                />
+                <Input
+                  type="password"
+                  className="controls"
+                  placeholder="Password"
+                  id="meal"
+                  name="meal"
+                  value={password || ""}
+                  callback={(e) => setPassword(e.target.value)}
+                />
+                <button type="submit" className=" col-10 btn-login">
+                  Ingresar
+                </button>
+                <p>
+                  <a className="btn-login" href="/registro">
+                    Registrarte{" "}
+                  </a>
+                  <a className="btn-login" href="/">
+                    Home{" "}
+                  </a>
+                </p>
+                <p className="forget-password">¿Olvidastes tu Contraseña?</p>
+              </form>
+            </div>
+          </div>
+        </div>
       </div>
       <ToastContainer />
     </div>

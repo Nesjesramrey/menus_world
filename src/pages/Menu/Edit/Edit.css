@@ -1,34 +1,27 @@
-body {
-  background-color: aliceblue;
-}
-
-.mainContainer {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-
-.container-form {
-  display: flex;
-  flex-direction: column;
-  width: 500px;
-  align-items: flex-start;
-  text-align: start;
-  margin-left: 30px;
-  font-family: "Roboto", "Helvetica Neue";
-  justify-content: space-between;
-}
-
-p {
-  text-align: center;
-  display: flex;
-  font-size: 18px;
-}
-
 .title-form {
   color: #fb7b05;
   font-size: 2.5rem;
   font-weight: bold;
+}
+
+.form-edit {
+  width: 400px;
+  height: 580px;
+  background-color: #f9f1f1;
+  margin: auto;
+  box-shadow: 7px 13px 37px #000;
+  padding: 20px 30px;
+  border-top: 4px solid #017bab;
+  color: rgb(14, 13, 13);
+}
+
+.form-edit h5 {
+  background-color: #f9f1f1;
+  margin: 0;
+  text-align: center;
+  height: 400px;
+  margin-bottom: 30px;
+  font-size: 20px;
 }
 
 .label_form {
@@ -49,120 +42,19 @@ p {
   margin-bottom: 10px;
 }
 
-.btn-7 {
-  background: linear-gradient(
-    0deg,
-    rgba(255, 151, 0, 1) 0%,
-    rgba(251, 75, 2, 1) 100%
-  );
-  line-height: 42px;
-  padding: 0;
-  border: none;
-  position: relative;
-  display: block;
-  margin-top: 15px;
-  width: 300px;
-  height: 35px;
-  font-size: 20px;
+.btn-edit {
+  padding: 4px;
+  border-radius: 8px;
+  background-color: #fff;
+  border: 2px solid #ff7b2c;
+  font-weight: bold;
+  margin: 7px 7px 7px 7px;
+  width: 200px;
+  text-decoration: none;
+  color: black;
 }
 
-.btn-7:before,
-.btn-7:after {
-  position: absolute;
-  content: "";
-  right: 0;
-  bottom: 0;
-  background: rgba(251, 75, 2, 1);
-  box-shadow: -7px -7px 20px 0px rgba(255, 255, 255, 0.9),
-    -4px -4px 5px 0px rgba(255, 255, 255, 0.9),
-    7px 7px 20px 0px rgba(0, 0, 0, 0.2), 4px 4px 5px 0px rgba(0, 0, 0, 0.3);
-  transition: all 0.3s ease;
-}
-.btn-7:before {
-  height: 0%;
-  width: 2px;
-}
-.btn-7:after {
-  width: 0%;
-  height: 2px;
-}
-.btn-7:hover {
-  color: rgba(251, 75, 2, 1);
-  background: transparent;
-}
-.btn-7:hover:before {
-  height: 100%;
-}
-.btn-7:hover:after {
-  width: 100%;
-}
-.btn-7 span:before,
-.btn-7 span:after {
-  position: absolute;
-  content: "";
-  left: 0;
-  top: 0;
-  background: rgba(251, 75, 2, 1);
-  box-shadow: -7px -7px 20px 0px rgba(255, 255, 255, 0.9),
-    -4px -4px 5px 0px rgba(255, 255, 255, 0.9),
-    7px 7px 20px 0px rgba(0, 0, 0, 0.2), 4px 4px 5px 0px rgba(0, 0, 0, 0.3);
-  transition: all 0.3s ease;
-}
-.btn-7 span:before {
-  width: 2px;
-  height: 0%;
-}
-.btn-7 span:after {
-  height: 2px;
-  width: 0%;
-}
-.btn-7 span:hover:before {
-  height: 100%;
-}
-.btn-7 span:hover:after {
-  width: 100%;
-}
-
-.instructions {
-  align-self: flex-start;
-  width: 500px;
-  text-align: justify;
-}
-
-.instructions-form {
-  margin-top: 10px;
-  font-size: 18px;
-}
-
-.containerImg {
-  margin-top: 20px;
-  text-align: center;
-}
-.description-food {
-  font-family: "Roboto";
-  font-size: 2rem;
-  font-weight: 700;
-  margin-left: 150px;
-  text-align: center;
-}
-@media only screen and (min-width: 320px) and (max-width: 680px) {
-  .containerImg {
-    display: none;
-  }
-  .title-form {
-    margin-top: 16px;
-  }
-  .input_form {
-    width: 350px;
-  }
-  .instructions {
-    align-self: flex-start;
-    width: 350px;
-    text-align: justify;
-  }
-
-  .instructions-form {
-    margin-top: 10px;
-    font-size: 18px;
-  }
+.btn-edit:hover {
+  background-color: #ff7b2c;
+  color: #fff;
 }

@@ -85,11 +85,11 @@ export default function MenuEdit() {
         {isLoading ? (
           <p>Cargando...</p>
         ) : (
-          <form onSubmit={handleSubmit}>
+          <form className="form-edit col-10 col-md-12" onSubmit={handleSubmit}>
             <label className="label_form">Platillo:</label>
             <Input
               type="text"
-              className="input_form"
+              className="input_form col-12"
               placeholder=""
               id="meal"
               name="meal"
@@ -100,7 +100,7 @@ export default function MenuEdit() {
             <label className="label_form">Descripcion:</label>
             <Input
               type="text"
-              className="input_form"
+              className="input_form col-12"
               placeholder=""
               id="meal"
               name="meal"
@@ -111,7 +111,7 @@ export default function MenuEdit() {
             <label className="label_form">Precio:</label>
             <Input
               type="text"
-              className="input_form"
+              className="input_form col-12"
               placeholder=""
               id="meal"
               name="meal"
@@ -126,7 +126,7 @@ export default function MenuEdit() {
               value={category || ""}
               callback={(e) => setCategory(e.target.value)}
             />
-            <button type="submit" className="btn-7 btnbutton_form">
+            <button type="submit" className="btn-edit">
               Modificar platillo
             </button>
           </form>
