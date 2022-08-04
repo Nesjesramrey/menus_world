@@ -10,6 +10,7 @@ export default function Home() {
       <img
         src="https://www.lifeder.com/wp-content/uploads/2018/04/Nuestra-comida-deberia-ser-nuestra-medicina-y-nuestra-medicina-deberia-ser-nuestra-comida.-min.jpg"
         alt="cabecera"
+        className="img-home"
       ></img>
       <div className="container-home-menu">
         <h1 className="title-home">MENU'S WORLD</h1>

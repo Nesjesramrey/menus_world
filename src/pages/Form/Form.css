@@ -1,4 +1,4 @@
-/* body {
+body {
   background-color: aliceblue;
 }
 
@@ -67,4 +67,22 @@
   font-weight: 700;
   margin-left: 150px;
   text-align: center;
-} */
+}
+
+.btn-register-menu {
+  padding: 4px;
+  border-radius: 8px;
+  background-color: #fff;
+  border: 2px solid #ff7b2c;
+  font-weight: bold;
+  margin: 7px 7px 7px 7px;
+  margin-top: 30px;
+  width: 200px;
+  text-decoration: none;
+  color: black;
+}
+
+.btn-register-menu:hover {
+  background-color: #ff7b2c;
+  color: #fff;
+}
