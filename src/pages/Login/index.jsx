@@ -1,10 +1,15 @@
 import { useState } from "react";
+
+// API functions
 import { login as loginUser } from "../../services/users";
 
 // Toastify
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Input from "../../../src/components/Input/index";
+
+// Components
+import NavBar from "../../../src/components/NavBar";
 
 import "./Login.css";
 
@@ -43,6 +48,7 @@ export default function Login() {
 
   return (
     <div className="container">
+      {NavBar(1)}
       <div className="row justify-content-center">
         <div className="col-12 col-md-12 ">
           <div className="card">

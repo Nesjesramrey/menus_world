@@ -1,7 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
 
-
 //Containers
 import MenuContainer from "./containers/MenuContainer";
 
@@ -29,6 +28,7 @@ function App() {
     <div className="App">
       <Routes>
         <Route path="/" element={<Home />} />
+
         <Route path="/login" element={<Login />} />
         <Route path="/registro" element={<Signup />} />
         <Route path="/menu" element={<MenuContainer />}>
@@ -53,4 +53,3 @@ function App() {
 }
 
 export default App;
-
