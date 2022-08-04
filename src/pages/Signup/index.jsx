@@ -12,22 +12,28 @@ export default function Signup() {
   // Local state
   const [username, setUserName] = useState("");
   const [email, setEmail] = useState("");
-  const [restaurant, setRestaurant] = useState("");
+  const [restaurants, setRestaurants] = useState("");
   const [password, setPassword] = useState("");
   const [userType, setUserType] = useState("");
 
   const cleanForm = () => {
     setUserName("");
     setEmail("");
-    setRestaurant("");
+    setRestaurants("");
     setPassword("");
+    setUserType("");
   };
 
   const isEmpty = (value) => !value;
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    if (isEmpty(username) || isEmpty(email) || isEmpty(password)) {
+    if (
+      isEmpty(username) ||
+      isEmpty(email) ||
+      isEmpty(password) ||
+      isEmpty(userType)
+    ) {
       toast.error("Se ingresaron datos incorrectos!!!!");
       return;
     }
@@ -36,6 +42,8 @@ export default function Signup() {
       username,
       email,
       password,
+      restaurants,
+      userType,
     };
 
     try {
@@ -50,7 +58,7 @@ export default function Signup() {
   return (
     <div className="container">
       <div className="row justify-content-center">
-        <div className="col-10 col-md-12 ">
+        <div className="col-12 col-md-12 ">
           <div className="card">
             <h2 className="card-title text-center">Registro</h2>
             <div className="card-body py-md-4">
@@ -58,7 +66,7 @@ export default function Signup() {
                 <div className="form-group">
                   <Input
                     type="text"
-                    className="form-control"
+                    className="controls"
                     placeholder="Name"
                     id="meal"
                     name="meal"
@@ -69,7 +77,7 @@ export default function Signup() {
                 <div className="form-group">
                   <Input
                     type="email"
-                    className="form-control"
+                    className="controls"
                     placeholder="Email"
                     id="meal"
                     name="meal"
@@ -80,19 +88,19 @@ export default function Signup() {
                 <div className="form-group">
                   <Input
                     type="text"
-                    className="form-control"
+                    className="controls"
                     placeholder="Nombre del Restaurante"
                     id="meal"
                     name="meal"
-                    value={restaurant}
-                    callback={(e) => setRestaurant(e.target.value)}
+                    value={restaurants}
+                    callback={(e) => setRestaurants(e.target.value)}
                   />
                 </div>
 
                 <div className="form-group">
                   <Input
                     type="text"
-                    className="form-control"
+                    className="controls"
                     placeholder="Password"
                     id="meal"
                     name="meal"
@@ -108,10 +116,8 @@ export default function Signup() {
                       onChange={(e) => setUserType(e.target.value)}
                     >
                       <option value="Select">Selecciona una categoria</option>
-                      <option value="Comensal">Cliente</option>
-                      <option value="Administador restaurant">
-                        Administador
-                      </option>
+                      <option value="Cliente">Cliente</option>
+                      <option value="Administrador">Administador</option>
                     </select>
                   </div>
                 </div>
