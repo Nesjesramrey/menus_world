@@ -1,4 +1,4 @@
-.container {
+/* .container {
   margin: 5px auto;
   display: flex;
   margin: 30px;
@@ -47,10 +47,10 @@
   border-radius: 5px;
   list-style-type: none;
   color: white;
-}
+} */
 
 /* 3 */
-.btn-3 {
+/* .btn-3 {
   background: rgb(0, 172, 238);
   background: linear-gradient(
     0deg,
@@ -121,4 +121,4 @@
 }
 .btn-3 :hover:after {
   width: 100%;
-}
+} */

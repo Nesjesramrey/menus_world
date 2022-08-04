@@ -1,7 +1,7 @@
 .container-home {
   display: flex;
   flex-direction: row;
-  background-color: rgba(60, 48, 93, 0.848);
+  background-color: #3c305dd8;
   height: 1200px;
 }
 
