@@ -6,9 +6,7 @@
 
 form {
   background-color: #f9f1f1;
-}
-.form-child {
-  background-color: #f9f1f1;
+  padding: 10px;
 }
 
 .form-login {
