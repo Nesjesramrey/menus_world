@@ -73,8 +73,8 @@ export default function Signup() {
                     placeholder="Email"
                     id="meal"
                     name="meal"
-                    value={restaurant}
-                    callback={(e) => setRestaurant(e.target.value)}
+                    value={email}
+                    callback={(e) => setEmail(e.target.value)}
                   />
                 </div>
                 <div className="form-group">
@@ -84,8 +84,8 @@ export default function Signup() {
                     placeholder="Nombre del Restaurante"
                     id="meal"
                     name="meal"
-                    value={email}
-                    callback={(e) => setEmail(e.target.value)}
+                    value={restaurant}
+                    callback={(e) => setRestaurant(e.target.value)}
                   />
                 </div>
 
