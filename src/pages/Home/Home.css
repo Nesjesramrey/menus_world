@@ -1,11 +1,7 @@
-/* body {
-  background-color: rgba(60, 48, 93, 0.848);
-} */
-
 .container-home {
   display: flex;
   flex-direction: row;
-  background-color: rgba(60, 48, 93, 0.848);
+  background-color: #3c305dd8;
   height: 1200px;
 }
 
@@ -27,10 +23,6 @@
   font-family: "Roboto", "Helvetica Neue";
 }
 
-img {
-  width: 800px;
-  margin: 30px;
-}
 .title-home {
   font-size: 2.5rem;
   color: rgb(233, 223, 223);
@@ -41,12 +33,11 @@ img {
   font-size: 18px;
   color: rgb(233, 223, 223);
 }
+
 .btn-home {
-  background: linear-gradient(
-    0deg,
-    rgba(255, 151, 0, 1) 0%,
-    rgba(251, 75, 2, 1) 100%
-  );
+  background: linear-gradient(0deg,
+      rgba(255, 151, 0, 1) 0%,
+      rgba(251, 75, 2, 1) 100%);
   line-height: 42px;
   padding: 0;
   border: none;
@@ -70,24 +61,30 @@ img {
     7px 7px 20px 0px rgba(0, 0, 0, 0.2), 4px 4px 5px 0px rgba(0, 0, 0, 0.3);
   transition: all 0.3s ease;
 }
+
 .btn-home:before {
   height: 0%;
   width: 2px;
 }
+
 .btn-home:after {
   width: 0%;
   height: 2px;
 }
+
 .btn-home:hover {
   color: rgb(253, 245, 242);
   background: transparent;
 }
+
 .btn-home:hover:before {
   height: 100%;
 }
+
 .btn-home:hover:after {
   width: 100%;
 }
+
 .btn-home:before,
 .btn-home:after {
   position: absolute;
@@ -100,17 +97,21 @@ img {
     7px 7px 20px 0px rgba(0, 0, 0, 0.2), 4px 4px 5px 0px rgba(0, 0, 0, 0.3);
   transition: all 0.3s ease;
 }
+
 .btn-home:before {
   width: 2px;
   height: 0%;
 }
+
 .btn-home:after {
   height: 2px;
   width: 0%;
 }
+
 .btn-home:hover:before {
   height: 100%;
 }
+
 .btn-home:hover:after {
   width: 100%;
 }

@@ -10,11 +10,6 @@
   flex-direction: column;
   background-color: white;
 }
-form{
-  width: 100%;
-  border: 3px solid black;
-  
-}
 .title-form {
   display: flex;
   justify-content: center;
@@ -25,6 +20,10 @@ form{
 }
 .sub_title{
   color:#fb7b05 ;
+}
+
+.form-menu {
+  background-color: white;
 }
 
 .label_form {
@@ -86,11 +85,6 @@ transition: .5s;
   align-items: center;
   max-width: 400px;
 }
-.img{
-  width: 80%;
-  border-radius: 50%;
-
-}
 .description-food {
   border: 1px solid red;
   font-family: "Roboto", sans-serif;
@@ -99,9 +93,7 @@ transition: .5s;
   color: white;
   font-size: 1.5rem;
 }
-li {
-  list-style: none;
-}
+
 .container-image{
   display: flex;
   width: 560px;

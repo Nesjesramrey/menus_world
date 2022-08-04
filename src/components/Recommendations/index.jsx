@@ -6,7 +6,7 @@ export default function Recommendations() {
 			<div className="mx-auto">
 				<img className="imgRecommPhoto img-fluid" src="https://thumbs2.imgbox.com/e5/4c/yAuwNEfg_t.jpg" alt="Rib eye al carbon*" />
 			</div>
-			<div>
+			<div className='contentCardRecommendations'>
 				<p className="text-center">
 					<strong>Rib eye al carbon</strong>
 				</p>

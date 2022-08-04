@@ -39,8 +39,8 @@ const uploadFile = async (file) => {
   const ReactS3Client = new S3(config);
   const data = await ReactS3Client.uploadFile(file, 'estabien')
   return data
-}
 
+}
   const isEmpty = (value) => !value;
 
   const handleSubmit = async (event) => {

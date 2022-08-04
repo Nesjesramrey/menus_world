@@ -31,23 +31,31 @@ export default function DishDelete() {
   };
 
   return (
-    <div>
-      <h2>¿Estas seguro que deseas eliminar el platillo?</h2>
-      {!dish ? (
-        <p>Cargando</p>
-      ) : (
-        <div className="card-info-delete">
-          <p>{dish.dishName}</p>
-          <p>{dish.description}</p>
-          <p>{dish.price}</p>
-          <button className="btn-3" onClick={() => navigate(-1)}>
-            Regresar
-          </button>
-          <button className="btn-3" onClick={handleClick}>
-            Eliminar
-          </button>
+    <div className="container">
+      <div className="row justify-content-center">
+        <div className="col-8 col-md-12 ">
+          <div className="card">
+            <h2 className="title-delete">
+              ¿Estas seguro que deseas eliminar el platillo?
+            </h2>
+            {!dish ? (
+              <p>Cargando</p>
+            ) : (
+              <div className="card-body py-md-4">
+                <p>{dish.dishName}</p>
+                <p>{dish.description}</p>
+                <p>{dish.price}</p>
+                <button className="btn-delete" onClick={() => navigate(-1)}>
+                  Regresar
+                </button>
+                <button className="btn-delete" onClick={handleClick}>
+                  Eliminar
+                </button>
+              </div>
+            )}
+          </div>
         </div>
-      )}
+      </div>
     </div>
   );
 }

@@ -1,4 +1,4 @@
-.container {
+/* .container {
   margin: 5px auto;
   display: flex;
   margin: 30px;
@@ -7,27 +7,16 @@
   align-items: center;
 }
 
-.card-menu {
-  display: flex;
-  flex-direction: column;
-  width: 450px;
-  height: 175px;
-  border-style: none;
-  color: #0b0b0e;
-  margin: 5px;
-  padding: 10px;
-  border-radius: 5px;
-  background: rgb(240, 245, 245);
-}
-
-.card-menu:hover {
-  box-shadow: 2px 2px 2px 2px #888785;
-}
-
-.name-food {
-  font-family: "Roboto", sans-serif;
-  font-size: 1.2rem;
+.btn-delete {
+  padding: 4px;
+  border-radius: 8px;
+  background-color: #fff;
+  border: 2px solid #ff7b2c;
   font-weight: bold;
+  margin: 7px 7px 7px 7px;
+  width: 200px;
+  text-decoration: none;
+  color: black;
 }
 
 .description-food {
@@ -35,7 +24,7 @@
   font-size: 0.9rem;
 }
 
-.card-info-delete {
+.card-info-menu {
   width: 350px;
   height: 100px;
   font-family: "Roboto", sans-serif;
@@ -47,10 +36,10 @@
   border-radius: 5px;
   list-style-type: none;
   color: white;
-}
+} */
 
 /* 3 */
-.btn-3 {
+/* .btn-3 {
   background: rgb(0, 172, 238);
   background: linear-gradient(
     0deg,
@@ -62,8 +51,6 @@
   line-height: 42px;
   padding: 0;
   border: none;
-  margin: 15px;
-  font-size: 1.5rem;
 }
 .btn-3 {
   position: relative;
@@ -123,4 +110,4 @@
 }
 .btn-3 :hover:after {
   width: 100%;
-}
+} */
