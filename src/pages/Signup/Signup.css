@@ -1,0 +1,58 @@
+.card {
+  border: 0.4rem solid rgba(60, 48, 93, 0.848);
+  top: 10%;
+}
+
+.form-signup {
+  width: 400px;
+  height: 380px;
+  background-color: #f9f1f1;
+  margin: auto;
+  box-shadow: 7px 13px 37px #000;
+  padding: 20px 30px;
+  border-top: 4px solid #017bab;
+  color: rgb(14, 13, 13);
+}
+
+.form-singup h5 {
+  background-color: #f9f1f1;
+  margin: 0;
+  text-align: center;
+  height: 40px;
+  margin-bottom: 30px;
+  font-size: 20px;
+}
+
+.form-control {
+  padding: 20px;
+  padding: 25px 15px;
+  margin-bottom: 1.3rem;
+}
+
+.form-control:focus {
+  color: #000000;
+  border: 3px solid #ff7b2c;
+  outline: 0;
+  box-shadow: none;
+}
+
+.form-group {
+  margin: 10px;
+}
+
+.btn-signup {
+  padding: 4px;
+  border-radius: 8px;
+  background-color: #fff;
+  border: 2px solid #ff7b2c;
+  font-weight: bold;
+  margin: 3px;
+  width: 150px;
+  text-decoration: none;
+  color: black;
+}
+
+.btn-signup:hover {
+  background-color: #ff7b2c;
+  color: #fff;
+}

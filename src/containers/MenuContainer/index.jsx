@@ -28,7 +28,7 @@ export default function MenuContainer() {
     //     </div>
     //   </div>
     // </div>
-    
+
     <Nav fill variant="tabs" defaultActiveKey="/menu">
       <Navbar.Toggle aria-controls="navbarScroll" />
       <Nav.Item>
@@ -67,10 +67,10 @@ export default function MenuContainer() {
           Disabled
         </Nav.Link>
       </Nav.Item>  */}
-     
+
       <Outlet />
-      
+
     </Nav>
-      
+
   );
 }

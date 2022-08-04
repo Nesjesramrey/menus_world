@@ -13,7 +13,7 @@ import "./Menu.css";
 export default function Menu() {
   // Local state
   const [dishes, setDishes] = useState([]);
-      
+
   // RRD
   const navigate = useNavigate();
 
@@ -31,24 +31,24 @@ export default function Menu() {
   }, []);
 
   const buildMenu = (dish, index) => (
-    
-  <Card>
-    <div className="card-menu" key={index}> 
+
+    <Card>
+      <div className="card-menu" key={index}>
         <div className="name-food">{dish.dishName}</div>
         <div className="name-food">{dish.description}</div>
         <div className="name-food">$ {dish.price}</div>
-      <div className="mb-2">
-        <Button className="btn-7" onClick={() => navigate(`edit/${dish._id}`)}>
-          Editar
-        </Button>
-        <Button className="btn-7" onClick={() => navigate(`delete/${dish._id}`)}>
-          Eliminar
-        </Button>
+        <div className="mb-2">
+          <Button className="btn-7" onClick={() => navigate(`edit/${dish._id}`)}>
+            Editar
+          </Button>
+          <Button className="btn-7" onClick={() => navigate(`delete/${dish._id}`)}>
+            Eliminar
+          </Button>
+        </div>
       </div>
-    </div>
-  </Card>
-     
-    
+    </Card>
+
+
   );
 
   return (
@@ -65,12 +65,12 @@ export default function Menu() {
             <li>EL PAGO CON TARJETA NO GENERA NINGUNA COMISIÓN.</li>
           </div>
         </div>
-      </div>   
+      </div>
 
 
     </div>
 
-   
+
 
   );
 }

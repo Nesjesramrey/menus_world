@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { sublist as listDishes } from "../../../services/menus";
 
-
 import "./Entries.css";
 
 export default function Entries() {
@@ -10,28 +9,23 @@ export default function Entries() {
 
   useEffect(() => {
     const list = async () => {
-      
       const data = await listDishes("Entradas");
-      
-      
       const parsedDishes = Object.keys(data).map((key) => {
         return { id: key, ...data[key] };
       });
 
       setDishes(parsedDishes);
-      
     };
 
     list();
   }, []);
 
   const buildMenu = (dish, index) => (
-    <div className="card-menu" key={index}> 
+    <div className="card-menu" key={index}>
       <div className="name-food">{dish.dishName}</div>
       <div className="name-food">{dish.description}</div>
       <div className="name-food">$ {dish.price}</div>
     </div>
-   
   );
 
   return (
