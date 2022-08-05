@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 // API functions
 import { login as loginUser } from "../../services/users";
@@ -14,6 +15,7 @@ import NavBar from "../../../src/components/NavBar";
 import "./Login.css";
 
 export default function Login() {
+  const navigate = useNavigate();
   // Local state
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -74,17 +76,21 @@ export default function Login() {
                   value={password || ""}
                   callback={(e) => setPassword(e.target.value)}
                 />
-                <button type="submit" className=" col-10 btn-login">
-                  Ingresar
-                </button>
-                <p>
-                  <a className="btn-login" href="/registro">
-                    Registrarte{" "}
-                  </a>
-                  <a className="btn-login" href="/">
-                    Home{" "}
-                  </a>
-                </p>
+
+                <div clasName="container-btn-login">
+                  <button type="submit" className="btn-login">
+                    Ingresar
+                  </button>
+                  <button
+                    className="btn-login"
+                    onClick={() => navigate(`/registro`)}
+                  >
+                    Registrarte
+                  </button>
+                  <button className="btn-login" onClick={() => navigate(`/`)}>
+                    Home
+                  </button>
+                </div>
                 <p className="forget-password">¿Olvidastes tu Contraseña?</p>
               </form>
             </div>

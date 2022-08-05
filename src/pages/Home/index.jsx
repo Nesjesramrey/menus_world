@@ -27,7 +27,7 @@ export default function Home() {
           <button
             type="button"
             className="btn-home"
-            onClick={() => navigate(`menu`)}
+            onClick={() => navigate(`menu/entradas`)}
           >
             Ir al menu
           </button>
