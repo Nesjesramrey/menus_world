@@ -1,7 +1,8 @@
 import { Outlet, Link } from "react-router-dom";
 import "./MenuContainer.css";
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
+import NavBar from "../../../src/components/NavBar";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
 
 export default function MenuContainer() {
   return (

@@ -80,8 +80,10 @@ export default function MenuEdit() {
 
   return (
     <div className="mainContainer">
-      <div className="container-form">
-        <h2>Introducir los datos del platillo para actualizar</h2>
+      <div className="container-form col-12 col-md-12">
+        <h2 className="title-edit col-12 col-md-12">
+          Introducir los datos del platillo para actualizar
+        </h2>
         {isLoading ? (
           <p>Cargando...</p>
         ) : (

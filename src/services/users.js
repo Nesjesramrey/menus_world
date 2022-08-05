@@ -1,7 +1,6 @@
 const URL = "http://localhost:8000";
 
 const generateConfig = (body) => {
-  console.log(JSON.stringify(body));
   return {
     method: "POST",
     headers: {

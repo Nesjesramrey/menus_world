@@ -31,7 +31,7 @@ export default function DishDelete() {
   };
 
   return (
-    <div className="container">
+    <div className="container container-delete">
       <div className="row justify-content-center">
         <div className="col-8 col-md-12 ">
           <div className="card">
