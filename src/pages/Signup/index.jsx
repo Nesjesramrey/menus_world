@@ -123,13 +123,13 @@ export default function Signup() {
                 </div>
                 <div className="d-flex flex-row align-items-center justify-content-between">
                   <a className="btn-signup " href="/login">
-                    Login
+                    Ir a Iniciar Sesion
                   </a>
                   <a className="btn-signup" href="/">
                     Home
                   </a>
                   <button type="submit" className="btn-signup">
-                    Create Account
+                    Crer Cuenta
                   </button>
                 </div>
               </form>

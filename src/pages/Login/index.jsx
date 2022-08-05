@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Cookies from "universal-cookie";
 
 // API functions
 import { login as loginUser } from "../../services/users";
@@ -17,11 +18,11 @@ import "./Login.css";
 export default function Login() {
   const navigate = useNavigate();
   // Local state
-  const [email, setEmail] = useState("");
+  const [username, setUserName] = useState("");
   const [password, setPassword] = useState("");
 
   const cleanForm = () => {
-    setEmail("");
+    setUserName("");
     setPassword("");
   };
 
@@ -29,20 +30,23 @@ export default function Login() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    if (isEmpty(email) || isEmpty(password)) {
+    if (isEmpty(username) || isEmpty(password)) {
       toast.error("Se ingresaron datos incorrectos!!!!");
       return;
     }
 
+    const cookies = new Cookies();
     const data = {
-      email,
+      username,
       password,
     };
 
     try {
       await loginUser(data);
-      toast.success("Login exitoso!!");
+      toast.success("Inicio de sesion exitoso!!");
       cleanForm();
+      cookies.set("Usuario", data.username, { path: "/" });
+      navigate("/");
     } catch (error) {
       console.error(error);
     }
@@ -54,18 +58,17 @@ export default function Login() {
       <div className="row justify-content-center">
         <div className="col-12 col-md-12 ">
           <div className="card">
-            <h2 className="card-title text-center">Login</h2>
+            <h2 className="card-title text-center">Iniciar Sesion</h2>
             <div className="card-body py-md-4">
               <form className="form-login col-10" onSubmit={handleSubmit}>
-                <h5>Formulario Login</h5>
                 <Input
                   type="text"
                   className="controls"
                   placeholder="Usuario"
                   id="meal"
                   name="meal"
-                  value={email || ""}
-                  callback={(e) => setEmail(e.target.value)}
+                  value={username || ""}
+                  callback={(e) => setUserName(e.target.value)}
                 />
                 <Input
                   type="password"
@@ -77,7 +80,7 @@ export default function Login() {
                   callback={(e) => setPassword(e.target.value)}
                 />
 
-                <div clasName="container-btn-login">
+                <div className="container-btn-login">
                   <button type="submit" className="btn-login">
                     Ingresar
                   </button>
