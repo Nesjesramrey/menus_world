@@ -25,10 +25,10 @@
 .form-menu {
   background-color: white;
 }
-.content-input{
+.content-input {
   display: flex;
 }
-.content{
+.content {
   width: 50%;
 }
 .label_form {
@@ -44,9 +44,9 @@
   width: 400px;
   height: 50px;
 
-  border-radius:7px;
-} 
-.button_menu{
+  border-radius: 7px;
+}
+.button_menu {
   border-radius: 5px;
   margin-top: 10px;
   margin-bottom: 10px;
@@ -57,26 +57,10 @@
   width: 100%;
   height: 50px;
   display: flex;
-  
 }
-
-.buttom_1{
-width: 400px;
-height: 40px;
-border-radius: 10px;
-background-color: #ffff;
-font-family: "Roboto", sans-serif;
-color:#fb7b05;
-border: 2px solid #fb7b05 ;
-transition: .5s;
-}
-.buttom_1:hover{
-  background-color: #fb7b05 ;
-  color:#ffff;
-  border:1px solid #fb7b05;
 
 .buttom_1 {
-  width: 100%;
+  width: 400px;
   height: 40px;
   border-radius: 10px;
   background-color: #ffff;
@@ -89,28 +73,27 @@ transition: .5s;
   background-color: #fb7b05;
   color: #ffff;
   border: 1px solid #fb7b05;
-
 }
-.content_form{
+
+.content_form {
   display: flex;
 }
-.content_input{
+.content_input {
   display: flex;
   flex-direction: column;
 }
 .instructions {
   /* border: 2px solid aqua; */
 
- display: flex;
- flex-direction: column;
- width: 40%;
- padding: 10px;
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  padding: 10px;
 
   display: flex;
   flex-direction: column;
   width: 100%;
   /* padding: 5px; */
-
 }
 .instructions-form {
   /* border: 1px solid blue; */
@@ -125,8 +108,6 @@ transition: .5s;
   align-items: center;
   width: 350px;
 }
-.container-image{
-  /* border: 1px solid red; */
 
 .container-image {
   display: flex;
@@ -160,16 +141,15 @@ transition: .5s;
 .text:hover {
   border: 3px solid #fb7c05af;
 }
-.image{
+.image {
   width: 200px;
-  height:180px;
+  height: 180px;
   border-radius: 5px;
 }
-.img{
+.img {
   width: 300px;
   padding: 15px;
 }
-.select_form{
 
 .image {
   width: 230px;
@@ -177,7 +157,6 @@ transition: .5s;
   border-radius: 5px;
 }
 .select_form {
-
   height: 35px;
   border-radius: 7px;
   font-family: "Roboto", sans-serif;
