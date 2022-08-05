@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useDropzone } from "react-dropzone";
 import { create as createMenu } from "../../services/menus";
-import S3 from 'react-aws-s3';
-import blobToBuffer from "blob-to-buffer";
+
+import { uploadFile } from 'react-s3';
 
 // Toastify
 import { ToastContainer, toast } from "react-toastify";
@@ -11,6 +11,7 @@ import Input from "../../../src/components/Input/index";
 import Select from "../../components/Select/index";
 
 import "./Form.css";
+
 // installed using npm install buffer --save
 window.Buffer = window.Buffer || require("buffer").Buffer;
 
@@ -21,7 +22,7 @@ export default function Form() {
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
   let [files, setFiles] = useState([]);
-  let [buffer, setBuffer] = useState([]);
+  const [fileToUpload, setFileToUpload] = useState(null);
 
   const cleanForm = () => {
     setDishName("");
@@ -29,18 +30,37 @@ export default function Form() {
     setDescription("");
     setPrice("");
   };
+
+  // Mover todo lo relacionado al dropzone y a S3 a un componente nuevo
   const config = {
     bucketName: process.env.REACT_APP_BUCKET_NAME,
     region: process.env.REACT_APP_REGION,
     accessKeyId: process.env.REACT_APP_ACCESS,
     secretAccessKey: process.env.REACT_APP_SECRET,
-}
-const uploadFile = async (file) => {
-  const ReactS3Client = new S3(config);
-  const data = await ReactS3Client.uploadFile(file, 'estabien')
-  return data
+  }
 
-}
+  const uploadFileToS3 = async (file) => {
+    const newName = makeUniqueFileName(file)
+
+    // Permitimos cambiar el nombre del archivo
+    Object.defineProperty(file, 'name', {
+      writable: true,
+      value: newName
+    });
+
+    console.log(file)
+    const data = await uploadFile(file, config)
+    return data;
+  }
+
+  const makeUniqueFileName = (file) => {
+    const [name, extension] = file.name.split("."); // Separamos nombre y extension
+    const lastModified = "" + file.lastModified; // Convertimos el Int a String
+
+    const newName = name + "_" + lastModified + "." + extension;
+
+    return newName;
+  }
   const isEmpty = (value) => !value;
 
   const handleSubmit = async (event) => {
@@ -54,11 +74,12 @@ const uploadFile = async (file) => {
       toast.error("Favor de llenar la forma completa!!!!");
       return;
     }
-    if(files.length >= 1){
-      console.log( buffer);
-      const imageUploaded = await uploadFile(Buffer.from(buffer))
 
-      console.log(imageUploaded);
+    let image_Url = null;
+    if(files.length >= 1){
+      const data = await uploadFileToS3(fileToUpload); // data de la imagen subida
+
+      const image_Url = data.location;
     }
     
 
@@ -67,6 +88,7 @@ const uploadFile = async (file) => {
       category,
       description,
       price,
+      image_Url
     };
 
     try {
@@ -81,12 +103,9 @@ const uploadFile = async (file) => {
   const { getRootProps } = useDropzone({
     accept: "image/*",
     onDrop: (acceptedFiles) => {
-      acceptedFiles.forEach((file)=>{
-      blobToBuffer(file, (error, buffer)=>{
-        console.log('buffer en dropzone', buffer);
-        setBuffer(buffer)
-      })
-      })
+      acceptedFiles.forEach((file) => {
+        setFileToUpload(file);
+      });
       setFiles(
         acceptedFiles.map((file) =>
           Object.assign(file, {
@@ -111,6 +130,9 @@ const uploadFile = async (file) => {
         {/* <p className="sub_title">Ingresa tus datos aqui </p> */}
 
         <form onSubmit={handleSubmit}>
+          <div className="content_form">
+       
+          <div className="content_input">
           <label className="label_form">Platillo:</label>
           <Input
             type="text"
@@ -143,6 +165,32 @@ const uploadFile = async (file) => {
             value={price}
             callback={(e) => setPrice(e.target.value)}
           />
+          </div>
+         
+      <div className="instructions">
+            <div className="instructions-form">
+              <strong>Platillo:</strong>Nombre del platillo como aparece en su
+              carta
+            </div>
+            <div className="instructions-form">
+              <strong>Descripcion:</strong> Aqui puedes describir los
+              ingredientes principales asi como los gramajes de tus platillos
+            </div>
+            <div className="instructions-form">
+              <strong>Precio:</strong> Precio incluyendo los impuestos
+              aplicables de tu localidad
+            </div>
+            <div className="instructions-form">
+              <strong>Categoria del platillo:</strong> Aqui tienes que
+              especificar si es una entrada, corte, postre, bebida o las
+              categorias que ya tengas definidas
+            </div>
+            
+          </div>
+          <div className="containerImg">
+        <img src="https://spng.pinpng.com/pngs/s/382-3827200_comida-icono-png-icons-png-comida-transparent-png.png" className="img"/>
+      </div>
+          </div>
           <div className="container-image">
             <div className="dropArea" {...getRootProps()}>
               <p className="text">Arrastra la imagen de tu producto</p>
@@ -164,30 +212,10 @@ const uploadFile = async (file) => {
             <strong>Registrar platillo</strong>
           </button>
           </div>
-          <div className="instructions">
-            <div className="instructions-form">
-              <strong>Platillo:</strong>Nombre del platillo como aparece en su
-              carta
-            </div>
-            <div className="instructions-form">
-              <strong>Descripcion:</strong> Aqui puedes describir los
-              ingredientes principales asi como los gramajes de tus platillos
-            </div>
-            <div className="instructions-form">
-              <strong>Precio:</strong> Precio incluyendo los impuestos
-              aplicables de tu localidad
-            </div>
-            <div className="instructions-form">
-              <strong>Categoria del platillo:</strong> Aqui tienes que
-              especificar si es una entrada, corte, postre, bebida o las
-              categorias que ya tengas definidas
-            </div>
-          </div>
+         
         </form>
       </div>
-      <div className="containerImg">
-        <img src="https://spng.pinpng.com/pngs/s/382-3827200_comida-icono-png-icons-png-comida-transparent-png.png" className="img"/>
-      </div>
+      
       <ToastContainer />
     </div>
   );
