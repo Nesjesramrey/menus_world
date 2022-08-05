@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useDropzone } from "react-dropzone";
+import { useDropzone } from "react-dropzone"
 import { create as createMenu } from "../../services/menus";
 
 // Toastify
