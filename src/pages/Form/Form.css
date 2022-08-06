@@ -5,7 +5,7 @@
   background-color: white;
 }
 .container-form {
-  /* border: 2px solid blue; */
+  border: 2px solid blue;
   display: flex;
   flex-direction: column;
   background-color: white;
@@ -25,12 +25,7 @@
 .form-menu {
   background-color: white;
 }
-.content-input{
-  display: flex;
-}
-.content{
-  width: 50%;
-}
+
 .label_form {
   /* border: 2px solid red; */
   font-family: "Roboto", sans-serif;
@@ -41,12 +36,8 @@
   font-family: "Roboto", sans-serif;
   font-size: 1.2rem;
   text-align: vertical;
-  width: 400px;
+  width: 100%;
   height: 50px;
-
-  border-radius:7px;
-} 
-.button_menu{
   border-radius: 5px;
   margin-top: 10px;
   margin-bottom: 10px;
@@ -57,24 +48,8 @@
   width: 100%;
   height: 50px;
   display: flex;
-  
+  justify-content: center;
 }
-
-.buttom_1{
-width: 400px;
-height: 40px;
-border-radius: 10px;
-background-color: #ffff;
-font-family: "Roboto", sans-serif;
-color:#fb7b05;
-border: 2px solid #fb7b05 ;
-transition: .5s;
-}
-.buttom_1:hover{
-  background-color: #fb7b05 ;
-  color:#ffff;
-  border:1px solid #fb7b05;
-
 .buttom_1 {
   width: 100%;
   height: 40px;
@@ -89,62 +64,53 @@ transition: .5s;
   background-color: #fb7b05;
   color: #ffff;
   border: 1px solid #fb7b05;
-
-}
-.content_form{
-  display: flex;
-}
-.content_input{
-  display: flex;
-  flex-direction: column;
 }
 .instructions {
   /* border: 2px solid aqua; */
-
- display: flex;
- flex-direction: column;
- width: 40%;
- padding: 10px;
-
   display: flex;
   flex-direction: column;
   width: 100%;
   /* padding: 5px; */
-
 }
 .instructions-form {
-  /* border: 1px solid blue; */
   flex-wrap: wrap;
-  margin-top: 25px;
+  margin-top: 10px;
   font-size: 18px;
 }
 .containerImg {
   /* border: 2px solid green; */
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-end;
   align-items: center;
-  width: 350px;
+  max-width: 400px;
 }
-.container-image{
-  /* border: 1px solid red; */
+.description-food {
+  border: 1px solid red;
+  font-family: "Roboto", sans-serif;
+  background-color: black;
+  /* width: 60%; */
+  color: white;
+  font-size: 1.5rem;
+}
 
 .container-image {
   display: flex;
-  width: 400px;
+  width: 560px;
   height: 200px;
 }
 .dropArea {
   display: flex;
   place-items: center;
   background-color: #f9f1f1;
-  width: 190px;
+  width: 217px;
   height: 200px;
 }
 .content-image {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 250px;
+  width: 280px;
 }
 .text {
   border: dotted #a8a3a3 3px;
@@ -160,24 +126,12 @@ transition: .5s;
 .text:hover {
   border: 3px solid #fb7c05af;
 }
-.image{
-  width: 200px;
-  height:180px;
-  border-radius: 5px;
-}
-.img{
-  width: 300px;
-  padding: 15px;
-}
-.select_form{
-
 .image {
   width: 230px;
   height: 180px;
   border-radius: 5px;
 }
 .select_form {
-
   height: 35px;
   border-radius: 7px;
   font-family: "Roboto", sans-serif;

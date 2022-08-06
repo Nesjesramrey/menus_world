@@ -79,7 +79,7 @@ export default function Form() {
     if(files.length >= 1){
       const data = await uploadFileToS3(fileToUpload); // data de la imagen subida
 
-      const image_Url = data.location;
+      image_Url = data.location;
     }
     
 
