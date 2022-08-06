@@ -129,7 +129,7 @@
   align-items: center;
 } */
 
-.card-menu {
+.card-menu-general{
   display: flex;
   flex-direction: column;
   width: 700px;
@@ -139,15 +139,42 @@
   margin: 5px;
   padding: 10px;
   border-radius: 5px;
-  background: rgb(240, 245, 245);
-  justify-content: center;
-  /* align-items: center;         */
+  background-color: #f9f1f1;
 }
-
-.card-menu:hover {
+.card-menu-general:hover{
   box-shadow: 2px 2px 2px 2px #888785;
 }
-
-.btn-2 .btn-7 {
-  align-items: center;
+.buttonsCard{
+  display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    text-align:center;
+    font-family: "Roboto", sans-serif;
+    font-size: 10px;
+    font-weight: bold;
 }
+
+.btn1-menu.btn.btn-none{
+  background-color: #ff7b2c; 
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.btn1-menu.btn.btn-none:hover {
+    background-color: #ff7b2c;
+    color: #fff;
+}
+
+.name-food{
+  font-family: "Roboto", sans-serif;
+  color: #3c305dd8;
+  font-weight: bold;
+  text-align: center;
+}
+
+.notes{
+  text-align: center;
+  text-decoration: solid;
+  font-weight: bold;
+}
+

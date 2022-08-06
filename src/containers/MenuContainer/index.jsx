@@ -29,69 +29,49 @@ export default function MenuContainer() {
     //     </div>
     //   </div>
     // </div>
-    <div>
-      {NavBar(1)}
-      <Nav fill variant="tabs" defaultActiveKey="/menu">
-        <Navbar.Toggle aria-controls="navbarScroll" />
-        <Nav.Item>
-          <Nav.Link to="/menu" as={Link}>
-            General
-          </Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link to="entradas" as={Link}>
-            Entradas
-          </Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link to="ensaladas" as={Link}>
-            Ensaladas
-          </Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link to="sopas" as={Link}>
-            Sopas
-          </Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link to="pescados" as={Link}>
-            Mariscos
-          </Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link to="cortes" as={Link}>
-            Cortes
-          </Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link to="snacks" as={Link}>
-            Snacks
-          </Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link to="bebidasnoalcoholicas" as={Link}>
-            Bebidas s/Alcohol
-          </Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link to="bebidasalcoholicas" as={Link}>
-            Bebidas c/Alcohol
-          </Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link to="postres" as={Link}>
-            Postres
-          </Nav.Link>
-        </Nav.Item>
+  <div className="col-10 col-md-12 ">  
+    <Nav fill variant="tabs" defaultActiveKey="/menu">
+      <Navbar.Toggle aria-controls="navbarScroll" />
+      <Nav.Item>
+        <Nav.Link to="/menu" as={Link} >General</Nav.Link>
+      </Nav.Item>
+      <Nav.Item>
+        <Nav.Link to="entradas" as={Link} >Entradas</Nav.Link>
+      </Nav.Item>
+      <Nav.Item>
+        <Nav.Link to="ensaladas" as={Link} >Ensaladas</Nav.Link>
+      </Nav.Item>
+      <Nav.Item>
+        <Nav.Link to="sopas" as={Link}>Sopas</Nav.Link>
+      </Nav.Item>
+      <Nav.Item>
+        <Nav.Link to="pescados" as={Link}>Mariscos</Nav.Link>
+      </Nav.Item>
+      <Nav.Item>
+        <Nav.Link to="cortes" as={Link}>Cortes</Nav.Link>
+      </Nav.Item>
+      <Nav.Item>
+        <Nav.Link to="snacks" as={Link}>Snacks</Nav.Link>
+      </Nav.Item>
+      <Nav.Item>
+        <Nav.Link to="bebidasnoalcoholicas" as={Link}>Bebidas s/Alcohol</Nav.Link>
+      </Nav.Item>
+      <Nav.Item>
+        <Nav.Link to="bebidasalcoholicas" as={Link}>Bebidas c/Alcohol</Nav.Link>
+      </Nav.Item>
+      <Nav.Item>
+        <Nav.Link to="postres" as={Link}>Postres</Nav.Link>
+      </Nav.Item>
 
-        {/* <Nav.Item>
+      {/* <Nav.Item>
           <Nav.Link eventKey="disabled" disabled>
           Disabled
         </Nav.Link>
       </Nav.Item>  */}
 
-        <Outlet />
-      </Nav>
-    </div>
+      <Outlet />
+
+    </Nav>
+  </div>    
   );
 }
