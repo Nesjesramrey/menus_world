@@ -30,6 +30,7 @@ export default function Form() {
     setCategory("");
     setDescription("");
     setPrice("");
+
   };
 
   // Mover todo lo relacionado al dropzone y a S3 a un componente nuevo
@@ -89,7 +90,7 @@ export default function Form() {
       category,
       description,
       price,
-      image_Url
+      image_Url,
     };
 
     try {
