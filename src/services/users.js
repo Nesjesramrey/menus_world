@@ -62,8 +62,8 @@ export const deleteUser = async (id, body) => {
     },
     body: JSON.stringify(body),
   });
-  console.log(response.status);
-  console.log(body);
+  //console.log(response.status);
+  //console.log(body);
   const data = await response.json();
   return data;
 };

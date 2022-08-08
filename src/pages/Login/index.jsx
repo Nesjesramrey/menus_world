@@ -13,6 +13,7 @@ import Input from "../../../src/components/Input/index";
 // Components
 import NavBar from "../../../src/components/NavBar";
 
+//CSS
 import "./Login.css";
 
 export default function Login() {
@@ -42,11 +43,15 @@ export default function Login() {
     };
 
     try {
-      await loginUser(data);
-      toast.success("Inicio de sesion exitoso!!");
+      const response = await loginUser(data);
       cleanForm();
       cookies.set("Usuario", data.username, { path: "/" });
-      navigate("/");
+      if (response.success === true) {
+        toast.success("Inicio de sesion exitoso!!");
+        navigate("/");
+      } else {
+        toast.error("Usuario o contrasena incorrectos");
+      }
     } catch (error) {
       console.error(error);
     }
@@ -83,15 +88,6 @@ export default function Login() {
                 <div className="container-btn-login">
                   <button type="submit" className="btn-login">
                     Ingresar
-                  </button>
-                  <button
-                    className="btn-login"
-                    onClick={() => navigate(`/registro`)}
-                  >
-                    Registrarte
-                  </button>
-                  <button className="btn-login" onClick={() => navigate(`/`)}>
-                    Home
                   </button>
                 </div>
                 <p className="forget-password">¿Olvidastes tu Contraseña?</p>

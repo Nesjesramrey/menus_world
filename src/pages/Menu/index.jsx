@@ -29,7 +29,6 @@ export default function Menu() {
 
   const buildMenu = (dish, index) => (
 
-    
   <div className="containerm">
     <div className="food-menu">
       <div className="food" key={index}> 
@@ -53,6 +52,9 @@ export default function Menu() {
     </div>
   </div>
 
+   
+  
+  
 
   );
 
