@@ -37,6 +37,8 @@ export default function Menu() {
         <div className="name-food">{dish.dishName}</div>
         <div className="name-food">{dish.description}</div>
         <div className="name-food">$ {dish.price}</div>
+        <div className="name-food">$ {dish.image_Url}</div>
+        
         <div className="mb-2">
           <Button className="btn-7" onClick={() => navigate(`edit/${dish._id}`)}>
             Editar
