@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { retrieve as retrieveDish } from "../../../services/menus";
+
+// API functions
 import { deleteDish } from "../../../services/menus";
 
 // CSS
@@ -10,7 +12,6 @@ export default function DishDelete() {
   // Local state
   const [dish, setDish] = useState(null);
 
-  // RRD
   const { id } = useParams();
   const navigate = useNavigate();
 
@@ -23,7 +24,7 @@ export default function DishDelete() {
     getDish();
   }, [id]);
 
-  console.log(id);
+  //console.log(id);
 
   const handleClick = (event) => {
     event.preventDefault();

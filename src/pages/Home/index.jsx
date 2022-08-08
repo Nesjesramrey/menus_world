@@ -1,8 +1,10 @@
 import { useNavigate } from "react-router-dom";
 import Cookies from "universal-cookie";
 
+// components
 import NavBar from "../../../src/components/NavBar";
 
+//CSS
 import "./Home.css";
 
 export default function Home() {
