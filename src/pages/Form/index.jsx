@@ -9,6 +9,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Input from "../../../src/components/Input/index";
 import Select from "../../components/Select/index";
+import NavBar from "../../components/NavBar";
 
 import "./Form.css";
 
@@ -124,9 +125,11 @@ export default function Form() {
 
   return (
     <div className="container main_Container">
-      <p className="title-form">MENU'S WORLD</p>
+      <NavBar/>
+      
+      
       <div className="container-form">
-        
+      {/* <p className="title-form">MENU'S WORLD</p> */}
         <div  className="subtitle"><h4>Formulario de registro de su platillo</h4></div>
         <form onSubmit={handleSubmit}>
           <div className="content_form">
@@ -144,7 +147,7 @@ export default function Form() {
           <Input
             type="number"
             className="input-group-text"
-            placeholder="0.00"
+            placeholder="$ 0.00"
             id="meal"
             name="meal"
             value={price}
@@ -159,20 +162,18 @@ export default function Form() {
           />
           </div>
           <label className="form_label">Descripcion:</label>
-          
-          <Input
+          <textarea
             type="text"
             className="form-control"
             placeholder="Describe tu platillo..."
             id="meal"
             name="meal"
             value={description}
-            callback={(e) => setDescription(e.target.value)}
-          />
+            callback={(e) => setDescription(e.target.value)}/>
           </div>
           <div className="container-image">
             <div className="dropArea" {...getRootProps()}>
-              <p className="text">Click para la imagen de tu platillo</p>
+              <p className="text">Click o arrastra una imagen</p>
             </div>
             <div className="content-image">
               {imagen}
