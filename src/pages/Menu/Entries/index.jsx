@@ -3,7 +3,7 @@ import { sublist as listDishes } from "../../../services/menus";
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import Carnitas from '../../../assets/carnitasribbye.jpg'
-import Tripa from '../../../assets/tripitasdeleche.jpg'
+
 
 
 import "./Entries.css";

@@ -1,180 +1,100 @@
-/* .container {
-  margin: 5px auto;
-  display: flex;
-  margin: 50px;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+
+* {
+  box-sizing: border-box;
 }
 
-.card-menu {
-  display: flex;
-  flex-direction: column;
-  width: 450px;
-  height: 555px;
-  border-style: none;
-  color: #0b0b0e;
-  margin: 5px;
-  padding: 10px;
-  border-radius: 5px;
-  background: rgb(240, 245, 245);
-            
-}
-
-.card-menu:hover {
-  box-shadow: 2px 2px 2px 2px #888785;
-}
-
-.name-food {
+body {
+  width: 100%;
+  margin: 0;
   font-family: "Roboto", sans-serif;
-  font-size: 10px;
-  font-weight: bold;
 }
 
-.description-food {
-  font-family: "Roboto", sans-serif;
-  font-size: 0.9rem;
+.food-menu {
+  width: 75%;
+  padding: 20px;
 }
 
-.card-info-menu {
-  width: 350px;
+.food-menu .food {
+  width: 100%;
   height: 200px;
-  font-family: "Roboto", sans-serif;
-  font-weight: 700;
-  font-size: 12px;
-  margin: 10px;
-  padding: 5px;
-  border: 1px solid;
-  border-radius: 5px;
-  list-style-type: none;
-  color: white;
-} */
-
-/* 3 */
-/* .btn-3 {
-  background: rgb(0, 172, 238);
-  background: linear-gradient(
-    0deg,
-    rgba(0, 172, 238, 1) 0%,
-    rgba(2, 126, 251, 1) 100%
-  );
-  width: 130px;
-  height: 40px;
-  line-height: 42px;
-  padding: 0;
-  border: none;
+  border-radius: 10px;
+  background: #f9f9f9;
+  box-shadow: 1px 1px 5px #959595;
+  display: flex;
+  margin-bottom: 20px;
 }
-.btn-3 {
+
+.food-menu .food .food-image {
+  height: 100%;
+  width: 40%;
+}
+
+.food-menu .food .food-image img {
+  width: 100%;
+  height: 100%;
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+}
+
+.food-menu .food .name-food-name {
+  width: 66%;
+  margin-left: 30px;
+  text-align: start;
+}
+
+.food-menu .food .name-food-name{
+  font-size: 0.9rem;
   position: relative;
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-.btn-3:before,
-.btn-3:after {
-  position: absolute;
-  content: "";
-  right: 0;
-  top: 0;
-  background: rgba(2, 126, 251, 1);
-  transition: all 0.3s ease;
-}
-.btn-3:before {
-  height: 0%;
-  width: 2px;
-}
-.btn-3:after {
-  width: 0%;
-  height: 2px;
-}
-.btn-3:hover {
-  background: transparent;
-  box-shadow: none;
-}
-.btn-3:hover:before {
-  height: 100%;
-}
-.btn-3:hover:after {
-  width: 100%;
-}
-.btn-3 :hover {
-  color: rgba(2, 126, 251, 1);
-}
-.btn-3 :before,
-.btn-3 :after {
-  position: absolute;
-  content: "";
-  left: 0;
-  bottom: 0;
-  background: rgba(2, 126, 251, 1);
-  transition: all 0.3s ease;
-}
-.btn-3 :before {
-  width: 2px;
-  height: 0%;
-}
-.btn-3 :after {
-  width: 0%;
-  height: 2px;
-}
-.btn-3 :hover:before {
-  height: 100%;
-}
-.btn-3 :hover:after {
-  width: 100%;
-} */
-
-/* .Card{
-  display: flex;
-  align-items: center;
-} */
-
-.card-menu-general{
-  display: flex;
-  flex-direction: column;
-  width: 700px;
-  height: 175px;
-  border-style: none;
-  color: #0b0b0e;
-  margin: 5px;
-  padding: 10px;
-  border-radius: 5px;
-  background-color: #f9f1f1;
-}
-.card-menu-general:hover{
-  box-shadow: 2px 2px 2px 2px #888785;
-}
-.buttonsCard{
-  display: flex;
-    margin-left: auto;
-    margin-right: auto;
-    text-align:center;
-    font-family: "Roboto", sans-serif;
-    font-size: 10px;
-    font-weight: bold;
 }
 
-.btn1-menu.btn.btn-none{
-  background-color: #ff7b2c; 
-  border-radius: 8px;
-  margin-bottom: 10px;
+.name-food-descrip{
+    display: flex;
+    text-align: start;   
+        
 }
 
-.btn1-menu.btn.btn-none:hover {
-    background-color: #ff7b2c;
-    color: #fff;
+.buttonsCard .btn1-menu{
+  display: inline-table;  
+  
 }
 
-.name-food{
-  font-family: "Roboto", sans-serif;
-  color: #3c305dd8;
-  font-weight: bold;
-  text-align: center;
-}
 
 .notes{
   text-align: center;
   text-decoration: solid;
   font-weight: bold;
+  align-items: center;
 }
 
+.icons8-edit { 
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHg9IjBweCIgeT0iMHB4Igp3aWR0aD0iMjQiIGhlaWdodD0iMjQiCnZpZXdCb3g9IjAgMCAyNCAyNCIKc3R5bGU9IiBmaWxsOiMwMDAwMDA7Ij4gICAgPHBhdGggZD0iTSAxOC40MTQwNjIgMiBDIDE4LjE1ODA2MiAyIDE3LjkwMjAzMSAyLjA5Nzk2ODcgMTcuNzA3MDMxIDIuMjkyOTY4OCBMIDE1LjcwNzAzMSA0LjI5Mjk2ODggTCAxNC4yOTI5NjkgNS43MDcwMzEyIEwgMyAxNyBMIDMgMjEgTCA3IDIxIEwgMjEuNzA3MDMxIDYuMjkyOTY4OCBDIDIyLjA5ODAzMSA1LjkwMTk2ODcgMjIuMDk4MDMxIDUuMjY4OTA2MyAyMS43MDcwMzEgNC44Nzg5MDYyIEwgMTkuMTIxMDk0IDIuMjkyOTY4OCBDIDE4LjkyNjA5NCAyLjA5Nzk2ODcgMTguNjcwMDYzIDIgMTguNDE0MDYyIDIgeiBNIDE4LjQxNDA2MiA0LjQxNDA2MjUgTCAxOS41ODU5MzggNS41ODU5Mzc1IEwgMTguMjkyOTY5IDYuODc4OTA2MiBMIDE3LjEyMTA5NCA1LjcwNzAzMTIgTCAxOC40MTQwNjIgNC40MTQwNjI1IHogTSAxNS43MDcwMzEgNy4xMjEwOTM4IEwgMTYuODc4OTA2IDguMjkyOTY4OCBMIDYuMTcxODc1IDE5IEwgNSAxOSBMIDUgMTcuODI4MTI1IEwgMTUuNzA3MDMxIDcuMTIxMDkzOCB6Ij48L3BhdGg+PC9zdmc+') 50% 50% no-repeat;
+  background-size: 100%;
+  position: relative;
+  right: 85px;
+  top:150px 
+  
+  
+}
+
+.icons8-trash { 
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHg9IjBweCIgeT0iMHB4Igp3aWR0aD0iMjQiIGhlaWdodD0iMjQiCnZpZXdCb3g9IjAgMCAyNCAyNCIKc3R5bGU9IiBmaWxsOiMwMDAwMDA7Ij48cGF0aCBkPSJNIDEwIDIgTCA5IDMgTCA0IDMgTCA0IDUgTCA1IDUgTCA1IDIwIEMgNSAyMC41MjIyMjIgNS4xOTEzMjg5IDIxLjA1NDYxIDUuNTY4MzU5NCAyMS40MzE2NDEgQyA1Ljk0NTM4OTkgMjEuODA4NjcxIDYuNDc3Nzc3OCAyMiA3IDIyIEwgMTcgMjIgQyAxNy41MjIyMjIgMjIgMTguMDU0NjEgMjEuODA4NjcxIDE4LjQzMTY0MSAyMS40MzE2NDEgQyAxOC44MDg2NzEgMjEuMDU0NjEgMTkgMjAuNTIyMjIyIDE5IDIwIEwgMTkgNSBMIDIwIDUgTCAyMCAzIEwgMTUgMyBMIDE0IDIgTCAxMCAyIHogTSA3IDUgTCAxNyA1IEwgMTcgMjAgTCA3IDIwIEwgNyA1IHogTSA5IDcgTCA5IDE4IEwgMTEgMTggTCAxMSA3IEwgOSA3IHogTSAxMyA3IEwgMTMgMTggTCAxNSAxOCBMIDE1IDcgTCAxMyA3IHoiPjwvcGF0aD48L3N2Zz4=') 50% 50% no-repeat;
+  background-size: 100%; 
+  position: relative;
+  right: 40px;
+  top:125px 
+}
+
+.name-food-price{
+  display: flexbox;
+  position: relative;
+  text-align: justify;
+  right: 250px;
+  top:100px
+
+}

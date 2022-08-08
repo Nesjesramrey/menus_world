@@ -1,77 +1,59 @@
 import { Outlet, Link } from "react-router-dom";
 import "./MenuContainer.css";
 import NavBar from "../../../src/components/NavBar";
-import Nav from "react-bootstrap/Nav";
-import Navbar from "react-bootstrap/Navbar";
+import Button from 'react-bootstrap/Button';
 
 export default function MenuContainer() {
   return (
-    // <div className="Menu-container">
-    //   <div className="Menu-container-2">
-    //     <div className="Menu-container-nav">
-    //       <nav className="navContainer">
-    //         <Link to="/menu">General</Link>
-    //         <Link to="entradas">Entradas</Link>
-    //         <Link to="ensaladas">Ensaladas</Link>
-    //         <Link to="sopas">Sopas</Link>
-    //         <Link to="pescados">Pescados</Link>
-    //         <Link to="cortes">Cortes</Link>
-    //         <Link to="snacks">Snacks</Link>
-    //         <Link to="bebidasnoalcoholicas">Bebidas s/Alcohol</Link>
-    //         <Link to="bebidasalcoholicas">Bebidas c/Alcohol</Link>
-    //         <Link to="postres">Postres</Link>
-    //       </nav>
-    //     </div>
-    //     <div className="Menu-container-content">
-    //       <div className="Content-container">
-    //         <Outlet />
-    //       </div>
-    //     </div>
-    //   </div>
-    // </div>
-  <div className="col-10 col-md-12 ">  
-    <Nav fill variant="tabs" defaultActiveKey="/menu">
-      <Navbar.Toggle aria-controls="navbarScroll" />
-      <Nav.Item>
-        <Nav.Link to="/menu" as={Link} >General</Nav.Link>
-      </Nav.Item>
-      <Nav.Item>
-        <Nav.Link to="entradas" as={Link} >Entradas</Nav.Link>
-      </Nav.Item>
-      <Nav.Item>
-        <Nav.Link to="ensaladas" as={Link} >Ensaladas</Nav.Link>
-      </Nav.Item>
-      <Nav.Item>
-        <Nav.Link to="sopas" as={Link}>Sopas</Nav.Link>
-      </Nav.Item>
-      <Nav.Item>
-        <Nav.Link to="pescados" as={Link}>Mariscos</Nav.Link>
-      </Nav.Item>
-      <Nav.Item>
-        <Nav.Link to="cortes" as={Link}>Cortes</Nav.Link>
-      </Nav.Item>
-      <Nav.Item>
-        <Nav.Link to="snacks" as={Link}>Snacks</Nav.Link>
-      </Nav.Item>
-      <Nav.Item>
-        <Nav.Link to="bebidasnoalcoholicas" as={Link}>Bebidas s/Alcohol</Nav.Link>
-      </Nav.Item>
-      <Nav.Item>
-        <Nav.Link to="bebidasalcoholicas" as={Link}>Bebidas c/Alcohol</Nav.Link>
-      </Nav.Item>
-      <Nav.Item>
-        <Nav.Link to="postres" as={Link}>Postres</Nav.Link>
-      </Nav.Item>
 
-      {/* <Nav.Item>
-          <Nav.Link eventKey="disabled" disabled>
-          Disabled
-        </Nav.Link>
-      </Nav.Item>  */}
+  
+    <div className="container-welcome">
+      {NavBar(1)}
 
+    <div className="buttonscategoria">    
+    <Button className="btn" to="/menu" as={Link} size="sm" >
+      General
+    </Button>{' '}
+    
+    <Button to="entradas" as={Link} size="sm" >
+      Entradas
+    </Button>{' '}
+
+    <Button to="ensaladas" as={Link} size="sm" >
+      Ensaladas
+    </Button>{' '}
+
+    <Button to="sopas" as={Link} size="sm" >
+      Sopas
+    </Button>{' '}
+
+    <Button to="pescados" as={Link} size="sm" >
+      Mariscos
+    </Button>{' '}
+
+    <Button to="cortes" as={Link} size="sm" >
+      Cortes
+    </Button>{' '}
+
+    <Button to="snacks" as={Link} size="sm" >
+      Snacks
+    </Button>{' '}
+
+    <Button to="bebidasnoalcoholicas" as={Link} size="sm" >
+      Bebidas s/Alcohol
+    </Button>{' '}
+
+    <Button to="bebidasalcoholicas" as={Link} size="sm" >
+      Bebidas c/Alcohol
+    </Button>{' '}
+
+    <Button to="postres" as={Link} size="sm" >
+      Postres
+    </Button>{''}
+       
       <Outlet />
-
-    </Nav>
-  </div>    
+    </div>
+    </div>
+  
   );
 }
