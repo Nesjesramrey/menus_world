@@ -1,11 +1,15 @@
 import { useState } from "react";
 import { create as createUser } from "../../services/users";
 
+// Components
+import NavBar from "../../../src/components/NavBar";
+
 // Toastify
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Input from "../../../src/components/Input/index";
 
+// CSS
 import "./Signup.css";
 
 export default function Signup() {
@@ -15,6 +19,10 @@ export default function Signup() {
   const [restaurants, setRestaurants] = useState("");
   const [password, setPassword] = useState("");
   const [userType, setUserType] = useState("");
+  const [itemActive, setItemActive] = useState(null);
+
+  // This is to active input restaurant
+  const isActive = (itemTypeUser) => itemTypeUser === itemActive;
 
   const cleanForm = () => {
     setUserName("");
@@ -59,11 +67,28 @@ export default function Signup() {
     <div className="container">
       <div className="row justify-content-center">
         <div className="col-12 col-md-12 ">
+          {NavBar(1)}
           <div className="card">
             <h2 className="card-title text-center">Registro</h2>
             <div className="card-body py-md-4">
               <form className="form-signup col-10" onSubmit={handleSubmit}>
                 <div className="form-group">
+                  <div className="select-child">
+                    <select
+                      type="text"
+                      className="select-signup col-12"
+                      placeholder=""
+                      value={userType}
+                      onChange={(e) => setUserType(e.target.value)}
+                      onClick={(e) => setItemActive(e.target.value)}
+                    >
+                      <option value="Select">
+                        Selecciona tu tipo de usuario
+                      </option>
+                      <option value="Cliente">Cliente</option>
+                      <option value="Administrador">Administador</option>
+                    </select>
+                  </div>
                   <Input
                     type="text"
                     className="controls"
@@ -88,7 +113,11 @@ export default function Signup() {
                 <div className="form-group">
                   <Input
                     type="text"
-                    className="controls"
+                    className={`${
+                      isActive("Administrador")
+                        ? "controls active"
+                        : "controls inactive"
+                    }`}
                     placeholder="Nombre del Restaurante"
                     id="meal"
                     name="meal"
@@ -107,29 +136,10 @@ export default function Signup() {
                     value={password}
                     callback={(e) => setPassword(e.target.value)}
                   />
-                  <div className="select-child">
-                    <select
-                      type="text"
-                      className="select-signup col-12"
-                      placeholder=""
-                      value={userType}
-                      onChange={(e) => setUserType(e.target.value)}
-                    >
-                      <option value="Select">Selecciona una categoria</option>
-                      <option value="Cliente">Cliente</option>
-                      <option value="Administrador">Administador</option>
-                    </select>
-                  </div>
                 </div>
                 <div className="d-flex flex-row align-items-center justify-content-between">
-                  <a className="btn-signup " href="/login">
-                    Ir a Iniciar Sesion
-                  </a>
-                  <a className="btn-signup" href="/">
-                    Home
-                  </a>
                   <button type="submit" className="btn-signup">
-                    Crer Cuenta
+                    Crear Cuenta
                   </button>
                 </div>
               </form>
