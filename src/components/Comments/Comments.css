@@ -1,4 +1,9 @@
-p {
+.noComments {
+	font-size: 18px;
+	margin-top: 15px;
+}
+
+.pComment {
 	margin: 0px;
 	padding: 0px;
 	display: flex;
@@ -38,7 +43,6 @@ p {
 .userSpace {
 	margin-right: 7px;
 }
-
 
 #textOtherRec {
 	margin-top: 7px;

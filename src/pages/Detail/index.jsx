@@ -1,10 +1,12 @@
+//#region imports
 import './Detail.css';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 
 // Components
-import NavBar from '../../components/NavBar'
+import NavBar from '../../components/NavBar';
 import ImgDish from '../../components/ImgDish';
 import DishDescription from '../../components/DishDescription';
 import CreateComments from '../../components/Comments';
@@ -14,61 +16,38 @@ import TableRatings from '../../components/TableRatings';
 
 //Services
 import { list as listFunc } from '../../services/menus';
+import { dishById as readIdDish } from '../../services/menus';
+//#endregion
 
+//  - - - - - - - - - - - - - - - Main function - - - - - - - - - - - - - - -
 export default function Detail() {
-	const [list, setList] = useState([]);
+	let { dishId } = useParams();
+	const [dish, setDish] = useState([]);
 
 	useEffect(() => {
-		const listDishes = async () => {
-			const data = await listFunc();
-			const parsedDishes = Object.keys(data).map((key) => {
-				return { id: key, ...data[key] };
-			});
-
-			setList(parsedDishes);
+		const dishInfo = async () => {
+			const dishData = await readIdDish(dishId);
+			setDish(dishData);
 		};
-
-		listDishes();
+		dishInfo();
 	}, []);
 
-	console.log(list);
+	// Generate list of comments
+	function showComments(data) {
+		const arrComment = data.comments ? data.comments : [];
+
+		if (arrComment.length > 0) {
+			let listComments = arrComment.map((comment, index) => CreateComments(comment, index));
+			return listComments;
+		} else {
+			return (
+				<p className="noComments text-center">No hay comentarios aun, sé el primero en comentar.</p>
+			);
+		}
+	}
+	const allComments = showComments(dish);
 
 	//#region Temporary vars
-	let img = 'https://images2.imgbox.com/66/db/s8TI4LcF_o.jpg';
-	let data = {
-		title: 'Ensalada de pollo',
-		description: 'Rica ensada de pollo, tiene 100 gr de pollo, lechuga, 3 ingredientes a elejir (aceitunas, elote, panela, queso, cutones), inlcuye bebida de 300 mL',
-		price: 78,
-		rating: 4.3,
-	};
-	let comments = [
-		{
-			name: 'Nestor Ramirez',
-			date: '20 Jul',
-			rating: 5,
-			comment: 'Esta muy buena, es de mis favoritas',
-		},
-		{
-			name: 'Luis Vera',
-			date: '15 Jul',
-			rating: 5,
-			comment: 'Todo muy rico y fresco, recomendada 😋',
-		},
-		{
-			name: 'Yusef',
-			date: '10 Jun',
-			rating: 5,
-			comment:
-				'EXCELENTE, estaba deliciosa, ademas a muy buen precio ya que incluye una bebida, sin lugar a dudas un platillo 100% recomendado',
-		},
-		{
-			name: 'Chucho',
-			date: '22 May',
-			rating: 4,
-			comment:
-				'Esta muy rica, y a buen precio, pero la verdad comparandola con la ensalada mixta, esta se queda abajo ',
-		},
-	];
 	let platillos = [
 		{
 			name: 'Rib eye al carbon',
@@ -111,11 +90,6 @@ export default function Detail() {
 		},
 	];
 
-	//#endregion
-
-	// Generate list of comments
-	let listComments = comments.map((comment, index) => CreateComments(comment, index));
-
 	// Cal ratings
 	let values = {
 		1: 0,
@@ -134,21 +108,23 @@ export default function Detail() {
 	}
 	getRatings(platillos);
 
+	//#endregion
+
+	//  - - - - - - - - - - - - - - - Return - - - - - - - - - - - - - - -
 	return (
 		<div className="container-fluid g-0">
-			{NavBar(1)}
+			<NavBar />
 			<div className="container g-5">
-
 				<main className="row">
 					<div className="col col-12 title text-center">
 						<h2>Calificaciones del platillo</h2>
 					</div>
 
 					{/* photo and description */}
-					<div className="col col-12 col-md-6 g-0">{ImgDish(img)}</div>
+					<div className="col col-12 col-md-6 g-0">{ImgDish(dish)}</div>
 					<div className="col col-12 col-md-6 g-0">
 						<div className="boxDish">
-							{DishDescription(data)}
+							{DishDescription(dish)}
 							{TableRatings(values, 1)}
 						</div>
 					</div>
@@ -158,7 +134,7 @@ export default function Detail() {
 					{/*- - - - Comments section - - - -*/}
 					<div className="col col-12 col-md-6 g-0">
 						{AddComment(1)}
-						{listComments}
+						{allComments}
 					</div>
 
 					{/*- - - - Reommendations - - - -*/}
@@ -171,10 +147,9 @@ export default function Detail() {
 						<div id="colCardsRecommendations">
 							{Recomendation(1)}
 							{Recomendation(2)}
-							</div>
+						</div>
 					</div>
 				</section>
-
 			</div>
 		</div>
 	);
