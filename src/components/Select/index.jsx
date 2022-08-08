@@ -5,13 +5,14 @@ export default function Select({
   placeholder,
   value,
   callback,
-  type = "text",
+  type ="text"
+  
 }) {
   return (
-    <div className="select-child">
+    <div>
       <select
         type={type}
-        className="select_form"
+        className="form-select form-select-mg"
         placeholder={placeholder}
         value={value}
         onChange={callback}

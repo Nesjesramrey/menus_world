@@ -1,7 +1,7 @@
 const URL = "http://localhost:8000";
 
 const generateConfig = (body) => {
-  console.log(JSON.stringify(body));
+  //console.log(JSON.stringify(body));
   return {
     method: "POST",
     headers: {
@@ -56,8 +56,8 @@ export const deleteDish = async (id, body) => {
     },
     body: JSON.stringify(body),
   });
-  console.log(response.status);
-  console.log(body);
+  //console.log(response.status);
+  //console.log(body);
   const data = await response.json();
   return data;
 };

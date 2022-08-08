@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useDropzone } from "react-dropzone";
+import { useDropzone } from "react-dropzone"
 import { create as createMenu } from "../../services/menus";
 
 import { uploadFile } from 'react-s3';
@@ -9,6 +9,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Input from "../../../src/components/Input/index";
 import Select from "../../components/Select/index";
+import NavBar from "../../components/NavBar";
 
 import "./Form.css";
 
@@ -119,57 +120,69 @@ export default function Form() {
   });
   const imagen = files.map((file) => {
     return (
-      <img key={file.name} src={file.preview} alt="img" className="image" />
+      <img key={file.name} src={file.preview} alt="img" className="image_file" />
     );
   });
 
   return (
     <div className="container main_Container">
+      <NavBar/>
+      
+      
       <div className="container-form">
-        <p className="title-form">MENU'S WORLD</p>
-        <h2 className="subtitle">Formulario de registro de su platillo</h2>
-        {/* <p className="sub_title">Ingresa tus datos aqui </p> */}
-
+      {/* <p className="title-form">MENU'S WORLD</p> */}
+        <div  className="subtitle"><h4>Formulario de registro de su platillo</h4></div>
         <form onSubmit={handleSubmit}>
           <div className="content_form">
-       
           <div className="content_input">
-          <label className="label_form">Platillo:</label>
+          <label className="form_label">Platillo:</label>
           <Input
             type="text"
-            className="input_form"
-            placeholder="Nombre de platillo"
-            id="meal"
-            name="meal"
+            placeholder="Nombre de platillo..."
             value={dishName}
             callback={(e) => setDishName(e.target.value)}
           />
-
-          <label className="label_form">Descripcion:</label>
+          <label className="form_label">Precio:</label>
+          <div className="price-categori">
+          
           <Input
-            type="text"
-            className="input_form"
-            placeholder="Describe tu platillo"
-            id="meal"
-            name="meal"
-            value={description}
-            callback={(e) => setDescription(e.target.value)}
-          />
-
-          <label className="label_form">Precio:</label>
-          <Input
-            type="text"
-            className="input_form"
-            placeholder="Costo de tu platillo"
+            type="number"
+            className="input-group-text"
+            placeholder="$ 0.00"
             id="meal"
             name="meal"
             value={price}
             callback={(e) => setPrice(e.target.value)}
           />
+            <Select
+            type="text"
+            className="select_form"
+            placeholder=""
+            value={category}
+            callback={(e) => setCategory(e.target.value)}
+          />
           </div>
-         
-      <div className="instructions">
-            <div className="instructions-form">
+          <label className="form_label">Descripcion:</label>
+          <textarea
+            type="text"
+            className="form-control"
+            placeholder="Describe tu platillo..."
+            id="meal"
+            name="meal"
+            value={description}
+            callback={(e) => setDescription(e.target.value)}/>
+          </div>
+          <div className="container-image">
+            <div className="dropArea" {...getRootProps()}>
+              <p className="text">Click o arrastra una imagen</p>
+            </div>
+            <div className="content-image">
+              {imagen}
+            </div>
+          </div>         
+          </div>
+          <div className="instructions">
+            {/* <div className="instructions-form">
               <strong>Platillo:</strong>Nombre del platillo como aparece en su
               carta
             </div>
@@ -185,34 +198,18 @@ export default function Form() {
               <strong>Categoria del platillo:</strong> Aqui tienes que
               especificar si es una entrada, corte, postre, bebida o las
               categorias que ya tengas definidas
-            </div>
-            
-          </div>
-          <div className="containerImg">
-        <img src="https://spng.pinpng.com/pngs/s/382-3827200_comida-icono-png-icons-png-comida-transparent-png.png" className="img"/>
-      </div>
-          </div>
-          <div className="container-image">
-            <div className="dropArea" {...getRootProps()}>
-              <p className="text">Arrastra la imagen de tu producto</p>
-            </div>
-            <div className="content-image">
-              {imagen}
-            </div>
-          </div>
-          {/* <label className="label_form">Selecciona una categoria:</label> */}
-          <Select
-            type="text"
-            className="select_form"
-            placeholder=""
-            value={category}
-            callback={(e) => setCategory(e.target.value)}
-          />
-          <div className="button_menu">
+            </div> */}
+          
+            <div className="button_menu">
           <button type="submit" className="buttom_1">
             <strong>Registrar platillo</strong>
           </button>
           </div>
+          </div>
+        
+          
+          {/* <label className="label_form">Selecciona una categoria:</label> */}
+       
          
         </form>
       </div>
