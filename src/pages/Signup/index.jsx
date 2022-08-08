@@ -65,9 +65,9 @@ export default function Signup() {
 
   return (
     <div className="container">
+      {NavBar(1)}
       <div className="row justify-content-center">
-        <div className="col-12 col-md-12 ">
-          {NavBar(1)}
+        <div className="col-12 col-md-6">
           <div className="card">
             <h2 className="card-title text-center">Registro</h2>
             <div className="card-body py-md-4">
@@ -146,6 +146,11 @@ export default function Signup() {
             </div>
           </div>
         </div>
+        <img
+          src="https://lavianda.mx/wp-content/uploads/2021/02/1200x638-El-silencio-es-el-sonido-de-una-buena-comida-Jamie-Oliver.jpg"
+          alt="register"
+          className="img-register col-md-6"
+        ></img>
       </div>
       <ToastContainer />
     </div>
