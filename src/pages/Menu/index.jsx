@@ -3,10 +3,6 @@ import { list as listDishes } from "../../../src/services/menus";
 import { useNavigate } from "react-router-dom";
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
-import visa from '../../assets/visa.png'
-
-
-
 
 
 import "./Menu.css";
@@ -33,23 +29,29 @@ export default function Menu() {
 
   const buildMenu = (dish, index) => (
 
-    <Card>
-    <div className="col-10 col-md-12 "> 
-      <div className="card-menu-general" key={index}>
-        <div className="name-food">{dish.dishName}</div>
-        <div className="name-food">{dish.description}</div>
-        <div className="name-food">$ {dish.price}</div>
-        <div className="buttonsCard btn1-menu">
-          <Button variant= "none" className="btn1-menu" onClick={() => navigate(`edit/${dish._id}`)}>
-            Editar
-          </Button>
-          <Button variant= "none" className="btn1-menu" onClick={() => navigate(`delete/${dish._id}`)}>
-            Eliminar
-          </Button>
-        </div>
-      </div>
-    </div>   
-    </Card>
+    
+  <div className="containerm">
+    <div className="food-menu">
+      <div className="food" key={index}> 
+          <div className="food-image">
+            <img src="https://image.freepik.com/free-photo/front-view-delicious-meat-hamburger-with-red-tomatoes-dark-background_179666-19347.jpg" alt="Food" />
+          </div>  
+         
+            <div className="name-food-name"><h5>{dish.dishName}</h5></div>
+            <div className="name-food-descrip">{dish.description}</div>
+            <div className="name-food-price"> ${dish.price}</div>
+            
+            <div className="iconos">
+            <div class="icons8-edit" onClick={() => navigate(`edit/${dish._id}`)}></div>
+            <div class="icons8-trash" onClick={() => navigate(`delete/${dish._id}`)}></div>
+            </div>
+            
+            
+          
+       
+      </div>  
+    </div>
+  </div>
 
 
   );
@@ -62,11 +64,11 @@ export default function Menu() {
           {dishes.map(buildMenu)}
           <div className="card-info-menu">
             <div className="notes">
-            <li>LA PROPINA NO ES OBLIGATORIA.</li>
+            <p>LA PROPINA NO ES OBLIGATORIA.</p>
             
-            <li>ACEPTAMOS PAGOS EN EFECTIVO, TARJETAS VISA, MASTER CARD Y AMERICAN EXPRESS.</li>
+            <p>ACEPTAMOS PAGOS EN EFECTIVO, TARJETAS VISA, MASTER CARD Y AMERICAN EXPRESS.</p>
             
-            <li>EL PAGO CON TARJETA NO GENERA NINGUNA COMISIÓN.</li>
+            <p>EL PAGO CON TARJETA NO GENERA NINGUNA COMISIÓN.</p>
             </div>
           </div>
           
