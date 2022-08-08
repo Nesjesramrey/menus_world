@@ -36,7 +36,8 @@
 /* .form-menu {
   border: 1px solid red;
   background-color: white;
-} */
+} 
+*/
 .content_form {
   /* border: 1px solid red; */
   display: flex;
@@ -63,7 +64,7 @@
 .price-categori{
   display: flex;
   justify-content: space-between;
-}
+  }
 .button_menu {
   /* border: 1px solid red; */
   width: 52%;
@@ -87,14 +88,6 @@
   color: #ffff;
   border: 1px solid #fb7b05;
 }
-
-.instructions {
-  /* border: 2px solid aqua; */
-  display: flex;
-  flex-direction: column;
-  width:100%;
-  margin-left: 8px;
-}
 .instructions-form {
   /* border: 1px solid black; */
   display: flex;
@@ -109,6 +102,7 @@
   align-items: center;
   /* padding: 10px; */
 }
+
 .container-image {
   /* border: 1px solid blue; */
   display: flex;
@@ -152,6 +146,7 @@
 .text:hover {
   border: 4px solid #fb7c0570;
 }
+
 .image_file {
   /* border: 1px solid red; */
   width: 100%;
@@ -165,7 +160,21 @@
 .form-select{
   cursor: pointer;
 }
+.image {
+  width: 200px;
+  height: 180px;
+  border-radius: 5px;
+}
+.img {
+  width: 300px;
+  padding: 15px;
+}
 
+.image {
+  width: 230px;
+  height: 180px;
+  border-radius: 5px;
+}
 @media only screen and (min-width: 320px) and (max-width: 680px) {
   .containerImg {
     display: none;
