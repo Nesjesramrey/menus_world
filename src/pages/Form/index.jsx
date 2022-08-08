@@ -8,6 +8,7 @@ import { uploadFile } from 'react-s3';
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Input from "../../../src/components/Input/index";
+import TextArea from "../../components/TextArea";
 import Select from "../../components/Select/index";
 import NavBar from "../../components/NavBar";
 
@@ -30,10 +31,11 @@ export default function Form() {
     setCategory("");
     setDescription("");
     setPrice("");
+    setFiles([]);
 
   };
 
-  // Mover todo lo relacionado al dropzone y a S3 a un componente nuevo
+  // Mover todo lo relacionado al dropzone y a S3 a un componente nuevo (pendiente)
   const config = {
     bucketName: process.env.REACT_APP_BUCKET_NAME,
     region: process.env.REACT_APP_REGION,
@@ -130,7 +132,6 @@ export default function Form() {
       
       
       <div className="container-form">
-      {/* <p className="title-form">MENU'S WORLD</p> */}
         <div  className="subtitle"><h4>Formulario de registro de su platillo</h4></div>
         <form onSubmit={handleSubmit}>
           <div className="content_form">
@@ -144,7 +145,6 @@ export default function Form() {
           />
           <label className="form_label">Precio:</label>
           <div className="price-categori">
-          
           <Input
             type="number"
             className="input-group-text"
@@ -163,14 +163,10 @@ export default function Form() {
           />
           </div>
           <label className="form_label">Descripcion:</label>
-          <textarea
-            type="text"
-            className="form-control"
+          <TextArea type="text"
             placeholder="Describe tu platillo..."
-            id="meal"
-            name="meal"
             value={description}
-            callback={(e) => setDescription(e.target.value)}/>
+            callback={(e) => setDescription(e.target.value)} />
           </div>
           <div className="container-image">
             <div className="dropArea" {...getRootProps()}>
@@ -182,35 +178,12 @@ export default function Form() {
           </div>         
           </div>
           <div className="instructions">
-            {/* <div className="instructions-form">
-              <strong>Platillo:</strong>Nombre del platillo como aparece en su
-              carta
-            </div>
-            <div className="instructions-form">
-              <strong>Descripcion:</strong> Aqui puedes describir los
-              ingredientes principales asi como los gramajes de tus platillos
-            </div>
-            <div className="instructions-form">
-              <strong>Precio:</strong> Precio incluyendo los impuestos
-              aplicables de tu localidad
-            </div>
-            <div className="instructions-form">
-              <strong>Categoria del platillo:</strong> Aqui tienes que
-              especificar si es una entrada, corte, postre, bebida o las
-              categorias que ya tengas definidas
-            </div> */}
-          
             <div className="button_menu">
           <button type="submit" className="buttom_1">
             <strong>Registrar platillo</strong>
           </button>
           </div>
           </div>
-        
-          
-          {/* <label className="label_form">Selecciona una categoria:</label> */}
-       
-         
         </form>
       </div>
       

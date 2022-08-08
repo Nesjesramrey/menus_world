@@ -103,7 +103,7 @@ export default function MenuEdit() {
             <label className="label_form">Descripcion:</label>
             <Input
               type="text"
-              className="input_form col-12"
+              className="input_form col-12 form-control"
               placeholder=""
               id="meal"
               name="meal"

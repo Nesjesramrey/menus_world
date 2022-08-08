@@ -41,7 +41,7 @@ export default function Menu() {
         <div className="name-food">$ {dish.price}</div>
 
         <div className="mb-2">
-          <Button className="btn-7" onClick={() => navigate(`edit/${dish._id}`)}>
+          <Button className="btn-7" onClick={() => navigate(`edit/${dish._id}`)}/>
 
         <div className="buttonsCard btn1-menu">
           <Button variant= "none" className="btn1-menu" onClick={() => navigate(`edit/${dish._id}`)}>
@@ -53,9 +53,10 @@ export default function Menu() {
         </div>
       </div>
     </div>   
+    </div> 
     </Card>
-
-
+  
+  
   );
 
   return (
