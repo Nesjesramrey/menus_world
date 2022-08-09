@@ -67,18 +67,21 @@ export default function Signup() {
     <div className="container">
       {NavBar(1)}
       <div className="row justify-content-center">
-        <div className="col-12 col-md-5">
+        <div className="col-12 col-md-5 ">
           <div className="card">
             <div className="title-registro">
-            <h2 className="card-title text-center title-registro">Registro</h2>
+              <h2 className="card-title text-center">Registro</h2>
             </div>
             <div className="card-body py-md-4">
-              <form className="form-signup col-10" onSubmit={handleSubmit}>
+              <form
+                className="form-select form-select-mg"
+                onSubmit={handleSubmit}
+              >
                 <div className="form-group">
                   <div className="select-child">
                     <select
                       type="text"
-                      className="form-select form-select-mg"
+                      className="form-select form-select-mg2"
                       placeholder=""
                       value={userType}
                       onChange={(e) => setUserType(e.target.value)}
@@ -87,8 +90,10 @@ export default function Signup() {
                       <option value="Select">
                         Selecciona tu tipo de usuario
                       </option>
-                      <option value="Cliente">Comensal</option>
-                      <option value="Administrador">Administador de restaurante</option>
+                      <option value="Comensal">Comensal</option>
+                      <option value="Administrador de restaurante">
+                        Administrador de restaurante
+                      </option>
                     </select>
                   </div>
                   <Input
@@ -116,9 +121,9 @@ export default function Signup() {
                   <Input
                     type="text"
                     className={`${
-                      isActive("Administrador")
+                      isActive("Administrador de restaurante")
                         ? "form-control active"
-                        : "form-control inactive"
+                        : "form-control d-none"
                     }`}
                     placeholder="Nombre del Restaurante"
                     id="meal"
@@ -130,7 +135,7 @@ export default function Signup() {
 
                 <div className="form-group">
                   <Input
-                    type="text"
+                    type="password"
                     className="form-control"
                     placeholder="Password"
                     id="meal"
@@ -139,7 +144,7 @@ export default function Signup() {
                     callback={(e) => setPassword(e.target.value)}
                   />
                 </div>
-                <div className="content-button">
+                <div className="d-flex flex-row align-items-center justify-content-between">
                   <button type="submit" className="btn-signup">
                     Crear Cuenta
                   </button>
@@ -153,6 +158,7 @@ export default function Signup() {
           alt="register"
           className="img-register col-md-7"
         ></img>
+        ;
       </div>
       <ToastContainer />
     </div>
