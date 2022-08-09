@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useParams, useNavigate } from "react-router-dom";
 import { sublist as listDishes } from "../../../services/menus";
 
 import Card from "react-bootstrap/Card";
@@ -8,10 +9,13 @@ import "./Meat_cut.css";
 export default function Meat_cut() {
   // Local state
   const [dishes, setDishes] = useState([]);
-
+  // RRD
+  const { category, restaurantName } = useParams();
+  console.log(category, restaurantName);
+  const navigate = useNavigate();
   useEffect(() => {
     const list = async () => {
-      const data = await listDishes("Cortes");
+      const data = await listDishes("Cortes", "Fishers");
       const parsedDishes = Object.keys(data).map((key) => {
         return { id: key, ...data[key] };
       });
@@ -25,7 +29,11 @@ export default function Meat_cut() {
   const buildMenu = (dish, index) => (
     <div className="containerm">
       <div className="food-menu">
-        <div className="food" key={index}>
+        <div
+          className="food"
+          key={index}
+          onClick={() => navigate(`/detalle/${dish._id}`)}
+        >
           <div className="food-image">
             <img src={dish.image_Url} alt="Food" />
           </div>

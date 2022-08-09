@@ -28,9 +28,13 @@ export default function Menu() {
   const buildMenu = (dish, index) => (
     <div className="containerm">
       <div className="food-menu">
-        <div className="food" key={index}>
+        <div
+          className="food"
+          key={index}
+          onClick={() => navigate(`/detalle/${dish._id}`)}
+        >
           <div className="food-image">
-            <img src={dish.image_Url} alt="Food" />
+            <img className="img-thumbnail" src={dish.image_Url} alt="Food" />
           </div>
 
           <div className="name-food-name">
