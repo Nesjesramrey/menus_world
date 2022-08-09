@@ -2,7 +2,6 @@
   color: black;
   font-size: 1rem;
   font-weight: bold;
-  /* margin-right: 15px; */
 }
 
 .form-edit {
@@ -12,7 +11,7 @@
   box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
   padding: 20px 30px;
   border-top: 2px solid #ff7b2c;
-  color: rgb(14, 13, 13);
+  color: #ff7b2c;
 }
 
 .form-edit h5 {

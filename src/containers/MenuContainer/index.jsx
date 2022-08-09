@@ -8,38 +8,39 @@ export default function MenuContainer() {
     <div className="container-welcome">
       {NavBar(1)}
 
-      <div className="buttonscategoria">
-        <Button className="btn" to="/menu" as={Link} size="sm">
+      <div className="container">
+        <div className="button-nav">
+        <Button bsPrefix="custom-btn" to="/menu" as={Link}>
           General
         </Button>{" "}
-        <Button to="entradas" as={Link} size="sm">
+        <Button bsPrefix="custom-btn" to="entradas" as={Link}>
           Entradas
         </Button>{" "}
-        <Button to="ensaladas" as={Link} size="sm">
+        <Button bsPrefix="custom-btn" to="ensaladas" as={Link}>
           Ensaladas
         </Button>{" "}
-        <Button to="sopas" as={Link} size="sm">
+        <Button bsPrefix="custom-btn" to="sopas" as={Link}>
           Sopas
         </Button>{" "}
-        <Button to="pescados" as={Link} size="sm">
+        <Button bsPrefix="custom-btn" to="pescados" as={Link}>
           Mariscos
         </Button>{" "}
-        <Button to="cortes" as={Link} size="sm">
+        <Button bsPrefix="custom-btn" to="cortes" as={Link}>
           Cortes
         </Button>{" "}
-        <Button to="snacks" as={Link} size="sm">
+        <Button bsPrefix="custom-btn" to="snacks" as={Link}>
           Snacks
         </Button>{" "}
-        <Button to="bebidasnoalcoholicas" as={Link} size="sm">
+        <Button bsPrefix="custom-btn" to="postres" as={Link}>
+          Postres
+        </Button>{""}
+        <Button bsPrefix="custom-btn" to="bebidasnoalcoholicas" as={Link}>
           Bebidas s/Alcohol
         </Button>{" "}
-        <Button to="bebidasalcoholicas" as={Link} size="sm">
+        <Button bsPrefix="custom-btn" to="bebidasalcoholicas" as={Link}>
           Bebidas c/Alcohol
         </Button>{" "}
-        <Button to="postres" as={Link} size="sm">
-          Postres
-        </Button>
-        {""}
+        </div>
         <Outlet />
       </div>
     </div>
