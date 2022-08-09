@@ -157,9 +157,6 @@ export default function Form() {
               >
                 <option value="Select">Selecciona tu restaurant</option>
                 <option value={restaurant}>{restaurant}</option>
-                <option value="La fondita del koder">
-                  La fondita del koder
-                </option>
               </select>
               <label className="form_label">Platillo:</label>
               <Input

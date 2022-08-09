@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 import { sublist as listDishes } from "../../../services/menus";
 
 import Card from "react-bootstrap/Card";
@@ -8,10 +10,11 @@ import "./Soup.css";
 export default function Soup() {
   // Local state
   const [dishes, setDishes] = useState([]);
-
+  // RRD
+  const navigate = useNavigate();
   useEffect(() => {
     const list = async () => {
-      const data = await listDishes("Sopas");
+      const data = await listDishes("Sopas", "Texas Rib");
       const parsedDishes = Object.keys(data).map((key) => {
         return { id: key, ...data[key] };
       });
@@ -25,7 +28,11 @@ export default function Soup() {
   const buildMenu = (dish, index) => (
     <div className="containerm">
       <div className="food-menu">
-        <div className="food" key={index}>
+        <div
+          className="food"
+          key={index}
+          onClick={() => navigate(`/detalle/${dish._id}`)}
+        >
           <div className="food-image">
             <img src={dish.image_Url} alt="Food" />
           </div>

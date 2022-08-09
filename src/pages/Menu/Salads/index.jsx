@@ -11,7 +11,7 @@ export default function Salads() {
 
   useEffect(() => {
     const list = async () => {
-      const data = await listDishes("Ensaladas");
+      const data = await listDishes("Ensaladas", "Texas Rib");
       const parsedDishes = Object.keys(data).map((key) => {
         return { id: key, ...data[key] };
       });
