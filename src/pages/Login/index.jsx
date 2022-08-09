@@ -52,11 +52,11 @@ export default function Login() {
       cookies.set("NombreResturante", response.data.info.userRestaurant[0], {
         path: "/",
       });
-      if (response.data.info.userCategory === "Cliente") {
+      if (response.data.info.userCategory === "Comensal") {
         toast.success("Inicio de sesion exitoso!!");
         navigate("/");
       }
-      if (response.data.info.userCategory === "Administrador") {
+      if (response.data.info.userCategory === "Administrador de restaurante") {
         toast.success("Inicio de sesion exitoso!!");
         navigate("/formulario");
       } else {
