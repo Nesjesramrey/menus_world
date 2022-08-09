@@ -47,6 +47,7 @@ function App() {
         </Route>
         <Route path="/formulario" element={<Form />} />
         <Route path="/detalle" element={<Detail />} />
+        <Route path="/detalle/:dishId" element={<Detail />} />
       </Routes>
     </div>
   );
