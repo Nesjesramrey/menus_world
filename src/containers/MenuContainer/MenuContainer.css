@@ -11,6 +11,7 @@ justify-content: space-evenly;
   display: flex;
   align-items: center;
   height: 40px;
+  font-family: "Roboto", sans-serif;
   background-color: white;
   border: 1px solid #fb7b05;
   color: #fb7b05;
