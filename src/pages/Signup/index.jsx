@@ -67,16 +67,18 @@ export default function Signup() {
     <div className="container">
       {NavBar(1)}
       <div className="row justify-content-center">
-        <div className="col-12 col-md-6">
+        <div className="col-12 col-md-5">
           <div className="card">
-            <h2 className="card-title text-center">Registro</h2>
+            <div className="title-registro">
+            <h2 className="card-title text-center title-registro">Registro</h2>
+            </div>
             <div className="card-body py-md-4">
               <form className="form-signup col-10" onSubmit={handleSubmit}>
                 <div className="form-group">
                   <div className="select-child">
                     <select
                       type="text"
-                      className="select-signup col-12"
+                      className="form-select form-select-mg"
                       placeholder=""
                       value={userType}
                       onChange={(e) => setUserType(e.target.value)}
@@ -85,13 +87,13 @@ export default function Signup() {
                       <option value="Select">
                         Selecciona tu tipo de usuario
                       </option>
-                      <option value="Cliente">Cliente</option>
-                      <option value="Administrador">Administador</option>
+                      <option value="Cliente">Comensal</option>
+                      <option value="Administrador">Administador de restaurante</option>
                     </select>
                   </div>
                   <Input
                     type="text"
-                    className="controls"
+                    className="form-control"
                     placeholder="Name"
                     id="meal"
                     name="meal"
@@ -102,7 +104,7 @@ export default function Signup() {
                 <div className="form-group">
                   <Input
                     type="email"
-                    className="controls"
+                    className="form-control"
                     placeholder="Email"
                     id="meal"
                     name="meal"
@@ -115,8 +117,8 @@ export default function Signup() {
                     type="text"
                     className={`${
                       isActive("Administrador")
-                        ? "controls active"
-                        : "controls inactive"
+                        ? "form-control active"
+                        : "form-control inactive"
                     }`}
                     placeholder="Nombre del Restaurante"
                     id="meal"
@@ -129,7 +131,7 @@ export default function Signup() {
                 <div className="form-group">
                   <Input
                     type="text"
-                    className="controls"
+                    className="form-control"
                     placeholder="Password"
                     id="meal"
                     name="meal"
@@ -137,7 +139,7 @@ export default function Signup() {
                     callback={(e) => setPassword(e.target.value)}
                   />
                 </div>
-                <div className="d-flex flex-row align-items-center justify-content-between">
+                <div className="content-button">
                   <button type="submit" className="btn-signup">
                     Crear Cuenta
                   </button>
@@ -147,9 +149,9 @@ export default function Signup() {
           </div>
         </div>
         <img
-          src="https://lavianda.mx/wp-content/uploads/2021/02/1200x638-El-silencio-es-el-sonido-de-una-buena-comida-Jamie-Oliver.jpg"
+          src="https://resizer.otstatic.com/v2/photos/wide-large/2/32402198.png"
           alt="register"
-          className="img-register col-md-6"
+          className="img-register col-md-7"
         ></img>
       </div>
       <ToastContainer />
