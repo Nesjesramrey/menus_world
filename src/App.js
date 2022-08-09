@@ -33,7 +33,7 @@ function App() {
         <Route path="/registro" element={<Signup />} />
         <Route path="/menu" element={<MenuContainer />}>
           <Route index element={<Menu />} />
-          <Route path="entradas" element={<Entries />} />
+          <Route path="qr/entradas" element={<Entries />} />
           <Route path="ensaladas" element={<Salads />} />
           <Route path="sopas" element={<Soup />} />
           <Route path="pescados" element={<Fish />} />

@@ -90,7 +90,7 @@ export default function Login() {
                     Ingresar
                   </button>
                 </div>
-                <p className="forget-password">¿Olvidastes tu Contraseña?</p>
+                <p className="forget-password">¿Olvidaste tu Contraseña?</p>
               </form>
             </div>
           </div>
