@@ -41,11 +41,11 @@ export default function Menu() {
 
           <div className="iconos">
             <div
-              class="icons8-edit"
+              className="icons8-edit"
               onClick={() => navigate(`edit/${dish._id}`)}
             ></div>
             <div
-              class="icons8-trash"
+              className="icons8-trash"
               onClick={() => navigate(`delete/${dish._id}`)}
             ></div>
           </div>
