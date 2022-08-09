@@ -99,7 +99,7 @@ export default function Signup() {
                   <Input
                     type="text"
                     className="form-control"
-                    placeholder="Name"
+                    placeholder="Nombre"
                     id="meal"
                     name="meal"
                     value={username}
@@ -110,7 +110,7 @@ export default function Signup() {
                   <Input
                     type="email"
                     className="form-control"
-                    placeholder="Email"
+                    placeholder="Correo"
                     id="meal"
                     name="meal"
                     value={email}
@@ -137,7 +137,7 @@ export default function Signup() {
                   <Input
                     type="password"
                     className="form-control"
-                    placeholder="Password"
+                    placeholder="Contraseña"
                     id="meal"
                     name="meal"
                     value={password}

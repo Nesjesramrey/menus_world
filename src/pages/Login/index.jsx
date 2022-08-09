@@ -89,7 +89,7 @@ export default function Login() {
                 <Input
                   className="form-control"
                   type="password"
-                  placeholder="Password"
+                  placeholder="Contraseña"
                   id="meal"
                   name="meal"
                   value={password || ""}

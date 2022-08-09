@@ -6,7 +6,6 @@
   border-radius: 10px;
 }
 .title-registro {
-  /* border: 1px solid red; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -45,7 +44,9 @@
 .form-group {
   margin: 10px;
 }
-
+.content-button-registrer{
+  border: 1px solid red;
+}
 .btn-signup {
   height: 38px;
   border-radius: 5px;
@@ -64,7 +65,7 @@
   color: #fff;
 }
 .content-button {
-  /* border: 1px solid blue; */
+  border: 1px solid blue;
   display: flex;
   justify-content: center;
   align-items: center;
