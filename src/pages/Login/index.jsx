@@ -45,10 +45,20 @@ export default function Login() {
     try {
       const response = await loginUser(data);
       cleanForm();
-      cookies.set("Usuario", data.username, { path: "/" });
-      if (response.success === true) {
+      cookies.set("Usuario", response.data.info.userName, { path: "/" });
+      cookies.set("TipoUsuario", response.data.info.userCategory, {
+        path: "/",
+      });
+      cookies.set("NombreResturante", response.data.info.userRestaurant[0], {
+        path: "/",
+      });
+      if (response.data.info.userCategory === "Cliente") {
         toast.success("Inicio de sesion exitoso!!");
         navigate("/");
+      }
+      if (response.data.info.userCategory === "Administrador") {
+        toast.success("Inicio de sesion exitoso!!");
+        navigate("/formulario");
       } else {
         toast.error("Usuario o contrasena incorrectos");
       }
