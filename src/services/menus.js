@@ -36,8 +36,10 @@ export const list = async () => {
   return data;
 };
 
-export const sublist = async (category) => {
-  const response = await fetch(`${URL}/menu/submenu?category=${category}`);
+export const sublist = async (category, restaurant) => {
+  const response = await fetch(
+    `${URL}/menu/submenu?category=${category}&restaurantName=${restaurant}`
+  );
   const data = await response.json();
   return data;
 };
