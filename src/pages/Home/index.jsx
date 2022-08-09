@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import Cookies from "universal-cookie";
+import logo from "../../assets/logomenu.png";
 
 // Toastify
 import { ToastContainer, toast } from "react-toastify";
@@ -22,21 +23,22 @@ export default function Home() {
   };
 
   return (
-    <div className="container-home">
+    <div className="m-1 d-flex flex-row justify-content-around align-items-center ">
       <img
         src="https://www.lifeder.com/wp-content/uploads/2018/04/Nuestra-comida-deberia-ser-nuestra-medicina-y-nuestra-medicina-deberia-ser-nuestra-comida.-min.jpg"
         alt="cabecera"
         className="img-home"
       ></img>
-      <div className="container-home-menu">
+      <div className="container-welcome ">
+        <img className="img-home" src={logo} alt="logo" />
         <h1 className="title-home">MENU'S WORLD</h1>
         <h2 className="p-home">Bienvenido {userName}</h2>
-        <h2 className="p-home">
+        <h3 className="p-home">
           Esta pagina busca mejorar tu experiencia digital de consulta de
           menus.Te invitamos a registrarte o ir directamente a ver los menu
-        </h2>
+        </h3>
 
-        <button type="button" className="btn-home" onClick={logout}>
+        <button type="button" className="btn-home " onClick={logout}>
           Cerrar Sesion
         </button>
 

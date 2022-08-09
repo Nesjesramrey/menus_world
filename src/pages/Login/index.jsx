@@ -109,6 +109,11 @@ export default function Login() {
             </div>
           </div>
         </div>
+        <img
+          src="https://media-cdn.tripadvisor.com/media/photo-s/10/6d/5d/1d/entrada-restaurant.jpg"
+          alt="register"
+          className="img-register col-md-7"
+        ></img>
       </div>
       <ToastContainer />
     </div>
