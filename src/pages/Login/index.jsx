@@ -8,10 +8,10 @@ import { login as loginUser } from "../../services/users";
 // Toastify
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Input from "../../../src/components/Input/index";
 
 // Components
 import NavBar from "../../../src/components/NavBar";
+import Input from "../../../src/components/Input/index";
 
 //CSS
 import "./Login.css";
@@ -44,6 +44,7 @@ export default function Login() {
 
     try {
       const response = await loginUser(data);
+      console.log(response);
       cleanForm();
       cookies.set("Usuario", response.data.info.userName, { path: "/" });
       cookies.set("TipoUsuario", response.data.info.userCategory, {
