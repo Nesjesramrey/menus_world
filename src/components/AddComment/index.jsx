@@ -7,7 +7,15 @@ export default function AddComment() {
 	const [isLogIn, setIsLogIn] = useState(true);
 	const [text, setText] = useState('');
 
+	const handleMessage = (msg) => {
+		console.log(msg)
+		setText('')
+		setCanComment(false)
+  };
+
 	function createContent() {
+
+		//
 		if (canComment === false) {
 			return (
 				<button id="addComment" type="button" onClick={() => setCanComment(true)}>
@@ -18,19 +26,17 @@ export default function AddComment() {
 		if (canComment === true) {
 			return (
 				<form id="formAddComment" action="/action_page.php">
+					<p>Escribe un comentario sobre el platillo y deja tu puntuación</p>
 					<textarea
 						id="addNewComment"
 						name="newComment"
-						rows="3"
-						cols="74"
 						placeholder="Escribe tu reseña del platillo"
-						// value={text}
-						// onChange={(e) => setCanComment(e.target.value)}
+						onChange={(e) => setText(e.target.value)}
 					></textarea>
 					<button
 						id="addComment"
 						type="button"
-						// onClick={(e) => handleMessage(text)}
+						onClick={(e) => handleMessage(text)}
 						>
 						Enviar comentario
 					</button>
@@ -39,9 +45,7 @@ export default function AddComment() {
 		}
 	}
 
-	const handleMessage = () => {
-		console.log(text)
-  };
+
 
 
 

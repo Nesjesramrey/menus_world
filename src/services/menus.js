@@ -24,6 +24,12 @@ export const retrieve = async (id) => {
   return data;
 };
 
+export const dishById = async (id) => {
+  const response = await fetch(`${URL}/detalle/${id}`);
+  const data = await response.json();
+  return data;
+};
+
 export const list = async () => {
   const response = await fetch(`${URL}/menu`);
   const data = await response.json();

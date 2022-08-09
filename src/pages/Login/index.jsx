@@ -61,14 +61,14 @@ export default function Login() {
     <div className="container">
       {NavBar(1)}
       <div className="row justify-content-center">
-        <div className="col-12 col-md-12 ">
+        <div className="col-4 col-md-4 ">
           <div className="card">
-            <h2 className="card-title text-center">Iniciar Sesion</h2>
+            <h2 className="card-title text-center title-h2">Iniciar Sesion</h2>
             <div className="card-body py-md-4">
               <form className="form-login col-10" onSubmit={handleSubmit}>
                 <Input
                   type="text"
-                  className="controls"
+                  className="form-control inputs"
                   placeholder="Usuario"
                   id="meal"
                   name="meal"
@@ -76,8 +76,8 @@ export default function Login() {
                   callback={(e) => setUserName(e.target.value)}
                 />
                 <Input
+                  className="form-control"
                   type="password"
-                  className="controls"
                   placeholder="Password"
                   id="meal"
                   name="meal"
@@ -90,7 +90,10 @@ export default function Login() {
                     Ingresar
                   </button>
                 </div>
-                <p className="forget-password">¿Olvidaste tu Contraseña?</p>
+
+                <div className="container-pass">
+                  <p className="forget-password">¿Olvidaste tu Contraseña?</p>
+                </div>
               </form>
             </div>
           </div>

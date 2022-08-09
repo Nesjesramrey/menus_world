@@ -6,10 +6,10 @@ export default function NavBar() {
 	const toggle = () => setIsOpen(!isOpen);
 
 	return (
-		<nav class="navbar sticky-top navbar-expand-lg nav-0">
-			<div class="container-fluid ">
+		<nav className="navbar sticky-top navbar-expand-lg nav-0">
+			<div className="container-fluid ">
 				<button
-					class="navbar-toggler"
+					className="navbar-toggler"
 					type="button"
 					data-bs-toggle="collapse"
 					data-bs-target="#navbarTogglerDemo01"
@@ -17,32 +17,32 @@ export default function NavBar() {
 					aria-expanded="false"
 					aria-label="Toggle navigation"
 				>
-					<span class="navbar-toggler-icon"></span>
+					<span className="navbar-toggler-icon"></span>
 				</button>
-				<div class="collapse navbar-collapse topNavBar" id="navbarTogglerDemo01">
-					<a class="navbar-brand" href="#">
+				<div className="collapse navbar-collapse topNavBar" id="navbarTogglerDemo01">
+					<a className="navbar-brand" href="#">
 						Logo
 					</a>
-					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-						<li class="nav-item">
-							<a class="nav-link active" aria-current="page" href="#">
+					<ul className="navbar-nav me-auto mb-2 mb-lg-0">
+						<li className="nav-item">
+							<a className="nav-link active" aria-current="page" href="#">
 								Home
 							</a>
 						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#">
+						<li className="nav-item">
+							<a className="nav-link" href="#">
 								Registrarse
 							</a>
 						</li>
 					</ul>
-					<form class="d-flex">
+					<form className="d-flex">
 						<input
-							class="form-control me-2"
+							className="form-control me-2"
 							type="search"
 							placeholder="Search"
 							aria-label="Search"
 						/>
-						<button class="btn btn-outline-success" type="submit">
+						<button className="btn btn-outline-success" type="submit">
 							Search
 						</button>
 					</form>
