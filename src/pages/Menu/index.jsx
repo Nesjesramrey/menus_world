@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { list as listDishes } from "../../../src/services/menus";
 import { useNavigate } from "react-router-dom";
-import Card from "react-bootstrap/Card";
 
 import "./Menu.css";
 
@@ -25,60 +24,61 @@ export default function Menu() {
     list();
   }, []);
 
-  const buildMenu = (dish, index) => (
-    <div className="containerm">
-      <div className="food-menu">
-        <div
-          className="food"
-          key={index}
-          onClick={() => navigate(`/detalle/${dish._id}`)}
-        >
-          <div className="food-image">
-            <img className="img-thumbnail" src={dish.image_Url} alt="Food" />
-          </div>
 
-          <div className="name-food-name">
-            <h5>{dish.dishName}</h5>
-          </div>
-          <div className="name-food-descrip">{dish.description}</div>
-          <div className="name-food-price"> ${dish.price}</div>
+  
+  // const buildMenu = (dish, index) => (
 
-          <div className="iconos">
-            <div
-              className="icons8-edit"
-              onClick={() => navigate(`edit/${dish._id}`)}
-            ></div>
-            <div
-              className="icons8-trash"
-              onClick={() => navigate(`delete/${dish._id}`)}
-            ></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
+  // <div className="containerm">
+  //   <div className="food-menu">
+  //     <div className="food" key={index}> 
+  //         <div className="food-image">
+  //           <img src="https://image.freepik.com/free-photo/front-view-delicious-meat-hamburger-with-red-tomatoes-dark-background_179666-19347.jpg" alt="Food" />
+  //         </div>  
+
+  //           <div className="name-food-name"><h5>{dish.dishName}</h5></div>
+  //           <div className="name-food-descrip">{dish.description}</div>
+  //           <div className="name-food-price"> ${dish.price}</div>
+
+  //           <div className="iconos">
+  //           <div class="icons8-edit" onClick={() => navigate(`edit/${dish._id}`)}></div>
+  //           <div class="icons8-trash" onClick={() => navigate(`delete/${dish._id}`)}></div>
+  //           </div>
+
+
+
+
+  //     </div>  
+  //   </div>
+  // </div>
+
+
+
+
+
+  // );
+
+  
+
 
   return (
-    <Card>
-      <div>
-        <div className="mainContainer">
-          <div className="container">
-            {dishes.map(buildMenu)}
-            <div className="card-info-menu">
-              <div className="notes">
-                <p>LA PROPINA NO ES OBLIGATORIA.</p>
 
-                <p>
-                  ACEPTAMOS PAGOS EN EFECTIVO, TARJETAS VISA, MASTER CARD Y
-                  AMERICAN EXPRESS.
-                </p>
 
-                <p>EL PAGO CON TARJETA NO GENERA NINGUNA COMISIÓN.</p>
-              </div>
-            </div>
-          </div>
+    <div className="mainContainer">
+      <div className="container">
+        <div className="row">
+          {dishes && dishes.map((dish) => <MenuCard dish={dish} navigate={navigate} />)}
         </div>
+          <div className="info">
+            <p>LA PROPINA NO ES OBLIGATORIA.</p>
+
+            <p>ACEPTAMOS PAGOS EN EFECTIVO, TARJETAS VISA, MASTER CARD Y AMERICAN EXPRESS.</p>
+
+            <p>EL PAGO CON TARJETA NO GENERA NINGUNA COMISIÓN.</p>
+          </div>
       </div>
-    </Card>
+
+      </div>
+    
   );
+
 }

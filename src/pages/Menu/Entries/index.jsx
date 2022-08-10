@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import { sublist as listDishes } from "../../../services/menus";
+
 import { useNavigate } from "react-router-dom";
 
 import Card from "react-bootstrap/Card";
+
 
 import "./Entries.css";
 
@@ -11,6 +13,8 @@ export default function Entries() {
   const [dishes, setDishes] = useState([]);
   // RRD
   const navigate = useNavigate();
+
+  
 
   useEffect(() => {
     const list = async () => {
@@ -24,6 +28,7 @@ export default function Entries() {
 
     list();
   }, []);
+
 
   const buildMenu = (dish, index) => (
     <div className="containerm">
@@ -61,8 +66,10 @@ export default function Entries() {
                 <li>EL PAGO CON TARJETA NO GENERA NINGUNA COMISIÓN.</li>
               </div>
             </div>
+
           </div>
         </div>
+
       </div>
     </Card>
   );
