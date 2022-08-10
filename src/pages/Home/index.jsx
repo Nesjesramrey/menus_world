@@ -96,7 +96,6 @@ export default function Home() {
         }`}
       >
         <img className="img-home" src={logo} alt="logo" />
-        <h1 className="title-home">MENU'S WORLD</h1>
         <h3 className="p-home">
           Esta pagina busca mejorar tu experiencia digital de consulta de
           menus.Te invitamos a registrarte o ir directamente a ver los menu

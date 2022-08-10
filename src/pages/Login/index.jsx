@@ -55,11 +55,11 @@ export default function Login() {
       });
       if (response.data.info.userCategory === "Comensal") {
         toast.success("Inicio de sesion exitoso!!");
-        navigate("/");
+        navigate("/menu");
       }
       if (response.data.info.userCategory === "Administrador de restaurante") {
         toast.success("Inicio de sesion exitoso!!");
-        navigate("/formulario");
+        navigate("/menu");
       } else {
         toast.error("Usuario o contrasena incorrectos");
       }
