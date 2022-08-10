@@ -2,15 +2,22 @@ import { Outlet, Link } from "react-router-dom";
 import "./MenuContainer.css";
 import NavBar from "../../../src/components/NavBar";
 import Button from "react-bootstrap/Button";
+import { getIsUserAdmin, getIsLogeddIn } from "../../Auth/auth";
+
 
 export default function MenuContainer() {
+  const isAdmin = getIsUserAdmin();
+  const isLogeddIn = getIsLogeddIn();
   return (
     <div className="container-welcome">
-      {NavBar(1)}
+      <NavBar 
+      isAdmin = {isAdmin}
+      isLogeddIn = {isLogeddIn}/>
 
       <div className="container">
         <div className="button-nav">
-        <Button bsPrefix="custom-btn" to="/menu" as={Link}>
+        <Button bsPrefix="custom-btn
+        " to="/menu" as={Link}>
           General
         </Button>{" "}
         <Button bsPrefix="custom-btn" to="entradas" as={Link}>
@@ -33,6 +40,7 @@ export default function MenuContainer() {
         </Button>{" "}
         <Button bsPrefix="custom-btn" to="postres" as={Link}>
           Postres
+
         </Button>{""}
         <Button bsPrefix="custom-btn" to="bebidasnoalcoholicas" as={Link}>
           Bebidas s/Alcohol
