@@ -9,7 +9,7 @@
   border: 1px solid #c5c5c5;
   display: flex;
   flex-direction: column;
-  background-color: #f5f1f138;
+  background-color: white;
   max-height: 600px;
 }
 .form-control{
@@ -27,6 +27,7 @@
   display: flex;
   justify-content: space-evenly;
   width: 100%;
+  
 }
 .form_label {
   font-family: "Roboto", sans-serif;
@@ -34,25 +35,30 @@
 }
 .content_input {
   display: flex;
+  border-top: 2px solid #ff7b2c;
   flex-direction: column;
   width: 40%;
   height: 320px;
   padding: 10px;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+
 }
 .price-categori{
   display: flex;
   justify-content: space-between;
   }
+  .input-group-text{
+    width: 165px;
+  }
 .button_menu {
-  width: 52%;
+  width: 53%;
   height: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .buttom_1 {
-  width: 520px;
+  width: 450px;
   height: 40px;
   border-radius: 5px;
   background-color: #ffff;
@@ -78,7 +84,7 @@
   justify-content: space-evenly;
   width: 40%;
   height: 322px;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
 
 }
 .dropArea {

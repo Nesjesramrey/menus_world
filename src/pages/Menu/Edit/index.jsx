@@ -15,6 +15,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Input from "../../../components/Input";
 import Select from "../../../../src/components/Select";
+import TextArea from "../../../components/TextArea"
 
 export default function MenuEdit() {
   // Local state
@@ -82,18 +83,18 @@ export default function MenuEdit() {
   return (
     <div className="mainContainer">
       <div className="container-form col-12 col-md-12">
-        <h2 className="title-edit col-12 col-md-12">
-          Introducir los datos del platillo para actualizar
+        <h2 className="title-edit col-6 col-md-6">
+          Datos para Actualizar
         </h2>
         {isLoading ? (
           <p>Cargando...</p>
         ) : (
-          <form className="form-edit col-10 col-md-12" onSubmit={handleSubmit}>
+          <form className="form-edit col-3 col-md-3" onSubmit={handleSubmit}>
             <label className="label_form">Platillo:</label>
             <Input
               type="text"
-              className="input_form col-12"
-              placeholder=""
+              className="form-control"
+              placeholder="Nombre..."
               id="meal"
               name="meal"
               value={dishName || ""}
@@ -101,10 +102,10 @@ export default function MenuEdit() {
             />
 
             <label className="label_form">Descripcion:</label>
-            <Input
+            <TextArea
               type="text"
-              className="input_form col-12 form-control"
-              placeholder=""
+              className="form-control"
+              placeholder="Descripcion..."
               id="meal"
               name="meal"
               value={description || ""}
@@ -114,8 +115,8 @@ export default function MenuEdit() {
             <label className="label_form">Precio:</label>
             <Input
               type="text"
-              className="input_form col-12"
-              placeholder=""
+              className="input-group-text"
+              placeholder="$ 0.00"
               id="meal"
               name="meal"
               value={price || ""}
@@ -129,9 +130,11 @@ export default function MenuEdit() {
               value={category || ""}
               callback={(e) => setCategory(e.target.value)}
             />
+            <div className="button-editar">
             <button type="submit" className="btn-edit">
               Modificar platillo
             </button>
+            </div>
           </form>
         )}
       </div>

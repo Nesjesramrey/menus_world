@@ -1,11 +1,12 @@
 import './ImgDish.css';
 
-export default function ImgDish(url) {
-	let urlImg = url ? url : 'img.jpg';
+export default function ImgDish(data) {
+	let urlImg = data.image_URL ? data.image_URL : 'img.jpg';
+	let title = data.dishName ? data.dishName : 'TITLE';
 
 	return (
 		<div className="imgSection">
-			<img className="img-fluid imgDishes" src={urlImg} alt="platillo" />
+			<img className="img-fluid imgDishes" src={urlImg} alt="platillo" title={title} />
 		</div>
 	);
 }

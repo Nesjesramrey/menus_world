@@ -8,10 +8,10 @@ import { login as loginUser } from "../../services/users";
 // Toastify
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Input from "../../../src/components/Input/index";
 
 // Components
 import NavBar from "../../../src/components/NavBar";
+import Input from "../../../src/components/Input/index";
 
 //CSS
 import "./Login.css";
@@ -44,11 +44,22 @@ export default function Login() {
 
     try {
       const response = await loginUser(data);
+      console.log(response);
       cleanForm();
-      cookies.set("Usuario", data.username, { path: "/" });
-      if (response.success === true) {
+      cookies.set("Usuario", response.data.info.userName, { path: "/" });
+      cookies.set("TipoUsuario", response.data.info.userCategory, {
+        path: "/",
+      });
+      cookies.set("NombreResturante", response.data.info.userRestaurant[0], {
+        path: "/",
+      });
+      if (response.data.info.userCategory === "Comensal") {
         toast.success("Inicio de sesion exitoso!!");
         navigate("/");
+      }
+      if (response.data.info.userCategory === "Administrador de restaurante") {
+        toast.success("Inicio de sesion exitoso!!");
+        navigate("/formulario");
       } else {
         toast.error("Usuario o contrasena incorrectos");
       }
@@ -61,14 +72,14 @@ export default function Login() {
     <div className="container">
       {NavBar(1)}
       <div className="row justify-content-center">
-        <div className="col-12 col-md-12 ">
+        <div className="col-4 col-md-4 ">
           <div className="card">
-            <h2 className="card-title text-center">Iniciar Sesion</h2>
+            <h2 className="card-title text-center title-h2">Iniciar Sesion</h2>
             <div className="card-body py-md-4">
               <form className="form-login col-10" onSubmit={handleSubmit}>
                 <Input
                   type="text"
-                  className="controls"
+                  className="form-control inputs"
                   placeholder="Usuario"
                   id="meal"
                   name="meal"
@@ -76,9 +87,9 @@ export default function Login() {
                   callback={(e) => setUserName(e.target.value)}
                 />
                 <Input
+                  className="form-control"
                   type="password"
-                  className="controls"
-                  placeholder="Password"
+                  placeholder="Contraseña"
                   id="meal"
                   name="meal"
                   value={password || ""}
@@ -90,11 +101,19 @@ export default function Login() {
                     Ingresar
                   </button>
                 </div>
-                <p className="forget-password">¿Olvidastes tu Contraseña?</p>
+
+                <div className="container-pass">
+                  <p className="forget-password">¿Olvidaste tu Contraseña?</p>
+                </div>
               </form>
             </div>
           </div>
         </div>
+        <img
+          src="https://media-cdn.tripadvisor.com/media/photo-s/10/6d/5d/1d/entrada-restaurant.jpg"
+          alt="register"
+          className="img-register col-md-7"
+        ></img>
       </div>
       <ToastContainer />
     </div>

@@ -24,14 +24,22 @@ export const retrieve = async (id) => {
   return data;
 };
 
+export const dishById = async (id) => {
+  const response = await fetch(`${URL}/detalle/${id}`);
+  const data = await response.json();
+  return data;
+};
+
 export const list = async () => {
   const response = await fetch(`${URL}/menu`);
   const data = await response.json();
   return data;
 };
 
-export const sublist = async (category) => {
-  const response = await fetch(`${URL}/menu/submenu?category=${category}`);
+export const sublist = async (category, restaurant) => {
+  const response = await fetch(
+    `${URL}/menu/submenu?category=${category}&restaurantName=${restaurant}`
+  );
   const data = await response.json();
   return data;
 };

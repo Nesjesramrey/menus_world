@@ -65,18 +65,23 @@ export default function Signup() {
 
   return (
     <div className="container">
+      {NavBar(1)}
       <div className="row justify-content-center">
-        <div className="col-12 col-md-12 ">
-          {NavBar(1)}
+        <div className="col-12 col-md-5 ">
           <div className="card">
-            <h2 className="card-title text-center">Registro</h2>
+            <div className="title-registro">
+              <h2 className="card-title text-center">Registro</h2>
+            </div>
             <div className="card-body py-md-4">
-              <form className="form-signup col-10" onSubmit={handleSubmit}>
+              <form
+                className="form-select form-select-mg"
+                onSubmit={handleSubmit}
+              >
                 <div className="form-group">
                   <div className="select-child">
                     <select
                       type="text"
-                      className="select-signup col-12"
+                      className="form-select form-select-mg2"
                       placeholder=""
                       value={userType}
                       onChange={(e) => setUserType(e.target.value)}
@@ -85,14 +90,16 @@ export default function Signup() {
                       <option value="Select">
                         Selecciona tu tipo de usuario
                       </option>
-                      <option value="Cliente">Cliente</option>
-                      <option value="Administrador">Administador</option>
+                      <option value="Comensal">Comensal</option>
+                      <option value="Administrador de restaurante">
+                        Administrador de restaurante
+                      </option>
                     </select>
                   </div>
                   <Input
                     type="text"
-                    className="controls"
-                    placeholder="Name"
+                    className="form-control"
+                    placeholder="Nombre"
                     id="meal"
                     name="meal"
                     value={username}
@@ -102,8 +109,8 @@ export default function Signup() {
                 <div className="form-group">
                   <Input
                     type="email"
-                    className="controls"
-                    placeholder="Email"
+                    className="form-control"
+                    placeholder="Correo"
                     id="meal"
                     name="meal"
                     value={email}
@@ -114,9 +121,9 @@ export default function Signup() {
                   <Input
                     type="text"
                     className={`${
-                      isActive("Administrador")
-                        ? "controls active"
-                        : "controls inactive"
+                      isActive("Administrador de restaurante")
+                        ? "form-control active"
+                        : "form-control d-none"
                     }`}
                     placeholder="Nombre del Restaurante"
                     id="meal"
@@ -128,9 +135,9 @@ export default function Signup() {
 
                 <div className="form-group">
                   <Input
-                    type="text"
-                    className="controls"
-                    placeholder="Password"
+                    type="password"
+                    className="form-control"
+                    placeholder="Contraseña"
                     id="meal"
                     name="meal"
                     value={password}
@@ -146,6 +153,12 @@ export default function Signup() {
             </div>
           </div>
         </div>
+        <img
+          src="https://resizer.otstatic.com/v2/photos/wide-large/2/32402198.png"
+          alt="register"
+          className="img-register col-md-7"
+        ></img>
+        ;
       </div>
       <ToastContainer />
     </div>
