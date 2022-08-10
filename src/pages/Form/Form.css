@@ -3,7 +3,6 @@
   display: flex;
   justify-content: center;
   background-color: white;
- 
 }
 .container-form {
   border: 1px solid #c5c5c5;
@@ -12,10 +11,10 @@
   background-color: white;
   max-height: 600px;
 }
-.form-control{
-  margin:0;
+.form-control {
+  margin: 0;
 }
-.subtitle{
+.subtitle {
   height: 60px;
   display: flex;
   flex-direction: column;
@@ -27,7 +26,6 @@
   display: flex;
   justify-content: space-evenly;
   width: 100%;
-  
 }
 .form_label {
   font-family: "Roboto", sans-serif;
@@ -41,15 +39,20 @@
   height: 320px;
   padding: 10px;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
-
 }
-.price-categori{
+.price-categori {
   display: flex;
   justify-content: space-between;
-  }
-  .input-group-text{
-    width: 165px;
-  }
+}
+.input-group-text {
+  width: 165px;
+}
+
+.btn-form {
+  width: 200px;
+  margin: 50px;
+}
+
 .button_menu {
   width: 53%;
   height: 100px;
@@ -85,7 +88,6 @@
   width: 40%;
   height: 322px;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
-
 }
 .dropArea {
   display: flex;
@@ -94,7 +96,8 @@
   height: 250px;
   border-radius: 10px;
 }
-.content-image {  display: flex;
+.content-image {
+  display: flex;
   justify-content: center;
   align-items: center;
   width: 250px;
@@ -102,7 +105,7 @@
 }
 .text {
   border: solid #cfcdcd 3px;
-  width:100%;
+  width: 100%;
   height: 100%;
   display: flex;
   align-items: center;
@@ -110,7 +113,7 @@
   flex-direction: column;
   border-radius: 15px;
   cursor: pointer;
-  transition: .5s;
+  transition: 0.5s;
 }
 .text:hover {
   border: 4px solid #fb7c0570;
@@ -124,7 +127,7 @@
   width: 180px;
   padding: 15px;
 }
-.form-select{
+.form-select {
   cursor: pointer;
 }
 .image {

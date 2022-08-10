@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { create as createUser } from "../../services/users";
 import Cookies from "universal-cookie";
-import logo from "../../assets/logomenu.png";
+import logo from "../../assets/logo200.png";
 
 // Toastify
 import { ToastContainer, toast } from "react-toastify";
@@ -76,6 +76,7 @@ export default function Home() {
       await createUser(data);
       toast.success("Registro exitoso!!");
       cleanForm();
+      navigate("/login");
     } catch (error) {
       console.error(error);
     }
@@ -95,7 +96,7 @@ export default function Home() {
             : "row justify-content-center container d-none"
         }`}
       >
-        <img className="img-home" src={logo} alt="logo" />
+        <img className="img-home" src={logo} alt="logo" width="50px" />
         <h3 className="p-home">
           Esta pagina busca mejorar tu experiencia digital de consulta de
           menus.Te invitamos a registrarte o ir directamente a ver los menu
@@ -199,7 +200,7 @@ export default function Home() {
               </div>
             </form>
             <button
-              href="/"
+              href="/login"
               className="btn-signup"
               onClick={(e) => setItemActiveRegister(e.target.value)}
               value="NoRegister"
