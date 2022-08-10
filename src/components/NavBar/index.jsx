@@ -1,7 +1,7 @@
 import "./NavBar.css";
 import React, { useState } from "react";
 
-export default function NavBar() {
+export default function NavBar({isLogeddIn}) {
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
 
@@ -26,7 +26,7 @@ export default function NavBar() {
           <a className="navbar-brand" href="#">
             Logo
           </a>
-          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+          {/* <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
               <a className="nav-link active" aria-current="page" href="/">
                 Home
@@ -37,8 +37,8 @@ export default function NavBar() {
                 Registrarse
               </a>
             </li>
-          </ul>
-          <form className="d-flex">
+          </ul> */}
+          {/* <form className="d-flex">
             <input
               className="form-control me-2"
               type="search"
@@ -48,8 +48,10 @@ export default function NavBar() {
             <button className="btn btn-outline-success" type="submit">
               Search
             </button>
-          </form>
+          </form> */}
+          
         </div>
+        { isLogeddIn ? "cerrar secion " : "iniciar secion"}
       </div>
     </nav>
 

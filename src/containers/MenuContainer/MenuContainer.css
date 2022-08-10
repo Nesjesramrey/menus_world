@@ -1,5 +1,4 @@
 .button-nav{
-/* border: 1px solid red; */
 height: 60px;
 display: flex;
 background-color: white;
@@ -23,7 +22,4 @@ justify-content: space-evenly;
 .custom-btn:hover{
   color: white;
   background-color: #fb7b05;
-
-
-
 }
