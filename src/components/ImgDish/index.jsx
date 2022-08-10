@@ -1,12 +1,17 @@
-import './ImgDish.css';
+import "./ImgDish.css";
 
 export default function ImgDish(data) {
-	let urlImg = data.image_URL ? data.image_URL : 'img.jpg';
-	let title = data.dishName ? data.dishName : 'TITLE';
+  let urlImg = data.image_Url ? data.image_Url : "img.jpg";
+  let title = data.dishName ? data.dishName : "TITLE";
 
-	return (
-		<div className="imgSection">
-			<img className="img-fluid imgDishes" src={urlImg} alt="platillo" title={title} />
-		</div>
-	);
+  return (
+    <div className="imgSection">
+      <img
+        className="img-fluid imgDishes"
+        src={urlImg}
+        alt="platillo"
+        title={title}
+      />
+    </div>
+  );
 }
