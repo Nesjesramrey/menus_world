@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { list as listDishes } from "../../../src/services/menus";
 import { useNavigate } from "react-router-dom";
+import MenuCard from "../../components/MenuCard";
 
 import "./Menu.css";
 
