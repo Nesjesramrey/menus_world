@@ -5,8 +5,8 @@ import "./menucard.css";
 
 const MenuCard = ({dish, navigate}) => {
     let descripcion = dish?.description
-    if (descripcion.length > 200){
-        descripcion = `${descripcion.slice(0, 180)}...` 
+    if (descripcion.length > 100){
+        descripcion = `${descripcion.slice(0, 100)}...` 
     } 
 
     return ( 
@@ -15,7 +15,7 @@ const MenuCard = ({dish, navigate}) => {
           <div className="food">
                
               <div className="food-col food-image" >
-                <img src={dish.image_URL} alt="Food" />
+                <img src={dish.image_Url} alt="Food" />
               </div>  
                 <div className="food-col food-detail">
                   <div className="name-food-name">
@@ -41,10 +41,6 @@ const MenuCard = ({dish, navigate}) => {
 
 
     );
-
-
-
-
 
 } 
 
