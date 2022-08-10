@@ -1,8 +1,6 @@
-import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { list as listDishes } from "../../../src/services/menus";
 import { useNavigate } from "react-router-dom";
-import Button from "react-bootstrap/Button";
 import MenuCard from "../../components/MenuCard";
 
 import "./Menu.css";
@@ -30,15 +28,15 @@ export default function Menu() {
   return (
     <div className="mainContainer">
       <div className="container">
-        <Button
-          className="btn-form"
-          bsPrefix="custom-btn"
-          to="/formulario"
-          as={Link}
-        >
-          Ir a registrar platillos
-        </Button>
         <div className="row">
+          <div className="container-btn">
+            <button
+              className="btn-form"
+              onClick={() => navigate(`/formulario`)}
+            >
+              Ir a registrar platillos
+            </button>
+          </div>
           {dishes &&
             dishes.map((dish) => <MenuCard dish={dish} navigate={navigate} />)}
         </div>

@@ -1,7 +1,8 @@
 import "./NavBar.css";
 import React, { useState } from "react";
+import logo from "../../assets/logo200.png";
 
-export default function NavBar({isLogeddIn}) {
+export default function NavBar({ isLogeddIn }) {
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
 
@@ -23,8 +24,9 @@ export default function NavBar({isLogeddIn}) {
           className="collapse navbar-collapse topNavBar"
           id="navbarTogglerDemo01"
         >
-          <a className="navbar-brand" href="#">
-            Logo
+          <img className="img-home" src={logo} alt="logo" width="110px" />
+          <a className="nav-link active" aria-current="page" href="/">
+            Home
           </a>
           {/* <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
@@ -49,9 +51,8 @@ export default function NavBar({isLogeddIn}) {
               Search
             </button>
           </form> */}
-          
         </div>
-        { isLogeddIn ? "cerrar secion " : "iniciar secion"}
+        {isLogeddIn ? "cerrar secion " : "iniciar secion"}
       </div>
     </nav>
 
