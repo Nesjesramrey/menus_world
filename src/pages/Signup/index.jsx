@@ -2,7 +2,6 @@ import { useState } from "react";
 import { create as createUser } from "../../services/users";
 
 // Components
-import NavBar from "../../../src/components/NavBar";
 
 // Toastify
 import { ToastContainer, toast } from "react-toastify";
@@ -65,7 +64,6 @@ export default function Signup() {
 
   return (
     <div className="container">
-      {NavBar(1)}
       <div className="row justify-content-center">
         <div className="col-12 col-md-5 ">
           <div className="card">
