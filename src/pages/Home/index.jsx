@@ -1,4 +1,6 @@
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { create as createUser } from "../../services/users";
 import Cookies from "universal-cookie";
 import logo from "../../assets/logomenu.png";
 
@@ -6,8 +8,12 @@ import logo from "../../assets/logomenu.png";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+//Components
+import Input from "../../../src/components/Input/index";
+
 //CSS
 import "./Home.css";
+import "./Signup.css";
 
 export default function Home() {
   const navigate = useNavigate();
@@ -15,11 +21,64 @@ export default function Home() {
   const userName = cookies.get("Usuario");
 
   const logout = () => {
+    toast.success("Gracias por tu visita vuelve pronto!!");
     cookies.remove("Usuario", { path: "/" });
     cookies.remove("TipoUsuario", { path: "/" });
     cookies.remove("NombreResturante", { path: "/" });
     navigate("/");
-    toast.success("Gracias por tu visita vuelve pronto!!");
+  };
+  // Local state
+  const [username, setUserName] = useState("");
+  const [email, setEmail] = useState("");
+  const [restaurants, setRestaurants] = useState("");
+  const [password, setPassword] = useState("");
+  const [userType, setUserType] = useState("");
+  const [itemActive, setItemActive] = useState(null);
+  const [itemActiveRegister, setItemActiveRegister] = useState("NoRegister");
+
+  // This is to active input restaurant
+  const isActive = (itemTypeUser) => itemTypeUser === itemActive;
+  //This active register form
+  const isActiveRegister = (itemRegister) =>
+    itemRegister === itemActiveRegister;
+
+  const cleanForm = () => {
+    setUserName("");
+    setEmail("");
+    setRestaurants("");
+    setPassword("");
+    setUserType("");
+  };
+
+  const isEmpty = (value) => !value;
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    if (
+      isEmpty(username) ||
+      isEmpty(email) ||
+      isEmpty(password) ||
+      isEmpty(userType)
+    ) {
+      toast.error("Se ingresaron datos incorrectos!!!!");
+      return;
+    }
+
+    const data = {
+      username,
+      email,
+      password,
+      restaurants,
+      userType,
+    };
+
+    try {
+      await createUser(data);
+      toast.success("Registro exitoso!!");
+      cleanForm();
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (
@@ -29,10 +88,14 @@ export default function Home() {
         alt="cabecera"
         className="img-home"
       ></img>
-      <div className="container-welcome ">
+      <div
+        className={`${
+          isActiveRegister("NoRegister")
+            ? "row justify-content-center container active"
+            : "row justify-content-center container d-none"
+        }`}
+      >
         <img className="img-home" src={logo} alt="logo" />
-        <h1 className="title-home">MENU'S WORLD</h1>
-        <h2 className="p-home">Bienvenido {userName}</h2>
         <h3 className="p-home">
           Esta pagina busca mejorar tu experiencia digital de consulta de
           menus.Te invitamos a registrarte o ir directamente a ver los menu
@@ -45,10 +108,106 @@ export default function Home() {
         <button
           type="button"
           className="btn-home"
-          onClick={() => navigate(`registro`)}
+          value="Register"
+          onClick={(e) => setItemActiveRegister(e.target.value)}
         >
           Registrarme
         </button>
+      </div>
+      <div
+        className={`${
+          isActiveRegister("Register") ? "container active" : "container d-none"
+        }`}
+      >
+        <div className="col-12 col-md-12  ">
+          <div className="title-registro">
+            <h2 className="card-title text-center">Registro</h2>
+          </div>
+          <div className="card-body py-md-4 form-select form-select-mg">
+            <form className="" onSubmit={handleSubmit}>
+              <div className="form-group">
+                <div className="select-child">
+                  <select
+                    type="text"
+                    className="form-select form-select-mg2"
+                    placeholder=""
+                    value={userType}
+                    onChange={(e) => setUserType(e.target.value)}
+                    onClick={(e) => setItemActive(e.target.value)}
+                  >
+                    <option value="Select">
+                      Selecciona tu tipo de usuario
+                    </option>
+                    <option value="Comensal">Comensal</option>
+                    <option value="Administrador de restaurante">
+                      Administrador de restaurante
+                    </option>
+                  </select>
+                </div>
+                <Input
+                  type="text"
+                  className="form-control"
+                  placeholder="Nombre"
+                  id="meal"
+                  name="meal"
+                  value={username}
+                  callback={(e) => setUserName(e.target.value)}
+                />
+              </div>
+              <div className="form-group">
+                <Input
+                  type="email"
+                  className="form-control"
+                  placeholder="Correo"
+                  id="meal"
+                  name="meal"
+                  value={email}
+                  callback={(e) => setEmail(e.target.value)}
+                />
+              </div>
+              <div className="form-group">
+                <Input
+                  type="text"
+                  className={`${
+                    isActive("Administrador de restaurante")
+                      ? "form-control active"
+                      : "form-control d-none"
+                  }`}
+                  placeholder="Nombre del Restaurante"
+                  id="meal"
+                  name="meal"
+                  value={restaurants}
+                  callback={(e) => setRestaurants(e.target.value)}
+                />
+              </div>
+
+              <div className="form-group">
+                <Input
+                  type="password"
+                  className="form-control"
+                  placeholder="Contraseña"
+                  id="meal"
+                  name="meal"
+                  value={password}
+                  callback={(e) => setPassword(e.target.value)}
+                />
+              </div>
+              <div className="d-flex flex-row align-items-center justify-content-between">
+                <button type="submit" className="btn-signup">
+                  Crear Cuenta
+                </button>
+              </div>
+            </form>
+            <button
+              href="/"
+              className="btn-signup"
+              onClick={(e) => setItemActiveRegister(e.target.value)}
+              value="NoRegister"
+            >
+              Home
+            </button>
+          </div>
+        </div>
       </div>
       <ToastContainer />
     </div>

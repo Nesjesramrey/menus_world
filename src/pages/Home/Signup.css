@@ -1,0 +1,76 @@
+.card-body {
+  border-radius: 10px;
+}
+.title-registro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+}
+.form-signup {
+  width: 380px;
+  height: 400px;
+  margin: auto;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+
+  padding: 20px 30px;
+  border-top: 2px solid #ff7b2c;
+  color: rgb(14, 13, 13);
+}
+
+.form-singup {
+  margin: 0;
+  text-align: center;
+  height: 40px;
+  margin-bottom: 30px;
+  font-size: 20px;
+  border-radius: 10px;
+}
+
+.select-child {
+  margin-bottom: 25px;
+}
+.select-signup {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.5rem;
+  border: 1px solid #017bab;
+  border-radius: 5px;
+}
+
+.form-group {
+  margin: 10px;
+}
+.btn-signup {
+  height: 38px;
+  border-radius: 5px;
+  background-color: #fff;
+  border: 2px solid #ff7b2c;
+  font-weight: bold;
+  margin: 3px;
+  width: 170px;
+  text-decoration: none;
+  color: #ff7b2c;
+  transition: 0.5s;
+}
+
+.btn-signup:hover {
+  background-color: #ff7b2c;
+  color: #fff;
+}
+.content-button {
+  border: 1px solid blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70px;
+}
+
+.img-register {
+  height: 593px;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+  .img-register {
+    display: none;
+  }
+}

@@ -25,27 +25,24 @@ export default function Menu() {
     list();
   }, []);
 
-
-
   return (
-
-
     <div className="mainContainer">
       <div className="container">
         <div className="row">
-          {dishes && dishes.map((dish) => <MenuCard dish={dish} navigate={navigate} />)}
+          {dishes &&
+            dishes.map((dish) => <MenuCard dish={dish} navigate={navigate} />)}
         </div>
         <div className="info">
           <p>LA PROPINA NO ES OBLIGATORIA.</p>
 
-          <p>ACEPTAMOS PAGOS EN EFECTIVO, TARJETAS VISA, MASTER CARD Y AMERICAN EXPRESS.</p>
+          <p>
+            ACEPTAMOS PAGOS EN EFECTIVO, TARJETAS VISA, MASTER CARD Y AMERICAN
+            EXPRESS.
+          </p>
 
           <p>EL PAGO CON TARJETA NO GENERA NINGUNA COMISIÓN.</p>
         </div>
       </div>
-
     </div>
-
   );
-
 }
