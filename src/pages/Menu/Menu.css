@@ -1,5 +1,10 @@
 .info {
-    text-align: center;
-    text-decoration: solid;
-    font-weight: bold;
+  text-align: center;
+  text-decoration: solid;
+  font-weight: bold;
+}
+
+.btn-form {
+  width: 200px;
+  margin-top: 50px;
 }

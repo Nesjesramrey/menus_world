@@ -1,9 +1,13 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { useDropzone } from "react-dropzone";
 import { create as createMenu } from "../../services/menus";
 import Cookies from "universal-cookie";
 
 import { uploadFile } from "react-s3";
+
+//components
+import Button from "react-bootstrap/Button";
 
 // Toastify
 import { ToastContainer, toast } from "react-toastify";
@@ -145,6 +149,9 @@ export default function Form() {
         <div className="subtitle">
           <h4>Formulario de registro de su platillo</h4>
         </div>
+        <Button className="btn-form" bsPrefix="custom-btn" to="/menu" as={Link}>
+          Regresar al menu
+        </Button>
         <form onSubmit={handleSubmit}>
           <div className="content_form">
             <div className="content_input">
