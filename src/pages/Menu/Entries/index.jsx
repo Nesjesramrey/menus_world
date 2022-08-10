@@ -1,16 +1,15 @@
 import { useEffect, useState } from "react";
 import { sublist as listDishes } from "../../../services/menus";
-import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
-import Carnitas from '../../../assets/carnitasribbye.jpg'
-
-
+import MenuCard from "../../../components/MenuCard";
+import { useNavigate } from "react-router-dom";
 
 import "./Entries.css";
 
 export default function Entries() {
   // Local state
   const [dishes, setDishes] = useState([]);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     const list = async () => {
@@ -25,38 +24,34 @@ export default function Entries() {
     list();
   }, []);
 
-  const buildMenu = (dish, index) => (
-    <Card>
+  // const buildMenu = (dish, index) => (
+         
+  //   <div className="card-menu-global" key={index}>
+  //     <div className="name-food">{dish.dishName}</div>
       
-    <div className="card-menu-global" key={index}>
-      <div className="name-food">{dish.dishName}</div>
+  //     <div className="name-food">{dish.description}</div>
+  //     <div className="name-food">$ {dish.price}</div>
       
-      <div className="name-food">{dish.description}</div>
-      <div className="name-food">$ {dish.price}</div>
-      
-    </div>  
-      <div className="fotoeat">
-        <img src= {Carnitas}></img>
-      </div>
-    </Card>
-
-
-    
-  );
+  //   </div> 
+        
+  // );
   
   return (
-    <div>
-      <div className="mainContainer">
-        <div className="container">
-          {dishes.map(buildMenu)}
-          <div className="card-info-menu">
-            <div className="notes">
-              <li>LA PROPINA NO ES OBLIGATORIA.</li>
-              <li>ACEPTAMOS PAGOS EN EFECTIVO, TARJETAS VISA, MASTER CARD Y AMERICAN EXPRESS.</li>
-              <li>EL PAGO CON TARJETA NO GENERA NINGUNA COMISIÓN.</li>
-            </div>
+    <div className="mainContainer">
+      <div className="container">
+        <div className="row">
+          {dishes && dishes.map((dish) => <MenuCard dish={dish} navigate={navigate} />)}
+        </div>
+        <div className="card-info-menu">
+          <div className="info">
+            <p>LA PROPINA NO ES OBLIGATORIA.</p>
+
+            <p>ACEPTAMOS PAGOS EN EFECTIVO, TARJETAS VISA, MASTER CARD Y AMERICAN EXPRESS.</p>
+
+            <p>EL PAGO CON TARJETA NO GENERA NINGUNA COMISIÓN.</p>
           </div>
         </div>
+
       </div>
     </div>
   );
