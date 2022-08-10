@@ -1,9 +1,9 @@
 import React from "react";
 
-import "./menucard.css";
+import "../MenuCard/menucard.css";
 
 
-const MenuCard = ({dish, navigate}) => {
+const MenuCardS = ({dish, navigate}) => {
     let descripcion = dish?.description
     if (descripcion.length > 100){
         descripcion = `${descripcion.slice(0, 100)}...` 
@@ -27,10 +27,7 @@ const MenuCard = ({dish, navigate}) => {
                 <div className="name-food-descrip">{descripcion}</div>
                 
                 </div>
-                <div className="iconos">
-                  <div class="icons8-edit" onClick={() => navigate(`edit/${dish._id}`)}></div>
-                  <div class="icons8-trash" onClick={() => navigate(`delete/${dish._id}`)}></div>
-                </div>
+               
                 
                 
               
@@ -44,5 +41,4 @@ const MenuCard = ({dish, navigate}) => {
 
 } 
 
-export default MenuCard
-
+export default MenuCardS

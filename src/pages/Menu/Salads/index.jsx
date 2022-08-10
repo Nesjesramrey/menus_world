@@ -1,13 +1,16 @@
 import { useEffect, useState } from "react";
 import { sublist as listDishes } from "../../../services/menus";
+import MenuCardS from "../../../components/MenuCardS";
+import { useNavigate } from "react-router-dom";
 
-import Card from "react-bootstrap/Card";
 
 import "./Salads.css";
 
 export default function Salads() {
   // Local state
   const [dishes, setDishes] = useState([]);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     const list = async () => {
@@ -22,41 +25,22 @@ export default function Salads() {
     list();
   }, []);
 
-  const buildMenu = (dish, index) => (
-    <div className="containerm">
-      <div className="food-menu">
-        <div className="food" key={index}>
-          <div className="food-image">
-            <img src={dish.image_Url} alt="Food" />
-          </div>
-          <div className="name-food-name">{dish.dishName}</div>
+  return (
+    <div className="mainContainer">
+      <div className="container">
+        <div className="row">
+          {dishes && dishes.map((dish) => <MenuCardS dish={dish} navigate={navigate} />)}
+        </div>
+        <div className="info">
+          <p>LA PROPINA NO ES OBLIGATORIA.</p>
 
-          <div className="name-food-descrip">{dish.description}</div>
-          <div className="name-food-price">$ {dish.price}</div>
+          <p>ACEPTAMOS PAGOS EN EFECTIVO, TARJETAS VISA, MASTER CARD Y AMERICAN EXPRESS.</p>
+
+          <p>EL PAGO CON TARJETA NO GENERA NINGUNA COMISIÓN.</p>
         </div>
       </div>
+
     </div>
   );
-
-  return (
-    <Card>
-      <div>
-        <div className="mainContainer">
-          <div className="container">
-            {dishes.map(buildMenu)}
-            <div className="card-info-menu">
-              <div className="notes">
-                <li>LA PROPINA NO ES OBLIGATORIA.</li>
-                <li>
-                  ACEPTAMOS PAGOS EN EFECTIVO, TARJETAS VISA, MASTER CARD Y
-                  AMERICAN EXPRESS.
-                </li>
-                <li>EL PAGO CON TARJETA NO GENERA NINGUNA COMISIÓN.</li>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </Card>
-  );
 }
+
