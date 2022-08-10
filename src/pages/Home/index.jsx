@@ -18,7 +18,8 @@ import "./Signup.css";
 export default function Home() {
   const navigate = useNavigate();
   const cookies = new Cookies();
-  const userName = cookies.get("Usuario");
+  const userLogged = cookies.get("Usuario");
+  console.log(userLogged);
 
   const logout = () => {
     toast.success("Gracias por tu visita vuelve pronto!!");
@@ -102,8 +103,20 @@ export default function Home() {
           menus.Te invitamos a registrarte o ir directamente a ver los menu
         </h3>
 
-        <button type="button" className="btn-home " onClick={logout}>
+        <button
+          type="button"
+          className={`${userLogged ? "btn-home active" : "btn-home d-none"}`}
+          onClick={logout}
+        >
           Cerrar Sesion
+        </button>
+
+        <button
+          onClick={() => navigate("/login")}
+          type="button"
+          className={`${!userLogged ? "btn-home active" : "btn-home d-none"}`}
+        >
+          Inicion Sesion
         </button>
 
         <button

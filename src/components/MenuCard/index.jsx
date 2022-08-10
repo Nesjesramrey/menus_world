@@ -24,7 +24,7 @@ const MenuCard = ({ dish, navigate }) => {
           </div>
           <div className="iconos">
             <div
-              class="icons8-edit"
+              class="icons8-comments"
               onClick={() => navigate(`/detalle/${dish._id}`)}
             ></div>
             <div

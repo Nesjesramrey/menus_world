@@ -16,6 +16,7 @@
 .btn-home {
   display: flex;
   align-items: center;
+  width: 150px;
   height: 55px;
   font-family: "Roboto", sans-serif;
   background-color: white;
