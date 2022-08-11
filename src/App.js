@@ -1,4 +1,5 @@
 import { Routes, Route } from "react-router-dom";
+import QRCode from "react-qr-code";
 import "./App.css";
 
 //Containers
@@ -26,8 +27,10 @@ import Detail from "./pages/Detail";
 function App() {
   return (
     <div className="App">
+        {/* <QRCode value="www.facebook.com" size={200} bgColor="#282c34" fgColor="#fff" level="H" /> */}
       <Routes>
         <Route path="/" element={<Home />} />
+      
 
         <Route path="/login" element={<Login />} />
 
