@@ -94,6 +94,7 @@ export default function Form() {
       const data = await uploadFileToS3(fileToUpload); // data de la imagen subida
 
       image_Url = data.location;
+      console.log(data);
     }
 
     const data = {
