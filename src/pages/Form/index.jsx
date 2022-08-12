@@ -9,6 +9,7 @@ import { uploadFile } from "react-s3";
 //components
 import Button from "react-bootstrap/Button";
 
+
 // Toastify
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -18,6 +19,7 @@ import Select from "../../components/Select/index";
 import NavBar from "../../components/NavBar";
 
 import "./Form.css";
+
 
 // installed using npm install buffer --save
 window.Buffer = window.Buffer || require("buffer").Buffer;
@@ -216,8 +218,15 @@ export default function Form() {
           </div>
         </form>
       </div>
+      
 
       <ToastContainer />
+
+      
     </div>
+    
+    
+    
+   
   );
 }
