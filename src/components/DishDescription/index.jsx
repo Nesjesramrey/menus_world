@@ -1,10 +1,14 @@
 import './DishDescription.css';
 
-export default function DishDescription(data) {
+export default function DishDescription(data, ratings) {
 	let name = data.dishName ? data.dishName : 'TITLE';
 	let description = data.description ? data.description : 'DESCRIPTION';
 	let cost = data.price ? `$ ${data.price}` : 'Precio no disponible';
-	let score = data.rating ? data.rating : 0;
+	let rating = 'Sin calificaciones';
+
+	if (ratings) {
+		rating = ratings.rating ? ratings.rating : 'Sin calificaciones';
+	}
 
 	return (
 		<div className="description">
@@ -14,7 +18,7 @@ export default function DishDescription(data) {
 			</div>
 			<div className="bottomSection">
 				<p>{cost}</p>
-				<p>{'⭐ ' + score + ' (' + 117 + ' votos)'}</p>
+				<p>{rating}</p>
 			</div>
 		</div>
 	);

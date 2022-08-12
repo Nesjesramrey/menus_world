@@ -15,16 +15,18 @@ import Recomendation from '../../components/Recommendations';
 import TableRatings from '../../components/TableRatings';
 
 //Services
-import { list as listFunc } from '../../services/menus';
+// import { list as listFunc } from '../../services/menus';
 import { dishById as readIdDish } from '../../services/menus';
+import { calcMean, calcPercentages, calcRatings } from '../../services/calcRatings';
 //#endregion
 
 //  - - - - - - - - - - - - - - - Main function - - - - - - - - - - - - - - -
 export default function Detail() {
-	let { dishId } = useParams();
-	const [dish, setDish] = useState([]);
+	let { dishId } = useParams(); // id's database
+	const [dish, setDish] = useState([]); //object with data of dish
 
 	useEffect(() => {
+		document.title = "Menu's World";
 		const dishInfo = async () => {
 			const dishData = await readIdDish(dishId);
 			setDish(dishData);
@@ -47,68 +49,8 @@ export default function Detail() {
 	}
 	const allComments = showComments(dish);
 
-	//#region Temporary vars
-	let platillos = [
-		{
-			name: 'Rib eye al carbon',
-			price: 245,
-			url: 'https://imgbox.com/gallery/edit/WPooo5KE58/q0xZTHFuESL043NZ',
-			ratings: [
-				{
-					comment: 'ok',
-					rating: 5,
-				},
-				{
-					comment: 'Me gusto',
-					rating: 4,
-				},
-				{
-					comment: 'Super recomendado',
-					rating: 3,
-				},
-				{
-					comment: 'Bueno y saludable',
-					rating: 4,
-				},
-				{
-					comment: 'EXCELENTE',
-					rating: 5,
-				},
-				{
-					comment: 'Muy rico',
-					rating: 5,
-				},
-				{
-					comment: 'Deliciosa',
-					rating: 5,
-				},
-				{
-					comment: 'Siempre la pido',
-					rating: 5,
-				},
-			],
-		},
-	];
-
-	// Cal ratings
-	let values = {
-		1: 0,
-		2: 0,
-		3: 0,
-		4: 0,
-		5: 0,
-	};
-	function getRatings(data) {
-		for (let dish of data) {
-			let ratings = dish.ratings;
-			for (let rating of ratings) {
-				values[rating.rating] += 1;
-			}
-		}
-	}
-	getRatings(platillos);
-
-	//#endregion
+	// values of ratings
+	const ratings = calcRatings(dish);
 
 	//  - - - - - - - - - - - - - - - Return - - - - - - - - - - - - - - -
 	return (
@@ -124,8 +66,8 @@ export default function Detail() {
 					<div className="col col-12 col-md-6 g-0">{ImgDish(dish)}</div>
 					<div className="col col-12 col-md-6 g-0">
 						<div className="boxDish">
-							{DishDescription(dish)}
-							{TableRatings(values, 1)}
+							{DishDescription(dish, ratings)}
+							{TableRatings(ratings)}
 						</div>
 					</div>
 				</main>
@@ -133,7 +75,7 @@ export default function Detail() {
 				<section className="row">
 					{/*- - - - Comments section - - - -*/}
 					<div className="col col-12 col-md-6 g-0">
-						{AddComment(1)}
+						{AddComment(dishId)}
 						{allComments}
 					</div>
 
