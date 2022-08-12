@@ -1,14 +1,24 @@
 import "./NavBar.css";
 import React, { useState } from "react";
-import logo from "../../assets/logo200.png";
+import { useNavigate } from "react-router-dom";
+import logo from "../../assets/Logo500.png";
+
+//components
+import Input from "../../../src/components/Input/index";
 
 export default function NavBar({ isLogeddIn }) {
-  const [isOpen, setIsOpen] = useState(false);
-  const toggle = () => setIsOpen(!isOpen);
+  const navigate = useNavigate();
+  // const [isOpen, setIsOpen] = useState(false);
+  const [restaurantName, setRestaurantName] = useState("");
+  // const toggle = () => setIsOpen(!isOpen);
+
+  const searchRestaurant = () => {
+    console.log("Searching");
+  };
 
   return (
     <nav className="navbar sticky-top navbar-expand-lg nav-0">
-      <div className="container-fluid ">
+      <div className="container-fluid d-flex justify-content-between">
         <button
           className="navbar-toggler"
           type="button"
@@ -21,13 +31,15 @@ export default function NavBar({ isLogeddIn }) {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div
-          className="collapse navbar-collapse topNavBar"
-          id="navbarTogglerDemo01"
+          className="collapse navbar-collapse topNavBar d-flex justify-content-between"
+          id="navbarTogglerDemo01 "
         >
-          <img className="img-home" src={logo} alt="logo" width="110px" />
-          <a className="nav-link active" aria-current="page" href="/">
-            Home
-          </a>
+          <img
+            className="img-home"
+            src={logo}
+            alt="logo"
+            onClick={() => navigate("/")}
+          />
           {/* <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
               <a className="nav-link active" aria-current="page" href="/">
@@ -40,19 +52,29 @@ export default function NavBar({ isLogeddIn }) {
               </a>
             </li>
           </ul> */}
-          {/* <form className="d-flex">
-            <input
-              className="form-control me-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
+          <form onSubmit={searchRestaurant} className="d-flex">
+            <Input
+              type="text"
+              placeholder="Nombre del restaurante"
+              value={restaurantName}
+              callback={(e) => setRestaurantName(e.target.value)}
             />
-            <button className="btn btn-outline-success" type="submit">
+            <button
+              className="btn-search  btn-outline-success"
+              type="submit"
+              onClick={() => navigate(`/menu/cortes/${restaurantName}`)}
+            >
               Search
             </button>
-          </form> */}
+          </form>
+          <button
+            type="submit"
+            className="login"
+            onClick={() => navigate("/login")}
+          >
+            {isLogeddIn ? "Cerrar Sesion " : "Iniciar Sesion"}
+          </button>
         </div>
-        {isLogeddIn ? "cerrar secion " : "iniciar secion"}
       </div>
     </nav>
 
