@@ -40,9 +40,9 @@ export default function Menu() {
           {dishes &&
             dishes.map((dish) => <MenuCard dish={dish} navigate={navigate} />)}
         </div>
+        
         <div className="info">
           <p>LA PROPINA NO ES OBLIGATORIA.</p>
-
           <p>
             ACEPTAMOS PAGOS EN EFECTIVO, TARJETAS VISA, MASTER CARD Y AMERICAN
             EXPRESS.
@@ -50,6 +50,9 @@ export default function Menu() {
 
           <p>EL PAGO CON TARJETA NO GENERA NINGUNA COMISIÓN.</p>
         </div>
+        {/* <div className="qrcontainer">
+              <QrCode />
+        </div> */}
       </div>
     </div>
   );
