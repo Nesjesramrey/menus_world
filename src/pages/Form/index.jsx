@@ -7,12 +7,8 @@ import Cookies from "universal-cookie";
 import { uploadFile } from "react-s3";
 
 
-
 //components
 import Button from "react-bootstrap/Button";
-
-
-
 
 
 // Toastify
