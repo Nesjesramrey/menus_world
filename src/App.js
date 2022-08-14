@@ -32,17 +32,23 @@ function App() {
 
         <Route path="/login" element={<Login />} />
 
-        <Route path="/menu" element={<MenuContainer />}>
+        <Route path="/menu/:restaurantName" element={<MenuContainer />}>
           <Route index element={<Menu />} />
-          <Route path="entradas" element={<Entries />} />
-          <Route path="ensaladas" element={<Salads />} />
-          <Route path="sopas" element={<Soup />} />
-          <Route path="pescados" element={<Fish />} />
-          <Route path="snacks" element={<Snacks />} />
+          <Route path="entradas/:restaurantName" element={<Entries />} />
+          <Route path="ensaladas/:restaurantName" element={<Salads />} />
+          <Route path="sopas/:restaurantName" element={<Soup />} />
+          <Route path="pescados/:restaurantName" element={<Fish />} />
+          <Route path="snacks/:restaurantName" element={<Snacks />} />
           <Route path="cortes/:restaurantName" element={<MeatCut />} />
-          <Route path="bebidasnoalcoholicas" element={<DrinksNoAlc />} />
-          <Route path="bebidasalcoholicas" element={<DrinksAlc />} />
-          <Route path="postres" element={<Desserts />} />
+          <Route
+            path="bebidasnoalcoholicas/:restaurantName"
+            element={<DrinksNoAlc />}
+          />
+          <Route
+            path="bebidasalcoholicas/:restaurantName"
+            element={<DrinksAlc />}
+          />
+          <Route path="postres/:restaurantName" element={<Desserts />} />
           <Route path="edit/:id" element={<MenuEdit />} />
           <Route path="delete/:id" element={<DishDelete />} />
         </Route>

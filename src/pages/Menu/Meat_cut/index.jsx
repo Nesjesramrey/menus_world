@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { sublist as listDishes } from "../../../services/menus";
-
 import MenuCardS from "../../../components/MenuCardS";
 
 import "./Meat_cut.css";

@@ -1,4 +1,4 @@
-const URL = "https://menus.api.nesjes.com";
+const URL = "http://localhost:8000";
 
 const generateConfig = (body) => {
   //console.log(JSON.stringify(body));
@@ -39,6 +39,14 @@ export const list = async () => {
 export const sublist = async (category, restaurant) => {
   const response = await fetch(
     `${URL}/menu/submenu?category=${category}&restaurantName=${restaurant}`
+  );
+  const data = await response.json();
+  return data;
+};
+
+export const sublistRestaurant = async (restaurant) => {
+  const response = await fetch(
+    `${URL}/menu/submenu?restaurantName=${restaurant}`
   );
   const data = await response.json();
   return data;

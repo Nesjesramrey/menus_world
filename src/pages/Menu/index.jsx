@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
-import { list as listDishes } from "../../../src/services/menus";
-import { useNavigate } from "react-router-dom";
+import { sublistRestaurant as listDishes } from "../../../src/services/menus";
+import { useParams, useNavigate } from "react-router-dom";
 import MenuCard from "../../components/MenuCard";
+import Cookies from "universal-cookie";
 
 import "./Menu.css";
 
@@ -10,11 +11,12 @@ export default function Menu() {
   const [dishes, setDishes] = useState([]);
 
   // RRD
+  const { restaurantName } = useParams();
   const navigate = useNavigate();
 
   useEffect(() => {
     const list = async () => {
-      const data = await listDishes();
+      const data = await listDishes(restaurantName);
       const parsedDishes = Object.keys(data).map((key) => {
         return { id: key, ...data[key] };
       });
@@ -24,6 +26,10 @@ export default function Menu() {
 
     list();
   }, []);
+
+  const cookies = new Cookies();
+  cookies.set("EndpointRestaurant", restaurantName, { path: "/" });
+  console.log(cookies);
 
   return (
     <div className="mainContainer">
@@ -40,7 +46,7 @@ export default function Menu() {
           {dishes &&
             dishes.map((dish) => <MenuCard dish={dish} navigate={navigate} />)}
         </div>
-        
+
         <div className="info">
           <p>LA PROPINA NO ES OBLIGATORIA.</p>
           <p>
