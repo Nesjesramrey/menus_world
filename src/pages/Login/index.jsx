@@ -46,7 +46,7 @@ export default function Login() {
 
     try {
       const response = await loginUser(data);
-      console.log(response);
+      //console.log(response);
       cleanForm();
       cookies.set("Usuario", response.data.info.userName, { path: "/" });
       cookies.set("TipoUsuario", response.data.info.userCategory, {
@@ -61,7 +61,7 @@ export default function Login() {
       }
       if (response.data.info.userCategory === "Administrador de restaurante") {
         toast.success("Inicio de sesion exitoso!!");
-        navigate("/menu");
+        navigate(`/menu/${endpointRestaurant}`);
       } else {
         toast.error("Usuario o contrasena incorrectos");
       }
@@ -98,11 +98,7 @@ export default function Login() {
                 />
 
                 <div className="container-btn-login">
-                  <button
-                    type="submit"
-                    className="btn-login"
-                    onClick={() => navigate(`/menu/${endpointRestaurant}`)}
-                  >
+                  <button type="submit" className="btn-login">
                     Ingresar
                   </button>
                 </div>

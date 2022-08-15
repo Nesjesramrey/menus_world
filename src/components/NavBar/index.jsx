@@ -56,24 +56,21 @@ export default function NavBar({ isLogeddIn }) {
           </ul> */}
           <form onSubmit={searchRestaurant} className="d-flex">
             <Input
-              type="text"
-              placeholder="Nombre del restaurante"
+              type="search"
+              placeholder="Buscar restaurante"
+              className="form-control"
               value={restaurantName}
               callback={(e) => setRestaurantName(e.target.value)}
             />
             <button
-              className="btn-search  btn-outline-success"
+              className="btn-search btn-primary"
               type="submit"
               onClick={() => navigate(`/menu/${restaurantName}`)}
             >
-              Search
+              <i className="fas fa-search"></i>
             </button>
           </form>
-          <button
-            type="submit"
-            className="login"
-            onClick={() => navigate("/login")}
-          >
+          <button type="submit" className="login" onClick={() => navigate("/")}>
             {isLogeddIn ? "Cerrar Sesion " : "Iniciar Sesion"}
           </button>
         </div>
