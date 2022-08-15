@@ -14,11 +14,11 @@ export default function DishDescription(data, ratings) {
 		<div className="description">
 			<div>
 				<h3 className="text-center">{name}</h3>
-				<p>{description}</p>
+				<p className="text-center">{description}</p>
 			</div>
 			<div className="bottomSection">
-				<p>{cost}</p>
-				<p>{rating}</p>
+				<p className="bold">{cost}</p>
+				<p className="bold">{rating}</p>
 			</div>
 		</div>
 	);

@@ -30,41 +30,6 @@ export function calcMean(data) {
 	}
 }
 
-export function calcPercentages(data) {
-	let values = {
-		1: 0,
-		2: 0,
-		3: 0,
-		4: 0,
-		5: 0,
-	};
-	let percentages = [];
-	let maxRating = 5;
-	let count = 0;
-
-	if (data.comments) {
-		if (data.comments.length > 0) {
-			for (let comment of data.comments) {
-				values[comment.rating] += 1;
-			}
-
-			//calc total
-			for (let i = 1; i <= maxRating; i++) {
-				count += values[i];
-			}
-
-			//calc percentages
-			for (let i = 0; i < maxRating; i++) {
-				percentages[i] = ((values[i + 1] / count) * 100).toFixed(1);
-			}
-
-			return percentages;
-		} else {
-			return [0, 0, 0, 0, 0];
-		}
-	}
-}
-
 export function calcRatings(data) {
 	let obj = {
 		totalVotes: 0,

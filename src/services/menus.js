@@ -57,6 +57,14 @@ export const sublist = async (category, restaurant) => {
   return data;
 };
 
+export const listRestaurant = async (restaurant) => {
+  const response = await fetch(
+    `${URL}/menu/submenu?restaurantName=${restaurant}`
+  );
+  const data = await response.json();
+  return data;
+};
+
 export const update = async (id, body) => {
   const response = await fetch(`${URL}/menu/edit?_id=${id}`, {
     method: "PATCH",
