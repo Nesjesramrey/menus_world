@@ -25,7 +25,7 @@ export default function Menu() {
     };
 
     list();
-  }, []);
+  }, [restaurantName]);
 
   const cookies = new Cookies();
   cookies.set("EndpointRestaurant", restaurantName, { path: "/" });
