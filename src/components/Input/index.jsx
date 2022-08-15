@@ -9,8 +9,9 @@ export default function Input({
   type = "text",
 }) {
   return (
-    <div>
+     <div>
       <input
+
         type={type}
         className={className}
         placeholder={placeholder}
