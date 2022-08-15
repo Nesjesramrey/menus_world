@@ -6,8 +6,6 @@ import MenuContainer from "./containers/MenuContainer";
 
 //Components
 import Home from "./pages/Home";
-import Login from "./pages/Login";
-
 import Menu from "./pages/Menu";
 import Entries from "./pages/Menu/Entries";
 import Salads from "./pages/Menu/Salads";
@@ -29,9 +27,6 @@ function App() {
       {/* <QRCode value="www.facebook.com" size={200} bgColor="#282c34" fgColor="#fff" level="H" /> */}
       <Routes>
         <Route path="/" element={<Home />} />
-
-        <Route path="/login" element={<Login />} />
-
         <Route path="/menu/:restaurantName" element={<MenuContainer />}>
           <Route index element={<Menu />} />
           <Route path="entradas/:restaurantName" element={<Entries />} />

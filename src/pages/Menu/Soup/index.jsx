@@ -9,8 +9,8 @@ export default function Meat_cut() {
   // Local state
   const [dishes, setDishes] = useState([]);
   // RRD
-  const { category, restaurantName } = useParams();
-  console.log(category, restaurantName);
+  const { restaurantName } = useParams();
+
   const navigate = useNavigate();
   useEffect(() => {
     const list = async () => {

@@ -1,8 +1,17 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+
+//services
 import { create as createUser } from "../../services/users";
-import Cookies from "universal-cookie";
+
+//Image
 import logo from "../../assets/logo200.png";
+
+//Cookies
+import Cookies from "universal-cookie";
+
+//Modal
+import Modal from "react-modal";
 
 // Toastify
 import { ToastContainer, toast } from "react-toastify";
@@ -10,17 +19,32 @@ import "react-toastify/dist/ReactToastify.css";
 
 //Components
 import Input from "../../../src/components/Input/index";
+import Login from "../../../src/pages/Login/index";
 
 //CSS
 import "./Home.css";
 import "./Signup.css";
 
+//Here begin the function
 export default function Home() {
   const navigate = useNavigate();
   const cookies = new Cookies();
   const userLogged = cookies.get("Usuario");
-  console.log(userLogged);
 
+  //Styles modal
+  const customStyles = {
+    content: {
+      top: "30%",
+      left: "50%",
+      right: "40%",
+      bottom: "20%",
+      marginRight: "-50%",
+      transform: "translate(-50%, -50%)",
+    },
+  };
+  Modal.setAppElement("#root");
+
+  //This is for remove cookies of user
   const logout = () => {
     toast.success("Gracias por tu visita vuelve pronto!!");
     cookies.remove("Usuario", { path: "/" });
@@ -36,9 +60,11 @@ export default function Home() {
   const [userType, setUserType] = useState("");
   const [itemActive, setItemActive] = useState(null);
   const [itemActiveRegister, setItemActiveRegister] = useState("NoRegister");
+  const [modalIsOpen, setModalIsOpen] = useState(false);
 
   // This is to active input restaurant
   const isActive = (itemTypeUser) => itemTypeUser === itemActive;
+
   //This active register form
   const isActiveRegister = (itemRegister) =>
     itemRegister === itemActiveRegister;
@@ -112,11 +138,11 @@ export default function Home() {
         </button>
 
         <button
-          onClick={() => navigate("/login")}
+          onClick={() => setModalIsOpen(true)}
           type="button"
           className={`${!userLogged ? "btn-home active" : "btn-home d-none"}`}
         >
-          Inicion Sesion
+          Inicio de Sesion
         </button>
 
         <button
@@ -213,8 +239,7 @@ export default function Home() {
               </div>
             </form>
             <button
-              href="/login"
-              className="btn-signup"
+              className="btn-singup"
               onClick={(e) => setItemActiveRegister(e.target.value)}
               value="NoRegister"
             >
@@ -223,6 +248,12 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <Modal isOpen={modalIsOpen} style={customStyles}>
+        <Login />
+        <button className="btn-singup" onClick={() => setModalIsOpen(false)}>
+          Con esto me cierro
+        </button>
+      </Modal>
       <ToastContainer />
     </div>
   );

@@ -29,7 +29,6 @@ export default function Menu() {
 
   const cookies = new Cookies();
   cookies.set("EndpointRestaurant", restaurantName, { path: "/" });
-  console.log(cookies);
 
   return (
     <div className="mainContainer">

@@ -1,4 +1,4 @@
-import { Outlet, Link, useNavigate } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 import "./MenuContainer.css";
 import NavBar from "../../../src/components/NavBar";
 import Button from "react-bootstrap/Button";
@@ -12,7 +12,6 @@ export default function MenuContainer() {
 
   const cookies = new Cookies();
   const endpointRestaurant = cookies.get("EndpointRestaurant");
-  console.log(endpointRestaurant);
 
   return (
     <div className="container-welcome">
@@ -23,8 +22,7 @@ export default function MenuContainer() {
           <Button
             bsPrefix="custom-btn
         "
-            to="/menu"
-            as={Link}
+            onClick={() => navigate(`/menu/${endpointRestaurant}`)}
           >
             General
           </Button>{" "}
