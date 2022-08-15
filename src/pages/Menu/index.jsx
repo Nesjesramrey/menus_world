@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { sublistRestaurant as listDishes } from "../../../src/services/menus";
+import { listRestaurant as listDishes } from "../../../src/services/menus";
 import { useParams, useNavigate } from "react-router-dom";
 import MenuCard from "../../components/MenuCard";
 import Cookies from "universal-cookie";

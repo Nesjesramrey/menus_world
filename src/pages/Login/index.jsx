@@ -57,7 +57,7 @@ export default function Login() {
       });
       if (response.data.info.userCategory === "Comensal") {
         toast.success("Inicio de sesion exitoso!!");
-        navigate("/menu");
+        navigate(`/menu/${endpointRestaurant}`);
       }
       if (response.data.info.userCategory === "Administrador de restaurante") {
         toast.success("Inicio de sesion exitoso!!");
