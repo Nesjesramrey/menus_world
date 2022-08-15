@@ -1,21 +1,20 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { sublist as listDishes } from "../../../services/menus";
-
 import MenuCardS from "../../../components/MenuCardS";
-
 
 import "./Snacks.css";
 
-export default function Snacks() {
+export default function Meat_cut() {
   // Local state
   const [dishes, setDishes] = useState([]);
   // RRD
-  const navigate = useNavigate();
+  const { restaurantName } = useParams();
 
+  const navigate = useNavigate();
   useEffect(() => {
     const list = async () => {
-      const data = await listDishes("Snacks", "Texas Rib");
+      const data = await listDishes("Snacks", restaurantName);
       const parsedDishes = Object.keys(data).map((key) => {
         return { id: key, ...data[key] };
       });
@@ -24,23 +23,26 @@ export default function Snacks() {
     };
 
     list();
-  }, []);
+  }, [restaurantName]);
 
   return (
     <div className="mainContainer">
       <div className="container">
         <div className="row">
-          {dishes && dishes.map((dish) => <MenuCardS dish={dish} navigate={navigate} />)}
+          {dishes &&
+            dishes.map((dish) => <MenuCardS dish={dish} navigate={navigate} />)}
         </div>
         <div className="info">
           <p>LA PROPINA NO ES OBLIGATORIA.</p>
 
-          <p>ACEPTAMOS PAGOS EN EFECTIVO, TARJETAS VISA, MASTER CARD Y AMERICAN EXPRESS.</p>
+          <p>
+            ACEPTAMOS PAGOS EN EFECTIVO, TARJETAS VISA, MASTER CARD Y AMERICAN
+            EXPRESS.
+          </p>
 
           <p>EL PAGO CON TARJETA NO GENERA NINGUNA COMISIÓN.</p>
         </div>
       </div>
-
     </div>
   );
 }

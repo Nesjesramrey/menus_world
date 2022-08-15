@@ -10,7 +10,6 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 // Components
-import NavBar from "../../../src/components/NavBar";
 import Input from "../../../src/components/Input/index";
 
 //CSS
@@ -28,6 +27,8 @@ export default function Login() {
   };
 
   const isEmpty = (value) => !value;
+  const cookies = new Cookies();
+  const endpointRestaurant = cookies.get("EndpointRestaurant");
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -37,6 +38,7 @@ export default function Login() {
     }
 
     const cookies = new Cookies();
+
     const data = {
       username,
       password,
@@ -44,7 +46,7 @@ export default function Login() {
 
     try {
       const response = await loginUser(data);
-      console.log(response);
+      //console.log(response);
       cleanForm();
       cookies.set("Usuario", response.data.info.userName, { path: "/" });
       cookies.set("TipoUsuario", response.data.info.userCategory, {
@@ -59,7 +61,7 @@ export default function Login() {
       }
       if (response.data.info.userCategory === "Administrador de restaurante") {
         toast.success("Inicio de sesion exitoso!!");
-        navigate("/menu");
+        navigate(`/menu/${endpointRestaurant}`);
       } else {
         toast.error("Usuario o contrasena incorrectos");
       }
@@ -70,7 +72,6 @@ export default function Login() {
 
   return (
     <div className="container">
-      {NavBar(1)}
       <div className="row justify-content-center">
         <div className="col-4 col-md-4 ">
           <div className="card">
@@ -109,11 +110,6 @@ export default function Login() {
             </div>
           </div>
         </div>
-        <img
-          src="https://media-cdn.tripadvisor.com/media/photo-s/10/6d/5d/1d/entrada-restaurant.jpg"
-          alt="register"
-          className="img-register col-md-7"
-        ></img>
       </div>
       <ToastContainer />
     </div>
