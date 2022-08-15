@@ -22,7 +22,7 @@ export default function Meat_cut() {
     };
 
     list();
-  }, []);
+  }, [restaurantName]);
 
   return (
     <div className="mainContainer">
