@@ -251,7 +251,7 @@ export default function Home() {
       <Modal isOpen={modalIsOpen} style={customStyles}>
         <Login />
         <button className="btn-singup" onClick={() => setModalIsOpen(false)}>
-          Con esto me cierro
+          Cerrar ventana
         </button>
       </Modal>
       <ToastContainer />
