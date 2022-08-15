@@ -1,77 +1,66 @@
 import './AddComment.css';
 import { useState } from 'react';
-import { createComment as sendComment }from '../../services/menus';
+import { createComment as sendComment } from '../../services/menus';
 
 export default function AddComment(id) {
 	const [canComment, setCanComment] = useState(false);
 	const [isLogIn, setIsLogIn] = useState(true);
 	const [text, setText] = useState('');
-	const [existComment, setExistComment] = useState(false)
+	const [existComment, setExistComment] = useState(false);
 
 	const sendToServer = () => {
-
-		if(isLogIn && !existComment && text.length > 0 ){
-			const now = new Date()
+		if (isLogIn && !existComment && text.length > 0) {
+			const now = new Date();
 			const bodyMsg = {
-				user: "Usuario Prueba",
+				user: 'Usuario Prueba',
 				rating: 5,
 				comment: text,
-				idUser: "62d53a3c7",
+				idUser: '62d53a3c7',
 				date: now,
 			};
-			console.log(bodyMsg)
-			sendComment(id,bodyMsg);
-			setExistComment(true)
-			console.log("mensaje enviado")
+			console.log(bodyMsg);
+			sendComment(id, bodyMsg);
+			setExistComment(true);
+			console.log('mensaje enviado');
 		} else {
-			console.log("hay que registrarse o iniciar sesion para publicar comentarios")
+			console.log('hay que registrarse o iniciar sesion para publicar comentarios');
 		}
-	}
+	};
 
-
+	
 	const sendData = () => {
+		let today = new Date();
 
-    let today = new Date();
+		const data = {
+			user: 'Mario',
+			rating: 5,
+			comment: text,
+			idUser: '23353',
+			date: today,
+		};
+		const Url = 'http://localhost:8000/detalle/62ec7f990a7ec0b3382173b1';
 
-    const data = {
-      user: 'Mario',
-      rating: 5,
-      comment: text,
-      idUser: '23353',
-      date: today,
-    };
-    const Url = 'http://localhost:8000/detalle/62ec7f990a7ec0b3382173b1'
-
-    fetch(Url, {
-      method: "PATCH",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(data)
-    })
-      .then(response => response.json())
-      .then(data => {
-        console.log("Success:", data);
-      })
-      .catch(error => {
-        console.error("Error:", error);
-      });
-  };
-
-
-
-
-
-
-
-
-
+		fetch(Url, {
+			method: 'PATCH',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify(data),
+		})
+			.then((response) => response.json())
+			.then((data) => {
+				console.log('Success:', data);
+			})
+			.catch((error) => {
+				console.error('Error:', error);
+			});
+	};
 
 	const handleMessage = (msg) => {
 		setCanComment(false);
 		setText(msg);
-		sendData()
-  };
+		sendData();
+	};
 
 	function createContent() {
 		if (canComment === false) {
@@ -91,11 +80,7 @@ export default function AddComment(id) {
 						placeholder="Escribe tu reseña del platillo"
 						onChange={(e) => setText(e.target.value)}
 					></textarea>
-					<button
-						id="addComment"
-						type="button"
-						onClick={(e) => handleMessage(text)}
-						>
+					<button id="addComment" type="button" onClick={(e) => handleMessage(text)}>
 						Enviar comentario
 					</button>
 				</form>

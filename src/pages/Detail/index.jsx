@@ -44,6 +44,7 @@ export default function Detail() {
 			}
 		};
 
+		
 		const getAnswer = async () => {
 			const data = await axios(fullURL);
 			if (data.status === 200) {
@@ -109,7 +110,7 @@ export default function Detail() {
 	};
 	const listRecomendation = getRecomendations();
 	console.log(restaurant);
-	console.log(listRecomendation)
+	console.log(listRecomendation);
 
 	//  - - - - - - - - - - - - - - - Return - - - - - - - - - - - - - - -
 	return (
