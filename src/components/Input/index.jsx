@@ -11,9 +11,8 @@ export default function Input({
 }) {
   return (
     <div >
-      
       <input
-      class="form-control"
+        class="form-control"
         type={type}
         className={className}
         placeholder={placeholder}

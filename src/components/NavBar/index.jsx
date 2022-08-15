@@ -1,7 +1,7 @@
 import "./NavBar.css";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import logo from "../../assets/Logo500.png";
+import logo from "../../assets/logoc200.png";
 
 //components
 import Input from "../../../src/components/Input/index";
@@ -20,22 +20,22 @@ export default function NavBar({ isLogeddIn }) {
     <nav className="navbar sticky-top navbar-expand-lg nav-0">
       <div className="container-fluid d-flex justify-content-between">
         <button
-          className="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarTogglerDemo01"
-          aria-controls="navbarTogglerDemo01"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
+          // className="navbar-toggler"
+          // type="button"
+          // data-bs-toggle="collapse"
+          // data-bs-target="#navbarTogglerDemo01"
+          // aria-controls="navbarTogglerDemo01"
+          // aria-expanded="false"
+          // aria-label="Toggle navigation"
         >
-          <span className="navbar-toggler-icon"></span>
+          {/* <span className="navbar-toggler-icon"></span> */}
         </button>
         <div
           className="collapse navbar-collapse topNavBar d-flex justify-content-between"
           id="navbarTogglerDemo01 "
         >
           <img
-            className="img-home"
+            className="img-home-navbar"
             src={logo}
             alt="logo"
             onClick={() => navigate("/")}
@@ -52,20 +52,23 @@ export default function NavBar({ isLogeddIn }) {
               </a>
             </li>
           </ul> */}
-          <form onSubmit={searchRestaurant} className="d-flex">
+          <form onSubmit={searchRestaurant}>
+            <div className="content-search">
             <Input
+            className="form-control"
               type="text"
               placeholder="Nombre del restaurante"
               value={restaurantName}
               callback={(e) => setRestaurantName(e.target.value)}
             />
             <button
-              className="btn-search  btn-outline-success"
+              className="btn-search"
               type="submit"
               onClick={() => navigate(`/menu/cortes/${restaurantName}`)}
             >
-              Search
+              Buscar
             </button>
+            </div>
           </form>
           <button
             type="submit"
