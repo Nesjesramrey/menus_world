@@ -7,16 +7,22 @@
 	padding: 7px;
 }
 
-.cardRecommendations:hover {
-	transition-duration: 700ms;
-	transform: scale(1.02);
-}
-
-.imgRecommPhoto {
+.overFlowDiv {
+	overflow: hidden;
 	border-radius: 6px;
 }
 
-.contentCardRecommendations { 
+.imgRecommPhoto {
+	object-fit: cover;
+	min-height: 200px;
+}
+
+.imgRecommPhoto:hover {
+	transition-duration: 700ms;
+	transform: scale(1.05);
+}
+
+.contentCardRecommendations {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
