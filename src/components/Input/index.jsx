@@ -7,13 +7,10 @@ export default function Input({
   value,
   callback,
   type = "text",
-  
 }) {
   return (
-    <div >
-      
+    <div>
       <input
-      class="form-control"
         type={type}
         className={className}
         placeholder={placeholder}

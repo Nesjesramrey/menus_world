@@ -1,6 +1,7 @@
 import "./NavBar.css";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Cookies from "universal-cookie";
 import logo from "../../assets/Logo500.png";
 
 //components
@@ -12,8 +13,9 @@ export default function NavBar({ isLogeddIn }) {
   const [restaurantName, setRestaurantName] = useState("");
   // const toggle = () => setIsOpen(!isOpen);
 
+  const cookies = new Cookies();
   const searchRestaurant = () => {
-    console.log("Searching");
+    cookies.remove("EndpointRestaurant");
   };
 
   return (
@@ -62,7 +64,7 @@ export default function NavBar({ isLogeddIn }) {
             <button
               className="btn-search  btn-outline-success"
               type="submit"
-              onClick={() => navigate(`/menu/cortes/${restaurantName}`)}
+              onClick={() => navigate(`/menu/${restaurantName}`)}
             >
               Search
             </button>

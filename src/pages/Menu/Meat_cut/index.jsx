@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { sublist as listDishes } from "../../../services/menus";
-
 import MenuCardS from "../../../components/MenuCardS";
 
 import "./Meat_cut.css";
@@ -10,8 +9,8 @@ export default function Meat_cut() {
   // Local state
   const [dishes, setDishes] = useState([]);
   // RRD
-  const { category, restaurantName } = useParams();
-  console.log(category, restaurantName);
+  const { restaurantName } = useParams();
+
   const navigate = useNavigate();
   useEffect(() => {
     const list = async () => {
