@@ -57,10 +57,7 @@ export default function NavBar({ isLogeddIn }) {
           <form onSubmit={searchRestaurant}>
             <div className="content-search">
             <Input
-
-            className="form-control"
               type="text"
-              type="search"
               placeholder="Buscar restaurante"
               className="form-control"
               value={restaurantName}
