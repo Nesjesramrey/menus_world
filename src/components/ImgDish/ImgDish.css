@@ -6,11 +6,12 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	height: calc(100% - 7px)
+	height: calc(100% - 7px);
 }
 
 .imgDishes {
 	border-radius: 6px;
 	object-fit: cover;
 	min-height: 70%;
+	max-height: 400px;
 }
