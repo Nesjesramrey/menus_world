@@ -1,4 +1,4 @@
-const URL = "http://localhost:8000";
+const URL = "https://menus.api.nesjes.com";
 
 const generateConfig = (body) => {
   //console.log(JSON.stringify(body));
@@ -30,21 +30,22 @@ export const dishById = async (id) => {
   return data;
 };
 
-export const createComment = async (id,data) => {
-const url = URL + '/detalle/' + id
-console.log(url)
+export const createComment = async (id, data) => {
+  const url = URL + "/detalle/" + id;
+  console.log(url);
 
   const response = await fetch(`${URL}/detalle/${id}`, {
     method: "PATCH",
-    header: {"Content-Type": "application/json"},
+    header: { "Content-Type": "application/json" },
     body: JSON.stringify(data),
   });
   const allData = await response.json();
   return allData;
-}
+};
 
 export const list = async () => {
   const response = await fetch(`${URL}/menu`);
+  console.log(URL);
   const data = await response.json();
   return data;
 };

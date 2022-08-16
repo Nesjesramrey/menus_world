@@ -1,7 +1,9 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useDropzone } from "react-dropzone";
 import { create as createMenu } from "../../services/menus";
+
+//Cookies
 import Cookies from "universal-cookie";
 
 import { uploadFile } from "react-s3";
@@ -25,8 +27,10 @@ window.Buffer = window.Buffer || require("buffer").Buffer;
 // cookies
 const cookies = new Cookies();
 const restaurant = cookies.get("NombreResturante");
+const endpointRestaurant = cookies.get("EndpointRestaurant");
 
 export default function Form() {
+  const navigate = useNavigate();
   // Local state
   const [restaurantName, setRestaurantName] = useState("");
   const [dishName, setDishName] = useState("");
@@ -151,7 +155,11 @@ export default function Form() {
         <div className="subtitle">
           <h4>Formulario de registro de su platillo</h4>
         </div>
-        <Button className="btn-form" bsPrefix="custom-btn" to="/menu" as={Link}>
+        <Button
+          className="btn-form"
+          bsPrefix="custom-btn"
+          onClick={() => navigate(`/menu/${endpointRestaurant}`)}
+        >
           Regresar al menu
         </Button>
         <form onSubmit={handleSubmit}>

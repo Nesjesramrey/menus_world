@@ -233,17 +233,17 @@ export default function Home() {
                 />
               </div>
               <div className="d-flex flex-row align-items-center justify-content-between">
-                <button type="submit" className="btn-signup">
+                <button type="submit" className="btn-singup">
                   Crear Cuenta
                 </button>
               </div>
             </form>
             <button
-              className="btn-singup"
+              className="btn-singup "
               onClick={(e) => setItemActiveRegister(e.target.value)}
               value="NoRegister"
             >
-              Home
+              Regresa inicio
             </button>
           </div>
         </div>

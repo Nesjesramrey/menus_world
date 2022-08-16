@@ -73,9 +73,9 @@ export default function NavBar({ isLogeddIn }) {
               </button>
             </div>
           </form>
-          <button type="submit" className="login" onClick={() => navigate("/")}>
+          {/*<button type="submit" className="login" onClick={() => navigate("/")}>
             {isLogeddIn ? "Cerrar Sesion " : "Iniciar Sesion"}
-          </button>
+        </button>*/}
         </div>
       </div>
     </nav>
