@@ -12,7 +12,7 @@ import ImgDish from '../../components/ImgDish';
 import DishDescription from '../../components/DishDescription';
 import CreateComments from '../../components/Comments';
 import AddComment from '../../components/AddComment';
-import Recomendations from '../../components/Recommendations';
+import createCardsRecomendations from '../../components/Recommendations';
 import TableRatings from '../../components/TableRatings';
 
 //Services
@@ -28,7 +28,7 @@ export default function Detail() {
 	const [restaurant, setRestaurant] = useState(null); //name of selectec restaurant
 	const [recomendations, setRecomendations] = useState([]); //list of object for recomendations
 
-	//get dish
+	//get dish, lis of recomendations and call functions to generate elements
 	useEffect(() => {
 		document.title = "Menu's World";
 
@@ -36,6 +36,20 @@ export default function Detail() {
 		const id = dishId;
 		const fullURL = url + id;
 
+		const getDish = async () => {
+			const data = await axios(fullURL);
+			if (data.status === 200) {
+				const response = data.data;
+				setDish(response);
+				setRestaurant(response.restaurantName);
+
+			}
+		};
+
+		getDish();
+	}, []);
+
+	useEffect(() => {
 		const getList = async () => {
 			const urlList = 'https://menus.api.nesjes.com/menu/submenu?restaurantName=' + restaurant;
 			const list = await axios(urlList);
@@ -43,21 +57,9 @@ export default function Detail() {
 				setRecomendations(list.data);
 			}
 		};
+		getList();
+	},[restaurant])
 
-		const getAnswer = async () => {
-			const data = await axios(fullURL);
-			if (data.status === 200) {
-				const response = data.data;
-				setDish(response);
-				setRestaurant(response.restaurantName);
-				getList();
-			}
-		};
-
-		getAnswer();
-	}, []);
-
-	// Generate list of comments
 	function showComments(data) {
 		const arrComment = data.comments ? data.comments : [];
 
@@ -70,13 +72,8 @@ export default function Detail() {
 			);
 		}
 	}
-	const allComments = showComments(dish);
 
-	// values of ratings
-	const ratings = calcRatings(dish);
-
-	//generate recomendations
-	const getRecomendations = () => {
+	const getListRecomendations = () => {
 		let listRecomendations = [];
 		let filter = dish.category;
 
@@ -107,9 +104,22 @@ export default function Detail() {
 		}
 		return listRecomendations;
 	};
-	const listRecomendation = getRecomendations();
-	console.log(restaurant);
-	console.log(listRecomendation)
+
+	let allComments = null;
+	let ratings = null;
+	let listRecomendation = null;
+	let recomendationsCards = null;
+
+	//call to functions to generate elements
+	// Generate list of comments
+	allComments = showComments(dish);
+
+	// values of ratings
+	ratings = calcRatings(dish);
+
+	//generate recomendations
+	listRecomendation = getListRecomendations();
+	recomendationsCards = createCardsRecomendations(listRecomendation);
 
 	//  - - - - - - - - - - - - - - - Return - - - - - - - - - - - - - - -
 	return (
@@ -145,7 +155,7 @@ export default function Detail() {
 								Otras recomendaciones
 							</h5>
 						</div>
-						<div id="colCardsRecommendations">{Recomendations(listRecomendation)}</div>
+						<div id="colCardsRecommendations">{recomendationsCards}</div>
 					</div>
 				</section>
 			</div>

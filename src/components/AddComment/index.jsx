@@ -1,12 +1,15 @@
 import './AddComment.css';
 import { useState } from 'react';
 import { createComment as sendComment }from '../../services/menus';
+import {getIsLogeddIn, getIsUserAdmin} from '../../Auth/auth'
 
 export default function AddComment(id) {
-	const [canComment, setCanComment] = useState(false);
-	const [isLogIn, setIsLogIn] = useState(true);
+	const [canComment, setCanComment] = useState(false);  //state 
 	const [text, setText] = useState('');
 	const [existComment, setExistComment] = useState(false)
+
+	const [isLogIn, setIsLogIn] = useState(true);
+	const [isUser, setUser ] = useState(true);
 
 	const sendToServer = () => {
 
@@ -28,19 +31,18 @@ export default function AddComment(id) {
 		}
 	}
 
-
 	const sendData = () => {
 
     let today = new Date();
 
     const data = {
-      user: 'Mario',
+      user: 'Alberto',
       rating: 5,
       comment: text,
       idUser: '23353',
       date: today,
     };
-    const Url = 'http://localhost:8000/detalle/62ec7f990a7ec0b3382173b1'
+    const Url = 'http://localhost:8000/detalle/' + id;
 
     fetch(Url, {
       method: "PATCH",
@@ -61,17 +63,24 @@ export default function AddComment(id) {
 
 
 
+	const addNewcomment = (msg) => {
+		//not logIn
+		if(isLogIn === false){
+			console.error('Para agregar comentarios debes iniciar sesión')
+		} else {
+			//Is logIn
+			if(isUser === true){
+				//only user can add comments
+				setCanComment(false);
+				setText(msg);
+				sendData()
+			} else {
+				//admins can't comment
+				console.log('No se puede agregar comentarios con sesión de administrador')
+			}
+		}
+	}
 
-
-
-
-
-
-	const handleMessage = (msg) => {
-		setCanComment(false);
-		setText(msg);
-		sendData()
-  };
 
 	function createContent() {
 		if (canComment === false) {
@@ -94,7 +103,7 @@ export default function AddComment(id) {
 					<button
 						id="addComment"
 						type="button"
-						onClick={(e) => handleMessage(text)}
+						onClick={(e) => addNewcomment(text)}
 						>
 						Enviar comentario
 					</button>
