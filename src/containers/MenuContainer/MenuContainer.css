@@ -1,0 +1,25 @@
+.button-nav{
+height: 60px;
+display: flex;
+background-color: white;
+align-items: center;
+display: flex;
+justify-content: space-evenly;
+}
+.custom-btn {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  font-family: "Roboto", sans-serif;
+  background-color: white;
+  border: 1px solid #fb7b05;
+  color: #fb7b05;
+  padding: 15px;
+  border-radius: 5px;
+  transition: .5s;
+  text-decoration: none;
+}
+.custom-btn:hover{
+  color: white;
+  background-color: #fb7b05;
+}

@@ -1,0 +1,25 @@
+.containber-delete {
+  height: 400px;
+}
+
+.title-delete {
+  padding: 15px;
+}
+
+.btn-delete {
+  padding: 4px;
+  border-radius: 8px;
+  background-color: #fff;
+  border: 2px solid #ff7b2c;
+  font-weight: bold;
+  margin: 7px 7px 7px 7px;
+  margin-top: 30px;
+  width: 200px;
+  text-decoration: none;
+  color: black;
+}
+
+.btn-delete:hover {
+  background-color: #ff7b2c;
+  color: #fff;
+}

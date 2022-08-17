@@ -1,0 +1,65 @@
+.title-edit {
+  color: black;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.form-edit {
+  width: 400px;
+  height: 470px;
+  max-height: 500px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+  padding: 20px 30px;
+  border-top: 2px solid #ff7b2c;
+  color: #ff7b2c;
+}
+
+.form-edit h5 {
+  margin: 0;
+  text-align: center;
+  height: 400px;
+  margin-bottom: 30px;
+  font-size: 20px;
+}
+
+.label_form {
+  font-family: "Roboto", sans-serif;
+  color: #ff7b2c;
+  text-align: start;
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+.input_form {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.5rem;
+  text-align: vertical;
+  width: 500px;
+  height: 100px;
+  border-radius: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.button-editar{
+  /* border: 1px solid red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+}
+.btn-edit {
+  height: 38px;
+  border-radius: 5px;
+  background-color: #fff;
+  border: 2px solid #ff7b2c;
+  font-weight: bold;
+  width: 170px;
+  text-decoration: none;
+  color: #ff7b2c;
+  transition: .5s;
+}
+
+.btn-edit:hover {
+  background-color: #ff7b2c;
+  color: #fff;
+}

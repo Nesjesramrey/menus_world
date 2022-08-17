@@ -1,0 +1,43 @@
+.cardRecommendations {
+	border: 1px solid #8e8ea9;
+	margin: 7px 7px 0px 7px;
+	border-radius: 6px;
+	background-color: #fff;
+	width: 45%;
+	padding: 7px;
+}
+
+.overFlowDiv {
+	overflow: hidden;
+	border-radius: 6px;
+	height: 250px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.imgRecommPhoto {
+	object-fit: cover;
+	min-height: 200px;
+}
+
+.imgRecommPhoto:hover {
+	transition-duration: 700ms;
+	transform: scale(1.05);
+}
+
+.contentCardRecommendations {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.containerRecomendations {
+	padding: 0px;
+	margin: 0px;
+	display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}

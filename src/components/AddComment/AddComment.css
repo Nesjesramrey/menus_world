@@ -1,0 +1,48 @@
+
+#addCommentSection {
+  display: flex;
+  justify-content: center;
+}
+
+#addComment {
+  padding: 4px;
+  border-radius: 8px;
+  background-color: #fff;
+  border: 2px solid #ff7b2c;
+  font-weight: bold;
+  margin: 7px 0px;
+  width: 200px;
+}
+
+#addComment:hover {
+  background-color: #ff7b2c;
+  color: #fff;
+}
+
+#formAddComment {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+#addNewComment { 
+  margin: 7px 0px;
+  border-radius: 8px;
+  padding: 12px;
+  border: 2px solid #ff7b2c;
+  width: calc(100% - 14px);
+  height: 100px;
+}
+
+#addNewComment:focus {
+  background-color: #ffefe6;
+}
+
+#buttonSize {
+  width: 140px;
+}
+
+#textInstructions {
+  margin-top: 10px;
+}
