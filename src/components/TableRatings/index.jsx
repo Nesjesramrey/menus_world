@@ -1,6 +1,7 @@
 import './TableRatings.css';
 import React, { useState } from 'react';
 import { Tooltip } from 'reactstrap';
+import { Rating } from 'react-simple-star-rating';
 
 export default function TableRatings(ratings) {
 	const [tooltipOpen, setTooltipOpen] = useState(false);
@@ -10,6 +11,10 @@ export default function TableRatings(ratings) {
 		for (let key in ratings) return false;
 		return true;
 	}
+
+	const star = (
+		<Rating fillColor={'#ffd700'} initialValue={1} size={18} readonly={true} iconsCount={1} />
+	);
 
 	function createGraph() {
 		let textVotes =
@@ -28,7 +33,16 @@ export default function TableRatings(ratings) {
 				<div className="ratingTable">
 					<div className="data">
 						<div className="mean center">{ratings.mean}</div>
-						<div className="center">⭐⭐⭐⭐⭐</div>
+						<div className="center">
+							<Rating
+								transition
+								ratingValue={ratings.mean * 20}
+								fillColor={'#ffd700'}
+								emptyColor={'#888888'}
+								size={20}
+								readonly={true}
+							/>
+						</div>
 						<div className="center">{ratings.totalVotes + ' votos'}</div>
 					</div>
 
@@ -37,35 +51,46 @@ export default function TableRatings(ratings) {
 							{textTooltip}
 						</Tooltip>
 						<div className="graphContainer">
-							<div className="value center">5⭐</div>
+							<div className="value center">
+								<p className="numStars">5</p>
+								<div className="alingStars">{star}</div>
+							</div>
 							<div className="base">
 								<div className="valueClass" style={{ width: ratings.stars5 + '%' }}></div>
 							</div>
 						</div>
 
 						<div className="graphContainer">
-							<div className="value center">4⭐</div>
+							<div className="value center">
+								<p className="numStars">4</p> {star}
+							</div>
 							<div className="base">
 								<div className="valueClass" style={{ width: ratings.stars4 + '%' }}></div>
 							</div>
 						</div>
 
 						<div className="graphContainer">
-							<div className="value center">3⭐</div>
+							<div className="value center">
+								<p className="numStars">3</p> {star}
+							</div>
 							<div className="base">
 								<div className="valueClass" style={{ width: ratings.stars3 + '%' }}></div>
 							</div>
 						</div>
 
 						<div className="graphContainer">
-							<div className="value center">2⭐</div>
+							<div className="value center">
+								<p className="numStars">2</p> {star}
+							</div>
 							<div className="base">
 								<div className="valueClass" style={{ width: ratings.stars2 + '%' }}></div>
 							</div>
 						</div>
 
 						<div className="graphContainer">
-							<div className="value center">1⭐</div>
+							<div className="value center">
+								<p className="numStars">1</p> {star}
+							</div>
 							<div className="base">
 								<div className="valueClass" style={{ width: ratings.stars1 + '%' }}></div>
 							</div>

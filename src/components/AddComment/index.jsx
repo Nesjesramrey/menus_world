@@ -1,86 +1,80 @@
 import './AddComment.css';
 import { useState } from 'react';
-import { createComment as sendComment }from '../../services/menus';
-import {getIsLogeddIn, getIsUserAdmin} from '../../Auth/auth'
+import { Rating } from 'react-simple-star-rating';
+import { createComment as sendComment } from '../../services/menus';
+import { getIsLogeddIn, getIsUserAdmin } from '../../Auth/auth';
 
 export default function AddComment(id) {
-	const [canComment, setCanComment] = useState(false);  //state 
+	const [canComment, setCanComment] = useState(false); //state
 	const [text, setText] = useState('');
-	const [existComment, setExistComment] = useState(false)
 
-	const [isLogIn, setIsLogIn] = useState(true);
-	const [isUser, setUser ] = useState(true);
+	//value of rating
+	const [ratingValue, setRatingValue] = useState(0);
+	
+	const [existComment, setExistComment] = useState(true);
 
-	const sendToServer = () => {
+	//state of logins
+	const [isLogIn, setIsLogIn] = useState(null);
+	const [isUser, setUser] = useState(null);
 
-		if(isLogIn && !existComment && text.length > 0 ){
-			const now = new Date()
-			const bodyMsg = {
-				user: "Usuario Prueba",
-				rating: 5,
-				comment: text,
-				idUser: "62d53a3c7",
-				date: now,
-			};
-			console.log(bodyMsg)
-			sendComment(id,bodyMsg);
-			setExistComment(true)
-			console.log("mensaje enviado")
-		} else {
-			console.log("hay que registrarse o iniciar sesion para publicar comentarios")
-		}
-	}
+	// read cookies
+	console.log(getIsLogeddIn());
+	console.log(getIsUserAdmin());
+	//setIsLogIn(true);
+	//setUser(true);
+	//const idser = id;
+	//const userName = name;
+
+	const handleRating = (rate) => setRatingValue(rate / 20);
+
+	console.log(ratingValue);
 
 	const sendData = () => {
+		let today = new Date();
 
-    let today = new Date();
+		const data = {
+			user: 'Alan',
+			rating: ratingValue,
+			comment: text,
+			idUser: '23353',
+			date: today,
+		};
+		const Url = 'http://localhost:8000/detalle/' + id;
 
-    const data = {
-      user: 'Alberto',
-      rating: 5,
-      comment: text,
-      idUser: '23353',
-      date: today,
-    };
-    const Url = 'http://localhost:8000/detalle/' + id;
-
-    fetch(Url, {
-      method: "PATCH",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(data)
-    })
-      .then(response => response.json())
-      .then(data => {
-        console.log("Success:", data);
-      })
-      .catch(error => {
-        console.error("Error:", error);
-      });
-  };
-
-
-
+		fetch(Url, {
+			method: 'PATCH',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify(data),
+		})
+			.then((response) => response.json())
+			.then((data) => {
+				console.log('Success:', data);
+			})
+			.catch((error) => {
+				console.error('Error:', error);
+			});
+	};
 
 	const addNewcomment = (msg) => {
 		//not logIn
-		if(isLogIn === false){
-			console.error('Para agregar comentarios debes iniciar sesión')
+		if (isLogIn === false) {
+			console.error('Para agregar comentarios debes iniciar sesión');
 		} else {
 			//Is logIn
-			if(isUser === true){
+			if (isUser === true) {
 				//only user can add comments
 				setCanComment(false);
 				setText(msg);
-				sendData()
+				sendData();
 			} else {
 				//admins can't comment
-				console.log('No se puede agregar comentarios con sesión de administrador')
+				console.error('No se puede agregar comentarios con sesión de administrador');
 			}
 		}
-	}
-
+		window.location.reload(false);
+	};
 
 	function createContent() {
 		if (canComment === false) {
@@ -100,11 +94,15 @@ export default function AddComment(id) {
 						placeholder="Escribe tu reseña del platillo"
 						onChange={(e) => setText(e.target.value)}
 					></textarea>
-					<button
-						id="addComment"
-						type="button"
-						onClick={(e) => addNewcomment(text)}
-						>
+					<Rating
+						transition
+						onClick={handleRating}
+						ratingValue={ratingValue}
+						fillColor={'#ffd700'}
+						emptyColor={'#888888'}
+						size={50}
+					/>
+					<button id="addComment" type="button" onClick={(e) => addNewcomment(text)}>
 						Enviar comentario
 					</button>
 				</form>
