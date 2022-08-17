@@ -55,7 +55,7 @@ export default function NavBar({ isLogeddIn }) {
             </li>
           </ul> */}
           <form onSubmit={searchRestaurant}>
-            <div className="content-search">
+            <div className="content-search  justify-content-start">
               <Input
                 type="search"
                 placeholder="Buscar restaurante"
@@ -68,8 +68,7 @@ export default function NavBar({ isLogeddIn }) {
                 type="submit"
                 onClick={() => navigate(`/menu/${restaurantName}`)}
               >
-                Buscar
-                <i className="fas fa-search"></i>
+                <i className="bi bi-search"></i>
               </button>
             </div>
           </form>
