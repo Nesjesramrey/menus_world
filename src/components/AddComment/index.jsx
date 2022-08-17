@@ -2,7 +2,6 @@ import "./AddComment.css";
 import { useState } from "react";
 import { Rating } from "react-simple-star-rating";
 import { createComment as sendComment } from "../../services/menus";
-import { getIsLogeddIn, getIsUserAdmin } from "../../Auth/auth";
 
 //Cokkies
 import Cookies from "universal-cookie";
@@ -16,7 +15,7 @@ export default function AddComment(id) {
   const userType = cookies.get("TipoUsuario");
   const userId = cookies.get("Id");
   const userName = cookies.get("Usuario");
-  console.log(userType, userId, userName);
+  // console.log(userType, userId, userName);
 
   //value of rating
   const [ratingValue, setRatingValue] = useState(0);
@@ -24,12 +23,12 @@ export default function AddComment(id) {
   const [existComment, setExistComment] = useState(true);
 
   //state of logins
-  const [isLogIn, setIsLogIn] = useState(null);
-  const [isUser, setUser] = useState(null);
+  //const [isLogIn, setIsLogIn] = useState(null);
+  //const [isUser, setUser] = useState(null);
 
   // read cookies
-  console.log(getIsLogeddIn());
-  console.log(getIsUserAdmin());
+  //console.log(getIsLogeddIn());
+  //console.log(getIsUserAdmin());
   //setIsLogIn(true);
   //setUser(true);
   //const idser = id;
@@ -37,18 +36,19 @@ export default function AddComment(id) {
 
   const handleRating = (rate) => setRatingValue(rate / 20);
 
-  console.log(ratingValue);
+  //console.log(ratingValue);
 
   const sendData = () => {
     let today = new Date();
 
     const data = {
-      user: "Alan",
+      user: { userName },
       rating: ratingValue,
       comment: text,
-      idUser: "23353",
+      idUser: { userId },
       date: today,
     };
+    console.log(data);
     const Url = "http://localhost:8000/detalle/" + id;
 
     fetch(Url, {
@@ -69,11 +69,11 @@ export default function AddComment(id) {
 
   const addNewcomment = (msg) => {
     //not logIn
-    if (isLogIn === false) {
+    if (userName === "") {
       console.error("Para agregar comentarios debes iniciar sesión");
     } else {
       //Is logIn
-      if (isUser === true) {
+      if (userType === "") {
         //only user can add comments
         setCanComment(false);
         setText(msg);

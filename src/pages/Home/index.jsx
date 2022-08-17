@@ -49,6 +49,7 @@ export default function Home() {
     cookies.remove("Usuario", { path: "/" });
     cookies.remove("TipoUsuario", { path: "/" });
     cookies.remove("NombreResturante", { path: "/" });
+    cookies.remove("Id", { path: "/" });
     navigate("/");
   };
   // Local state
