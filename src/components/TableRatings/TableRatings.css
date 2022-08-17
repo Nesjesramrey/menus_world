@@ -39,6 +39,9 @@
 .value {
 	width: 15%;
 	font-weight: 500;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .base {
@@ -52,4 +55,21 @@
 	height: 10px;
 	border-radius: 10px;
 	background-color: gold;
+}
+
+.numStars {
+	margin: 2px 0px 0px 0px;
+	padding: 0px;
+}
+
+.alingStars {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.alingStars > span {
+	margin: 0px;
+	padding: 0px;
+	margin-top: -5px;
 }
