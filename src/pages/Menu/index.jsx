@@ -4,10 +4,15 @@ import { useNavigate } from "react-router-dom";
 import MenuCard from "../../components/MenuCard";
 
 import "./Menu.css";
+import QrCode from "../../components/QrCode";
+// import QRCode from "react-qr-code";
+// import QRCode from "react-qr-code";
 
 export default function Menu() {
   // Local state
   const [dishes, setDishes] = useState([]);
+
+  
 
   // RRD
   const navigate = useNavigate();
@@ -32,15 +37,22 @@ export default function Menu() {
           <div className="container-btn">
             <button
               className="btn-form"
-              onClick={() => navigate(`/formulario`)}
-            >
+              onClick={() => navigate(`/formulario`)}>
               Ir a registrar platillos
             </button>
+            <div>
+              <QrCode />
+              
+            </div>
           </div>
           {dishes &&
             dishes.map((dish) => <MenuCard dish={dish} navigate={navigate} />)}
         </div>
-        
+
+        <div>
+          
+        </div>
+            
         <div className="info">
           <p>LA PROPINA NO ES OBLIGATORIA.</p>
           <p>
@@ -50,9 +62,7 @@ export default function Menu() {
 
           <p>EL PAGO CON TARJETA NO GENERA NINGUNA COMISIÓN.</p>
         </div>
-        {/* <div className="qrcontainer">
-              <QrCode />
-        </div> */}
+       
       </div>
     </div>
   );

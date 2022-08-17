@@ -1,6 +1,6 @@
 import React from "react";
-
 import "./menucard.css";
+
 
 const MenuCard = ({ dish, navigate }) => {
   let descripcion = dish?.description;
@@ -9,8 +9,9 @@ const MenuCard = ({ dish, navigate }) => {
   }
 
   return (
+    
     <div className="col  col-6" key={dish._id}>
-      <div className="food-menu">
+         <div className="food-menu">
         <div>
           <div className="food">
             <div className="food-col food-image col-6">
@@ -41,7 +42,11 @@ const MenuCard = ({ dish, navigate }) => {
         </div>
       </div>
     </div>
+
+
   );
-};
+  };
+
 
 export default MenuCard;
+
