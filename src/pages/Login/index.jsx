@@ -46,7 +46,7 @@ export default function Login() {
 
     try {
       const response = await loginUser(data);
-      console.log(response);
+      //console.log(response);
       cleanForm();
       cookies.set("Id", response.data.info._id, { path: "/" });
       cookies.set("Usuario", response.data.info.userName, { path: "/" });

@@ -53,7 +53,6 @@ export default function Menu() {
   const cookies = new Cookies();
   cookies.set("EndpointRestaurant", restaurantName, { path: "/" });
   const userType = cookies.get("TipoUsuario");
-  console.log(userType);
 
   return (
     <div className="mainContainer">
