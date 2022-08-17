@@ -2,11 +2,17 @@ import React from "react";
 
 import "./menucard.css";
 
+//Cokkies for use name of restaurante and user category
+import Cookies from "universal-cookie";
+
 const MenuCard = ({ dish, navigate }) => {
   let descripcion = dish?.description;
   if (descripcion.length > 100) {
     descripcion = `${descripcion.slice(0, 100)}...`;
   }
+
+  const cookies = new Cookies();
+  const userType = cookies.get("TipoUsuario");
 
   return (
     <div className="col  col-6" key={dish._id}>
@@ -25,15 +31,27 @@ const MenuCard = ({ dish, navigate }) => {
             </div>
             <div className="iconos">
               <div
-                className="icons8-comments"
+                className={`${
+                  !userType
+                    ? "icons8-comments d-none"
+                    : "icons8-comments active"
+                }`}
                 onClick={() => navigate(`/detalle/${dish._id}`)}
               ></div>
               <div
-                className="icons8-edit"
+                className={`${
+                  !userType || userType === "Comensal"
+                    ? "icons8-edit d-none"
+                    : "icons8-edit active"
+                }`}
                 onClick={() => navigate(`edit/${dish._id}`)}
               ></div>
               <div
-                className="icons8-trash"
+                className={`${
+                  !userType || userType === "Comensal"
+                    ? "icons8-trash d-none"
+                    : "icons8-trash active"
+                }`}
                 onClick={() => navigate(`delete/${dish._id}`)}
               ></div>
             </div>
