@@ -1,12 +1,11 @@
 .form-child {
   background-color: #f5f5f5;
-
 }
-.card-body{
+.card-body {
   display: flex;
   justify-content: center;
 }
-.title-h2{
+.title-h2 {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -32,7 +31,8 @@
   margin-bottom: 30px;
   font-size: 20px;
 }
-.container-btn-login{
+
+.container-btn-login {
   display: flex;
   justify-content: center;
 }
@@ -46,7 +46,7 @@
   width: 170px;
   text-decoration: none;
   color: #ff7b2c;
-  transition: .5s;
+  transition: 0.5s;
 }
 
 .btn-login:hover {
@@ -62,8 +62,8 @@
   text-decoration: none;
   font-size: 14px;
 }
-.container-pass{
-  width: 217px
+.container-pass {
+  width: 217px;
 }
 .form-login .forget-password:hover {
   text-decoration: underline;
