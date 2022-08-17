@@ -33,10 +33,9 @@ export default function Detail() {
 
   // add usertype, ID and username
   const cookies = new Cookies();
-  const userType = cookies.get("TipoUsuario");
-  const userId = cookies.get("Id");
-  const userName = cookies.get("Usuario");
-  console.log(userType, userId, userName);
+  //const userType = cookies.get("TipoUsuario");
+  // const userId = cookies.get("Id");
+  // const userName = cookies.get("Usuario");
 
   //get dish, lis of recomendations and call functions to generate elements
   useEffect(() => {
@@ -56,7 +55,7 @@ export default function Detail() {
     };
 
     getDish();
-  }, []);
+  }, [dishId]);
 
   useEffect(() => {
     const getList = async () => {
