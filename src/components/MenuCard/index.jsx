@@ -32,7 +32,7 @@ const MenuCard = ({ dish, navigate }) => {
             <div className="iconos">
               <div
                 className={`${
-                  !userType || userType === "Comensal"
+                  !userType
                     ? "icons8-comments d-none"
                     : "icons8-comments active"
                 }`}

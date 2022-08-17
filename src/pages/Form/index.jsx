@@ -178,6 +178,7 @@ export default function Form() {
               <label className="form_label">Platillo:</label>
               <Input
                 type="text"
+                className="form-control"
                 placeholder="Nombre de platillo..."
                 value={dishName}
                 callback={(e) => setDishName(e.target.value)}
@@ -204,6 +205,7 @@ export default function Form() {
               <label className="form_label">Descripcion:</label>
               <TextArea
                 type="text"
+                className="form-control"
                 placeholder="Describe tu platillo..."
                 value={description}
                 callback={(e) => setDescription(e.target.value)}

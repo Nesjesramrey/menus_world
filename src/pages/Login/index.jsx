@@ -77,10 +77,10 @@ export default function Login() {
         <div className="col-12 col-md-12 ">
           <h2 className="card-title text-center title-h2">Iniciar Sesion</h2>
 
-          <form className="form-login col-12" onSubmit={handleSubmit}>
+          <form className="form-login col-12 p-2" onSubmit={handleSubmit}>
             <Input
               type="text"
-              className="form-control inputs"
+              className="form-control"
               placeholder="Usuario"
               id="meal"
               name="meal"

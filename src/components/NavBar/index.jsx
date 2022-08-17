@@ -20,7 +20,7 @@ export default function NavBar({ isLogeddIn }) {
 
   return (
     <nav className="navbar sticky-top navbar-expand-lg nav-0">
-      <div className="container-fluid d-flex justify-content-between">
+      <div className="container-fluid d-flex justify-content-center">
         <button
         // className="navbar-toggler"
         // type="button"
@@ -55,7 +55,7 @@ export default function NavBar({ isLogeddIn }) {
             </li>
           </ul> */}
           <form onSubmit={searchRestaurant}>
-            <div className="content-search  justify-content-start">
+            <div className="content-search  justify-content-center">
               <Input
                 type="search"
                 placeholder="Buscar restaurante"
@@ -72,9 +72,9 @@ export default function NavBar({ isLogeddIn }) {
               </button>
             </div>
           </form>
-          {/*<button type="submit" className="login" onClick={() => navigate("/")}>
+          <button type="submit" className="login" onClick={() => navigate("/")}>
             {isLogeddIn ? "Cerrar Sesion " : "Iniciar Sesion"}
-        </button>*/}
+          </button>
         </div>
       </div>
     </nav>

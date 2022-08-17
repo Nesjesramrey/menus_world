@@ -1,17 +1,18 @@
 .topNavBar {
   /* border: 1px solid red; */
+  display: flex;
+  justify-content: space-between;
   border-bottom: 2px solid #fb7b05;
   max-width: 1290px;
   height: 70px;
-  position: relative;
   top: -8px;
   background-color: white;
-  margin-left: auto;
-  margin-right: auto;
 }
+
 .img-home-navbar {
   width: 65px;
 }
+
 .login {
   display: flex;
   align-items: center;
@@ -33,7 +34,7 @@
   display: flex;
   justify-content: center;
   /* border: 1px solid black; */
-  width: 1000px;
+  width: 600px;
 }
 
 .btn-search {
