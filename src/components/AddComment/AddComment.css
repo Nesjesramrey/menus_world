@@ -29,12 +29,20 @@
 #addNewComment { 
   margin: 7px 0px;
   border-radius: 8px;
-  padding: 5px;
-  border: 1px solid #ff7b2c;
+  padding: 12px;
+  border: 2px solid #ff7b2c;
   width: calc(100% - 14px);
   height: 100px;
 }
 
+#addNewComment:focus {
+  background-color: #ffefe6;
+}
+
 #buttonSize {
   width: 140px;
+}
+
+#textInstructions {
+  margin-top: 10px;
 }

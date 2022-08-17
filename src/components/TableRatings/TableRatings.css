@@ -37,12 +37,12 @@
 }
 
 .value {
-	width: 10%;
+	width: 15%;
 	font-weight: 500;
 }
 
 .base {
-	width: 85%;
+	width: 80%;
 	height: 10px;
 	background-color: #888888;
 	border-radius: 10px;
