@@ -40,7 +40,7 @@
 .btn-search {
   width: 80px;
   margin-left: 10px;
-  height: 40px;
+  width: 600px;
   border-radius: 5px;
   background-color: #fb7b05;
   font-family: "Roboto", sans-serif;
@@ -51,5 +51,4 @@
 .btn-search:hover {
   background-color:#f88214c9 ;
   color: white;
-  
 }
