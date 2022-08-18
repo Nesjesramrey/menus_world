@@ -1,5 +1,5 @@
-const URL = "http://localhost:8000";
-//const URL = "https://menus.api.nesjes.com";
+//const URL = "http://localhost:8000";
+const URL = "https://menus.api.nesjes.com";
 
 const generateConfig = (body) => {
   //console.log(JSON.stringify(body));
@@ -80,7 +80,7 @@ export const update = async (id, body) => {
 };
 
 export const deleteDish = async (id, body) => {
-  const response = await fetch(`${URL}/menu/${id}`, {
+  const response = await fetch(`${URL}/menu/{restaurant}/${id}`, {
     method: "DELETE",
     headers: {
       "Content-Type": "Application/JSON",
