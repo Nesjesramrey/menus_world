@@ -1,17 +1,18 @@
 .topNavBar {
   /* border: 1px solid red; */
+  display: flex;
+  justify-content: space-between;
   border-bottom: 2px solid #fb7b05;
   max-width: 1290px;
   height: 70px;
-  position: relative;
   top: -8px;
   background-color: white;
-  margin-left: auto;
-  margin-right: auto;
 }
-.img-home-navbar{
+
+.img-home-navbar {
   width: 65px;
 }
+
 .login {
   display: flex;
   align-items: center;
@@ -22,20 +23,22 @@
   color: #fb7b05;
   padding: 15px;
   border-radius: 5px;
-  transition: .5s;
+  transition: 0.5s;
   text-decoration: none;
- 
 }
 .login:hover {
   color: white;
   background-color: #fb7b05;
 }
-.btn-search{
-  border: 1px solid red;
-  width: 300px;
+.content-search {
+  display: flex;
+  justify-content: center;
+  /* border: 1px solid black; */
+  width: 600px;
 }
+
 .btn-search {
-  width: 100px;
+  width: 40px;
   height: 40px;
   border-radius: 5px;
   background-color: #fb7b05;
@@ -43,17 +46,9 @@
   color: white;
   border: 1px solid #fb7b05;
   transition: 0.5s;
-  margin-left: 15px;
 }
 .btn-search:hover {
   background-color: white;
   color: #fb7b05;
   border: 1px solid #fb7b05;
 }
-.content-search{
-  display: flex;
-  justify-content: center;
-  /* border: 1px solid black; */
-  width:1000px;
-}
-

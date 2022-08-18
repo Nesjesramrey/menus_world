@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import QRCode from 'qrcode';
 
-
 import './qrCode.css'
 
 const QrCode = () => {
@@ -17,9 +16,6 @@ const QrCode = () => {
       console.log(error);
     }
   }
-
-  // e.target.value
-
 
   return (
     <div className='container'>
@@ -37,3 +33,5 @@ const QrCode = () => {
 }
 
 export default QrCode
+
+

@@ -9,15 +9,12 @@ export default function Input({
   type = "text",
 }) {
   return (
-     <div>
-      <input
-
-        type={type}
-        className={className}
-        placeholder={placeholder}
-        value={value}
-        onChange={callback}
-      />
-    </div>
+    <input
+      type={type}
+      className={className}
+      placeholder={placeholder}
+      value={value}
+      onChange={callback}
+    />
   );
 }
