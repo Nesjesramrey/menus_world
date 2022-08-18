@@ -1,7 +1,6 @@
 import React from "react";
 
-import "../MenuCard/menucard.css";
-
+import "./menuCardS.css";
 
 const MenuCardS = ({dish, navigate}) => {
     let descripcion = dish?.description
@@ -11,7 +10,7 @@ const MenuCardS = ({dish, navigate}) => {
 
     return ( 
         <div className="col  col-6" key={dish._id}>
-        <div className="food-menu">
+        <div className="food1-menu">
           <div className="food">
                
               <div className="food-col food-image" >
