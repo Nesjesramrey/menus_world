@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import QRCode from 'qrcode';
 
+
 import './qrCode.css'
 
 const QrCode = () => {
@@ -21,13 +22,10 @@ const QrCode = () => {
     <div className='container'>
 
       <button className="custom-btn" onClick={() => generateQrCode()}> Genera tu QR </button>
-
-
       <br />
-      <br />
-      <br />
+     
       {imageUrl ? (<a href={imageUrl} download><img src={imageUrl} alt="img" /></a>) : null}
-
+      
     </div>
   )
 }

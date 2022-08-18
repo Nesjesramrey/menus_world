@@ -73,21 +73,15 @@ export default function Menu() {
           onClick={() => navigate(`/formulario`)}>
           Ir a registrar platillos
         </button>
+        <div className="containerqr">
+              <QrCode />              
+        </div>
+
       </div>
+      
       <div className="container">
         <div className="row">
-
-          <div className="container-btn">
-            <button
-              className="btn-form"
-              onClick={() => navigate(`/formulario`)}>
-              Ir a registrar platillos
-            </button>
-            <div>
-              <QrCode />
-              
-            </div>
-          </div>
+        
           {dishes &&
             dishes.map((dish) => <MenuCard dish={dish} navigate={navigate} />)}
         </div>

@@ -18,8 +18,8 @@
 }
 
 .food-menu .food .food-image img {
-  width: 100%;
-  height: 100%;
+  width: 68%;
+  height: 99%;
   border-bottom-left-radius: 10px;
   border-top-left-radius: 10px;
 }
@@ -66,6 +66,7 @@
     50% 50% no-repeat;
   background-size: 100%;
   cursor: pointer;
+  
 }
 
 .icons8-edit {

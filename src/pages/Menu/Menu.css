@@ -26,7 +26,9 @@
   transition: 0.5s;
   text-decoration: none;
 }
+
 .btn-form-1:hover {
   color: white;
   background-color: #fb7b05;
 }
+
