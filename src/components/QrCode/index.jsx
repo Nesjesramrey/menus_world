@@ -1,36 +1,38 @@
 import React, { useState } from 'react';
 import QRCode from 'qrcode';
-import {CopyToClipboard} from 'react-copy-to-clipboard';
 
+
+import './qrCode.css'
 
 const QrCode = () => {
 
-  const [url, setUrl] = useState('');
-  const[imageUrl, setImageUrl] = useState('');
+  const [imageUrl, setImageUrl] = useState('');
+  const currentUrl = window.location.href;
+  console.log(currentUrl)
   const generateQrCode = async () => {
-    try{
-            const response = await QRCode.toDataURL(url);
-            setImageUrl(response);
-    }catch (error){
-        console.log(error);
+    try {
+      const response = await QRCode.toDataURL(currentUrl);
+      setImageUrl(response);
+    } catch (error) {
+      console.log(error);
     }
   }
 
+  // e.target.value
 
 
   return (
     <div className='container'>
-      {/* <CopyToClipboard text= "http://localhost:3002/menu/"> */}
-      <input type="text" onChange={(e) => setUrl(e.target.value)} />
-      <button className= "btn btn-primary" onClick={() => generateQrCode()}> Genera tu QR </button> 
-      {/* </CopyToClipboard> */}
+
+      <button className="custom-btn" onClick={() => generateQrCode()}> Genera tu QR </button>
+
 
       <br />
       <br />
       <br />
-      {imageUrl ? (<a href={imageUrl} download><img src={imageUrl} alt="img"/></a>): null }
-      
-    </div>  
+      {imageUrl ? (<a href={imageUrl} download><img src={imageUrl} alt="img" /></a>) : null}
+
+    </div>
   )
 }
 

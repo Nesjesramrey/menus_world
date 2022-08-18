@@ -54,13 +54,11 @@ export default function Menu() {
             dishes.map((dish) => <MenuCard dish={dish} navigate={navigate} />)}
         </div>
 
-<<<<<<< HEAD
+
         <div>
           
         </div>
             
-=======
->>>>>>> 6e00c244eb6a1b93e9f08bdabe2c224fccf1f5bb
         <div className="info">
           <p>LA PROPINA NO ES OBLIGATORIA.</p>
           <p>

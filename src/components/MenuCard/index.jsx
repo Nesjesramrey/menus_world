@@ -20,7 +20,7 @@ const MenuCard = ({ dish, navigate }) => {
             <div className="food-col food-detail">
               <div className="name-food-name">
                 <h5>{dish.dishName}</h5>
-                <span className="name-food-price"> ${dish.price}</span>
+               <span className="name-food-price"> ${dish.price}</span>
               </div>
               <div className="name-food-descrip">{descripcion}</div>
             </div>
