@@ -5,7 +5,7 @@ import MenuCardS from "../../../components/MenuCardS";
 
 import "./DrinksAlc.css";
 
-export default function Meat_cut() {
+export default function DrinksAlc() {
   // Local state
   const [dishes, setDishes] = useState([]);
   // RRD

@@ -25,7 +25,7 @@ export default function NavBar() {
       left: "50%",
       right: "50%",
       bottom: "25%",
-      marginRight: "-30%",
+      marginRight: "-45%",
       transform: "translate(-50%, -50%)",
     },
   };

@@ -32,12 +32,12 @@ const MenuCard = ({ dish, navigate }) => {
 
   const cookies = new Cookies();
   const userType = cookies.get("TipoUsuario");
-  //const restaurantName = cookies.get("EndpointRestaurant");
+  const restaurantName = cookies.get("EndpointRestaurant");
 
-  //const deleteDish = (dish_id) => {
-  //setModalIsOpen(true);
-  // navigate(`/menu/${restaurantName}/delete/{dish_id}`);
-  // };
+  const deleteDish = () => {
+    setModalIsOpen(true);
+    navigate(`/menu/${restaurantName}?id=${dish._id}`);
+  };
 
   return (
     <div className="col  col-6" key={dish._id}>
@@ -77,7 +77,9 @@ const MenuCard = ({ dish, navigate }) => {
                     ? "icons8-trash d-none"
                     : "icons8-trash active"
                 }`}
-                onClick={() => navigate(`delete/${dish._id}`)}
+                onClick={() => {
+                  deleteDish();
+                }}
               ></div>
             </div>
           </div>

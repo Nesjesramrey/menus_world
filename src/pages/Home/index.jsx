@@ -36,8 +36,8 @@ export default function Home() {
       top: "30%",
       left: "50%",
       right: "50%",
-      bottom: "25%",
-      marginRight: "-30%",
+      bottom: "30%",
+      marginRight: "-25%",
       transform: "translate(-50%, -50%)",
     },
   };

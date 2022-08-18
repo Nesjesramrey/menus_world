@@ -42,7 +42,7 @@ export default function Menu() {
     <div className="mainContainer">
       <h1 className="titleRestaurant">{`${
         restaurantName === "undefined"
-          ? "Bienvenido puedes buscar tu restaurante"
+          ? "Bienvenido busca tu menu "
           : restaurantName
       }`}</h1>
       <div className="container-btn-form-1 d-flex justify-content-end mb-2 mt-1 me-3">
