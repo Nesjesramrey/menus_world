@@ -30,8 +30,22 @@ export const dishById = async (id) => {
   return data;
 };
 
+export const createComment = async (id, data) => {
+  const url = URL + "/detalle/" + id;
+  console.log(url);
+
+  const response = await fetch(`${URL}/detalle/${id}`, {
+    method: "PATCH",
+    header: { "Content-Type": "application/json" },
+    body: JSON.stringify(data),
+  });
+  const allData = await response.json();
+  return allData;
+};
+
 export const list = async () => {
   const response = await fetch(`${URL}/menu`);
+  console.log(URL);
   const data = await response.json();
   return data;
 };
@@ -44,7 +58,7 @@ export const sublist = async (category, restaurant) => {
   return data;
 };
 
-export const sublistRestaurant = async (restaurant) => {
+export const listRestaurant = async (restaurant) => {
   const response = await fetch(
     `${URL}/menu/submenu?restaurantName=${restaurant}`
   );

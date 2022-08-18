@@ -1,4 +1,5 @@
 import './Comments.css';
+import { Rating } from 'react-simple-star-rating';
 
 export default function CreateComments(data, key) {
 	let user = data.user ? data.user : 'NAME';
@@ -42,15 +43,6 @@ export default function CreateComments(data, key) {
 	}
 	let dateToComment = calcDate(date);
 
-	function showStars(amountOfStars) {
-		let chainStars = '';
-		for (let star = 0; star < amountOfStars; star++) {
-			chainStars += '⭐';
-		}
-		return chainStars;
-	}
-	const stars = showStars(rating);
-
 	return (
 		<div key={key} className="divComment">
 			<div className="divImgProfile">
@@ -63,7 +55,16 @@ export default function CreateComments(data, key) {
 					</p>
 					<p className="pComment">{dateToComment}</p>
 				</div>
-				<p className="pComment">{stars}</p>
+				<p className="pComment">
+					<Rating
+						transition
+						ratingValue={rating * 20}
+						fillColor={'#ffd700'}
+						emptyColor={'#888888'}
+						size={20}
+						readonly={true}
+					/>
+				</p>
 				<p className="text-start pComment">{text}</p>
 			</div>
 		</div>
