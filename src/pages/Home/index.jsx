@@ -23,7 +23,6 @@ import Login from "../../../src/pages/Login/index";
 
 //CSS
 import "./Home.css";
-import "./Signup.css";
 
 //Here begin the function
 export default function Home() {
@@ -36,9 +35,9 @@ export default function Home() {
     content: {
       top: "30%",
       left: "50%",
-      right: "40%",
-      bottom: "20%",
-      marginRight: "-50%",
+      right: "50%",
+      bottom: "30%",
+      marginRight: "-25%",
       transform: "translate(-50%, -50%)",
     },
   };
@@ -50,6 +49,7 @@ export default function Home() {
     cookies.remove("Usuario", { path: "/" });
     cookies.remove("TipoUsuario", { path: "/" });
     cookies.remove("NombreResturante", { path: "/" });
+    cookies.remove("Id", { path: "/" });
     navigate("/");
   };
   // Local state
@@ -128,31 +128,32 @@ export default function Home() {
           Esta pagina busca mejorar tu experiencia digital de consulta de
           menus.Te invitamos a registrarte o ir directamente a ver los menu
         </h3>
+        <div className=" d-flex justify-content-center">
+          <button
+            type="button"
+            className={`${userLogged ? "btn-home active" : "btn-home d-none"}`}
+            onClick={logout}
+          >
+            Cerrar Sesion
+          </button>
 
-        <button
-          type="button"
-          className={`${userLogged ? "btn-home active" : "btn-home d-none"}`}
-          onClick={logout}
-        >
-          Cerrar Sesion
-        </button>
+          <button
+            onClick={() => setModalIsOpen(true)}
+            type="button"
+            className={`${!userLogged ? "btn-home active" : "btn-home d-none"}`}
+          >
+            Inicio de Sesion
+          </button>
 
-        <button
-          onClick={() => setModalIsOpen(true)}
-          type="button"
-          className={`${!userLogged ? "btn-home active" : "btn-home d-none"}`}
-        >
-          Inicio de Sesion
-        </button>
-
-        <button
-          type="button"
-          className="btn-home"
-          value="Register"
-          onClick={(e) => setItemActiveRegister(e.target.value)}
-        >
-          Registrarme
-        </button>
+          <button
+            type="button"
+            className="btn-home"
+            value="Register"
+            onClick={(e) => setItemActiveRegister(e.target.value)}
+          >
+            Registrarme
+          </button>
+        </div>
       </div>
       <div
         className={`${
@@ -233,26 +234,27 @@ export default function Home() {
                 />
               </div>
               <div className="d-flex flex-row align-items-center justify-content-between">
-                <button type="submit" className="btn-signup">
+                <button type="submit" className="btn-singup">
                   Crear Cuenta
                 </button>
               </div>
             </form>
             <button
-              className="btn-singup"
+              className="btn-singup "
               onClick={(e) => setItemActiveRegister(e.target.value)}
               value="NoRegister"
             >
-              Home
+              Regresa inicio
             </button>
           </div>
         </div>
       </div>
       <Modal isOpen={modalIsOpen} style={customStyles}>
         <Login />
-        <button className="btn-singup" onClick={() => setModalIsOpen(false)}>
-          Cerrar ventana
-        </button>
+        <button
+          className="btn-close position-absolute top-0 end-0 "
+          onClick={() => setModalIsOpen(false)}
+        ></button>
       </Modal>
       <ToastContainer />
     </div>

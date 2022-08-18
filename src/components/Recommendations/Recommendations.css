@@ -7,18 +7,37 @@
 	padding: 7px;
 }
 
-.cardRecommendations:hover {
-	transition-duration: 700ms;
-	transform: scale(1.02);
+.overFlowDiv {
+	overflow: hidden;
+	border-radius: 6px;
+	height: 250px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .imgRecommPhoto {
-	border-radius: 6px;
+	object-fit: cover;
+	min-height: 200px;
 }
 
-.contentCardRecommendations { 
+.imgRecommPhoto:hover {
+	transition-duration: 700ms;
+	transform: scale(1.05);
+}
+
+.contentCardRecommendations {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+}
+
+.containerRecomendations {
+	padding: 0px;
+	margin: 0px;
+	display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
 }

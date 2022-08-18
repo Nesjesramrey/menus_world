@@ -3,8 +3,15 @@
 	margin: 7px 7px 0px 7px;
 	border: 1px solid #8e8ea9;
 	background-color: #fff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: calc(100% - 7px);
 }
 
 .imgDishes {
 	border-radius: 6px;
+	object-fit: cover;
+	min-height: 70%;
+	max-height: 400px;
 }
