@@ -74,14 +74,6 @@ export default function Menu() {
           {dishes &&
             dishes.map((dish) => <MenuCard dish={dish} navigate={navigate} />)}
         </div>
-        <Modal isOpen={modalIsOpen} style={customStyles}>
-          <div>Aqui va algo</div>
-          <Delete />
-          <button
-            className="btn-close position-absolute top-0 end-0 "
-            onClick={() => setModalIsOpen(false)}
-          ></button>
-        </Modal>
         <div className="info">
           <p>LA PROPINA NO ES OBLIGATORIA.</p>
           <p>
@@ -91,6 +83,14 @@ export default function Menu() {
 
           <p>EL PAGO CON TARJETA NO GENERA NINGUNA COMISIÓN.</p>
         </div>
+        <Modal isOpen={modalIsOpen} style={customStyles}>
+          <div>Aqui va algo</div>
+          <Delete />
+          <button
+            className="btn-close position-absolute top-0 end-0 "
+            onClick={() => setModalIsOpen(false)}
+          ></button>
+        </Modal>
         <button
           onClick={() => setModalIsOpen(true)}
           type="button"
