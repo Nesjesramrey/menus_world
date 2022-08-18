@@ -16,7 +16,6 @@ import QrCode from "../../components/QrCode";
 export default function Menu() {
   // Local state
   const [dishes, setDishes] = useState([]);
-  const [modalIsOpen, setModalIsOpen] = useState(false);
 
   // RRD
   const { restaurantName } = useParams();
