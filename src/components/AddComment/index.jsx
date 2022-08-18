@@ -3,49 +3,33 @@ import { useState } from "react";
 import { Rating } from "react-simple-star-rating";
 import { createComment as sendComment } from "../../services/menus";
 
-//Cokkies
+//Cookies
 import Cookies from "universal-cookie";
 
 export default function AddComment(id) {
   const [canComment, setCanComment] = useState(false); //state
   const [text, setText] = useState("");
+  const [existComment, setExistComment] = useState(true);
+
+    //value of rating
+    const [ratingValue, setRatingValue] = useState(0);
 
   // add usertype, ID and username
   const cookies = new Cookies();
   const userType = cookies.get("TipoUsuario");
   const userId = cookies.get("Id");
   const userName = cookies.get("Usuario");
-  // console.log(userType, userId, userName);
-
-  //value of rating
-  const [ratingValue, setRatingValue] = useState(0);
-
-  const [existComment, setExistComment] = useState(true);
-
-  //state of logins
-  //const [isLogIn, setIsLogIn] = useState(null);
-  //const [isUser, setUser] = useState(null);
-
-  // read cookies
-  //console.log(getIsLogeddIn());
-  //console.log(getIsUserAdmin());
-  //setIsLogIn(true);
-  //setUser(true);
-  //const idser = id;
-  //const userName = name;
 
   const handleRating = (rate) => setRatingValue(rate / 20);
-
-  //console.log(ratingValue);
 
   const sendData = () => {
     let today = new Date();
 
     const data = {
-      user: { userName },
+      user: userName,
       rating: ratingValue,
       comment: text,
-      idUser: { userId },
+      idUser: userId,
       date: today,
     };
     console.log(data);
@@ -69,11 +53,11 @@ export default function AddComment(id) {
 
   const addNewcomment = (msg) => {
     //not logIn
-    if (userName === "") {
+    if (!userName) {
       console.error("Para agregar comentarios debes iniciar sesión");
     } else {
       //Is logIn
-      if (userType === "") {
+      if (userType === "Comensal") {
         //only user can add comments
         setCanComment(false);
         setText(msg);

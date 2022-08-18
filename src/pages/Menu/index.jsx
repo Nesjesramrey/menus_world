@@ -12,6 +12,8 @@ import Delete from "../../../src/pages/Menu/Delete";
 //Cokkies for use name of restaurante and user category
 import Cookies from "universal-cookie";
 
+import QrCode from "../../components/QrCode";
+
 //Modal
 import Modal from "react-modal";
 
@@ -71,37 +73,44 @@ export default function Menu() {
       </div>
       <div className="container">
         <div className="row">
+          <div>
+            <QrCode />
+          </div>
           {dishes &&
             dishes.map((dish) => <MenuCard dish={dish} navigate={navigate} />)}
         </div>
-        <div className="info">
-          <p>LA PROPINA NO ES OBLIGATORIA.</p>
-          <p>
-            ACEPTAMOS PAGOS EN EFECTIVO, TARJETAS VISA, MASTER CARD Y AMERICAN
-            EXPRESS.
-          </p>
 
-          <p>EL PAGO CON TARJETA NO GENERA NINGUNA COMISIÓN.</p>
-        </div>
-        <Modal isOpen={modalIsOpen} style={customStyles}>
-          <div>Aqui va algo</div>
-          <Delete />
-          <button
-            className="btn-close position-absolute top-0 end-0 "
-            onClick={() => setModalIsOpen(false)}
-          ></button>
-        </Modal>
-        <button
-          onClick={() => setModalIsOpen(true)}
-          type="button"
-          className="btn-home active"
-        >
-          Activa modal
-        </button>
-        {/* <div className="qrcontainer">
-              <QrCode />
-        </div> */}
+        <div></div>
+
+        {dishes &&
+          dishes.map((dish) => <MenuCard dish={dish} navigate={navigate} />)}
       </div>
+      <Modal isOpen={modalIsOpen} style={customStyles}>
+        <div>Aqui va algo</div>
+        <Delete />
+        <button
+          className="btn-close position-absolute top-0 end-0 "
+          onClick={() => setModalIsOpen(false)}
+        ></button>
+      </Modal>
+
+      <div className="info">
+        <p>LA PROPINA NO ES OBLIGATORIA.</p>
+        <p>
+          ACEPTAMOS PAGOS EN EFECTIVO, TARJETAS VISA, MASTER CARD Y AMERICAN
+          EXPRESS.
+        </p>
+
+        <p>EL PAGO CON TARJETA NO GENERA NINGUNA COMISIÓN.</p>
+      </div>
+
+      <button
+        onClick={() => setModalIsOpen(true)}
+        type="button"
+        className="btn-home active"
+      >
+        Activa modal
+      </button>
     </div>
   );
 }
