@@ -14,7 +14,7 @@ export default function Meat_cut() {
   const navigate = useNavigate();
   useEffect(() => {
     const list = async () => {
-      const data = await listDishes("Ensaldas", restaurantName);
+      const data = await listDishes("Ensaladas", restaurantName);
       const parsedDishes = Object.keys(data).map((key) => {
         return { id: key, ...data[key] };
       });
