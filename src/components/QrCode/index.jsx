@@ -1,32 +1,38 @@
-import React from "react";
+import React, { useState } from "react";
 import QRCode from "qrcode";
 
-import Input from "../Input";
+import "./qrCode.css";
 
-const generateQrCode = async ({ qr, setQr }) => {
-  try {
-    const response = await QRCode.toDataURL("prueba generando qr");
-    console.log(response);
-  } catch (error) {
-    console.log(error);
-  }
+const QrCode = () => {
+  const [imageUrl, setImageUrl] = useState("");
+  const currentUrl = window.location.href;
+  //console.log(currentUrl)
+  const generateQrCode = async () => {
+    try {
+      const response = await QRCode.toDataURL(currentUrl);
+      setImageUrl(response);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <div className="container">
-      {/* <input type="text"></input> */}
-      <Input
-        type="text"
-        placeholder="Generar_QR..."
-        value={qr}
-        callback={(e) => setQr(e.target.value)}
-      />
-
-      <button className=".btn" onClick={() => generateQrCode()}>
+      <button className="custom-btn" onClick={() => generateQrCode()}>
         {" "}
         Genera tu QR{" "}
       </button>
+
+      <br />
+      <br />
+      <br />
+      {imageUrl ? (
+        <a href={imageUrl} download>
+          <img src={imageUrl} alt="img" />
+        </a>
+      ) : null}
     </div>
   );
 };
 
-export default generateQrCode;
+export default QrCode;
