@@ -12,6 +12,9 @@ import Delete from "../../../src/pages/Menu/Delete";
 //Cokkies for use name of restaurante and user category
 import Cookies from "universal-cookie";
 
+
+import QrCode from "../../components/QrCode";
+
 //Modal
 import Modal from "react-modal";
 
@@ -28,10 +31,13 @@ const customStyles = {
 };
 Modal.setAppElement("#root");
 
+
 export default function Menu() {
   // Local state
   const [dishes, setDishes] = useState([]);
   const [modalIsOpen, setModalIsOpen] = useState(false);
+
+  
 
   // RRD
   const { restaurantName } = useParams();
@@ -64,13 +70,32 @@ export default function Menu() {
               ? "btn-form-1 d-none"
               : "btn-form-1 active"
           }`}
-          onClick={() => navigate(`/formulario`)}
-        >
+          onClick={() => navigate(`/formulario`)}>
           Ir a registrar platillos
         </button>
       </div>
       <div className="container">
         <div className="row">
+
+          <div className="container-btn">
+            <button
+              className="btn-form"
+              onClick={() => navigate(`/formulario`)}>
+              Ir a registrar platillos
+            </button>
+            <div>
+              <QrCode />
+              
+            </div>
+          </div>
+          {dishes &&
+            dishes.map((dish) => <MenuCard dish={dish} navigate={navigate} />)}
+        </div>
+
+        <div>
+          
+        </div>
+            
           {dishes &&
             dishes.map((dish) => <MenuCard dish={dish} navigate={navigate} />)}
         </div>
@@ -82,6 +107,7 @@ export default function Menu() {
             onClick={() => setModalIsOpen(false)}
           ></button>
         </Modal>
+
         <div className="info">
           <p>LA PROPINA NO ES OBLIGATORIA.</p>
           <p>
@@ -91,6 +117,7 @@ export default function Menu() {
 
           <p>EL PAGO CON TARJETA NO GENERA NINGUNA COMISIÓN.</p>
         </div>
+
         <button
           onClick={() => setModalIsOpen(true)}
           type="button"
@@ -98,10 +125,8 @@ export default function Menu() {
         >
           Activa modal
         </button>
-        {/* <div className="qrcontainer">
-              <QrCode />
-        </div> */}
+        
       </div>
-    </div>
+   
   );
 }
