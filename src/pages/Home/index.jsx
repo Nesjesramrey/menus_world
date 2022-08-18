@@ -110,9 +110,9 @@ export default function Home() {
   };
 
   return (
-    <div className="m-1 d-flex flex-row justify-content-around align-items-center ">
+    <div className="m-1 d-flex flex-row ">
       <img
-        src="https://www.lifeder.com/wp-content/uploads/2018/04/Nuestra-comida-deberia-ser-nuestra-medicina-y-nuestra-medicina-deberia-ser-nuestra-comida.-min.jpg"
+        src="https://www.mobydecmuebles.com/wp-content/uploads/2019/09/restaurante-naranja.jpg"
         alt="cabecera"
         className="img-home"
       ></img>
@@ -123,7 +123,8 @@ export default function Home() {
             : "row justify-content-center container d-none"
         }`}
       >
-        <img className="img-home" src={logo} alt="logo" width="50px" />
+        
+        <img  src={logo} alt="logo" className="img-home-logo"/>
         <h3 className="p-home">
           Esta pagina busca mejorar tu experiencia digital de consulta de
           menus.Te invitamos a registrarte o ir directamente a ver los menu
@@ -147,7 +148,7 @@ export default function Home() {
 
           <button
             type="button"
-            className="btn-home"
+            className="btn-home-registrer"
             value="Register"
             onClick={(e) => setItemActiveRegister(e.target.value)}
           >

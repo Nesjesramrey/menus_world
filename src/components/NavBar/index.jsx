@@ -159,5 +159,6 @@ export default function NavBar() {
     // 		<NavbarText>Simple Text</NavbarText>
     // 	</Collapse>
     // </Navbar>
+    
   );
 }
