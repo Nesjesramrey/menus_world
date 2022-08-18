@@ -24,9 +24,7 @@ const QrCode = () => {
       <br />
      
       {imageUrl ? (<a href={imageUrl} download><img src={imageUrl} alt="img" /></a>) : null}
-      
-
-      <br />
+            
       {imageUrl ? (
         <a href={imageUrl} download>
           <img src={imageUrl} alt="img" />
