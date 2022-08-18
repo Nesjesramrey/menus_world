@@ -33,7 +33,7 @@ export default function AddComment(id) {
       date: today,
     };
     console.log(data);
-    const Url = "http://localhost:8000/detalle/" + id;
+    const Url = "https://menus.api.nesjes.com/detalle/" + id;
 
     fetch(Url, {
       method: "PATCH",
