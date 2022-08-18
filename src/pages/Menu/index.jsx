@@ -60,6 +60,7 @@ export default function Menu() {
           <QrCode />
         </div>
       </div>
+      
       <div className="container">
         <div className="row">
           {dishes &&
