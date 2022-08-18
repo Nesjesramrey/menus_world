@@ -34,12 +34,13 @@
   display: flex;
   justify-content: center;
   /* border: 1px solid black; */
-  width: 600px;
+  width: 650px;
 }
 
 .btn-search {
-  width: 40px;
-  height: 40px;
+  width: 80px;
+  margin-left: 10px;
+  width: 600px;
   border-radius: 5px;
   background-color: #fb7b05;
   font-family: "Roboto", sans-serif;
@@ -48,7 +49,6 @@
   transition: 0.5s;
 }
 .btn-search:hover {
-  background-color: white;
-  color: #fb7b05;
-  border: 1px solid #fb7b05;
+  background-color:#f88214c9 ;
+  color: white;
 }
