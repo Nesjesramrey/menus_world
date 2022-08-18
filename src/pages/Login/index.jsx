@@ -46,7 +46,7 @@ export default function Login() {
 
     try {
       const response = await loginUser(data);
-      console.log(response);
+      //console.log(response);
       cleanForm();
       cookies.set("Id", response.data.info.id, { path: "/" });
       cookies.set("Usuario", response.data.info.userName, { path: "/" });
@@ -63,11 +63,9 @@ export default function Login() {
       if (response.data.info.userCategory === "Administrador de restaurante") {
         toast.success("Inicio de sesion exitoso!!");
         navigate(`/menu/${endpointRestaurant}`);
-      } else {
-        toast.error("Usuario o contrasena incorrectos");
       }
     } catch (error) {
-      console.error(error);
+      //console.error(error);
     }
   };
 

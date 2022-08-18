@@ -1,14 +1,12 @@
-import React, { useState } from 'react';
-import QRCode from 'qrcode';
-
+import React, { useState } from "react";
+import QRCode from "qrcode";
 
 import './qrCode.css'
 
 const QrCode = () => {
-
-  const [imageUrl, setImageUrl] = useState('');
+  const [imageUrl, setImageUrl] = useState("");
   const currentUrl = window.location.href;
-  console.log(currentUrl)
+  //console.log(currentUrl)
   const generateQrCode = async () => {
     try {
       const response = await QRCode.toDataURL(currentUrl);
@@ -16,9 +14,10 @@ const QrCode = () => {
     } catch (error) {
       console.log(error);
     }
-  }
+  };
 
   return (
+
     <div className='container'>
 
       <button className="custom-btn" onClick={() => generateQrCode()}> Genera tu QR </button>
@@ -26,10 +25,15 @@ const QrCode = () => {
      
       {imageUrl ? (<a href={imageUrl} download><img src={imageUrl} alt="img" /></a>) : null}
       
+
+      <br />
+      {imageUrl ? (
+        <a href={imageUrl} download>
+          <img src={imageUrl} alt="img" />
+        </a>
+      ) : null}
     </div>
-  )
-}
+  );
+};
 
-export default QrCode
-
-
+export default QrCode;
