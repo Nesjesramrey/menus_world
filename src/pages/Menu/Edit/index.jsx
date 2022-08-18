@@ -15,7 +15,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Input from "../../../components/Input";
 import Select from "../../../../src/components/Select";
-import TextArea from "../../../components/TextArea"
+import TextArea from "../../../components/TextArea";
 
 export default function MenuEdit() {
   // Local state
@@ -83,13 +83,11 @@ export default function MenuEdit() {
   return (
     <div className="mainContainer">
       <div className="container-form col-12 col-md-12">
-        <h2 className="title-edit col-6 col-md-6">
-          Datos para Actualizar
-        </h2>
+        <h2 className="title-edit col-6 col-md-6">Datos para Actualizar</h2>
         {isLoading ? (
           <p>Cargando...</p>
         ) : (
-          <form className="form-edit col-3 col-md-3" onSubmit={handleSubmit}>
+          <form className="form-edit col-6 col-md-6" onSubmit={handleSubmit}>
             <label className="label_form">Platillo:</label>
             <Input
               type="text"
@@ -131,9 +129,9 @@ export default function MenuEdit() {
               callback={(e) => setCategory(e.target.value)}
             />
             <div className="button-editar">
-            <button type="submit" className="btn-edit">
-              Modificar platillo
-            </button>
+              <button type="submit" className="btn-edit">
+                Modificar platillo
+              </button>
             </div>
           </form>
         )}

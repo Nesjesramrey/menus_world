@@ -44,8 +44,6 @@ export default function DishDelete() {
             ) : (
               <div className="card-body py-md-4">
                 <p>{dish.dishName}</p>
-                <p>{dish.description}</p>
-                <p>{dish.price}</p>
                 <button className="btn-delete" onClick={() => navigate(-1)}>
                   Regresar
                 </button>
