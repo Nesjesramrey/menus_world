@@ -64,10 +64,7 @@ export default function Menu() {
       
       <div className="container">
         <div className="row">
-         <div>
-            <QrCode />
-        </div>
-
+        
           {dishes &&
             dishes.map((dish) => <MenuCard dish={dish} navigate={navigate} />)}
         </div>
