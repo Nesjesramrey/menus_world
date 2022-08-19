@@ -33,11 +33,11 @@ export default function Home() {
   //Styles modal
   const customStyles = {
     content: {
-      top: "30%",
+      top: "40%",
       left: "50%",
       right: "50%",
-      bottom: "30%",
-      marginRight: "-25%",
+      bottom: "5%",
+      marginRight: "-50%",
       transform: "translate(-50%, -50%)",
     },
   };
@@ -123,8 +123,7 @@ export default function Home() {
             : "row justify-content-center container d-none"
         }`}
       >
-        
-        <img  src={logo} alt="logo" className="img-home-logo"/>
+        <img src={logo} alt="logo" className="img-home-logo" />
         <h3 className="p-home">
           Esta pagina busca mejorar tu experiencia digital de consulta de
           menus.Te invitamos a registrarte o ir directamente a ver los menu
@@ -155,6 +154,13 @@ export default function Home() {
             Registrarme
           </button>
         </div>
+        <Modal isOpen={modalIsOpen} style={customStyles}>
+          <Login />
+          <button
+            className="btn-close position-absolute top-0 end-0 "
+            onClick={() => setModalIsOpen(false)}
+          ></button>
+        </Modal>
       </div>
       <div
         className={`${
@@ -250,13 +256,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <Modal isOpen={modalIsOpen} style={customStyles}>
-        <Login />
-        <button
-          className="btn-close position-absolute top-0 end-0 "
-          onClick={() => setModalIsOpen(false)}
-        ></button>
-      </Modal>
+
       <ToastContainer />
     </div>
   );
