@@ -40,7 +40,7 @@ const MenuCard = ({ dish, navigate }) => {
   };
 
   return (
-    <div className="col  col-6" key={dish._id}>
+    <div className="col-10  col-md-6" key={dish._id}>
       <div className="food-menu">
         <div>
           <div className="food">

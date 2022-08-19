@@ -6,6 +6,7 @@
   transition: 1s;
   font-size: 40px;
   margin-top: 15px;
+  margin-left: 100px;
   text-shadow: 3px 3px 3px #fb7b05;
 }
 
@@ -13,6 +14,7 @@
   text-align: center;
   text-decoration: solid;
   font-weight: bold;
+  margin: 10px;
 }
 
 .btn-form-1 {
