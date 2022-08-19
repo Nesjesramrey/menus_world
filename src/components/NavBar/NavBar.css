@@ -9,11 +9,11 @@
   background-color: white;
 }
 
-.navbar-brand__img{
+.navbar-brand__img {
   width: 60px;
 }
-button.btn-home-nav{
-  width: 110px;
+.btn-home-nav {
+  width: 150px;
   height: 45px;
   font-family: "Roboto", sans-serif;
   background-color: white;
@@ -22,7 +22,7 @@ button.btn-home-nav{
   border-radius: 5px;
   transition: 0.5s;
   text-decoration: none;
-  margin: 15px;
+  margin-left: 40px;
 }
 .login {
   display: flex;
@@ -59,6 +59,6 @@ button.btn-home-nav{
   transition: 0.5s;
 }
 .btn-search:hover {
-  background-color:#f88214c9 ;
+  background-color: #f88214c9;
   color: white;
 }
