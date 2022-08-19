@@ -33,10 +33,10 @@ export default function Home() {
   //Styles modal
   const customStyles = {
     content: {
-      top: "30%",
+      top: "40%",
       left: "50%",
       right: "50%",
-      bottom: "30%",
+      bottom: "5%",
       marginRight: "-20%",
       transform: "translate(-50%, -50%)",
     },

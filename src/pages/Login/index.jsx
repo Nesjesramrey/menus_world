@@ -95,7 +95,7 @@ export default function Login() {
               callback={(e) => setPassword(e.target.value)}
             />
 
-            <div className="container-btn-login">
+            <div className="container-btn-login col-10">
               <button type="submit" className="btn-login">
                 Ingresar
               </button>

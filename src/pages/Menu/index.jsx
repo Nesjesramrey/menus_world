@@ -56,15 +56,13 @@ export default function Menu() {
         >
           Ir a registrar platillos
         </button>
-        <div className="containerqr">
-              <QrCode />              
+        <div>
+          <QrCode />
         </div>
-
       </div>
       
       <div className="container">
         <div className="row">
-        
           {dishes &&
             dishes.map((dish) => <MenuCard dish={dish} navigate={navigate} />)}
         </div>
