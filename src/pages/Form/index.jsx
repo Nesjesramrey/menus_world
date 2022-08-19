@@ -51,10 +51,10 @@ export default function Form() {
 
   // Mover todo lo relacionado al dropzone y a S3 a un componente nuevo (pendiente)
   const config = {
-    bucketName: "deploy-menusworld",
-    region: "us-east-2",
-    accessKeyId: "AKIAW7DTEGDATKMYOV6R",
-    secretAccessKey: "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",
+    bucketName: process.env.REACT_APP_BUCKET_NAME,
+    region: process.env.REACT_APP_REGION,
+    accessKeyId: process.env.REACT_APP_ACCESS,
+    secretAccessKey: process.env.REACT_APP_SECRET,
   };
 
   const uploadFileToS3 = async (file) => {
