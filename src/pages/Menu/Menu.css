@@ -40,4 +40,9 @@
 	flex-direction: row;
 	align-items: center;
 	justify-content: space-between;
+
+.ReactModal__Overlay {
+  opacity: 1;
+  transition: opacity 2000ms ease-in-out;
+
 }

@@ -49,81 +49,55 @@ export default function NavBar() {
   };
 
   return (
-    <div>
-      <nav className="navbar sticky-top navbar-expand-lg nav-0">
-        <div className="container-fluid d-flex justify-content-center">
-          <button
-          // className="navbar-toggler"
-          // type="button"
-          // data-bs-toggle="collapse"
-          // data-bs-target="#navbarTogglerDemo01"
-          // aria-controls="navbarTogglerDemo01"
-          // aria-expanded="false"
-          // aria-label="Toggle navigation"
-          >
-            {/* <span className="navbar-toggler-icon"></span> */}
-          </button>
-          <div
-            className="collapse navbar-collapse topNavBar d-flex justify-content-between"
-            id="navbarTogglerDemo01 "
-          >
-            <img
-              className="img-home-navbar"
-              src={logo}
-              alt="logo"
-              onClick={() => navigate("/")}
+    <div className="container d-flex">
+      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <div className="logo-nav">
+          {" "}
+          <img
+            loading="lazy"
+            className="navbar-brand imgNav"
+            src={logo}
+            alt="logo"
+            onClick={() => navigate("/")}
+          />
+        </div>
+        <form className="nav-item" onSubmit={searchRestaurant}>
+          <div className="col col-12 col-6 content-search  justify-content-center ">
+            <Input
+              type="search"
+              placeholder="Buscar restaurante"
+              className="form-control"
+              value={restaurantName}
+              callback={(e) => setRestaurantName(e.target.value)}
             />
-            {/* <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-            <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="/">
-                Home
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="/registro">
-                Registrarse
-              </a>
-            </li>
-          </ul> */}
-            <form onSubmit={searchRestaurant}>
-              <div className="content-search  justify-content-center">
-                <Input
-                  type="search"
-                  placeholder="Buscar restaurante"
-                  className="form-control"
-                  value={restaurantName}
-                  callback={(e) => setRestaurantName(e.target.value)}
-                />
-                <button
-                  className="btn-search"
-                  type="submit"
-                  onClick={() => navigate(`/menu/${restaurantName}`)}
-                >
-                  <i className="bi bi-search"></i>
-                </button>
-              </div>
-            </form>
             <button
-              type="button"
-              className={`${
-                userLogged ? "btn-home active" : "btn-home d-none"
-              }`}
-              onClick={logout}
+              className="btn-search"
+              type="submit"
+              onClick={() => navigate(`/menu/${restaurantName}`)}
             >
-              Cerrar Sesion
-            </button>
-
-            <button
-              onClick={() => setModalIsOpen(true)}
-              type="button"
-              className={`${
-                !userLogged ? "btn-home active" : "btn-home d-none"
-              }`}
-            >
-              Inicio de Sesion
+              Buscar
             </button>
           </div>
-        </div>
+        </form>
+        <button
+          type="button"
+          className={`${
+            userLogged ? "btn-home-nav nav-item active" : "btn-home-nav d-none"
+          }`}
+          onClick={logout}
+        >
+          Cerrar Sesion
+        </button>
+
+        <button
+          onClick={() => setModalIsOpen(true)}
+          type="button"
+          className={`${
+            !userLogged ? "btn-home-nav nav-item active" : "btn-home-nav d-none"
+          }`}
+        >
+          Inicio de Sesion
+        </button>
       </nav>
       <Modal isOpen={modalIsOpen} style={customStyles}>
         <Login />
@@ -133,32 +107,5 @@ export default function NavBar() {
         ></button>
       </Modal>
     </div>
-    // <Navbar>
-    // 	<NavbarBrand href="/">reactstrap</NavbarBrand>
-    // 	<NavbarToggler onClick={toggle} />
-    // 	<Collapse isOpen={isOpen} navbar>
-    // 		<Nav className="me-auto" navbar>
-    // 			<NavItem>
-    // 				<NavLink href="/components/">Components</NavLink>
-    // 			</NavItem>
-    // 			<NavItem>
-    // 				<NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
-    // 			</NavItem>
-    // 			<UncontrolledDropdown nav inNavbar>
-    // 				<DropdownToggle nav caret>
-    // 					Options
-    // 				</DropdownToggle>
-    // 				<DropdownMenu right>
-    // 					<DropdownItem>Option 1</DropdownItem>
-    // 					<DropdownItem>Option 2</DropdownItem>
-    // 					<DropdownItem divider />
-    // 					<DropdownItem>Reset</DropdownItem>
-    // 				</DropdownMenu>
-    // 			</UncontrolledDropdown>
-    // 		</Nav>
-    // 		<NavbarText>Simple Text</NavbarText>
-    // 	</Collapse>
-    // </Navbar>
-    
   );
 }

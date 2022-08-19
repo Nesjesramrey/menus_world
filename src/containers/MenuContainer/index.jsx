@@ -14,11 +14,11 @@ export default function MenuContainer() {
   const endpointRestaurant = cookies.get("EndpointRestaurant");
 
   return (
-    <div className="container-welcome">
+    <div className="container-welcome  col-12">
       <NavBar isAdmin={isAdmin} isLogeddIn={isLogeddIn} />
 
-      <div className="container">
-        <div className="button-nav">
+      <div className="container col-10 ">
+        <div className="button-nav col-1 col-md-12">
           <Button
             bsPrefix="custom-btn
         "
@@ -48,7 +48,7 @@ export default function MenuContainer() {
             bsPrefix="custom-btn"
             onClick={() => navigate(`pescados/${endpointRestaurant}`)}
           >
-            Pescados y mariscos
+            Pescados
           </Button>{" "}
           <Button
             bsPrefix="custom-btn"

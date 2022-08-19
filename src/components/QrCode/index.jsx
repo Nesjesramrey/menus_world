@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import QRCode from 'qrcode';
 
+
 import './qrCode.css';
 
 //Cokkies for use name of restaurante and user category
