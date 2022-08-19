@@ -13,6 +13,20 @@
 	text-align: center;
 	text-decoration: solid;
 	font-weight: bold;
+  text-align: center;
+  font-family: "Times New Roman", Times, serif;
+  transition: 1s;
+  font-size: 40px;
+  margin-top: 15px;
+  margin-left: 100px;
+  text-shadow: 3px 3px 3px #fb7b05;
+}
+
+.info {
+  text-align: center;
+  text-decoration: solid;
+  font-weight: bold;
+  margin: 10px;
 }
 
 .btn-form-1 {
@@ -40,4 +54,9 @@
 	flex-direction: row;
 	align-items: center;
 	justify-content: space-between;
+}
+
+.ReactModal__Overlay {
+  opacity: 1;
+  transition: opacity 2000ms ease-in-out;
 }
