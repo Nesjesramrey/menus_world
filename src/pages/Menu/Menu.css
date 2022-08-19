@@ -2,11 +2,11 @@
 
 .titleRestaurant {
   text-align: center;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: "Times New Roman", Times, serif;
   transition: 1s;
   font-size: 40px;
   margin-top: 15px;
-  text-shadow: 3px 3px 3px #fb7b05 ;
+  text-shadow: 3px 3px 3px #fb7b05;
 }
 
 .info {
@@ -35,3 +35,7 @@
   background-color: #fb7b05;
 }
 
+.ReactModal__Overlay {
+  opacity: 1;
+  transition: opacity 2000ms ease-in-out;
+}
