@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import QRCode from "qrcode";
 
-import './qrCode.css'
+import "./qrCode.css";
 
 //Cokkies for use name of restaurante and user category
 import Cookies from "universal-cookie";
@@ -23,7 +23,6 @@ const QrCode = () => {
   const userType = cookies.get("TipoUsuario");
 
   return (
-
     <div className="container">
       <button
         className={`${
@@ -37,13 +36,14 @@ const QrCode = () => {
         Genera tu QR{" "}
       </button>
 
-    <div className='container'>
-
-      <button className="custom-btn" onClick={() => generateQrCode()}> Genera tu QR </button>
       <br />
-     
-      {imageUrl ? (<a href={imageUrl} download><img src={imageUrl} alt="img" /></a>) : null}
-            
+
+      {imageUrl ? (
+        <a href={imageUrl} download>
+          <img src={imageUrl} alt="img" />
+        </a>
+      ) : null}
+
       {imageUrl ? (
         <a href={imageUrl} download>
           <img src={imageUrl} alt="img" />
