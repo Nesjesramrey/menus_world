@@ -1,10 +1,13 @@
-.button-nav{
-height: 60px;
-display: flex;
-background-color: white;
-align-items: center;
-display: flex;
-justify-content: space-evenly;
+.button-nav {
+  height: 60px;
+  display: flex;
+  background-color: white;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin: 5px;
 }
 .custom-btn {
   display: flex;
@@ -16,10 +19,11 @@ justify-content: space-evenly;
   color: #fb7b05;
   padding: 15px;
   border-radius: 5px;
-  transition: .5s;
+  transition: 0.5s;
   text-decoration: none;
+  margin: 10px;
 }
-.custom-btn:hover{
+.custom-btn:hover {
   color: white;
   background-color: #fb7b05;
 }
