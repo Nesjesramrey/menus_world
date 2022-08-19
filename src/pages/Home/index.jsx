@@ -37,7 +37,7 @@ export default function Home() {
       left: "50%",
       right: "50%",
       bottom: "30%",
-      marginRight: "-25%",
+      marginRight: "-20%",
       transform: "translate(-50%, -50%)",
     },
   };
