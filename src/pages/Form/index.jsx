@@ -51,7 +51,7 @@ export default function Form() {
 
   // Mover todo lo relacionado al dropzone y a S3 a un componente nuevo (pendiente)
   const config = {
-    bucketName: "deploy-menusworld",
+    bucketName: process.env.REACT_APP_BUCKET_NAME,
     region: process.env.REACT_APP_REGION,
     accessKeyId: process.env.REACT_APP_ACCESS,
     secretAccessKey: process.env.REACT_APP_SECRET,
@@ -66,7 +66,7 @@ export default function Form() {
       value: newName,
     });
 
-    console.log(file);
+    //console.log(file);
     const data = await uploadFile(file, config);
     return data;
   };
@@ -99,7 +99,7 @@ export default function Form() {
       const data = await uploadFileToS3(fileToUpload); // data de la imagen subida
 
       image_Url = data.location;
-      console.log(data);
+      //console.log(data);
     }
 
     const data = {
@@ -133,7 +133,7 @@ export default function Form() {
           })
         )
       );
-      console.log(acceptedFiles);
+      //console.log(acceptedFiles);
     },
   });
   const imagen = files.map((file) => {
