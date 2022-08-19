@@ -35,9 +35,9 @@ export default function Home() {
     content: {
       top: "40%",
       left: "50%",
-      right: "50%",
+      right: "10%",
       bottom: "5%",
-      marginRight: "-20%",
+      marginRight: "-40%",
       transform: "translate(-50%, -50%)",
     },
   };
@@ -123,8 +123,7 @@ export default function Home() {
             : "row justify-content-center container d-none"
         }`}
       >
-        
-        <img  src={logo} alt="logo" className="img-home-logo"/>
+        <img src={logo} alt="logo" className="img-home-logo" />
         <h3 className="p-home">
           Esta pagina busca mejorar tu experiencia digital de consulta de
           menus.Te invitamos a registrarte o ir directamente a ver los menu
