@@ -1,56 +1,51 @@
-import React, { useState } from "react";
-import QRCode from "qrcode";
+import React, { useState } from 'react';
+import QRCode from 'qrcode';
 
-import "./qrCode.css";
+import './qrCode.css';
 
 //Cokkies for use name of restaurante and user category
-import Cookies from "universal-cookie";
+import Cookies from 'universal-cookie';
 
 const QrCode = () => {
-  const [imageUrl, setImageUrl] = useState("");
-  const currentUrl = window.location.href;
-  //console.log(currentUrl)
-  const generateQrCode = async () => {
-    try {
-      const response = await QRCode.toDataURL(currentUrl);
-      setImageUrl(response);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+	const [imageUrl, setImageUrl] = useState('');
+	const currentUrl = window.location.href;
+	const generateQrCode = async () => {
+		try {
+			const response = await QRCode.toDataURL(currentUrl, { width: 200 });
+			setImageUrl(response);
+		} catch (error) {
+			console.log(error);
+		}
+	};
 
-  const cookies = new Cookies();
-  const userType = cookies.get("TipoUsuario");
+	const cookies = new Cookies();
+	const userType = cookies.get('TipoUsuario');
 
-  return (
-    <div className="container">
-      <button
-        className={`${
-          !userType || userType === "Comensal"
-            ? "custom-btn d-none"
-            : "custom-btn active"
-        }`}
-        onClick={() => generateQrCode()}
-      >
-        {" "}
-        Genera tu QR{" "}
-      </button>
+	function renderQr() {
+		if (userType) {
+			if (userType === 'Administrador de restaurante') {
+				return (
+					<div className="container qrSection">
+						<div>
+							<button className="custom-btn ms-auto" onClick={() => generateQrCode()}>
+								Genera tu QR
+							</button>
+						</div>
+						<div>
+							{imageUrl ? (
+								<a href={imageUrl} download>
+									<img src={imageUrl} alt="img" />
+								</a>
+							) : null}
+						</div>
+					</div>
+				);
+			}
+		}
+	}
+	const qr = renderQr();
 
-      <br />
-
-      {imageUrl ? (
-        <a href={imageUrl} download>
-          <img src={imageUrl} alt="img" />
-        </a>
-      ) : null}
-
-      {imageUrl ? (
-        <a href={imageUrl} download>
-          <img src={imageUrl} alt="img" />
-        </a>
-      ) : null}
-    </div>
-  );
+	return <div>{qr}</div>;
 };
 
 export default QrCode;
