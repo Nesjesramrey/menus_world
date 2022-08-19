@@ -49,23 +49,34 @@ export default function NavBar() {
   };
 
   return (
-    <div className="">
-      <nav className="navbar navbar-expand-lg navbar-light nav-0">
-        <div className="container-fluid d-flex justify-content-center">
-          <div
-            className="navbar navbar-expand-lg collapse navbar-collapse topNavBar d-flex justify-content-between"
-            id="navbarTogglerDemo01 "
-          >
-            <a href="#" className="navbar-brand"> <img 
-            loading="lazy"
-           className="navbar-brand__img" 
-          src={logo}
-          alt="logo"
-          onClick={() => navigate("/")}
-        /></a>
-           
+    <div className="container">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div className="navbar-nav">
+            <div className="navbar-brand">
+              {" "}
+              <img
+                loading="lazy"
+                className="navbar-brand__img"
+                src={logo}
+                alt="logo"
+                onClick={() => navigate("/")}
+              />
+            </div>
+
             <form onSubmit={searchRestaurant}>
-              <div className="col col-12 col-6 content-search  justify-content-center">
+              <div className="col col-12 col-6 content-search  justify-content-center ">
                 <Input
                   type="search"
                   placeholder="Buscar restaurante"
@@ -77,7 +88,8 @@ export default function NavBar() {
                   className="btn-search"
                   type="submit"
                   onClick={() => navigate(`/menu/${restaurantName}`)}
-                >Buscar
+                >
+                  Buscar
                   {/* <i className="bi bi-search"></i> */}
                 </button>
               </div>
@@ -112,32 +124,5 @@ export default function NavBar() {
         ></button>
       </Modal>
     </div>
-    // <Navbar>
-    // 	<NavbarBrand href="/">reactstrap</NavbarBrand>
-    // 	<NavbarToggler onClick={toggle} />
-    // 	<Collapse isOpen={isOpen} navbar>
-    // 		<Nav className="me-auto" navbar>
-    // 			<NavItem>
-    // 				<NavLink href="/components/">Components</NavLink>
-    // 			</NavItem>
-    // 			<NavItem>
-    // 				<NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
-    // 			</NavItem>
-    // 			<UncontrolledDropdown nav inNavbar>
-    // 				<DropdownToggle nav caret>
-    // 					Options
-    // 				</DropdownToggle>
-    // 				<DropdownMenu right>
-    // 					<DropdownItem>Option 1</DropdownItem>
-    // 					<DropdownItem>Option 2</DropdownItem>
-    // 					<DropdownItem divider />
-    // 					<DropdownItem>Reset</DropdownItem>
-    // 				</DropdownMenu>
-    // 			</UncontrolledDropdown>
-    // 		</Nav>
-    // 		<NavbarText>Simple Text</NavbarText>
-    // 	</Collapse>
-    // </Navbar>
-    
   );
 }

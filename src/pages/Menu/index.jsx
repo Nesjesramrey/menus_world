@@ -57,9 +57,7 @@ export default function Menu() {
           >
             Ir a registrar platillos
           </button>
-          <div>
-            <QrCode />
-          </div>
+          <QrCode />
         </div>
 
         <div className="container  col-md-12">
