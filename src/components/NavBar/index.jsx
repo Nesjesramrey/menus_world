@@ -49,72 +49,55 @@ export default function NavBar() {
   };
 
   return (
-    <div className="container">
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarNavAltMarkup"
-          aria-controls="navbarNavAltMarkup"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
-        <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div className="navbar-nav">
-            <div className="navbar-brand">
-              {" "}
-              <img
-                loading="lazy"
-                className="navbar-brand__img"
-                src={logo}
-                alt="logo"
-                onClick={() => navigate("/")}
-              />
-            </div>
-
-            <form onSubmit={searchRestaurant}>
-              <div className="col col-12 col-6 content-search  justify-content-center ">
-                <Input
-                  type="search"
-                  placeholder="Buscar restaurante"
-                  className="form-control"
-                  value={restaurantName}
-                  callback={(e) => setRestaurantName(e.target.value)}
-                />
-                <button
-                  className="btn-search"
-                  type="submit"
-                  onClick={() => navigate(`/menu/${restaurantName}`)}
-                >
-                  Buscar
-                  {/* <i className="bi bi-search"></i> */}
-                </button>
-              </div>
-            </form>
+    <div className="container d-flex">
+      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <div className="logo-nav">
+          {" "}
+          <img
+            loading="lazy"
+            className="navbar-brand imgNav"
+            src={logo}
+            alt="logo"
+            onClick={() => navigate("/")}
+          />
+        </div>
+        <form className="nav-item" onSubmit={searchRestaurant}>
+          <div className="col col-12 col-6 content-search  justify-content-center ">
+            <Input
+              type="search"
+              placeholder="Buscar restaurante"
+              className="form-control"
+              value={restaurantName}
+              callback={(e) => setRestaurantName(e.target.value)}
+            />
             <button
-              type="button"
-              className={`${
-                userLogged ? "btn-home-nav active" : "btn-home-nav d-none"
-              }`}
-              onClick={logout}
+              className="btn-search"
+              type="submit"
+              onClick={() => navigate(`/menu/${restaurantName}`)}
             >
-              Cerrar Sesion
-            </button>
-
-            <button
-              onClick={() => setModalIsOpen(true)}
-              type="button"
-              className={`${
-                !userLogged ? "btn-home-nav active" : "btn-home-nav d-none"
-              }`}
-            >
-              Inicio de Sesion
+              Buscar
             </button>
           </div>
-        </div>
+        </form>
+        <button
+          type="button"
+          className={`${
+            userLogged ? "btn-home-nav nav-item active" : "btn-home-nav d-none"
+          }`}
+          onClick={logout}
+        >
+          Cerrar Sesion
+        </button>
+
+        <button
+          onClick={() => setModalIsOpen(true)}
+          type="button"
+          className={`${
+            !userLogged ? "btn-home-nav nav-item active" : "btn-home-nav d-none"
+          }`}
+        >
+          Inicio de Sesion
+        </button>
       </nav>
       <Modal isOpen={modalIsOpen} style={customStyles}>
         <Login />

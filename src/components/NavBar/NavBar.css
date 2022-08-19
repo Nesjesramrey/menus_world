@@ -9,7 +9,8 @@
   background-color: white;
 }
 
-.navbar-brand__img {
+.navbar-brand,
+.navImg {
   width: 60px;
 }
 .btn-home-nav {
@@ -61,4 +62,13 @@
 .btn-search:hover {
   background-color: #f88214c9;
   color: white;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+  .btn-search {
+    width: 50px;
+  }
+  .btn-home-nav {
+    display: none;
+  }
 }
