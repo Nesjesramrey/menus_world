@@ -49,44 +49,23 @@ export default function NavBar() {
   };
 
   return (
-    <div>
-      <nav className="navbar sticky-top navbar-expand-lg nav-0">
+    <div className="">
+      <nav className="navbar navbar-expand-lg navbar-light nav-0">
         <div className="container-fluid d-flex justify-content-center">
-          <button
-          // className="navbar-toggler"
-          // type="button"
-          // data-bs-toggle="collapse"
-          // data-bs-target="#navbarTogglerDemo01"
-          // aria-controls="navbarTogglerDemo01"
-          // aria-expanded="false"
-          // aria-label="Toggle navigation"
-          >
-            {/* <span className="navbar-toggler-icon"></span> */}
-          </button>
           <div
-            className="collapse navbar-collapse topNavBar d-flex justify-content-between"
+            className="navbar navbar-expand-lg collapse navbar-collapse topNavBar d-flex justify-content-between"
             id="navbarTogglerDemo01 "
           >
-            <img
-              className="img-home-navbar"
-              src={logo}
-              alt="logo"
-              onClick={() => navigate("/")}
-            />
-            {/* <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-            <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="/">
-                Home
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="/registro">
-                Registrarse
-              </a>
-            </li>
-          </ul> */}
+            <a href="#" className="navbar-brand"> <img 
+            loading="lazy"
+           className="navbar-brand__img" 
+          src={logo}
+          alt="logo"
+          onClick={() => navigate("/")}
+        /></a>
+           
             <form onSubmit={searchRestaurant}>
-              <div className="content-search  justify-content-center">
+              <div className="col col-12 col-6 content-search  justify-content-center">
                 <Input
                   type="search"
                   placeholder="Buscar restaurante"
@@ -98,15 +77,15 @@ export default function NavBar() {
                   className="btn-search"
                   type="submit"
                   onClick={() => navigate(`/menu/${restaurantName}`)}
-                >
-                  <i className="bi bi-search"></i>
+                >Buscar
+                  {/* <i className="bi bi-search"></i> */}
                 </button>
               </div>
             </form>
             <button
               type="button"
               className={`${
-                userLogged ? "btn-home active" : "btn-home d-none"
+                userLogged ? "btn-home-nav active" : "btn-home-nav d-none"
               }`}
               onClick={logout}
             >
@@ -117,7 +96,7 @@ export default function NavBar() {
               onClick={() => setModalIsOpen(true)}
               type="button"
               className={`${
-                !userLogged ? "btn-home active" : "btn-home d-none"
+                !userLogged ? "btn-home-nav active" : "btn-home-nav d-none"
               }`}
             >
               Inicio de Sesion
