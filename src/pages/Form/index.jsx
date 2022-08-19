@@ -51,7 +51,7 @@ export default function Form() {
 
   // Mover todo lo relacionado al dropzone y a S3 a un componente nuevo (pendiente)
   const config = {
-    bucketName: process.env.REACT_APP_BUCKET_NAME,
+    bucketName: "deploy-menusworld",
     region: process.env.REACT_APP_REGION,
     accessKeyId: process.env.REACT_APP_ACCESS,
     secretAccessKey: process.env.REACT_APP_SECRET,
