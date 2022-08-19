@@ -4,24 +4,24 @@
   flex-direction: column;
   height: 900px;
 }
-img.img-home{
+img.img-home {
   width: 100%;
   height: 100%;
 }
-img.img-home-logo{
+img.img-home-logo {
   /* border: 1px solid green; */
   width: 240px;
   height: 200px;
   position: relative;
   top: 180px;
 }
-h3.p-home{
+h3.p-home {
   /* border: 1px solid red; */
   /* width: 690px; */
-  padding: 40px;  
+  padding: 40px;
   max-width: 650px;
   margin-top: 50px;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
 .btn-home {
   width: 150px;
@@ -50,8 +50,8 @@ h3.p-home{
   margin: 15px;
 }
 .btn-home-registrer:hover {
-  color: white ;
-  background-color:#f88214c9 ;
+  color: white;
+  background-color: #f88214c9;
   /* border: 1px solid #fb7b05; */
 }
 .btn-home:hover {
@@ -135,4 +135,8 @@ h3.p-home{
   .img-home {
     display: none;
   }
+}
+.ReactModal__Overlay {
+  opacity: 1;
+  transition: opacity 2000ms ease-in-out;
 }

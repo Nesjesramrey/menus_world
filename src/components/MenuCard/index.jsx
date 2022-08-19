@@ -13,14 +13,14 @@ import Delete from '../../../src/pages/Menu/Delete';
 
 //Styles modal
 const customStyles = {
-	content: {
-		top: '30%',
-		left: '50%',
-		right: '50%',
-		bottom: '25%',
-		marginRight: '-30%',
-		transform: 'translate(-50%, -50%)',
-	},
+  content: {
+    top: "40%",
+    left: "50%",
+    right: "50%",
+    bottom: "5%",
+    marginRight: "-50%",
+    transform: "translate(-50%, -50%)",
+  },
 };
 Modal.setAppElement('#root');
 
