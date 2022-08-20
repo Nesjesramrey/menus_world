@@ -6,13 +6,6 @@
   align-items: center;
 }
 
-.form-child {
-  background-color: #f5f5f5;
-}
-.card-body {
-  display: flex;
-  justify-content: center;
-}
 .title-h2 {
   display: flex;
   justify-content: center;
@@ -25,18 +18,14 @@
   justify-content: center;
   align-items: center;
   justify-content: space-around;
-  background-color: white;
+  background-color: #f5f5f5;
   border-top: 2px solid #ff7b2c;
   color: rgb(14, 13, 13);
   box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
 }
-.form-login h5 {
-  background-color: #f5f5f5;
-  margin: 0;
-  text-align: center;
-  height: 40px;
-  margin-bottom: 30px;
-  font-size: 20px;
+
+.form-control {
+  height: 50px;
 }
 
 .container-btn-login {
@@ -45,7 +34,7 @@
   width: 100%;
 }
 .btn-login {
-  height: 38px;
+  height: 50px;
   border-radius: 5px;
   background-color: #fff;
   border: 2px solid #ff7b2c;

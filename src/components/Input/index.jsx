@@ -11,7 +11,7 @@ export default function Input({
   return (
     <input
       type={type}
-      className={className}
+      className={"form-control"}
       placeholder={placeholder}
       value={value}
       onChange={callback}
