@@ -70,43 +70,39 @@ export default function Login() {
   };
 
   return (
-    <div className="container col-md-11">
-      <div className="row justify-content-center ">
-        <div className="col-10 col-md-11 ">
-          <h2 className="card-title text-center title-h2">Iniciar Sesion</h2>
+    <div className="container login-container p-2 justify-content-center col-12">
+      <div className="p-2 col-12 ">
+        <h2 className="card-title text-center mb-4 title-h2">Iniciar Sesion</h2>
+        <form className="form-login col-12 p-2" onSubmit={handleSubmit}>
+          <Input
+            type="text"
+            className="form-control"
+            placeholder="Usuario"
+            id="meal"
+            name="meal"
+            value={username || ""}
+            callback={(e) => setUserName(e.target.value)}
+          />
+          <Input
+            className="form-control"
+            type="password"
+            placeholder="Contraseña"
+            id="meal"
+            name="meal"
+            value={password || ""}
+            callback={(e) => setPassword(e.target.value)}
+          />
 
-          <form className="form-login col-12 p-2" onSubmit={handleSubmit}>
-            <Input
-              type="text"
-              className="form-control"
-              placeholder="Usuario"
-              id="meal"
-              name="meal"
-              value={username || ""}
-              callback={(e) => setUserName(e.target.value)}
-            />
-            <Input
-              className="form-control"
-              type="password"
-              placeholder="Contraseña"
-              id="meal"
-              name="meal"
-              value={password || ""}
-              callback={(e) => setPassword(e.target.value)}
-            />
+          <button type="submit" className="btn-login">
+            Ingresar
+          </button>
 
-            <div className="container-btn-login col-10">
-              <button type="submit" className="btn-login">
-                Ingresar
-              </button>
-            </div>
-
-            {/* <div className="container-pass">
-                <p className="forget-password">¿Olvidaste tu Contraseña?</p>
-  </div>*/}
-          </form>
-        </div>
+          <div className="container-pass">
+            <p className="forget-password">¿Olvidaste tu Contraseña?</p>
+          </div>
+        </form>
       </div>
+
       <ToastContainer />
     </div>
   );

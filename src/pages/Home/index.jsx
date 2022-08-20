@@ -19,7 +19,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 //Components
 import Input from "../../../src/components/Input/index";
-import Login from "../../../src/pages/Login/index";
+import Login from "../../../src/components/Login";
 
 //CSS
 import "./Home.css";
@@ -35,9 +35,9 @@ export default function Home() {
     content: {
       top: "40%",
       left: "50%",
-      right: "10%",
-      bottom: "5%",
-      marginRight: "-40%",
+      right: "auto",
+      bottom: "auto",
+      marginRight: "-50%",
       transform: "translate(-50%, -50%)",
     },
   };

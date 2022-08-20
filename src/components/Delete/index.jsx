@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { retrieve as retrieveDish } from "../../../services/menus";
+import { retrieve as retrieveDish } from "../../services/menus";
 
 // API functions
-import { deleteDish } from "../../../services/menus";
+import { deleteDish } from "../../services/menus";
 
 // CSS
 import "./Delete.css";
