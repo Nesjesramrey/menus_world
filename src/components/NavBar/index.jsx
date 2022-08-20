@@ -6,7 +6,7 @@ import Cookies from "universal-cookie";
 
 //components
 import Input from "../../../src/components/Input/index";
-import Login from "../../../src/pages/Login/index";
+import Login from "../../../src/components/Login";
 
 //Modal
 import Modal from "react-modal";
