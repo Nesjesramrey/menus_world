@@ -21,11 +21,11 @@ export default function NavBar() {
   //Styles modal
   const customStyles = {
     content: {
-      top: "30%",
+      top: "40%",
       left: "50%",
-      right: "50%",
-      bottom: "25%",
-      marginRight: "-45%",
+      right: "auto",
+      bottom: "auto",
+      marginRight: "-50%",
       transform: "translate(-50%, -50%)",
     },
   };
