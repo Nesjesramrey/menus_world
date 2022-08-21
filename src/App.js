@@ -6,7 +6,7 @@ import MenuContainer from "./containers/MenuContainer";
 
 //Components
 import Home from "./pages/Home";
-import Menu from "./pages/Menu";
+import Menu from "./pages/Menu/General";
 import Entries from "./pages/Menu/Entries";
 import Salads from "./pages/Menu/Salads";
 import Soup from "./pages/Menu/Soup";

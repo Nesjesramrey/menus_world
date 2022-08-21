@@ -16,8 +16,8 @@ const customStyles = {
   content: {
     top: "40%",
     left: "50%",
-    right: "50%",
-    bottom: "5%",
+    right: "auto",
+    bottom: "auto",
     marginRight: "-50%",
     transform: "translate(-50%, -50%)",
   },
@@ -43,7 +43,7 @@ const MenuCard = ({ dish, index, navigate }) => {
   const rating = calcMean(dish);
 
   return (
-    <div key={index} className="cardMenu d-flex-r">
+    <div key={index} className="cardMenu p-1 m-3 d-flex-r">
       <div className="menuCardImg">
         <a href={"../detalle/" + dish._id}>
           <img
