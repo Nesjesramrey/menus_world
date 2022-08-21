@@ -71,7 +71,7 @@ export default function Login() {
 
   return (
     <div className="container login-container p-2 justify-content-center col-12">
-      <div className="p-2 col-12 ">
+      <div className="login-item p-2 col-12 ">
         <h2 className="card-title text-center mb-4 title-h2">Iniciar Sesion</h2>
         <form className="form-login col-12 p-2" onSubmit={handleSubmit}>
           <Input

@@ -1,6 +1,6 @@
 .login-container {
-  width: 400px;
-  height: 400px;
+  width: auto;
+  height: 500px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -11,8 +11,9 @@
   justify-content: center;
   align-items: center;
 }
+
 .form-login {
-  height: 250px;
+  height: 350px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -28,15 +29,10 @@
   height: 50px;
 }
 
-.container-btn-login {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
 .btn-login {
   height: 50px;
   border-radius: 5px;
-  background-color: #fff;
+  background-color: #f5f5f5;
   border: 2px solid #ff7b2c;
   font-weight: bold;
   margin: 7px 7px 7px 7px;
@@ -48,11 +44,11 @@
 
 .btn-login:hover {
   background-color: #ff7b2c;
-  color: #fff;
+  color: #f5f5f5;
 }
 
 .form-login .forget-password {
-  background-color: white;
+  background-color: #f5f5f5;
   margin-top: 20px;
   margin-bottom: 10px;
   color: rgb(28, 27, 27);
@@ -71,5 +67,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+
+  .form-login {
+    height: auto;
   }
 }

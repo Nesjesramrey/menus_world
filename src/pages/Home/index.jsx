@@ -72,7 +72,9 @@ export default function Home() {
             : "row justify-content-center container d-none"
         }`}
       >
-        <img src={logo} alt="logo" className="img-home-logo" />
+        <div className="container-img d-flex justify-content-center">
+          <img src={logo} alt="logo" className="img-home-logo" />
+        </div>
         <h3 className="p-home">
           Deja atras la experiencia PDF o imagenes para consultar tus platillos
           favoritos, disfruta tus alimentos y comparte tus opiniones.
