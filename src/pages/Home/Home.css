@@ -1,36 +1,33 @@
-.container-welcome {
-  margin-left: 15px;
-  display: flex;
-  flex-direction: column;
-  height: 900px;
-}
 img.img-home {
   width: 100%;
   height: 100%;
 }
-img.img-home-logo {
+img-home-logo {
   /* border: 1px solid green; */
   width: 240px;
   height: 200px;
-  position: relative;
+  position: absolute;
   top: 180px;
 }
 h3.p-home {
   /* border: 1px solid red; */
   /* width: 690px; */
-  padding: 40px;
+  padding: 25px;
   max-width: 650px;
   margin-top: 50px;
   font-family: Georgia, "Times New Roman", Times, serif;
+  text-align: justify;
+  color: #fb7b05;
 }
 .btn-home {
   width: 150px;
   height: 55px;
   font-family: "Roboto", sans-serif;
+
   background-color: white;
   border: 1px solid #fb7b05;
   color: #fb7b05;
-  padding: 15px;
+  padding: 10px;
   border-radius: 5px;
   transition: 0.5s;
   text-decoration: none;
@@ -63,17 +60,11 @@ h3.p-home {
   .img-home {
     display: none;
   }
+  .btn-home {
+    font-size: 3.5vw;
+  }
 }
 .ReactModal__Overlay {
   opacity: 1;
   transition: opacity 2000ms ease-in-out;
-}
-
-.form-control {
-  border: none;
-  border-bottom: 1px solid #757575;
-}
-
-.form-control:focus {
-  outline: none;
 }

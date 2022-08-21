@@ -61,39 +61,44 @@ export default function Register() {
       await createUser(data);
       toast.success("Registro exitoso!!");
       cleanForm();
-      navigate("/login");
+      navigate("/menu");
     } catch (error) {
       console.error(error);
     }
   };
 
   return (
-    <div className="col-12 col-md-12  ">
-      <div className="title-registro">
-        <h2 className="card-title text-center">Registro</h2>
+    <div className="col-12 col-md-12 p-5 ">
+      <div className="title-register">
+        <h1 className="card-title text-center">Bienvenido a Menu's World</h1>
       </div>
-      <div className="card-body py-md-4 form-select form-select-mg">
+      <p className="description-register">
+        Con tu registro podras comentar y calificar los platillos, si eres
+        administrador o dueño de un restaurante al darte de alta podras cargar
+        tus platillos y generar tu propio QR
+      </p>
+      <div className="card-body">
         <form className="" onSubmit={handleSubmit}>
+          <div className="select-control">
+            <select
+              type="text"
+              className="form-control line-input mb-5"
+              placeholder=""
+              value={userType}
+              onChange={(e) => setUserType(e.target.value)}
+              onClick={(e) => setItemActive(e.target.value)}
+            >
+              <option value="Select">Selecciona tu tipo de usuario</option>
+              <option value="Comensal">Comensal</option>
+              <option value="Administrador de restaurante">
+                Administrador de restaurante
+              </option>
+            </select>
+          </div>
           <div className="form-group">
-            <div className="select-child">
-              <select
-                type="text"
-                className="form-select form-select-mg2"
-                placeholder=""
-                value={userType}
-                onChange={(e) => setUserType(e.target.value)}
-                onClick={(e) => setItemActive(e.target.value)}
-              >
-                <option value="Select">Selecciona tu tipo de usuario</option>
-                <option value="Comensal">Comensal</option>
-                <option value="Administrador de restaurante">
-                  Administrador de restaurante
-                </option>
-              </select>
-            </div>
             <Input
               type="text"
-              className="form-control"
+              className="form-control line-input mb-5"
               placeholder="Nombre"
               id="meal"
               name="meal"
@@ -101,11 +106,12 @@ export default function Register() {
               callback={(e) => setUserName(e.target.value)}
             />
           </div>
+
           <div className="form-group">
             <Input
               type="email"
-              className="form-control"
-              placeholder="Correo"
+              className="form-control line-input mb-5"
+              placeholder="Correo electronico.   Ej. user@empresa.com"
               id="meal"
               name="meal"
               value={email}
@@ -117,7 +123,7 @@ export default function Register() {
               type="text"
               className={`${
                 isActive("Administrador de restaurante")
-                  ? "form-control active"
+                  ? "form-control line-input mb-5 active"
                   : "form-control d-none"
               }`}
               placeholder="Nombre del Restaurante"
@@ -131,8 +137,19 @@ export default function Register() {
           <div className="form-group">
             <Input
               type="password"
-              className="form-control"
+              className="form-control line-input mb-5"
               placeholder="Contraseña"
+              id="meal"
+              name="meal"
+              value={password}
+              callback={(e) => setPassword(e.target.value)}
+            />
+          </div>
+          <div className="form-group">
+            <Input
+              type="password"
+              className="form-control line-input mb-5"
+              placeholder="Confirma tu contraseña"
               id="meal"
               name="meal"
               value={password}

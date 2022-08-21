@@ -59,7 +59,7 @@ export default function Home() {
     itemRegister === itemActiveRegister;
 
   return (
-    <div className="m-1 d-flex flex-row ">
+    <div className="m-1 p-4 d-flex flex-row ">
       <img
         src="https://www.mobydecmuebles.com/wp-content/uploads/2019/09/restaurante-naranja.jpg"
         alt="cabecera"
@@ -74,8 +74,8 @@ export default function Home() {
       >
         <img src={logo} alt="logo" className="img-home-logo" />
         <h3 className="p-home">
-          Esta pagina busca mejorar tu experiencia digital de consulta de
-          menus.Te invitamos a registrarte o ir directamente a ver los menu
+          Deja atras la experiencia PDF o imagenes para consultar tus platillos
+          favoritos, disfruta tus alimentos y comparte tus opiniones.
         </h3>
         <div className=" d-flex justify-content-center">
           <button
