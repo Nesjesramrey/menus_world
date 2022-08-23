@@ -19,6 +19,7 @@ import Desserts from "./pages/Menu/Desserts";
 import MenuEdit from "./pages/Menu/Edit";
 import Form from "./pages/Form";
 import Detail from "./pages/Detail";
+import Restaurants from "./pages/Restaurants";
 
 function App() {
   return (
@@ -48,6 +49,7 @@ function App() {
         <Route path="/formulario" element={<Form />} />
         <Route path="/detalle" element={<Detail />} />
         <Route path="/detalle/:dishId" element={<Detail />} />
+        <Route path="/restaurants" element={<Restaurants />} />
       </Routes>
     </div>
   );
