@@ -151,8 +151,8 @@ export default function Form() {
     <div className="container main_Container">
       <NavBar />
 
-      <div className="container-form">
-        <div className="subtitle">
+      <div className="container-form p-2">
+        <div className="subtitle m-2">
           <h4>Formulario de registro de su platillo</h4>
         </div>
         <Button
@@ -163,8 +163,8 @@ export default function Form() {
           Regresar al menu
         </Button>
         <form onSubmit={handleSubmit}>
-          <div className="content_form">
-            <div className="content_input">
+          <div className="content_form d-flex flex-row flex-wrap">
+            <div className="content_input col-12 col-md-5 m-1">
               <select
                 type="text"
                 className="form-select form-select-mg"
@@ -211,7 +211,7 @@ export default function Form() {
                 callback={(e) => setDescription(e.target.value)}
               />
             </div>
-            <div className="container-image">
+            <div className="container-image col-12 col-md-6">
               <div className="dropArea" {...getRootProps()}>
                 <p className="text">Click o arrastra una imagen</p>
               </div>
