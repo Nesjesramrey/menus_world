@@ -19,6 +19,7 @@ export const create = async (body) => {
 };
 
 export const login = async (body) => {
+  console.log(body);
   const requestConfig = generateConfig(body);
   const response = await fetch(`${URL}/users/login`, requestConfig);
   const data = await response.json();

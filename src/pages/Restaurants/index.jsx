@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { listRestaurant as listDishes } from "../../services/menus";
+import { listRestaurant } from "../../services/restaurants";
 import { useParams, useNavigate } from "react-router-dom";
 
 //CSS
@@ -7,13 +7,18 @@ import "./Restaurants.css";
 
 //Components
 import RestaurantCard from "../../components/RestaurantCard";
+import ButtonsMenu from "../../components/ButtonsMenu";
+import NavBar from "../../../src/components/NavBar";
 
 //Cokkies for use name of restaurante and user category
 import Cookies from "universal-cookie";
 
+//Authorization
+import { getIsUserAdmin, getIsLogeddIn } from "../../Auth/auth";
+
 export default function Restaurants() {
   // Local state
-  const [dishes, setDishes] = useState([]);
+  const [restaurants, setRestaurants] = useState([]);
 
   // RRD
   const { restaurantName } = useParams();
@@ -21,12 +26,12 @@ export default function Restaurants() {
 
   useEffect(() => {
     const list = async () => {
-      const data = await listDishes(restaurantName);
-      const parsedDishes = Object.keys(data).map((key) => {
+      const data = await listRestaurant(restaurantName);
+      const parsedRestaurants = Object.keys(data).map((key) => {
         return { id: key, ...data[key] };
       });
 
-      setDishes(parsedDishes);
+      setRestaurants(parsedRestaurants);
     };
 
     list();
@@ -34,45 +39,23 @@ export default function Restaurants() {
 
   const cookies = new Cookies();
   cookies.set("EndpointRestaurant", restaurantName, { path: "/" });
-  const userType = cookies.get("TipoUsuario");
 
-  const cards = dishes.map((dish, index) => (
-    <RestaurantCard dish={dish} index={index} navigate={navigate} />
+  const cards = restaurants.map((restaurant, index) => (
+    <RestaurantCard restaurant={restaurant} index={index} navigate={navigate} />
   ));
+  const isAdmin = getIsUserAdmin();
+  const isLogeddIn = getIsLogeddIn();
 
   return (
     <div className="mainContainer">
-      <h1 className="titleRestaurant">{`${
-        restaurantName === "undefined"
-          ? "Bienvenido busca tu menu "
-          : restaurantName
-      }`}</h1>
-      <div className="container-btn-form-1 d-flex justify-content-end mb-2 mt-1 me-3">
-        <button
-          className={`${
-            !userType || userType === "Comensal"
-              ? "btn-form-1 d-none"
-              : "btn-form-1 active"
-          }`}
-          onClick={() => navigate(`/formulario`)}
-        >
-          Ir a registrar platillos
-        </button>
-      </div>
+      <NavBar isAdmin={isAdmin} isLogeddIn={isLogeddIn} />
+      <ButtonsMenu />
+      <h1 className="titleRestaurant">{`${"Bienvenido busca tu menu "}`}</h1>
 
       <div className="container g-0">
         <div className="row">
           <div className="col col-12 d-flex-r">{cards}</div>
         </div>
-      </div>
-
-      <div className="info">
-        <p>LA PROPINA NO ES OBLIGATORIA.</p>
-        <p>
-          ACEPTAMOS PAGOS EN EFECTIVO, TARJETAS VISA, MASTER CARD Y AMERICAN
-          EXPRESS.
-        </p>
-        <p>EL PAGO CON TARJETA NO GENERA NINGUNA COMISIÓN.</p>
       </div>
     </div>
   );
