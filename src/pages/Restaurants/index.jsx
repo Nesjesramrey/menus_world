@@ -1,0 +1,62 @@
+import { useEffect, useState } from "react";
+import { listRestaurant } from "../../services/restaurants";
+import { useParams, useNavigate } from "react-router-dom";
+
+//CSS
+import "./Restaurants.css";
+
+//Components
+import RestaurantCard from "../../components/RestaurantCard";
+import ButtonsMenu from "../../components/ButtonsMenu";
+import NavBar from "../../../src/components/NavBar";
+
+//Cokkies for use name of restaurante and user category
+import Cookies from "universal-cookie";
+
+//Authorization
+import { getIsUserAdmin, getIsLogeddIn } from "../../Auth/auth";
+
+export default function Restaurants() {
+  // Local state
+  const [restaurants, setRestaurants] = useState([]);
+
+  // RRD
+  const { restaurantName } = useParams();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const list = async () => {
+      const data = await listRestaurant(restaurantName);
+      const parsedRestaurants = Object.keys(data).map((key) => {
+        return { id: key, ...data[key] };
+      });
+
+      setRestaurants(parsedRestaurants);
+    };
+
+    list();
+  }, [restaurantName]);
+
+  const cookies = new Cookies();
+  cookies.set("EndpointRestaurant", restaurantName, { path: "/" });
+
+  const cards = restaurants.map((restaurant, index) => (
+    <RestaurantCard restaurant={restaurant} index={index} navigate={navigate} />
+  ));
+  const isAdmin = getIsUserAdmin();
+  const isLogeddIn = getIsLogeddIn();
+
+  return (
+    <div className="mainContainer">
+      <NavBar isAdmin={isAdmin} isLogeddIn={isLogeddIn} />
+      <ButtonsMenu />
+      <h1 className="titleRestaurant">{`${"Bienvenido busca tu menu "}`}</h1>
+
+      <div className="container g-0">
+        <div className="row">
+          <div className="col col-12 d-flex-r">{cards}</div>
+        </div>
+      </div>
+    </div>
+  );
+}

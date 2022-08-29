@@ -3,6 +3,7 @@ import { useState } from "react";
 
 //services
 import { create as createUser } from "../../services/users";
+import { createRestaurant } from "../../services/restaurants";
 
 // Toastify
 import { ToastContainer, toast } from "react-toastify";
@@ -10,6 +11,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 //Components
 import Input from "../../../src/components/Input/index";
+import TextArea from "../../components/TextArea";
 
 //CSS
 import "./Register.css";
@@ -20,7 +22,9 @@ export default function Register() {
   const [username, setUserName] = useState("");
   const [email, setEmail] = useState("");
   const [restaurants, setRestaurants] = useState("");
+  const [descriptionRestaurant, setDescriptionRestaurant] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
   const [userType, setUserType] = useState("");
   const [itemActive, setItemActive] = useState(null);
 
@@ -31,6 +35,7 @@ export default function Register() {
     setUserName("");
     setEmail("");
     setRestaurants("");
+    setDescriptionRestaurant("");
     setPassword("");
     setUserType("");
   };
@@ -48,20 +53,32 @@ export default function Register() {
       toast.error("Se ingresaron datos incorrectos!!!!");
       return;
     }
-
+    if (password !== confirmPassword) {
+      toast.error("La contraseña es incorrecta!!!!");
+      return;
+    }
     const data = {
       username,
       email,
       password,
       restaurants,
+      descriptionRestaurant,
       userType,
     };
 
     try {
-      await createUser(data);
-      toast.success("Registro exitoso!!");
-      cleanForm();
-      navigate("/menu");
+      if (userType === "Comensal") {
+        await createUser(data);
+        toast.success("Registro exitoso!!");
+        cleanForm();
+        navigate("/restaurants");
+      } else {
+        await createUser(data);
+        await createRestaurant(data);
+        toast.success("Registro exitoso!!");
+        cleanForm();
+        navigate("/restaurants");
+      }
     } catch (error) {
       console.error(error);
     }
@@ -133,6 +150,19 @@ export default function Register() {
               callback={(e) => setRestaurants(e.target.value)}
             />
           </div>
+          <div className="form-group">
+            <TextArea
+              type="text"
+              className={`${
+                isActive("Administrador de restaurante")
+                  ? "form-control line-input mb-5 active"
+                  : "form-control d-none"
+              }`}
+              placeholder="Danos un breve descripcion de tu restaurante..."
+              value={descriptionRestaurant}
+              callback={(e) => setDescriptionRestaurant(e.target.value)}
+            />
+          </div>
 
           <div className="form-group">
             <Input
@@ -152,8 +182,8 @@ export default function Register() {
               placeholder="Confirma tu contraseña"
               id="meal"
               name="meal"
-              value={password}
-              callback={(e) => setPassword(e.target.value)}
+              value={confirmPassword}
+              callback={(e) => setConfirmPassword(e.target.value)}
             />
           </div>
           <div className="d-flex flex-row align-items-center justify-content-between">
