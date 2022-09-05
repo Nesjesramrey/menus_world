@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import "./menucard.css";
 import { calcMean } from "../../services/calcRatings";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 //Modal
 import Modal from "react-modal";
@@ -22,7 +24,12 @@ const customStyles = {
     transform: "translate(-50%, -50%)",
   },
 };
+AOS.init({
+  easing: 'ease-out-back',
+  duration: 700
+});
 Modal.setAppElement("#root");
+
 
 const MenuCard = ({ dish, index, navigate }) => {
   let descripcion = dish?.description;
@@ -43,25 +50,25 @@ const MenuCard = ({ dish, index, navigate }) => {
   const rating = calcMean(dish);
 
   return (
-    <div key={index} className="cardMenu p-1 m-3 d-flex-r">
-      <div className="menuCardImg">
+    <div key={index} data-aos="zoom-in" className="cardMenu p-1 m-3 d-flex-r">
+      <div className="menuCardImg" >
         <a href={"../detalle/" + dish._id}>
           <img
             className="imgCardMenu"
             alt={dish.dishName}
             src={dish.image_Url}
-          />
+            />
         </a>
       </div>
-      <div className="menuCardContent d-flex-c">
+      <div className="menuCardContent d-flex-c" >
         <div className="cardMenuTop">
           <p className="cardMenuTitle pStyle">{dish.dishName}</p>
           <div className="d-flex-r">
-            <p className="cardMenuPrice pStyle">{"$ " + dish.price + ".00"}</p>
-            <p className="pStyle">{rating}</p>
+            <p  className="cardMenuPrice pStyle">{"$ " + dish.price + ".00"}</p>
+            <p  className="pStyle">{rating}</p>
           </div>
 
-          <p className="cardMenuDescription pStyle">{descripcion}</p>
+          <p  className="cardMenuDescription pStyle">{descripcion}</p>
         </div>
 
         <div className="cardMenuButtons d-flex-r">

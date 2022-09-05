@@ -8,19 +8,23 @@ import Button from "react-bootstrap/Button";
 
 //Cookies
 import Cookies from "universal-cookie";
+import { useState } from "react";
 
 export default function ButtonsMenu() {
   const navigate = useNavigate();
+  const [ itemAcitve, setItemActive ] = useState(null);
+  const isActive = (itemNumber) => itemNumber === itemAcitve
+
 
   const cookies = new Cookies();
   const endpointRestaurant = cookies.get("EndpointRestaurant");
 
   return (
-    <div className="container d-flex flex-wrap col-12 ">
+    <div className="container-md d-flex flex-wrap col-12 sticky-top content-button">
       <Button
-        bsPrefix="custom-btn
-        "
+        bsPrefix="custom-btn"
         onClick={() => navigate(`/menu/${endpointRestaurant}`)}
+        
       >
         General
       </Button>{" "}
