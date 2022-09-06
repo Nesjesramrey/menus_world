@@ -16,10 +16,10 @@ export default function ButtonsMenu() {
   const endpointRestaurant = cookies.get("EndpointRestaurant");
 
   return (
-    <div className="container d-flex flex-wrap col-12 ">
+    <ul>
+    <div className="container d-flex flex-wrap col-12  ">
       <Button
-        bsPrefix="custom-btn
-        "
+        bsPrefix="custom-btn"
         onClick={() => navigate(`/menu/${endpointRestaurant}`)}
       >
         General
@@ -80,5 +80,6 @@ export default function ButtonsMenu() {
         Bebidas c/Alcohol
       </Button>{" "}
     </div>
+    </ul>
   );
 }
