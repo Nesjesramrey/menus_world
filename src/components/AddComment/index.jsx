@@ -6,7 +6,7 @@ import { createComment as sendComment } from "../../services/menus";
 //Cookies
 import Cookies from "universal-cookie";
 
-export default function AddComment(id) {
+export default function AddComment(id,alredyCommented) {
   const [canComment, setCanComment] = useState(false); //state
   const [text, setText] = useState("");
   const [existComment, setExistComment] = useState(true);
@@ -52,6 +52,10 @@ export default function AddComment(id) {
   };
 
   const addNewcomment = (msg) => {
+    console.log(msg.length)
+    console.log(ratingValue)
+
+
     //not logIn
     if (!userName) {
       console.error("Para agregar comentarios debes iniciar sesión");
@@ -59,9 +63,14 @@ export default function AddComment(id) {
       //Is logIn
       if (userType === "Comensal") {
         //only user can add comments
-        setCanComment(false);
-        setText(msg);
-        sendData();
+        if(alredyCommented === false && msg.length > 0 && ratingValue > 0){
+          console.log(msg.length)
+          console.log(ratingValue)
+          
+          setCanComment(false);
+          setText(msg);
+          sendData();
+        } 
       } else {
         //admins can't comment
         console.error(
@@ -69,12 +78,19 @@ export default function AddComment(id) {
         );
       }
     }
-    window.location.reload(false);
+   // window.location.reload(false); // - - - - - - - - - - - -  reload only when all succes ok
   };
+
 
   function createContent() {
     if (canComment === false) {
-      return (
+      if (alredyCommented){
+        return (
+          <p>Ya has comentado este platillo</p>
+        )
+
+      } else {
+        return(
         <button
           id="addComment"
           type="button"
@@ -82,7 +98,21 @@ export default function AddComment(id) {
         >
           Agrega un comentario
         </button>
-      );
+        )
+      }
+
+
+
+
+
+        // <button
+        //   id="addComment"
+        //   type="button"
+        //   onClick={() => setCanComment(true)}
+        // >
+        //   Agrega un comentario
+        // </button>
+      
     }
     if (canComment === true) {
       return (

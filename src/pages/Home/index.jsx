@@ -49,8 +49,8 @@ export default function Home() {
     cookies.remove("Id", { path: "/" });
     navigate("/");
   };
-  // Local state
 
+  // Local state
   const [itemActiveRegister, setItemActiveRegister] = useState("NoRegister");
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
@@ -82,7 +82,7 @@ export default function Home() {
             </div>
             <div>
               <h3 className="p-home">
-                Deja atras la experiencia PDF o imágenes para consultar tus
+                Deja atrás la experiencia PDF o imágenes para consultar tus
                 platillos favoritos, disfruta tus alimentos y comparte tus
                 opiniones
               </h3>
@@ -127,7 +127,7 @@ export default function Home() {
             }`}
           >
             <button
-              className="btn-singup "
+              className="btn-second ms-5"
               onClick={(e) => setItemActiveRegister(e.target.value)}
               value="NoRegister"
             >
@@ -136,7 +136,10 @@ export default function Home() {
 
             <Register />
           </div>
-          <Modal isOpen={modalIsOpen} style={customStyles}>
+          <Modal isOpen={modalIsOpen} 
+          // style={customStyles}
+          className="modalStyles"
+          >
             <Login />
             <button
               className="btn-close position-absolute top-0 end-0 "
