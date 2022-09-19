@@ -23,7 +23,7 @@ const RestaurantCard = ({ restaurant, index }) => {
       <div className="menuCardContent d-flex-c">
         <div className="cardMenuTop">
           <p className="cardMenuTitle pStyle">{restaurant.restaurants}</p>
-          <p className="cardMenuTitle pStyle">
+          <p className="name-food-descrip pStyle">
             {restaurant.descriptionRestaurant}
           </p>
         </div>

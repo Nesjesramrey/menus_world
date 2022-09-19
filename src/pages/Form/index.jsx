@@ -221,7 +221,7 @@ export default function Form() {
           <div className="instructions">
             <div className="button_menu">
               <button type="submit" className="buttom_1">
-                <strong>Registrar platillo</strong>
+                Registrar platillo
               </button>
             </div>
           </div>
