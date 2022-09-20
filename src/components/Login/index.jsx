@@ -90,8 +90,8 @@ export default function Login() {
 						callback={(e) => setPassword(e.target.value)}
 					/>
 
-					<button type="submit" className="btn-prim">
-						Ingresar
+					<button type="submit" className="btn-prim-login1">
+					Ingresar
 					</button>
 
 					<div className="container-pass">

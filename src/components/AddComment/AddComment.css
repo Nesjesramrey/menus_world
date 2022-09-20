@@ -5,18 +5,22 @@
 }
 
 #addComment {
-  padding: 4px;
-  border-radius: 8px;
-  background-color: #fff;
-  border: 2px solid #ff7b2c;
-  font-weight: bold;
+  display: flex;
+  padding: 15px;
+  border-radius: 5px;
+  font-family: "Roboto", sans-serif;
+  background-color: #ff7b2c;
+  border: 1px solid #ff7b2c;
+  color: white;
   margin: 7px 0px;
-  width: 200px;
+  height: 40px;
+  font-size: 14px;
+  align-items: center;
 }
 
 #addComment:hover {
-  background-color: #ff7b2c;
-  color: #fff;
+  background-color: white;
+  color: #ff7b2c;
 }
 
 #formAddComment {

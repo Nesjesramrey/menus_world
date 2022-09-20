@@ -18,7 +18,7 @@ import DrinksAlc from "./pages/Menu/DrinksAlc";
 import Desserts from "./pages/Menu/Desserts";
 import MenuEdit from "./pages/Menu/Edit";
 import Form from "./pages/Form";
-import Detail from "./pages/Detail";
+import Detail from "./pages/Detail";  
 
 function App() {
   return (

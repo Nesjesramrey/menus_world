@@ -68,13 +68,11 @@ export default function NavBar() {
               placeholder="Buscar restaurante"
               className="form-control"
               value={restaurantName}
-              callback={(e) => setRestaurantName(e.target.value)}
-            />
+              callback={(e) => setRestaurantName(e.target.value)}/>
             <button
               className="btn-search"
               type="submit"
-              onClick={() => navigate(`/menu/${restaurantName}`)}
-            >
+              onClick={() => navigate(`/menu/${restaurantName}`)}>
               Buscar
             </button>
           </div>
@@ -86,7 +84,7 @@ export default function NavBar() {
           }`}
           onClick={logout}
         >
-          Cerrar Sesion
+          Cerrar Sesión
         </button>
 
         <button
@@ -96,7 +94,7 @@ export default function NavBar() {
             !userLogged ? "btn-home-nav nav-item active" : "btn-home-nav d-none"
           }`}
         >
-          Inicio de Sesion
+          Iniciar Sesión
         </button>
       </nav>
       <Modal isOpen={modalIsOpen} style={customStyles}>

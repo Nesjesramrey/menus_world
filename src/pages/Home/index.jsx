@@ -95,7 +95,7 @@ export default function Home() {
                 }`}
                 onClick={logout}
               >
-                Cerrar sesión
+                Cerrar Sesión
               </button>
 
               <button
@@ -105,7 +105,7 @@ export default function Home() {
                   !userLogged ? "btn-prim active" : "btn-prim d-none"
                 }`}
               >
-                Iniciar sesión
+                Iniciar Sesión
               </button>
 
               <button
@@ -114,7 +114,7 @@ export default function Home() {
                 value="Register"
                 onClick={(e) => setItemActiveRegister(e.target.value)}
               >
-                Crear cuenta
+                Crear Cuenta
               </button>
             </div>
           </div>

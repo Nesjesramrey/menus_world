@@ -42,7 +42,7 @@ input.line-input {
 .btn-singup {
   display: flex;
   align-items: center;
-  height: 50px;
+  height: 40px;
   font-family: "Roboto", sans-serif;
   background-color: white;
   border: 1px solid #fb7b05;
@@ -52,7 +52,9 @@ input.line-input {
   transition: 0.5s;
   text-decoration: none;
   margin: 15px;
+  font-size: 14px;
 }
+
 .btn-singup:hover {
   color: white;
   background-color: #fb7b05;

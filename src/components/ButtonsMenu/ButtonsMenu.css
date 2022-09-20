@@ -1,8 +1,7 @@
 .custom-btn {
   display: flex;
   align-items: center;
-  width: 100px;
-  height: 50px;
+  height: 40px;
   font-family: "Roboto", sans-serif;
   background-color: white;
   border: 1px solid #fb7b05;
@@ -12,7 +11,12 @@
   transition: 0.5s;
   text-decoration: none;
   margin: 10px;
+  text-align: center;
+  justify-content: center;
+  font-size: 14px;
+
 }
+
 .custom-btn:hover {
   color: white;
   background-color: #fb7b05;
