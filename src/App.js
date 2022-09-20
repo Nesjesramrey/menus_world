@@ -5,6 +5,8 @@ import "./App.css";
 import MenuContainer from "./containers/MenuContainer";
 
 //Components
+import HomePage from "./pages/Principal";
+import FAQPage from "./pages/FAQ";
 import Home from "./pages/Home";
 import Menu from "./pages/Menu/General";
 import Entries from "./pages/Menu/Entries";
@@ -50,6 +52,8 @@ function App() {
         <Route path="/detalle" element={<Detail />} />
         <Route path="/detalle/:dishId" element={<Detail />} />
         <Route path="/restaurants" element={<Restaurants />} />
+        <Route path="/principal" element={<HomePage />} />
+        <Route path="/faq" element={FAQPage} />
       </Routes>
     </div>
   );
