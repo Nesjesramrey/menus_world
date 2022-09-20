@@ -184,16 +184,16 @@ export default function Register() {
         <h1 className="card-title text-center">Bienvenido a Menu's World</h1>
       </div>
       <p className="description-register">
-        Con tu registro podras comentar y calificar los platillos, si eres
-        administrador o dueño de un restaurante al darte de alta podras cargar
-        tus platillos y generar tu propio QR
+        Con tu registro podrás comentar y calificar los platillos. Si eres
+        administrador o dueño de un restaurante al darte de alta podrás cargar
+        tus platillos y generar un QR con acceso directo a tu menú.
       </p>
       <div className="card-body">
         <form className="" onSubmit={handleSubmit}>
           <div className="select-control">
             <select
               type="text"
-              className="form-control line-input mb-5"
+              className="form-control line-input mb-4"
               placeholder=""
               value={userType}
               onChange={(e) => setUserType(e.target.value)}
@@ -209,7 +209,7 @@ export default function Register() {
           <div className="form-group">
             <Input
               type="text"
-              className="form-control line-input mb-5"
+              className="form-control line-input mb-4"
               placeholder="Nombre"
               id="meal"
               name="meal"
@@ -221,7 +221,7 @@ export default function Register() {
           <div className="form-group">
             <Input
               type="email"
-              className="form-control line-input mb-5"
+              className="form-control line-input mb-4"
               placeholder="Correo electronico.   Ej. user@empresa.com"
               id="meal"
               name="meal"
@@ -234,7 +234,7 @@ export default function Register() {
               type="text"
               className={`${
                 isActive("Administrador de restaurante")
-                  ? "form-control line-input mb-5 active"
+                  ? "form-control line-input mb-4 active"
                   : "form-control d-none"
               }`}
               placeholder="Nombre del Restaurante"
@@ -249,10 +249,10 @@ export default function Register() {
               type="text"
               className={`${
                 isActive("Administrador de restaurante")
-                  ? "form-control line-input mb-5 active"
+                  ? "form-control line-input mb-4 active"
                   : "form-control d-none"
               }`}
-              placeholder="Agregar una breve descripcion de tu restaurante..."
+              placeholder="Danos un breve descripción de tu restaurante..."
               value={descriptionRestaurant}
               callback={(e) => setDescriptionRestaurant(e.target.value)}
             />
@@ -273,7 +273,7 @@ export default function Register() {
           <div className="form-group">
             <Input
               type="password"
-              className="form-control line-input mb-5"
+              className="form-control line-input mb-4"
               placeholder="Contraseña"
               id="meal"
               name="meal"
@@ -293,7 +293,7 @@ export default function Register() {
             />
           </div>
           <div className="d-flex flex-row align-items-center justify-content-between">
-            <button type="submit" className="btn-singup">
+            <button type="submit" className="btn-prim">
               Crear Cuenta
             </button>
           </div>

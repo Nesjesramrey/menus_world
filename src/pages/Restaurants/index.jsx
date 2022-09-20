@@ -7,7 +7,6 @@ import "./Restaurants.css";
 
 //Components
 import RestaurantCard from "../../components/RestaurantCard";
-import ButtonsMenu from "../../components/ButtonsMenu";
 import NavBar from "../../../src/components/NavBar";
 import QrCode from "../../../src/components/QrCode";
 
@@ -51,7 +50,6 @@ export default function Restaurants() {
   return (
     <div className="mainContainer">
       <NavBar isAdmin={isAdmin} isLogeddIn={isLogeddIn} />
-      <ButtonsMenu />
       <h1 className="titleRestaurant">{`${"Bienvenido busca tu menu "}`}</h1>
       <div className="container-btn-form-1 d-flex justify-content-end mb-2 mt-1 me-3">
         <button

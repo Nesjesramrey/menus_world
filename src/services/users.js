@@ -1,5 +1,5 @@
-const URL = "http://localhost:8000";
-//const URL = "https://menus.api.nesjes.com";
+//const URL = "http://localhost:8000";
+const URL = "https://menus.api.nesjes.com";
 
 const generateConfig = (body) => {
   return {
@@ -22,7 +22,6 @@ export const login = async (body) => {
   const requestConfig = generateConfig(body);
   const response = await fetch(`${URL}/users/login`, requestConfig);
   const data = await response.json();
-  console.log(data);
   return data;
 };
 
@@ -64,8 +63,6 @@ export const deleteUser = async (id, body) => {
     },
     body: JSON.stringify(body),
   });
-  //console.log(response.status);
-  //console.log(body);
   const data = await response.json();
   return data;
 };

@@ -1,7 +1,7 @@
 .startContainer {
 	width: 90%;
 	height: 90%;
-  min-height: 500px;
+	min-height: 500px;
 }
 
 .d-flex-r {
@@ -10,14 +10,12 @@
 
 .img-home-logo {
 	width: 90%;
-	/* margin-bottom: 50px; */
 }
 
 .p-home {
 	font-family: Georgia, 'Times New Roman', Times, serif;
 	text-align: center;
 	color: #fb7b05;
-	/* margin-bottom: 50px; */
 }
 
 #active {
@@ -54,4 +52,13 @@
 .btn-second:hover {
 	background-color: #ff7b2c;
 	color: #fff;
+}
+
+.modalStyles {
+	top: '40%';
+	left: '50%';
+	right: 'auto';
+	bottom: 'auto';
+	margin-right: '-50%';
+	transform: 'translate(-50%, -50%)';
 }
