@@ -1,5 +1,5 @@
-//const URL = "http://localhost:8000";
-const URL = "https://menus.api.nesjes.com";
+const URL = "http://localhost:8000";
+//const URL = "https://menus.api.nesjes.com";
 
 const generateConfig = (body) => {
   return {

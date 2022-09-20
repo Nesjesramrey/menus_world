@@ -27,7 +27,8 @@ function App() {
     <div className="App">
       {/* <QRCode value="www.facebook.com" size={200} bgColor="#282c34" fgColor="#fff" level="H" /> */}
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<HomePage />} />
+        <Route path="/register" element={<Home />} />
         <Route path="/menu/:restaurantName" element={<MenuContainer />}>
           <Route index element={<Menu />} />
           <Route path="entradas/:restaurantName" element={<Entries />} />
@@ -51,7 +52,7 @@ function App() {
         <Route path="/detalle" element={<Detail />} />
         <Route path="/detalle/:dishId" element={<Detail />} />
         <Route path="/restaurants" element={<Restaurants />} />
-        <Route path="/principal" element={<HomePage />} />
+
         <Route path="/faq" element={FAQPage} />
       </Routes>
     </div>
