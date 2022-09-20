@@ -1,12 +1,13 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDropzone } from "react-dropzone";
+import { uploadFile } from "react-s3";
+
+//API services
 import { create as createMenu } from "../../services/menus";
 
 //Cookies
 import Cookies from "universal-cookie";
-
-import { uploadFile } from "react-s3";
 
 // Toastify
 import { ToastContainer, toast } from "react-toastify";
@@ -19,6 +20,7 @@ import TextArea from "../../components/TextArea";
 import Select from "../../components/Select/index";
 import NavBar from "../../components/NavBar";
 
+//CSS
 import "./Form.css";
 
 // installed using npm install buffer --save

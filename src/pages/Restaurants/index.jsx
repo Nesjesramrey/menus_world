@@ -8,6 +8,7 @@ import "./Restaurants.css";
 //Components
 import RestaurantCard from "../../components/RestaurantCard";
 import NavBar from "../../../src/components/NavBar";
+import QrCode from "../../../src/components/QrCode";
 
 //Cokkies for use name of restaurante and user category
 import Cookies from "universal-cookie";
@@ -38,6 +39,7 @@ export default function Restaurants() {
 
   const cookies = new Cookies();
   cookies.set("EndpointRestaurant", restaurantName, { path: "/" });
+  const userType = cookies.get("TipoUsuario");
 
   const cards = restaurants.map((restaurant, index) => (
     <RestaurantCard restaurant={restaurant} index={index} navigate={navigate} />
@@ -49,7 +51,21 @@ export default function Restaurants() {
     <div className="mainContainer">
       <NavBar isAdmin={isAdmin} isLogeddIn={isLogeddIn} />
       <h1 className="titleRestaurant">{`${"Bienvenido busca tu menu "}`}</h1>
-
+      <div className="container-btn-form-1 d-flex justify-content-end mb-2 mt-1 me-3">
+        <button
+          className={`${
+            !userType || userType === "Comensal"
+              ? "btn-form-1 d-none"
+              : "btn-form-1 active"
+          }`}
+          onClick={() => navigate(`/formulario`)}
+        >
+          Ir a registrar platillos
+        </button>
+        <div>
+          <QrCode />
+        </div>
+      </div>
       <div className="container g-0">
         <div className="row">
           <div className="col col-12 d-flex-r">{cards}</div>
