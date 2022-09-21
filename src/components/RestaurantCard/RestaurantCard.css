@@ -12,19 +12,7 @@
 	margin-bottom: 20px;
 }
 
-/* .food1-menu .food .food-image {
-    height: 100%;
-    width: 40%;
-  }
-  
-  .food1-menu .food .food-image img {
-    width: 68%;
-    height: 99%;
-    border-bottom-left-radius: 10px;
-    border-top-left-radius: 10px;
-  } */
 .food-image img {
-	display: flexbox;
 	height: 99%;
 	width: 55%;
 	top: 50px;
@@ -56,6 +44,7 @@
 	font-weight: bold;
 	align-items: center;
 }
+
 .iconos {
 	display: flex;
 	flex-direction: row;
@@ -64,6 +53,7 @@
 	margin-left: auto;
 	padding: 10px;
 }
+
 .icons8-comments {
 	width: 20px;
 	height: 20px;
@@ -88,7 +78,5 @@
 }
 
 .food-col.food-detail {
-	/* align-items: center;
-    justify-content: flex-start; */
 	padding: 10px;
 }

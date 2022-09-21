@@ -3,7 +3,6 @@ import './Detail.css';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useEffect, useState } from 'react';
-//import axios from "axios";
 import { useParams } from 'react-router-dom';
 
 // Components
