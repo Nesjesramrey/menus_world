@@ -118,6 +118,7 @@
 .dropArea {
 	display: flex;
 	background-color: #f5f5f5;
+	border: 2px dotted #ff7b2c;
 	width: 250px;
 	height: 250px;
 	border-radius: 10px;
@@ -129,6 +130,7 @@
 	align-items: center;
 	width: 250px;
 	height: 250px;
+	background-color: #bbb;
 }
 
 .text {

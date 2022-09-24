@@ -18,17 +18,6 @@ export default function NavBar() {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
 
-  //Styles modal
-  const customStyles = {
-    content: {
-      top: "40%",
-      left: "50%",
-      right: "auto",
-      bottom: "auto",
-      marginRight: "-50%",
-      transform: "translate(-50%, -50%)",
-    },
-  };
   Modal.setAppElement("#root");
 
   //Cookies
@@ -101,7 +90,7 @@ export default function NavBar() {
         </button>
       </nav>
 
-      <Modal isOpen={modalIsOpen} style={customStyles}>
+      <Modal isOpen={modalIsOpen} className="modalStyles">
         <Login />
         <button
           className="btn-close position-absolute top-0 end-0 "

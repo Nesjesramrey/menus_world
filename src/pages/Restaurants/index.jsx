@@ -51,7 +51,7 @@ export default function Restaurants() {
     <div className="mainContainer">
       <NavBar isAdmin={isAdmin} isLogeddIn={isLogeddIn} />
       <h1 className="titleRestaurant">{`${"Bienvenido busca tu menu "}`}</h1>
-      <div className="container-btn-form-1 d-flex justify-content-end mb-2 mt-1 me-3">
+      <div className="container g-0 p-0">
         <button
           className={`${
             !userType || userType === "Comensal"
