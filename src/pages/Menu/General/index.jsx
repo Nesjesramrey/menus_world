@@ -67,7 +67,7 @@ export default function Menu() {
 
       <div className="container g-0">
         <div className="row">
-          <div className="col col-12 d-flex-r">{cards}</div>
+          <div className="col col-12 d-flex-r g-0 p-0">{cards}</div>
         </div>
       </div>
 

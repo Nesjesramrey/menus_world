@@ -12,38 +12,41 @@
 }
 
 .cardMenu {
-	width: 45%;
+	width: 46%;
 	height: 200px;
 	background-color: #fff;
 	border: 1px solid #d17b86;
 	border-radius: 8px;
 	margin-bottom: 12px;
+	overflow: hidden;
+
+	display: flex;
+	flex-direction: row;
+	align-items: center;
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 992px) {
 	.cardMenu {
 		width: 90%;
 	}
 }
 
 .menuCardImg {
-	height: 100%;
-	width: 30%;
 	overflow: hidden;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+	background-color: #f9edf1;
+	width: 200px;
+	height: 200px;
 }
 
 .imgCardMenu {
-	border-radius: 8px;
 	object-fit: cover;
-	max-height: 200px;
+	height: 200px;
+	width: 200px;
 }
 
 .menuCardContent {
 	height: 100%;
-	width: 70%;
+	width: calc(100% - 201px);
 }
 
 .cardMenuTop {
@@ -52,6 +55,7 @@
 
 .cardMenuTitle {
 	font-weight: bold;
+	font-size: 20px;
 }
 
 .cardMenuPrice {
@@ -64,7 +68,6 @@
 	height: 80px;
 	background-color: #f9edf1;
 	margin: 8px 2px 2px 2px;
-	border-radius: 6px;
 	padding: 2px;
 	display: flex;
 	align-items: center;

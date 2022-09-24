@@ -85,7 +85,7 @@ export default function Detail() {
 			return listComments;
 		} else {
 			return (
-				<p className="noComments text-center">No hay comentarios aun, sé el primero en comentar.</p>
+				<p className="noComments text-center"><h5>No hay comentarios aun, sé el primero en comentar.</h5></p>
 			);
 		}
 	}

@@ -50,7 +50,7 @@ export default function Restaurants() {
       <NavBar isAdmin={isAdmin} isLogeddIn={isLogeddIn} />
       <h1 className="titleRestaurant">{`${"Bienvenido busca tu menu "}`}</h1>
 
-      <div className="container g-0">
+      <div className="container g-0 p-0">
         <div className="row">
           <div className="col col-12 d-flex-r">{cards}</div>
         </div>
