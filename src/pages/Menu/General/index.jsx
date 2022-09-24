@@ -7,11 +7,10 @@ import "./General.css";
 
 //Components
 import MenuCard from "../../../components/MenuCard";
+import QrCode from "../../../components/QrCode";
 
 //Cokkies for use name of restaurante and user category
 import Cookies from "universal-cookie";
-
-import QrCode from "../../../components/QrCode";
 
 export default function Menu() {
   // Local state
