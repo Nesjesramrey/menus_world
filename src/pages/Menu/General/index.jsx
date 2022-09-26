@@ -34,7 +34,8 @@ export default function Menu() {
   }, [restaurantName]);
 
   const cookies = new Cookies();
-  cookies.set("EndpointRestaurant", restaurantName, { path: "/" });
+
+  cookies.set("EndpointRestaurant", restaurantName);
   const userType = cookies.get("TipoUsuario");
 
   const cards = dishes.map((dish, index) => (

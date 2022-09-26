@@ -8,13 +8,9 @@ import "./Restaurants.css";
 //Components
 import RestaurantCard from "../../components/RestaurantCard";
 import NavBar from "../../../src/components/NavBar";
-import QrCode from "../../../src/components/QrCode";
-
-//Cokkies for use name of restaurante and user category
-import Cookies from "universal-cookie";
 
 //Authorization
-import { getIsUserAdmin, getIsLogeddIn } from "../../Auth/auth";
+import { getIsUserAdmin, getIsLogeddIn, getRestaurantName } from "../../Auth/auth";
 
 export default function Restaurants() {
   // Local state
@@ -37,38 +33,43 @@ export default function Restaurants() {
     list();
   }, [restaurantName]);
 
-  const cookies = new Cookies();
-  cookies.set("EndpointRestaurant", restaurantName, { path: "/" });
-  const userType = cookies.get("TipoUsuario");
-
-  const cards = restaurants.map((restaurant, index) => (
-    <RestaurantCard restaurant={restaurant} index={index} navigate={navigate} />
-  ));
   const isAdmin = getIsUserAdmin();
   const isLogeddIn = getIsLogeddIn();
+  const owned = getRestaurantName();
+
+
+  const evalRestaurant = (restaurant) => {
+    for (let i of owned){
+      if(i === restaurant.restaurants){
+        return restaurant
+      } 
+    }
+  }
+
+  const showCards = () => {
+
+    if(isAdmin){
+      const cards = restaurants.filter((restaurant) => evalRestaurant(restaurant)).map((restaurant, index) => (
+        <RestaurantCard restaurant={restaurant} index={index} navigate={navigate} />
+      ));
+      return cards
+    } else { 
+      const cards = restaurants.map((restaurant, index) => (
+        <RestaurantCard restaurant={restaurant} index={index} navigate={navigate} />
+      ));
+      return cards
+    }
+  }
 
   return (
     <div className="mainContainer">
       <NavBar isAdmin={isAdmin} isLogeddIn={isLogeddIn} />
       <h1 className="titleRestaurant">{`${"Bienvenido busca tu menu "}`}</h1>
-      <div className="container g-0 p-0">
-        <button
-          className={`${
-            !userType || userType === "Comensal"
-              ? "btn-form-1 d-none"
-              : "btn-form-1 active"
-          }`}
-          onClick={() => navigate(`/formulario`)}
-        >
-          Ir a registrar platillos
-        </button>
-        <div>
-          <QrCode />
-        </div>
-      </div>
       <div className="container g-0">
         <div className="row">
-          <div className="col col-12 d-flex-r">{cards}</div>
+          <div className="col col-12 d-flex-r">
+            {showCards()}
+            </div>
         </div>
       </div>
     </div>
