@@ -7,6 +7,7 @@ import Cookies from "universal-cookie";
 //components
 import Input from "../../../src/components/Input/index";
 import Login from "../../../src/components/Login";
+import ButtonsMenu from "../ButtonsMenu";
 
 //Modal
 import Modal from "react-modal";
@@ -49,63 +50,74 @@ export default function NavBar() {
   };
 
   return (
-    <div className="container d-flex">
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <div className="logo-nav">
-          {" "}
-          <img
-            loading="lazy"
-            className="navbar-brand imgNav"
-            src={logo}
-            alt="logo"
-            onClick={() => navigate("/")}
-          />
-        </div>
-        <form className="nav-item" onSubmit={searchRestaurant}>
-          <div className="col col-12 col-6 content-search  justify-content-center ">
-            <Input
-              type="search"
-              placeholder="Buscar restaurante"
-              className="form-control"
-              value={restaurantName}
-              callback={(e) => setRestaurantName(e.target.value)}
-            />
-            <button
-              className="btn-search"
-              type="submit"
-              onClick={() => navigate(`/menu/${restaurantName}`)}
-            >
-              Buscar
-            </button>
-          </div>
-        </form>
-        <button
-          type="button"
-          className={`${
-            userLogged ? "btn-home-nav nav-item active" : "btn-home-nav d-none"
-          }`}
-          onClick={logout}
-        >
-          Cerrar Sesion
-        </button>
+    <div className="container sticky-top">
+      <div class="row">
+        <div class="col">
+          <nav className="navbar navbar-expand-lg navbar-light bg-light">
+            <div className="col-2 logo-nav">
+              {" "}
+              <img
+                loading="lazy"
+                className="navbar-brand imgNav "
+                src={logo}
+                alt="logo"
+                onClick={() => navigate("/menu")}
+              />
+            </div>
+            <form class="col-8 " onSubmit={searchRestaurant}>
+              <div className=" content-search">
+                <Input
+                  type="search"
+                  placeholder="Buscar restaurante"
+                  className="form-control content-input"
+                  value={restaurantName}
+                  callback={(e) => setRestaurantName(e.target.value)}
+                />
 
-        <button
-          onClick={() => setModalIsOpen(true)}
-          type="button"
-          className={`${
-            !userLogged ? "btn-home-nav nav-item active" : "btn-home-nav d-none"
-          }`}
-        >
-          Inicio de Sesion
-        </button>
-      </nav>
-      <Modal isOpen={modalIsOpen} style={customStyles}>
-        <Login />
-        <button
-          className="btn-close position-absolute top-0 end-0 "
-          onClick={() => setModalIsOpen(false)}
-        ></button>
-      </Modal>
+                <button
+                  className="button-search"
+                  type="submit"
+                  onClick={() => navigate(`/menu/${restaurantName}`)}
+                >
+                  <i className="bi bi-search "></i>
+                </button>
+              </div>
+            </form>
+            <div class="col-2 content-sesion">
+              <button
+                type="button"
+                className={`${
+                  userLogged
+                    ? "btn-home-nav nav-item active"
+                    : "btn-home-nav d-none"
+                }`}
+                onClick={logout}
+              >
+                Cerrar Sesion
+              </button>
+
+              <button
+                onClick={() => setModalIsOpen(true)}
+                type="button"
+                className={`${
+                  !userLogged
+                    ? "btn-home-nav  nav-item active"
+                    : "btn-home-nav d-none"
+                }`}
+              >
+                Inicio de Sesion
+              </button>
+            </div>
+          </nav>
+          <Modal isOpen={modalIsOpen} style={customStyles}>
+            <Login />
+            <button
+              className="btn-close position-absolute top-0 end-0 "
+              onClick={() => setModalIsOpen(false)}
+            ></button>
+          </Modal>
+        </div>
+      </div>
     </div>
   );
 }
