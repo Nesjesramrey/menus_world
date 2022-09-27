@@ -27,17 +27,6 @@ export default function Home() {
   const cookies = new Cookies();
   const userLogged = cookies.get("Usuario");
 
-  //Styles modal
-  const customStyles = {
-    content: {
-      top: "40%",
-      left: "50%",
-      right: "auto",
-      bottom: "auto",
-      marginRight: "-50%",
-      transform: "translate(-50%, -50%)",
-    },
-  };
   Modal.setAppElement("#root");
   const home = () => {
     navigate("/");
@@ -134,7 +123,7 @@ export default function Home() {
             }`}
           >
             <button
-              className="btn-second ms-5"
+              className="btn-second mt-2 ms-5"
               onClick={(e) => setItemActiveRegister(e.target.value)}
               value="NoRegister"
             >
@@ -143,6 +132,7 @@ export default function Home() {
 
             <Register />
           </div>
+
           <Modal
             isOpen={modalIsOpen}
             // style={customStyles}
