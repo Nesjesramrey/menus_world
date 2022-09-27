@@ -14,22 +14,11 @@ import Modal from "react-modal";
 
 export default function NavBar() {
   const navigate = useNavigate();
-  // const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   const [restaurantName, setRestaurantName] = useState("");
   const [modalIsOpen, setModalIsOpen] = useState(false);
-  // const toggle = () => setIsOpen(!isOpen);
+  const toggle = () => setIsOpen(!isOpen);
 
-  //Styles modal
-  const customStyles = {
-    content: {
-      top: "40%",
-      left: "50%",
-      right: "auto",
-      bottom: "auto",
-      marginRight: "-50%",
-      transform: "translate(-50%, -50%)",
-    },
-  };
   Modal.setAppElement("#root");
 
   //Cookies
@@ -46,7 +35,7 @@ export default function NavBar() {
     cookies.remove("TipoUsuario", { path: "/" });
     cookies.remove("NombreResturante", { path: "/" });
     cookies.remove("Id", { path: "/" });
-    navigate(`/menu/undefined`);
+    navigate(`/`);
   };
 
   return (

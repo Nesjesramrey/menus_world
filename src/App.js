@@ -1,10 +1,11 @@
 import { Routes, Route } from "react-router-dom";
-import "./App.css";
 
 //Containers
 import MenuContainer from "./containers/MenuContainer";
 
 //Components
+import HomePage from "./pages/Principal";
+import FAQPage from "./pages/FAQ";
 import Home from "./pages/Home";
 import Menu from "./pages/Menu/General";
 import Entries from "./pages/Menu/Entries";
@@ -26,7 +27,8 @@ function App() {
     <div className="App">
       {/* <QRCode value="www.facebook.com" size={200} bgColor="#282c34" fgColor="#fff" level="H" /> */}
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<HomePage />} />
+        <Route path="/register" element={<Home />} />
         <Route path="/menu/:restaurantName" element={<MenuContainer />}>
           <Route index element={<Menu />} />
           <Route path="entradas/:restaurantName" element={<Entries />} />
@@ -50,6 +52,8 @@ function App() {
         <Route path="/detalle" element={<Detail />} />
         <Route path="/detalle/:dishId" element={<Detail />} />
         <Route path="/restaurants" element={<Restaurants />} />
+
+        <Route path="/faq" element={FAQPage} />
       </Routes>
     </div>
   );

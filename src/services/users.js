@@ -19,7 +19,6 @@ export const create = async (body) => {
 };
 
 export const login = async (body) => {
-  console.log(body);
   const requestConfig = generateConfig(body);
   const response = await fetch(`${URL}/users/login`, requestConfig);
   const data = await response.json();
@@ -64,8 +63,6 @@ export const deleteUser = async (id, body) => {
     },
     body: JSON.stringify(body),
   });
-  //console.log(response.status);
-  //console.log(body);
   const data = await response.json();
   return data;
 };

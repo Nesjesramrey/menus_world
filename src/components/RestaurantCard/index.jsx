@@ -10,20 +10,20 @@ const RestaurantCard = ({ restaurant, index }) => {
   const restaurantName = restaurant.restaurants;
 
   return (
-    <div key={index} className="cardMenu p-1 m-3 d-flex-r">
-      <div className="menuCardImg">
+    <div key={index} className="cardRestaurant p-0 m-3">
+      <div className="restaurantCardImg">
         <a href={"../menu/" + restaurantName}>
           <img
-            className="imgCardMenu"
+            className="imgCardRestaurants"
             alt={restaurant.restaurants}
             src={restaurant.image_Url}
           />
         </a>
       </div>
-      <div className="menuCardContent d-flex-c">
+      <div className="restaurantCardContent d-flex-c">
         <div className="cardMenuTop">
-          <p className="cardMenuTitle pStyle">{restaurant.restaurants}</p>
-          <p className="cardMenuTitle pStyle">
+          <p className="restaurantMenuTitle pStyle">{restaurant.restaurants}</p>
+          <p className="name-food-descrip pStyle">
             {restaurant.descriptionRestaurant}
           </p>
         </div>

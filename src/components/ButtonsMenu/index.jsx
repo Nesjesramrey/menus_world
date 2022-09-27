@@ -1,20 +1,22 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 
 //CSS
-import "./ButtonsMenu.css";
+import './ButtonsMenu.css';
 
 //Components
-import Button from "react-bootstrap/Button";
+import Button from 'react-bootstrap/Button';
 
 //Cookies
+
 import Cookies from "universal-cookie";
 import { useState } from "react";
 
-export default function ButtonsMenu() {
-  const navigate = useNavigate();
 
-  const cookies = new Cookies();
-  const endpointRestaurant = cookies.get("EndpointRestaurant");
+export default function ButtonsMenu() {
+	const navigate = useNavigate();
+
+	const cookies = new Cookies();
+	const endpointRestaurant = cookies.get('EndpointRestaurant');
 
   return (
     <nav class="navbar container navbar-expand-lg navbar-ligth ">

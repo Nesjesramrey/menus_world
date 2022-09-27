@@ -28,7 +28,6 @@ export default function Login() {
 
   const isEmpty = (value) => !value;
   const cookies = new Cookies();
-  const endpointRestaurant = cookies.get("EndpointRestaurant");
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -36,8 +35,6 @@ export default function Login() {
       toast.error("Se ingresaron datos incorrectos!!!!");
       return;
     }
-
-    const cookies = new Cookies();
 
     const data = {
       email,
@@ -57,11 +54,11 @@ export default function Login() {
       });
       if (response.data.info.userCategory === "Comensal") {
         toast.success("Inicio de sesión exitoso!!");
-        navigate(`/menu/${endpointRestaurant}`);
+        navigate(`/restaurants`);
       }
       if (response.data.info.userCategory === "Administrador de restaurante") {
         toast.success("Inicio de sesión exitoso!!");
-        navigate(`/menu/${endpointRestaurant}`);
+        navigate(`/restaurants`);
       }
     } catch (error) {}
   };

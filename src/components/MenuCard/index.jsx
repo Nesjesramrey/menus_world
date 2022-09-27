@@ -52,6 +52,7 @@ const MenuCard = ({ dish, index, navigate }) => {
   return (
     <div key={index} data-aos="zoom-in-up" className="cardMenu p-1 m-3 d-flex-r">
       <div className="menuCardImg" >
+
         <a href={"../detalle/" + dish._id}>
           <img
             className="imgCardMenu"

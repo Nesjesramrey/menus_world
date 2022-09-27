@@ -1,0 +1,13 @@
+.social-button {
+  font-size: 40px;
+  line-height: 80px;
+  width: 80px;
+  height: 80px;
+  color: white;
+  border-radius: 100%;
+}
+.social-button a,
+.social-button a:hover,
+.social-button a:visited {
+  color: white;
+}/*# sourceMappingURL=style.css.map */

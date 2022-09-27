@@ -1,0 +1,19 @@
+.contact {
+  text-align: center;
+}
+.contact h2 {
+  margin-top: 0;
+  margin-bottom: 25px;
+}
+.contact h2 i {
+  color: #dd4b39;
+}
+.contact ul.list-social {
+  margin-bottom: 0;
+}
+.contact ul.list-social .list-inline-item {
+  margin-right: 10px;
+}
+.contact .fa-heart {
+  margin-right: 10px;
+}/*# sourceMappingURL=style.css.map */
