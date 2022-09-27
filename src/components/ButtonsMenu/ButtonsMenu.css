@@ -1,4 +1,5 @@
 .custom-btn {
+<<<<<<< HEAD
   display: flex;
   align-items: center;
   justify-content: center;
@@ -13,8 +14,27 @@
   transition: 0.5s;
   text-decoration: none;
   margin: 10px;
+=======
+	padding: 4px 12px;
+	border-radius: 8px;
+	border: 2px solid #ff7b2c;
+	background-color: #fff;
+	font-weight: bold;
+	margin-left: 12px;
+	margin-top: 7px;
+>>>>>>> eea691b55e3e0d40da34a9c428e309547d6d9d01
 }
+
 .custom-btn:hover {
-  color: white;
-  background-color: #fb7b05;
+	background-color: #ff7b2c;
+	color: #fff;
+}
+
+.custom-btn:focus {
+	padding: 4px 12px;
+	border-radius: 8px;
+	border: 2px solid #ff7b2c;
+	background-color: #ff7b2c;
+	font-weight: bold;
+	color: #fff;
 }

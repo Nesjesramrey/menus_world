@@ -1,0 +1,81 @@
+.navigation {
+  border-color: rgba(34, 34, 34, 0.05);
+  background-color: white;
+  transition: all 0.35s;
+  font-family: "Catamaran", "Helvetica", "Arial", "sans-serif";
+  font-weight: 200;
+  letter-spacing: 1px;
+}
+.navigation .navbar-brand {
+  color: white;
+  font-family: "Catamaran", "Helvetica", "Arial", "sans-serif";
+  font-weight: 200;
+  letter-spacing: 1px;
+}
+.navigation .navbar-brand:hover, .navigation .navbar-brand:focus {
+  color: #fcbd20;
+}
+.navigation .navbar-toggler {
+  font-size: 12px;
+  padding: 8px 10px;
+  color: #222222;
+}
+.navigation .navbar-nav > .nav-item > .nav-link {
+  font-size: 11px;
+  font-family: "Lato", "Helvetica", "Arial", "sans-serif";
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.navigation .navbar-nav > .nav-item > .nav-link.active {
+  color: #fdcc52 !important;
+  background-color: transparent;
+}
+.navigation .navbar-nav > .nav-item > .nav-link.active:hover {
+  background-color: transparent;
+}
+.navigation .navbar-nav > .nav-item > .nav-link,
+.navigation .navbar-nav > .nav-item > .nav-link:focus {
+  color: #222222;
+}
+.navigation .navbar-nav > .nav-item > .nav-link:hover,
+.navigation .navbar-nav > .nav-item > .nav-link:focus:hover {
+  color: #fdcc52;
+}
+@media (min-width: 992px) {
+  .navigation {
+    border-color: transparent;
+    background-color: transparent;
+  }
+  .navigation .navbar-brand {
+    color: fade(white, 70%);
+  }
+  .navigation .navbar-brand:hover, .navigation .navbar-brand:focus {
+    color: white;
+  }
+  .navigation .navbar-nav > .nav-item > .nav-link,
+.navigation .navbar-nav > .nav-item > .nav-link:focus {
+    color: rgba(255, 255, 255, 0.7);
+  }
+  .navigation .navbar-nav > .nav-item > .nav-link:hover,
+.navigation .navbar-nav > .nav-item > .nav-link:focus:hover {
+    color: white;
+  }
+  .navigation.navbar-shrink {
+    border-color: rgba(34, 34, 34, 0.1);
+    background-color: white;
+  }
+  .navigation.navbar-shrink .navbar-brand {
+    color: #222222;
+  }
+  .navigation.navbar-shrink .navbar-brand:hover, .navigation.navbar-shrink .navbar-brand:focus {
+    color: #fdcc52;
+  }
+  .navigation.navbar-shrink .navbar-nav > .nav-item > .nav-link,
+.navigation.navbar-shrink .navbar-nav > .nav-item > .nav-link:focus {
+    color: #222222;
+  }
+  .navigation.navbar-shrink .navbar-nav > .nav-item > .nav-link:hover,
+.navigation.navbar-shrink .navbar-nav > .nav-item > .nav-link:focus:hover {
+    color: #fdcc52;
+  }
+}/*# sourceMappingURL=style.css.map */

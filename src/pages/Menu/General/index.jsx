@@ -7,11 +7,10 @@ import "./General.css";
 
 //Components
 import MenuCard from "../../../components/MenuCard";
+import QrCode from "../../../components/QrCode";
 
 //Cokkies for use name of restaurante and user category
 import Cookies from "universal-cookie";
-
-import QrCode from "../../../components/QrCode";
 
 export default function Menu() {
   // Local state
@@ -49,7 +48,7 @@ export default function Menu() {
           ? "Bienvenido busca tu menu "
           : restaurantName
       }`}</h1>
-      <div className="container-btn-form-1 d-flex justify-content-end mb-2 mt-1 me-3">
+      <div className="container-btn-form-1 d-flex justify-content-end align-items-center me-3">
         <button
           className={`${
             !userType || userType === "Comensal"
@@ -67,7 +66,7 @@ export default function Menu() {
 
       <div className="container g-0">
         <div className="row">
-          <div className="col col-12 d-flex-r">{cards}</div>
+          <div className="col col-12 d-flex-r g-0 p-0">{cards}</div>
         </div>
       </div>
 

@@ -13,22 +13,11 @@ import Modal from "react-modal";
 
 export default function NavBar() {
   const navigate = useNavigate();
-  // const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   const [restaurantName, setRestaurantName] = useState("");
   const [modalIsOpen, setModalIsOpen] = useState(false);
-  // const toggle = () => setIsOpen(!isOpen);
+  const toggle = () => setIsOpen(!isOpen);
 
-  //Styles modal
-  const customStyles = {
-    content: {
-      top: "40%",
-      left: "50%",
-      right: "auto",
-      bottom: "auto",
-      marginRight: "-50%",
-      transform: "translate(-50%, -50%)",
-    },
-  };
   Modal.setAppElement("#root");
 
   //Cookies
@@ -45,14 +34,13 @@ export default function NavBar() {
     cookies.remove("TipoUsuario", { path: "/" });
     cookies.remove("NombreResturante", { path: "/" });
     cookies.remove("Id", { path: "/" });
-    navigate(`/menu/undefined`);
+    navigate(`/`);
   };
 
   return (
-    <div className="container d-flex">
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+    <div className="container g-0">
+      <nav className="navbar navbar-light bg-light navFlex">
         <div className="logo-nav">
-          {" "}
           <img
             loading="lazy"
             className="navbar-brand imgNav"
@@ -61,6 +49,7 @@ export default function NavBar() {
             onClick={() => navigate("/")}
           />
         </div>
+
         <form className="nav-item" onSubmit={searchRestaurant}>
           <div className="col col-12 col-6 content-search  justify-content-center ">
             <Input
@@ -79,6 +68,7 @@ export default function NavBar() {
             </button>
           </div>
         </form>
+
         <button
           type="button"
           className={`${
@@ -99,7 +89,8 @@ export default function NavBar() {
           Inicio de Sesion
         </button>
       </nav>
-      <Modal isOpen={modalIsOpen} style={customStyles}>
+
+      <Modal isOpen={modalIsOpen} className="modalStyles">
         <Login />
         <button
           className="btn-close position-absolute top-0 end-0 "
