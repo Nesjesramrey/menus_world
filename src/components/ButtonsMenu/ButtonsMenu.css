@@ -80,8 +80,9 @@ button.navbar-toggler-icon:focus{
 .custom-btn {
   display: flex;
   align-items: center;
-  height: 45px;
-  padding: 10px 22px;
+  justify-content: center;
+  width: 100px;
+  height: 50px;
   font-family: "Roboto", sans-serif;
   background-color: white;
   border: 1px solid rgb(251, 123, 5);
