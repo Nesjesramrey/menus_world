@@ -15,10 +15,24 @@ import { getIsUserAdmin, getIsLogeddIn, getRestaurantName } from "../../Auth/aut
 export default function Restaurants() {
   // Local state
   const [restaurants, setRestaurants] = useState([]);
+  let searchResult = []
 
   // RRD
   const { restaurantName } = useParams();
   const navigate = useNavigate();
+
+  //param for search
+  const { search } = useParams();
+
+  if(search){
+    const restaurantsResults = restaurants.filter(item => {
+      const name = item.restaurants.toLowerCase();
+      if (name.indexOf(search) >= 0){
+        return item;
+      }
+  });
+  searchResult = restaurantsResults
+  }
 
   useEffect(() => {
     const list = async () => {
@@ -26,7 +40,6 @@ export default function Restaurants() {
       const parsedRestaurants = Object.keys(data).map((key) => {
         return { id: key, ...data[key] };
       });
-
       setRestaurants(parsedRestaurants);
     };
 
@@ -37,27 +50,37 @@ export default function Restaurants() {
   const isLogeddIn = getIsLogeddIn();
   const owned = getRestaurantName();
 
+  function returnCards () {
 
-  const evalRestaurant = (restaurant) => {
-    for (let i of owned){
-      if(i === restaurant.restaurants){
-        return restaurant
-      } 
+    const evalRestaurant = (restaurant) => {
+      for (let i of owned){
+        if(i === restaurant.restaurants){
+          return restaurant;
+        } 
+      }
     }
-  }
+  
+    const showCards = (data) => {
+  
+      if(isAdmin){
+        const cards = data.filter((restaurant) => evalRestaurant(restaurant)).map((restaurant, index) => (
+          <RestaurantCard restaurant={restaurant} index={index} navigate={navigate} />
+        ));
+        return cards;
+      } else { 
+        const cards = data.map((restaurant, index) => (
+          <RestaurantCard restaurant={restaurant} index={index} navigate={navigate} />
+        ));
+        return cards;
+      }
+    }
 
-  const showCards = () => {
-
-    if(isAdmin){
-      const cards = restaurants.filter((restaurant) => evalRestaurant(restaurant)).map((restaurant, index) => (
-        <RestaurantCard restaurant={restaurant} index={index} navigate={navigate} />
-      ));
-      return cards
-    } else { 
-      const cards = restaurants.map((restaurant, index) => (
-        <RestaurantCard restaurant={restaurant} index={index} navigate={navigate} />
-      ));
-      return cards
+    if(search){
+      const filterCards = showCards(searchResult);
+      return filterCards;
+    } else {
+      const allCards = showCards(restaurants);
+      return allCards;
     }
   }
 
@@ -68,7 +91,7 @@ export default function Restaurants() {
       <div className="container g-0">
         <div className="row">
           <div className="col col-12 d-flex-r">
-            {showCards()}
+            {returnCards()}
             </div>
         </div>
       </div>

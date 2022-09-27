@@ -43,13 +43,13 @@ export default function Menu() {
   ));
 
   return (
-    <div className="mainContainer">
+    <div className="mainContainer container g-0">
       <h1 className="titleRestaurant">{`${
         restaurantName === "undefined"
-          ? "Bienvenido busca tu menu "
+          ? "Bienvenido busca tu menu"
           : restaurantName
       }`}</h1>
-      <div className="container-btn-form-1 d-flex justify-content-end align-items-center me-3">
+      <div className="container-btn-form-1 d-flex justify-content-end align-items-center">
         <button
           className={`${
             !userType || userType === "Comensal"
@@ -60,9 +60,7 @@ export default function Menu() {
         >
           Ir a registrar platillos
         </button>
-        <div>
           <QrCode />
-        </div>
       </div>
 
       <div className="container g-0">

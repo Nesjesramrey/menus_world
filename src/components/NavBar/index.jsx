@@ -62,7 +62,7 @@ export default function NavBar() {
             <button
               className="btn-search"
               type="submit"
-              onClick={() => navigate(`/menu/${restaurantName}`)}
+              onClick={() => navigate(`/restaurants/${restaurantName}`)}
             >
               Buscar
             </button>
