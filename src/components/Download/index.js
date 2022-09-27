@@ -2,8 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Container, Row, Col } from "reactstrap";
 
-import googlePlayBadge from "./images/google-play-badge.svg";
-import appStoreBadge from "./images/app-store-badge.svg";
+import googlePlayBadge from "./images/servicio2.svg";
+import appStoreBadge from "./images/cubiertos.png";
 import "./style.css";
 
 const propTypes = {
