@@ -1,5 +1,5 @@
-const URL = "http://localhost:8000";
-//const URL = "https://menus.api.nesjes.com";
+//const URL = "http://localhost:8000";
+const URL = "https://menusapi.nesjes.com";
 
 const generateConfig = (body) => {
   return {
@@ -20,6 +20,7 @@ export const create = async (body) => {
 
 export const login = async (body) => {
   const requestConfig = generateConfig(body);
+  console.log(requestConfig);
   const response = await fetch(`${URL}/users/login`, requestConfig);
   const data = await response.json();
   return data;
