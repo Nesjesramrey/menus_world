@@ -3,7 +3,6 @@ import './Detail.css';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useEffect, useState } from 'react';
-//import axios from "axios";
 import { useParams } from 'react-router-dom';
 
 // Components
@@ -86,7 +85,7 @@ export default function Detail() {
 			return listComments;
 		} else {
 			return (
-				<p className="noComments text-center">No hay comentarios aun, sé el primero en comentar.</p>
+				<p className="noComments text-center"><h5>No hay comentarios aun, sé el primero en comentar.</h5></p>
 			);
 		}
 	}

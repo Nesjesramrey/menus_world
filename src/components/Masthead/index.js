@@ -22,7 +22,10 @@ const Masthead = ({ text, buttonLabel, downloadLink, demoScreen }) => (
         <Col lg="7" xs="12" className="my-auto">
           <div className="header-content mx-auto">
             <h1 className="mb-5">{text}</h1>
-            <a href={downloadLink} className="btn btn-outline btn-xl">
+            <a
+              href="/restaurants"
+              className="btn text-white btn-outline btn-xl"
+            >
               {buttonLabel}
             </a>
           </div>

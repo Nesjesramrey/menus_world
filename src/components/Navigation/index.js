@@ -112,11 +112,8 @@ class Navigation extends Component {
         className={classnames("navigation", { "navbar-shrink": sticky })}
       >
         <Container>
-          <Link to="/restaurants" className="navbar-brand">
-            Busca tu menu
-          </Link>
           <Link to="/register" className="navbar-brand">
-            Crear cuenta o registrarte
+            Iniciar Sesion o registrarse
           </Link>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>

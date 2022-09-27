@@ -1,94 +1,48 @@
-.food1-menu {
-	padding: 20px;
-}
-
-.food1-menu .food {
-	width: 100%;
+.cardRestaurant {
+	box-sizing: border-box;
+	width: 46%;
 	height: 200px;
-	border-radius: 10px;
-	background: #f9f9f9;
-	box-shadow: 1px 1px 5px #959595;
+	background-color: #fff;
+	border: 1px solid #d17b86;
+	border-radius: 8px;
+	margin-bottom: 12px;
+	overflow: hidden;
 	display: flex;
-	margin-bottom: 20px;
+	flex-direction: row;
+	align-items: center;
 }
 
-/* .food1-menu .food .food-image {
-    height: 100%;
-    width: 40%;
-  }
-  
-  .food1-menu .food .food-image img {
-    width: 68%;
-    height: 99%;
-    border-bottom-left-radius: 10px;
-    border-top-left-radius: 10px;
-  } */
-.food-image img {
-	display: flexbox;
-	height: 99%;
-	width: 55%;
-	top: 50px;
-	left: 50px;
+@media only screen and (max-width: 992px) {
+	.cardRestaurant {
+		width: 90%;
+	}
 }
 
-.food1-menu .food {
-	text-align: start;
-}
-
-.food1-menu .food {
+.restaurantCardImg {
 	display: flex;
-	justify-content: flex-end;
-	width: 100%;
-	font-size: 0.9rem;
+	justify-content: center;
+	align-items: center;
+	width: 200px;
+	height: 200px;
+	background-color: #000;
+	overflow: hidden;
+}
+
+.imgCardRestaurants {
+	object-fit: cover;
+	max-width: 200px;
+}
+
+.restaurantCardContent {
+	height: 100%;
+	width: calc(100% - 198px);
 }
 
 .name-food-descrip {
 	text-align: center;
 }
 
-.buttonsCard .btn1-menu {
-	display: inline-table;
-}
-
-.notes {
-	text-align: center;
-	text-decoration: solid;
+.restaurantMenuTitle {
 	font-weight: bold;
-	align-items: center;
-}
-.iconos {
-	display: flex;
-	flex-direction: row;
-	justify-content: flex-end;
-	margin-top: auto;
-	margin-left: auto;
-	padding: 10px;
-}
-.icons8-comments {
-	width: 20px;
-	height: 20px;
-	background: url('https://img.icons8.com/material-outlined/344/comments--v1.png') 50% 50% no-repeat;
-	background-size: 100%;
-	cursor: pointer;
-}
-
-.name-food-price {
-	font-weight: bold;
-	color: #ff7b2c;
-	font-size: large;
-}
-
-.food-col {
-	display: flex;
-	flex-direction: column;
-}
-
-.food-col.food-image {
-	min-width: 40%;
-}
-
-.food-col.food-detail {
-	/* align-items: center;
-    justify-content: flex-start; */
-	padding: 10px;
+	font-size: 22px;
 }
