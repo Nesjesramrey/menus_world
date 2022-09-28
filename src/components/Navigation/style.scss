@@ -9,7 +9,11 @@
   @include heading-font;
 
   .navbar-brand {
+<<<<<<< HEAD
     color: white;
+=======
+    color: $theme-primary;
+>>>>>>> 432256750d01d305b2862281a26b120f9f70f930
     @include heading-font;
 
     &:hover,

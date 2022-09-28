@@ -128,4 +128,44 @@ i{
     position: relative;
     left: -10px;
   }
+	
+}
+
+.btn-search {
+	padding: 4px 12px;
+	border-radius: 8px;
+	border: 2px solid #ff7b2c;
+	background-color: #ff7b2c;
+	font-weight: bold;
+	color: #fff;
+	margin-left: 5px;
+}
+
+.btn-search:hover {
+	background-color: #fff;
+	color: #000;
+}
+
+@media only screen and (max-width: 500px) {
+	.navFlex {
+		flex-direction: column;
+		justify-content: center;
+	}
+
+	.nav-item {
+		margin-top: 10px;
+	}
+
+	.btn-home-nav {
+		margin-top: 10px;
+	}
+}
+
+.modalStyles {
+	top: '40%';
+	left: '50%';
+	right: 'auto';
+	bottom: 'auto';
+	margin-right: '-50%';
+	transform: 'translate(-50%, -50%)';
 }
