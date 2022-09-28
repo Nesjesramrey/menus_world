@@ -1,5 +1,5 @@
 // Global Styles
-import "typeface-catamaran"; // eslint-disable-line
+// import "typeface-catamaran"; // eslint-disable-line
 //import "font-awesome/css/font-awesome.css";
 //import "simple-line-icons/css/simple-line-icons.css";
 //import "html5-device-mockups/dist/device-mockups.css";
