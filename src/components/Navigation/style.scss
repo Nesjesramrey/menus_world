@@ -9,7 +9,8 @@
   @include heading-font;
 
   .navbar-brand {
-    color: white;
+    color: $theme-primary;
+    font-weight: bold;
     @include heading-font;
 
     &:hover,
@@ -42,7 +43,7 @@
 
       > .nav-link,
       > .nav-link:focus {
-        color: $gray-darker;
+        color: $theme-primary;
 
         &:hover {
           color: $theme-primary;
@@ -52,23 +53,24 @@
   }
   @media (min-width: 992px) {
     border-color: transparent;
-    background-color: transparent;
+    background-color: white;
 
     .navbar-brand {
-      color: fade(white, 70%);
+      color: fade(black, 70%);
 
       &:hover,
       &:focus {
-        color: white;
+        color: $theme-primary;
       }
     }
 
     .navbar-nav > .nav-item > .nav-link,
     .navbar-nav > .nav-item > .nav-link:focus {
-      color: fade-out(white, 0.3);
+      color: fade-out($theme-primary);
+      font-weight: 900;
 
       &:hover {
-        color: white;
+        color: $theme-primary;
       }
     }
 
