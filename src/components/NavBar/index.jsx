@@ -50,7 +50,7 @@ export default function NavBar() {
                 className="navbar-brand imgNav "
                 src={logo}
                 alt="logo"
-                onClick={() => navigate("/menu")}
+                onClick={() => navigate("/")}
               />
             </div>
             <form class="col-8 " onSubmit={searchRestaurant}>

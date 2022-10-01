@@ -36,7 +36,7 @@ export default function AddComment(id, alredyCommented) {
       idUser: userId,
       date: today,
     };
-    const Url = "https://menusapi.nesjes.com/detalle/" + id;
+    const Url = "http://localhost:8000" + id;
 
     fetch(Url, {
       method: "PATCH",
