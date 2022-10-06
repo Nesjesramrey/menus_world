@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-import QRCode from 'qrcode';
+import React, { useState } from "react";
+import QRCode from "qrcode";
 
-import './qrCode.css';
+import "./qrCode.css";
 
 //Cokkies for use name of restaurante and user category
-import Cookies from 'universal-cookie';
+import Cookies from "universal-cookie";
 
 const QrCode = () => {
 	const [imageUrl, setImageUrl] = useState('');

@@ -1,5 +1,5 @@
 // Global Styles
-import "typeface-catamaran"; // eslint-disable-line
+// import "typeface-catamaran"; // eslint-disable-line
 //import "font-awesome/css/font-awesome.css";
 //import "simple-line-icons/css/simple-line-icons.css";
 //import "html5-device-mockups/dist/device-mockups.css";
@@ -40,15 +40,15 @@ const FEATURES = [
 ];
 const SECTIONS = [
   {
-    title: "Download",
+    title: "No mas PDF",
     id: "download",
   },
   {
-    title: "Features",
+    title: "Caracteristicas",
     id: "features",
   },
   {
-    title: "Contact",
+    title: "Contacto",
     id: "contact",
   },
 ];
@@ -80,13 +80,13 @@ const HomePage = () => (
   <PageLayout sections={SECTIONS}>
     <Masthead
       text="Menu's World es una web app que te ayudara a tener una mejor experiencia online con los menu de tus restaurantes favoritos!"
-      buttonLabel="Empieza ahora!"
+      buttonLabel="Empieza ahora, busca  tu menu!"
       downloadLink="#download"
       demoScreen={demoScreen}
     />
     <Download
       title="Descubre una nueva manera de interactuar con tu menu!"
-      subtitle="Proximamente nuestra app estara disponible en dispositivos moviles! Esperanos!"
+      subtitle="Ya no necesitaras descargar PDF o Imagenes para buscar tus platillos de forma digital!"
       googlePlayDownloadLink="#"
       appStoreDownloadLink="#"
     />
@@ -97,8 +97,8 @@ const HomePage = () => (
       demoScreen={demoScreen}
     />
     <CallToAction
-      firstLine="Disfruta."
-      secondLine="Comenta."
+      firstLine="Disfruta tus alimentos."
+      secondLine="Comparte tu experiencia."
       buttonLabel="Empecemos!"
       buttonUrl="#contact"
     />

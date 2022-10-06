@@ -28,7 +28,9 @@ export default function Home() {
   const userLogged = cookies.get("Usuario");
 
   Modal.setAppElement("#root");
-
+  const home = () => {
+    navigate("/");
+  };
   //This is for remove cookies of user
   const logout = () => {
     toast.success("Gracias por tu visita vuelve pronto!!");
@@ -67,7 +69,12 @@ export default function Home() {
             }`}
           >
             <div className="d-flex flex-row justify-content-center">
-              <img src={logo} alt="Menu's World" className="img-home-logo" />
+              <img
+                onClick={home}
+                src={logo}
+                alt="Menu's World"
+                className="img-home-logo"
+              />
             </div>
             <div>
               <h3 className="p-home">
@@ -125,8 +132,11 @@ export default function Home() {
 
             <Register />
           </div>
-          <Modal isOpen={modalIsOpen} 
-          className="modalStyles"
+
+          <Modal
+            isOpen={modalIsOpen}
+            // style={customStyles}
+            className="modalStyles"
           >
             <Login />
             <button
