@@ -10,7 +10,6 @@
 .overFlowDiv {
 	overflow: hidden;
 	border-radius: 6px;
-	height: 250px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -18,7 +17,90 @@
 
 .imgRecommPhoto {
 	object-fit: cover;
-	min-height: 200px;
+}
+
+@media only screen and (min-width: 100px) {
+	.overFlowDiv {
+		height: 150px;
+		width: 98%;
+	}
+
+	.imgRecommPhoto {
+		height: 150px;
+		width: 98%;
+	}
+}
+
+@media only screen and (min-width: 320px) {
+	.overFlowDiv {
+		height: 180px;
+		width: 98%;
+	}
+
+	.imgRecommPhoto {
+		height: 180px;
+		width: 98%;
+	}
+}
+
+@media only screen and (min-width: 520px) {
+	.overFlowDiv {
+		height: 180px;
+		width: 208px;
+	}
+
+	.imgRecommPhoto {
+		height: 180px;
+		width: 208px;
+	}
+}
+
+@media only screen and (min-width: 768px) {
+	.overFlowDiv {
+		height: 180px;
+		width: 134px;
+	}
+
+	.imgRecommPhoto {
+		height: 180px;
+		width: 134px;
+	}
+}
+
+@media only screen and (min-width: 992px) {
+	.overFlowDiv {
+		height: 230px;
+		width: 180px;
+	}
+
+	.imgRecommPhoto {
+		height: 230px;
+		width: 180px;
+	}
+}
+
+@media only screen and (min-width: 1200px) {
+	.overFlowDiv {
+		height: 250px;
+		width: 230px;
+	}
+
+	.imgRecommPhoto {
+		height: 250px;
+		width: 230px;
+	}
+}
+
+@media only screen and (min-width: 1400px) {
+	.overFlowDiv {
+		height: 250px;
+		width: 270px;
+	}
+
+	.imgRecommPhoto {
+		height: 250px;
+		width: 270px;
+	}
 }
 
 .imgRecommPhoto:hover {
@@ -37,7 +119,7 @@
 	padding: 0px;
 	margin: 0px;
 	display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
 }
