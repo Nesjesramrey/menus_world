@@ -10,7 +10,6 @@
 
   .navbar-brand {
     color: $theme-primary;
-    font-weight: bold;
     @include heading-font;
 
     &:hover,
@@ -33,6 +32,7 @@
 
         &.active {
           color: $theme-primary !important;
+          font-weight: bolder;
           background-color: transparent;
 
           &:hover {
@@ -44,9 +44,11 @@
       > .nav-link,
       > .nav-link:focus {
         color: $theme-primary;
+        font-weight: bolder;
 
         &:hover {
           color: $theme-primary;
+          font-weight: bolder;
         }
       }
     }
@@ -66,11 +68,12 @@
 
     .navbar-nav > .nav-item > .nav-link,
     .navbar-nav > .nav-item > .nav-link:focus {
-      color: fade-out($theme-primary);
-      font-weight: 900;
+      color: $theme-primary;
+      font-weight: bolder;
 
       &:hover {
         color: $theme-primary;
+        font-weight: bolder;
       }
     }
 

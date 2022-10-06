@@ -8,7 +8,6 @@
 }
 .navigation .navbar-brand {
   color: rgba(238, 117, 47, 0.937254902);
-  font-weight: bold;
   font-family: "Catamaran", "Helvetica", "Arial", "sans-serif";
   font-weight: 200;
   letter-spacing: 1px;
@@ -29,6 +28,7 @@
 }
 .navigation .navbar-nav > .nav-item > .nav-link.active {
   color: rgba(238, 117, 47, 0.937254902) !important;
+  font-weight: bolder;
   background-color: transparent;
 }
 .navigation .navbar-nav > .nav-item > .nav-link.active:hover {
@@ -37,10 +37,12 @@
 .navigation .navbar-nav > .nav-item > .nav-link,
 .navigation .navbar-nav > .nav-item > .nav-link:focus {
   color: rgba(238, 117, 47, 0.937254902);
+  font-weight: bolder;
 }
 .navigation .navbar-nav > .nav-item > .nav-link:hover,
 .navigation .navbar-nav > .nav-item > .nav-link:focus:hover {
   color: rgba(238, 117, 47, 0.937254902);
+  font-weight: bolder;
 }
 @media (min-width: 992px) {
   .navigation {
@@ -55,12 +57,13 @@
   }
   .navigation .navbar-nav > .nav-item > .nav-link,
 .navigation .navbar-nav > .nav-item > .nav-link:focus {
-    color: rgba(238, 117, 47, 0.637254902);
-    font-weight: 900;
+    color: rgba(238, 117, 47, 0.937254902);
+    font-weight: bolder;
   }
   .navigation .navbar-nav > .nav-item > .nav-link:hover,
 .navigation .navbar-nav > .nav-item > .nav-link:focus:hover {
     color: rgba(238, 117, 47, 0.937254902);
+    font-weight: bolder;
   }
   .navigation.navbar-shrink {
     border-color: rgba(34, 34, 34, 0.1);
