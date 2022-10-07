@@ -81,11 +81,11 @@ const HomePage = () => (
     <CallToAction
       firstLine="Disfruta tus alimentos."
       secondLine="Comparte tu experiencia."
-      buttonLabel="Busca tu menu!"
+      buttonLabel="Busca tu menu"
       buttonUrl="#contact"
     />
     <Masthead
-      text="Unete a la comunidad que busca mejorar tu experiencia con los menus!"
+      text="Unete a la comunidad que busca mejorar tu experiencia con los menus"
       buttonLabel="Registra tu restaurante!"
       downloadLink="#download"
       demoScreen={demoScreen}
@@ -103,8 +103,6 @@ const HomePage = () => (
       features={FEATURES}
       demoScreen={demoScreen}
     />
-
-    <ContactUs socialNetworks={SOCIAL_NETWORKS} />
   </PageLayout>
 );
 

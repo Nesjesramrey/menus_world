@@ -2,7 +2,7 @@ import throttle from "lodash.throttle";
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import classnames from "classnames";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import {
   Container,
@@ -13,6 +13,7 @@ import {
   NavItem,
   NavLink,
 } from "reactstrap";
+import logo from "../../assets/logoc200.png";
 
 import "./style.css";
 
@@ -113,6 +114,16 @@ class Navigation extends Component {
         expand="lg"
         className={classnames("navigation", { "navbar-shrink": sticky })}
       >
+        <div className="col-2 logo-nav">
+          {" "}
+          <img
+            loading="lazy"
+            className="navbar-brand imgNav "
+            src={logo}
+            alt="logo"
+            onClick={() => useNavigate("/")}
+          />
+        </div>
         <Container>
           <Link to="/register" className="navbar-brand">
             Registrate
