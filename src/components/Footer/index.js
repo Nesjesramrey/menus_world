@@ -26,7 +26,7 @@ const LINKS = [
 const Footer = () => (
   <footer>
     <Container>
-      <p>&copy; 2017 Start Bootstrap. All Rights Reserved.</p>
+      <p>&copy; 2012 Menu's World. All Rights Reserved.</p>
       <ul className="list-inline">
         {LINKS.map(({ title, link }) => (
           <li className="list-inline-item" key={normalize(title)}>

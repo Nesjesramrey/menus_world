@@ -7,49 +7,42 @@ import "./qrCode.css";
 import Cookies from "universal-cookie";
 
 const QrCode = () => {
-  const [imageUrl, setImageUrl] = useState("");
-  const currentUrl = window.location.href;
-  const generateQrCode = async () => {
-    try {
-      const response = await QRCode.toDataURL(currentUrl, { width: 200 });
-      setImageUrl(response);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+	const [imageUrl, setImageUrl] = useState('');
+	
+	const currentUrl = window.location.href;
+	const generateQrCode = async () => {
+		try {
+			const response = await QRCode.toDataURL(currentUrl, { width: 200 });
+			setImageUrl(response);
+		} catch (error) {
+			console.log(error);
+		}
+	};
 
-  const cookies = new Cookies();
-  const userType = cookies.get("TipoUsuario");
+	const cookies = new Cookies();
+	const userType = cookies.get('TipoUsuario');
 
-  function renderQr() {
-    if (userType) {
-      if (userType === "Administrador de restaurante") {
-        return (
-          <div className="container qrSection">
-            <div>
-              <button
-                className="custom-btn ms-auto"
-                onClick={() => generateQrCode()}
-              >
-                Genera tu QR
-              </button>
-            </div>
+	function renderQr() {
+		if (userType) {
+			if (userType === 'Administrador de restaurante') {
+				return (
+					<div className="qrSection">
+							<button className="custom-btn" onClick={() => generateQrCode()}>
+								Generar QR
+							</button>
+							{imageUrl ? (
+								<a className="qrImage" href={imageUrl} download>
+									<img src={imageUrl} alt="img" />
+								</a>
+							) : null}
+					</div>
+				);
+			}
+		}
+	}
+	const qr = renderQr();
 
-            <div>
-              {imageUrl ? (
-                <a href={imageUrl} download>
-                  <img src={imageUrl} alt="img" />
-                </a>
-              ) : null}
-            </div>
-          </div>
-        );
-      }
-    }
-  }
-  const qr = renderQr();
-
-  return <div>{qr}</div>;
+	return qr
 };
 
 export default QrCode;

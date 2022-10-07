@@ -7,13 +7,13 @@
   letter-spacing: 1px;
 }
 .navigation .navbar-brand {
-  color: white;
+  color: rgba(238, 117, 47, 0.937254902);
   font-family: "Catamaran", "Helvetica", "Arial", "sans-serif";
   font-weight: 200;
   letter-spacing: 1px;
 }
 .navigation .navbar-brand:hover, .navigation .navbar-brand:focus {
-  color: #fcbd20;
+  color: rgba(216, 90, 18, 0.937254902);
 }
 .navigation .navbar-toggler {
   font-size: 12px;
@@ -27,7 +27,8 @@
   text-transform: uppercase;
 }
 .navigation .navbar-nav > .nav-item > .nav-link.active {
-  color: #fdcc52 !important;
+  color: rgba(238, 117, 47, 0.937254902) !important;
+  font-weight: bolder;
   background-color: transparent;
 }
 .navigation .navbar-nav > .nav-item > .nav-link.active:hover {
@@ -35,30 +36,34 @@
 }
 .navigation .navbar-nav > .nav-item > .nav-link,
 .navigation .navbar-nav > .nav-item > .nav-link:focus {
-  color: #222222;
+  color: rgba(238, 117, 47, 0.937254902);
+  font-weight: bolder;
 }
 .navigation .navbar-nav > .nav-item > .nav-link:hover,
 .navigation .navbar-nav > .nav-item > .nav-link:focus:hover {
-  color: #fdcc52;
+  color: rgba(238, 117, 47, 0.937254902);
+  font-weight: bolder;
 }
 @media (min-width: 992px) {
   .navigation {
     border-color: transparent;
-    background-color: transparent;
+    background-color: white;
   }
   .navigation .navbar-brand {
-    color: fade(white, 70%);
+    color: fade(black, 70%);
   }
   .navigation .navbar-brand:hover, .navigation .navbar-brand:focus {
-    color: white;
+    color: rgba(238, 117, 47, 0.937254902);
   }
   .navigation .navbar-nav > .nav-item > .nav-link,
 .navigation .navbar-nav > .nav-item > .nav-link:focus {
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(238, 117, 47, 0.937254902);
+    font-weight: bolder;
   }
   .navigation .navbar-nav > .nav-item > .nav-link:hover,
 .navigation .navbar-nav > .nav-item > .nav-link:focus:hover {
-    color: white;
+    color: rgba(238, 117, 47, 0.937254902);
+    font-weight: bolder;
   }
   .navigation.navbar-shrink {
     border-color: rgba(34, 34, 34, 0.1);
@@ -68,7 +73,7 @@
     color: #222222;
   }
   .navigation.navbar-shrink .navbar-brand:hover, .navigation.navbar-shrink .navbar-brand:focus {
-    color: #fdcc52;
+    color: rgba(238, 117, 47, 0.937254902);
   }
   .navigation.navbar-shrink .navbar-nav > .nav-item > .nav-link,
 .navigation.navbar-shrink .navbar-nav > .nav-item > .nav-link:focus {
@@ -76,6 +81,6 @@
   }
   .navigation.navbar-shrink .navbar-nav > .nav-item > .nav-link:hover,
 .navigation.navbar-shrink .navbar-nav > .nav-item > .nav-link:focus:hover {
-    color: #fdcc52;
+    color: rgba(238, 117, 47, 0.937254902);
   }
 }/*# sourceMappingURL=style.css.map */

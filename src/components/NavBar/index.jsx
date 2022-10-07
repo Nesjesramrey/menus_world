@@ -7,6 +7,7 @@ import Cookies from "universal-cookie";
 //components
 import Input from "../../../src/components/Input/index";
 import Login from "../../../src/components/Login";
+import ButtonsMenu from "../ButtonsMenu";
 
 //Modal
 import Modal from "react-modal";
@@ -62,32 +63,38 @@ export default function NavBar() {
             <button
               className="btn-search"
               type="submit"
-              onClick={() => navigate(`/menu/${restaurantName}`)}
+              onClick={() => navigate(`/restaurants/${restaurantName}`)}
             >
               Buscar
             </button>
           </div>
         </form>
 
-        <button
-          type="button"
-          className={`${
-            userLogged ? "btn-home-nav nav-item active" : "btn-home-nav d-none"
-          }`}
-          onClick={logout}
-        >
-          Cerrar Sesion
-        </button>
+        <div class="col-2 content-sesion">
+          <button
+            type="button"
+            className={`${
+              userLogged
+                ? "btn-home-nav nav-item active"
+                : "btn-home-nav d-none"
+            }`}
+            onClick={logout}
+          >
+            Cerrar Sesion
+          </button>
 
-        <button
-          onClick={() => setModalIsOpen(true)}
-          type="button"
-          className={`${
-            !userLogged ? "btn-home-nav nav-item active" : "btn-home-nav d-none"
-          }`}
-        >
-          Inicio de Sesion
-        </button>
+          <button
+            onClick={() => setModalIsOpen(true)}
+            type="button"
+            className={`${
+              !userLogged
+                ? "btn-home-nav  nav-item active"
+                : "btn-home-nav d-none"
+            }`}
+          >
+            Inicio de Sesion
+          </button>
+        </div>
       </nav>
 
       <Modal isOpen={modalIsOpen} className="modalStyles">

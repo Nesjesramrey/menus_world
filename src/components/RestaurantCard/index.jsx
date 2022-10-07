@@ -1,7 +1,7 @@
 //CSS
 import "./RestaurantCard.css";
 
-const RestaurantCard = ({ restaurant, index }) => {
+export default function RestaurantCard({restaurant, index}){
   let descripcion = restaurant.descriptionRestaurant;
   if (descripcion.length > 200) {
     descripcion = `${descripcion.slice(0, 200)}...`;
@@ -31,5 +31,3 @@ const RestaurantCard = ({ restaurant, index }) => {
     </div>
   );
 };
-
-export default RestaurantCard;

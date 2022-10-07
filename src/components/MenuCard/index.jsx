@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import "./menucard.css";
 import { calcMean } from "../../services/calcRatings";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 //Modal
 import Modal from "react-modal";
@@ -22,6 +24,10 @@ const customStyles = {
     transform: "translate(-50%, -50%)",
   },
 };
+AOS.init({
+  easing: "ease-out-back",
+  duration: 700,
+});
 Modal.setAppElement("#root");
 
 const MenuCard = ({ dish, index, navigate }) => {
@@ -43,7 +49,11 @@ const MenuCard = ({ dish, index, navigate }) => {
   const rating = calcMean(dish);
 
   return (
-    <div key={index} className="cardMenu p-0 m-3 d-flex-r">
+    <div
+      key={index}
+      data-aos="zoom-in-up"
+      className="cardMenu p-1 m-3 d-flex-r"
+    >
       <div className="menuCardImg">
         <a href={"../detalle/" + dish._id}>
           <img

@@ -41,7 +41,7 @@ const Features = ({ title, subtitle, features, demoScreen }) => {
         <Row>
           <Col lg="4" xs="12" className="my-auto">
             <DeviceMockup
-              device="iPhone6Plus"
+              device="myDevice"
               orientation="portrait"
               color="white"
             >

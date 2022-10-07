@@ -1,5 +1,14 @@
 .qrSection {
 	display: flex;
-	flex-direction: column;
-	justify-items: center;
+	flex-direction: row;
+	align-items: center;
+}
+
+.qrImage { 
+	margin-left: 12px;
+}
+
+.custom-btn {
+	height: fit-content;
+	margin-bottom: 2px;
 }

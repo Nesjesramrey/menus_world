@@ -9,11 +9,11 @@ body {
 }
 
 a {
-  color: #fdcc52;
+  color: rgba(238, 117, 47, 0.937254902);
   transition: all 0.35s;
 }
 a:hover, a:focus {
-  color: #fcbd20;
+  color: rgba(216, 90, 18, 0.937254902);
 }
 
 hr {
@@ -52,12 +52,12 @@ section h2 {
 }
 
 .bg-primary {
-  background: #fdcc52;
-  background: linear-gradient(#fdcc52, #fdc539);
+  background: rgba(238, 117, 47, 0.937254902);
+  background: linear-gradient(rgba(238, 117, 47, 0.937254902), rgba(236, 101, 23, 0.937254902));
 }
 
 .text-primary {
-  color: #fdcc52;
+  color: rgba(238, 117, 47, 0.937254902);
 }
 
 .no-gutter > [class*=col-] {
@@ -72,8 +72,8 @@ section h2 {
 }
 .btn-outline:hover, .btn-outline:focus, .btn-outline:active, .btn-outline.active {
   color: white;
-  border-color: #fdcc52;
-  background-color: #fdcc52;
+  border-color: rgba(238, 117, 47, 0.937254902);
+  background-color: rgba(238, 117, 47, 0.937254902);
 }
 
 .btn {
@@ -86,4 +86,9 @@ section h2 {
 .btn-xl {
   font-size: 11px;
   padding: 15px 45px;
+}
+
+.text-orange {
+  color: #ff7b2c;
+  font-weight: bolder;
 }/*# sourceMappingURL=style.css.map */
