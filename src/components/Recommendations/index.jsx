@@ -30,7 +30,7 @@ export default function createCardsRecommendations(data) {
 			return (
 				<div key={index} className="cardRecommendations">
 					<div className="mx-auto overFlowDiv">
-						<a title={name} href={link}><img className="imgRecommPhoto img-fluid" src={img} alt={fullName} /></a>
+						<a title={name} href={link}><img className="imgRecommPhoto" src={img} alt={fullName} /></a>
 					</div>
 					<div className="contentCardRecommendations">
 						<p className="text-center">
