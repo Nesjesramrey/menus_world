@@ -24,18 +24,15 @@ const Masthead = ({ text, buttonLabel, downloadLink, demoScreen }) => (
             <h1 className="mb-5">{text}</h1>
             <a
               href="/restaurants"
-              className="btn text-white btn-outline btn-xl"
+              className="btn text-dark btn-outline btn-xl btn-masthead"
             >
               {buttonLabel}
             </a>
+            <br></br>
           </div>
         </Col>
         <Col lg="5" xs="12" className="my-auto">
-          <DeviceMockup
-            device="iPhone6Plus"
-            orientation="portrait"
-            color="white"
-          >
+          <DeviceMockup device="myDevice" orientation="portrait" color="white">
             <img src={demoScreen} className="img-fluid" alt="" />
           </DeviceMockup>
         </Col>

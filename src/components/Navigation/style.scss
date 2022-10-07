@@ -9,7 +9,7 @@
   @include heading-font;
 
   .navbar-brand {
-    color: white;
+    color: $theme-primary;
     @include heading-font;
 
     &:hover,
@@ -32,6 +32,7 @@
 
         &.active {
           color: $theme-primary !important;
+          font-weight: bolder;
           background-color: transparent;
 
           &:hover {
@@ -42,33 +43,37 @@
 
       > .nav-link,
       > .nav-link:focus {
-        color: $gray-darker;
+        color: $theme-primary;
+        font-weight: bolder;
 
         &:hover {
           color: $theme-primary;
+          font-weight: bolder;
         }
       }
     }
   }
   @media (min-width: 992px) {
     border-color: transparent;
-    background-color: transparent;
+    background-color: white;
 
     .navbar-brand {
-      color: fade(white, 70%);
+      color: fade(black, 70%);
 
       &:hover,
       &:focus {
-        color: white;
+        color: $theme-primary;
       }
     }
 
     .navbar-nav > .nav-item > .nav-link,
     .navbar-nav > .nav-item > .nav-link:focus {
-      color: fade-out(white, 0.3);
+      color: $theme-primary;
+      font-weight: bolder;
 
       &:hover {
-        color: white;
+        color: $theme-primary;
+        font-weight: bolder;
       }
     }
 
