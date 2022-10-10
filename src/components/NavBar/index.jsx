@@ -1,7 +1,7 @@
 import "./NavBar.css";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import logo from "../../assets/logoc200.png";
+import logo from "../../assets/logo200.png";
 import Cookies from "universal-cookie";
 
 //components
@@ -52,7 +52,11 @@ export default function NavBar() {
                 alt="logo"
                 onClick={() => navigate("/menu")}
               />
+              <div className="buttons-hamburger">
+                <ButtonsMenu />
+              </div>
             </div>
+
             <form class="col-8 " onSubmit={searchRestaurant}>
               <div className=" content-search">
                 <Input
@@ -76,25 +80,25 @@ export default function NavBar() {
               <button
                 type="button"
                 className={`${
-                  userLogged
-                    ? "btn-home-nav nav-item active"
-                    : "btn-home-nav d-none"
+                  userLogged ? "user-session active" : "btn-home-nav d-none"
                 }`}
                 onClick={logout}
               >
-                Cerrar Sesion
+                <i class="bi bi-person-circle"></i>
+                Salir
               </button>
 
               <button
                 onClick={() => setModalIsOpen(true)}
                 type="button"
                 className={`${
-                  !userLogged
-                    ? "btn-home-nav  nav-item active"
-                    : "btn-home-nav d-none"
+                  !userLogged ? "user-session  active" : "btn-home-nav d-none"
                 }`}
               >
-                Inicio de Sesion
+                <div className="user-session">
+                  <i class="bi bi-person-circle"></i>
+                  <span className="span-user">Ingreso</span>
+                </div>
               </button>
             </div>
           </nav>

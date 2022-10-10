@@ -1,1 +1,5 @@
-
+@media only screen and (max-width: 320px) and (max-width: 658px) {
+.content-button-container{
+    display: none;
+}
+}
