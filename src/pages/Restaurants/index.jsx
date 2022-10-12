@@ -10,12 +10,16 @@ import RestaurantCard from "../../components/RestaurantCard";
 import NavBar from "../../../src/components/NavBar";
 
 //Authorization
-import { getIsUserAdmin, getIsLogeddIn, getRestaurantName } from "../../Auth/auth";
+import {
+  getIsUserAdmin,
+  getIsLogeddIn,
+  getRestaurantName,
+} from "../../Auth/auth";
 
 export default function Restaurants() {
   // Local state
   const [restaurants, setRestaurants] = useState([]);
-  let searchResult = []
+  let searchResult = [];
 
   // RRD
   const { restaurantName } = useParams();
@@ -24,14 +28,14 @@ export default function Restaurants() {
   //param for search
   const { search } = useParams();
 
-  if(search){
-    const restaurantsResults = restaurants.filter(item => {
+  if (search) {
+    const restaurantsResults = restaurants.filter((item) => {
       const name = item.restaurants.toLowerCase();
-      if (name.indexOf(search) >= 0){
+      if (name.indexOf(search) >= 0) {
         return item;
       }
-  });
-  searchResult = restaurantsResults
+    });
+    searchResult = restaurantsResults;
   }
 
   useEffect(() => {
@@ -50,32 +54,40 @@ export default function Restaurants() {
   const isLogeddIn = getIsLogeddIn();
   const owned = getRestaurantName();
 
-  function returnCards () {
-
+  function returnCards() {
     const evalRestaurant = (restaurant) => {
-      for (let i of owned){
-        if(i === restaurant.restaurants){
+      for (let i of owned) {
+        if (i === restaurant.restaurants) {
           return restaurant;
-        } 
+        }
       }
-    }
-  
-    const showCards = (data) => {
-  
-      if(isAdmin){
-        const cards = data.filter((restaurant) => evalRestaurant(restaurant)).map((restaurant, index) => (
-          <RestaurantCard restaurant={restaurant} index={index} navigate={navigate} />
-        ));
-        return cards;
-      } else { 
-        const cards = data.map((restaurant, index) => (
-          <RestaurantCard restaurant={restaurant} index={index} navigate={navigate} />
-        ));
-        return cards;
-      }
-    }
+    };
 
-    if(search){
+    const showCards = (data) => {
+      if (isAdmin) {
+        const cards = data
+          .filter((restaurant) => evalRestaurant(restaurant))
+          .map((restaurant, index) => (
+            <RestaurantCard
+              restaurant={restaurant}
+              index={index}
+              navigate={navigate}
+            />
+          ));
+        return cards;
+      } else {
+        const cards = data.map((restaurant, index) => (
+          <RestaurantCard
+            restaurant={restaurant}
+            index={index}
+            navigate={navigate}
+          />
+        ));
+        return cards;
+      }
+    };
+
+    if (search) {
       const filterCards = showCards(searchResult);
       return filterCards;
     } else {
@@ -87,12 +99,15 @@ export default function Restaurants() {
   return (
     <div className="mainContainer">
       <NavBar isAdmin={isAdmin} isLogeddIn={isLogeddIn} />
-      <h1 className="titleRestaurant">{`${"Bienvenido busca tu menu "}`}</h1>
+      <div className="content-title-restaurant">
+        <span className="titleRestaurant">{`${"¡Elige tu restaurante favorito! "}`}</span>
+        <span className="info-restaurant">
+          ¡Llego la hora de crear, comer y disfrutar.. !{" "}
+        </span>
+      </div>
       <div className="container g-0">
         <div className="row">
-          <div className="col col-12 d-flex-r">
-            {returnCards()}
-            </div>
+          <div className="col col-12 d-flex-r">{returnCards()}</div>
         </div>
       </div>
     </div>

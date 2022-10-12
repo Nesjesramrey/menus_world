@@ -17,7 +17,9 @@ export default function MenuContainer() {
   return (
     <div className="container-welcome  col-12">
       <NavBar isAdmin={isAdmin} isLogeddIn={isLogeddIn} />
-      <ButtonsMenu />
+      <div className="content-button-container">
+        <ButtonsMenu />
+      </div>
       <Outlet />
     </div>
   );

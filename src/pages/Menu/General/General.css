@@ -1,14 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Alfa+Slab+One&display=swap');
-
-.titleRestaurant {
-	text-align: center;
-	font-family: 'Times New Roman', Times, serif;
-	transition: 1s;
-	font-size: 40px;
-	margin-top: 15px;
-	text-shadow: 3px 3px 3px #fb7b05;
-}
-
 .info {
 	text-align: center;
 	text-decoration: solid;

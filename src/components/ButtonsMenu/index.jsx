@@ -1,27 +1,26 @@
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 //CSS
-import './ButtonsMenu.css';
+import "./ButtonsMenu.css";
 
 //Components
-import Button from 'react-bootstrap/Button';
+import Button from "react-bootstrap/Button";
 
 //Cookies
 
 import Cookies from "universal-cookie";
-import { useState } from "react";
-
+// import { useState } from "react";
 
 export default function ButtonsMenu() {
-	const navigate = useNavigate();
+  const navigate = useNavigate();
 
-	const cookies = new Cookies();
-	const endpointRestaurant = cookies.get('EndpointRestaurant');
+  const cookies = new Cookies();
+  const endpointRestaurant = cookies.get("EndpointRestaurant");
 
   return (
     <nav class="navbar container navbar-expand-lg navbar-ligth ">
       <button
-        class="navbar-toggler d-flex d-lg-none flex-column justify-content-between"
+        class="navbar-toggler d-flex d-lg-none flex-column justify-content-between content-button"
         type="button"
         data-bs-toggle="collapse"
         data-bs-target="#opciones"
@@ -31,7 +30,11 @@ export default function ButtonsMenu() {
         <span class="toggler-icon middle-bar"></span>
         <span class="toggler-icon bottom-bar"></span>
       </button>
-      <div class="collapse navbar-collapse content-button" id="opciones">
+      <div
+        class="navbar-collapse content-button"
+        id="opciones"
+        data-bs-toggle="collapse"
+      >
         <ul class="col col-sm-12 content-nav">
           <li class="nav-item">
             <Button
