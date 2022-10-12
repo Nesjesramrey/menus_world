@@ -12,7 +12,7 @@ import Features from "../../components/Features";
 import CallToAction from "../../components/CallToAction";
 import ContactUs from "../../components/ContactUs";
 import Icon from "../../components/Icon";
-import demoScreen from "./images/demo-screen-1.jpg";
+import demoScreen from "./images/Restaurante-15.jpg";
 import "./style.css";
 
 const FEATURES = [
@@ -78,9 +78,15 @@ const SOCIAL_NETWORKS = [
  */
 const HomePage = () => (
   <PageLayout sections={SECTIONS}>
+    <CallToAction
+      firstLine="Disfruta tus alimentos."
+      secondLine="Comparte tu experiencia."
+      buttonLabel="Busca tu menu"
+      buttonUrl="#contact"
+    />
     <Masthead
-      text="Menu's World es una web app que te ayudara a tener una mejor experiencia online con los menu de tus restaurantes favoritos!"
-      buttonLabel="Empieza ahora, busca  tu menu!"
+      text="Unete a la comunidad que busca mejorar tu experiencia con los menus"
+      buttonLabel="Registra tu restaurante!"
       downloadLink="#download"
       demoScreen={demoScreen}
     />
@@ -90,19 +96,13 @@ const HomePage = () => (
       googlePlayDownloadLink="#"
       appStoreDownloadLink="#"
     />
+
     <Features
       title="Caracteristicas ilimitadas, diversion ilimitada"
       subtitle="Revisa que puedes hacer en Menu's World!"
       features={FEATURES}
       demoScreen={demoScreen}
     />
-    <CallToAction
-      firstLine="Disfruta tus alimentos."
-      secondLine="Comparte tu experiencia."
-      buttonLabel="Empecemos!"
-      buttonUrl="#contact"
-    />
-    <ContactUs socialNetworks={SOCIAL_NETWORKS} />
   </PageLayout>
 );
 

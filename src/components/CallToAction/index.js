@@ -23,7 +23,7 @@ const CallToAction = ({ firstLine, secondLine, buttonLabel, buttonUrl }) => (
           <br />
           {secondLine}
         </h2>
-        <a href={buttonUrl} className="btn btn-outline btn-xl">
+        <a href="/restaurants" className="btn text-white btn-outline btn-xl">
           {buttonLabel}
         </a>
       </Container>

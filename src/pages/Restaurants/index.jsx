@@ -8,21 +8,35 @@ import "./Restaurants.css";
 //Components
 import RestaurantCard from "../../components/RestaurantCard";
 import NavBar from "../../../src/components/NavBar";
-import QrCode from "../../../src/components/QrCode";
-
-//Cokkies for use name of restaurante and user category
-import Cookies from "universal-cookie";
 
 //Authorization
-import { getIsUserAdmin, getIsLogeddIn } from "../../Auth/auth";
+import {
+  getIsUserAdmin,
+  getIsLogeddIn,
+  getRestaurantName,
+} from "../../Auth/auth";
 
 export default function Restaurants() {
   // Local state
   const [restaurants, setRestaurants] = useState([]);
+  let searchResult = [];
 
   // RRD
   const { restaurantName } = useParams();
   const navigate = useNavigate();
+
+  //param for search
+  const { search } = useParams();
+
+  if (search) {
+    const restaurantsResults = restaurants.filter((item) => {
+      const name = item.restaurants.toLowerCase();
+      if (name.indexOf(search) >= 0) {
+        return item;
+      }
+    });
+    searchResult = restaurantsResults;
+  }
 
   useEffect(() => {
     const list = async () => {
@@ -30,45 +44,70 @@ export default function Restaurants() {
       const parsedRestaurants = Object.keys(data).map((key) => {
         return { id: key, ...data[key] };
       });
-
       setRestaurants(parsedRestaurants);
     };
 
     list();
   }, [restaurantName]);
 
-  const cookies = new Cookies();
-  cookies.set("EndpointRestaurant", restaurantName, { path: "/" });
-  const userType = cookies.get("TipoUsuario");
-
-  const cards = restaurants.map((restaurant, index) => (
-    <RestaurantCard restaurant={restaurant} index={index} navigate={navigate} />
-  ));
   const isAdmin = getIsUserAdmin();
   const isLogeddIn = getIsLogeddIn();
+  const owned = getRestaurantName();
+
+  function returnCards() {
+    const evalRestaurant = (restaurant) => {
+      for (let i of owned) {
+        if (i === restaurant.restaurants) {
+          return restaurant;
+        }
+      }
+    };
+
+    const showCards = (data) => {
+      if (isAdmin) {
+        const cards = data
+          .filter((restaurant) => evalRestaurant(restaurant))
+          .map((restaurant, index) => (
+            <RestaurantCard
+              restaurant={restaurant}
+              index={index}
+              navigate={navigate}
+            />
+          ));
+        return cards;
+      } else {
+        const cards = data.map((restaurant, index) => (
+          <RestaurantCard
+            restaurant={restaurant}
+            index={index}
+            navigate={navigate}
+          />
+        ));
+        return cards;
+      }
+    };
+
+    if (search) {
+      const filterCards = showCards(searchResult);
+      return filterCards;
+    } else {
+      const allCards = showCards(restaurants);
+      return allCards;
+    }
+  }
 
   return (
     <div className="mainContainer">
       <NavBar isAdmin={isAdmin} isLogeddIn={isLogeddIn} />
-      <h1 className="titleRestaurant">{`${"Bienvenido busca tu menu "}`}</h1>
-      <div className="container g-0 p-0">
-        <button
-          className={`${
-            !userType || userType === "Comensal"
-              ? "btn-form-1 d-none"
-              : "btn-form-1 active"
-          }`}
-          onClick={() => navigate(`/formulario`)}
-        >
-          Ir a registrar platillos
-        </button>
-        <div>
-          <QrCode />
-        </div>
+      <div className="content-title-restaurant">
+        <span className="titleRestaurant">{`${"¡Elige tu restaurante favorito! "}`}</span>
+        <span className="info-restaurant">
+          ¡Llego la hora de crear, comer y disfrutar.. !{" "}
+        </span>
       </div>
       <div className="container g-0">
         <div className="row">
-          <div className="col col-12 d-flex-r">{cards}</div>
+          <div className="col col-12 d-flex-r">{returnCards()}</div>
         </div>
       </div>
     </div>

@@ -50,7 +50,7 @@ export default function NavBar() {
                 className="navbar-brand imgNav "
                 src={logo}
                 alt="logo"
-                onClick={() => navigate("/menu")}
+                onClick={() => navigate("/")}
               />
               <div className="buttons-hamburger">
                 <ButtonsMenu />
@@ -61,7 +61,7 @@ export default function NavBar() {
               <div className=" content-search">
                 <Input
                   type="search"
-                  placeholder="Buscar restaurante"
+                  placeholder="Elige tu restaurante..."
                   className="form-control content-input"
                   value={restaurantName}
                   callback={(e) => setRestaurantName(e.target.value)}
@@ -72,7 +72,7 @@ export default function NavBar() {
                   type="submit"
                   onClick={() => navigate(`/menu/${restaurantName}`)}
                 >
-                  <i className="bi bi-search "></i>
+                  <i className="bi bi-search"></i>
                 </button>
               </div>
             </form>
@@ -84,8 +84,9 @@ export default function NavBar() {
                 }`}
                 onClick={logout}
               >
-                <i class="bi bi-person-circle"></i>
-                Salir
+                <span className="span-user">
+                  <i class="bi bi-person-circle"></i>Salir
+                </span>
               </button>
 
               <button
@@ -102,14 +103,14 @@ export default function NavBar() {
               </button>
             </div>
           </nav>
-          <Modal isOpen={modalIsOpen} className="modalStyles">
-            <Login />
-            <button
-              className="btn-close position-absolute top-0 end-0 "
-              onClick={() => setModalIsOpen(false)}
-            ></button>
-          </Modal>
         </div>
+        <Modal isOpen={modalIsOpen} className="modalStyles">
+          <Login />
+          <button
+            className="btn-close"
+            onClick={() => setModalIsOpen(false)}
+          ></button>
+        </Modal>
       </div>
     </div>
   );

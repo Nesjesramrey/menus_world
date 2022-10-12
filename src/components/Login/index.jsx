@@ -67,34 +67,42 @@ export default function Login() {
     <div className="container login-container p-2 justify-content-center">
       <div className="login-item p-2 ">
         <h2 className="card-title text-center mb-4 title-h2">Iniciar Sesión</h2>
-        <form className="form-login p-2" onSubmit={handleSubmit}>
-          <Input
-            type="text"
-            className="form-control"
-            placeholder="Email"
-            id="meal"
-            name="meal"
-            value={email || ""}
-            callback={(e) => setEmail(e.target.value)}
-          />
-          <Input
-            className="form-control"
-            type="password"
-            placeholder="Contraseña"
-            id="meal"
-            name="meal"
-            value={password || ""}
-            callback={(e) => setPassword(e.target.value)}
-          />
+        <form className="form-content" onSubmit={handleSubmit}>
+          <div className="form">
+            <Input
+              required
+              type="text"
+              // placeholder="Email"
+              id="meal"
+              name="meal"
+              value={email || ""}
+              callback={(e) => setEmail(e.target.value)}
+            />
+            <label className="lbl-name">
+              <span className="text-name">Email</span>
+            </label>
+          </div>
+          <div className="form">
+            <Input
+              type="password"
+              // placeholder="Contraseña"
+              id="meal"
+              name="meal"
+              value={password || ""}
+              callback={(e) => setPassword(e.target.value)}
+            />
+            <label className="lbl-name">
+              <span className="text-name">Contraseña</span>
+            </label>
+          </div>
 
-          <button type="submit" className="btn-prim">
+          <button type="submit" className="btn-login">
             Ingresar
           </button>
-
-          <div className="container-pass">
-            <p className="forget-password">¿Olvidaste tu Contraseña?</p>
-          </div>
         </form>
+        <div className="container-pass">
+          <p className="forget-password">¿Olvidaste tu Contraseña?</p>
+        </div>
       </div>
 
       <ToastContainer />

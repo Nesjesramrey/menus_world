@@ -1,0 +1,45 @@
+.content-title-restaurant{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 160px;
+    /* border: 1px solid red; */
+}
+.titleRestaurant {
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+	font-weight: bold;
+    text-align: center;
+	font-size: 40px;
+}
+.info-restaurant{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #fb7b05;
+    font-size: 20px;
+}
+@media  (max-width: 520px)  {
+    .content-title-restaurant{
+        margin: 0px 10px;
+        height: 100px;
+    }
+	.titleRestaurant{
+		font-size: 28px;
+		margin: 10px;
+	}
+    .info-restaurant{
+        font-size: 15px;
+    }
+}
+@media  (max-width: 400px)  {
+    .content-title-restaurant{
+        margin: 0px 10px;
+        height: 100px;
+    }
+	.titleRestaurant{
+		font-size: 22px;
+	}
+    .info-restaurant{
+        font-size: 11px;
+    }
+}
