@@ -160,7 +160,7 @@ export default function Detail() {
 
 				<section className="row">
 					{/*- - - - Comments section - - - -*/}
-					<div className="col col-12 col-md-6 g-0">
+					<div className="col col-12 col-md-6 g-0 fixSpace">
 						{AddComment(dishId,alredyCommented)}
 						{allComments}
 					</div>

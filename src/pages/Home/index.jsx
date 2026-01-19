@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 //Image
-import logo from "../../assets/logo500.png";
+import logo from "../../assets/logo500ne.png";
 
 //Cookies
 import Cookies from "universal-cookie";

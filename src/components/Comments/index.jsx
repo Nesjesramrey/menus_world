@@ -8,7 +8,8 @@ export default function CreateComments(data, key) {
 	let text = data.comment ? data.comment : 'TEXT';
 
 	let url = 'https://ui-avatars.com/api/';
-	let params = '?size=40&rounded=true&background=ffb01d&color=fff&name=';
+	// let params = '?size=40&rounded=true&background=ffb01d&color=fff&name=';
+	let params = '?size=40&rounded=true&background=d82533&color=fff&name=';
 	let urlImg = url + params + user;
 
 	function calcDate(dateString) {

@@ -24,15 +24,15 @@ export default function Restaurants() {
   //param for search
   const { search } = useParams();
 
-  if(search){
-    const restaurantsResults = restaurants.filter(item => {
-      const name = item.restaurants.toLowerCase();
-      if (name.indexOf(search) >= 0){
-        return item;
-      }
-  });
-  searchResult = restaurantsResults
-  }
+  // if(search){
+  //   const restaurantsResults = restaurants.filter(item => {
+  //     const name = item.restaurants.toLowerCase();
+  //     if (name.indexOf(search) >= 0){
+  //       return item;
+  //     }
+  // });
+  // searchResult = restaurantsResults
+  // }
 
   useEffect(() => {
     const list = async () => {
@@ -41,10 +41,15 @@ export default function Restaurants() {
         return { id: key, ...data[key] };
       });
       setRestaurants(parsedRestaurants);
+      console.log(restaurants)
     };
 
     list();
   }, [restaurantName]);
+
+
+
+  console.log(restaurants)
 
   const isAdmin = getIsUserAdmin();
   const isLogeddIn = getIsLogeddIn();

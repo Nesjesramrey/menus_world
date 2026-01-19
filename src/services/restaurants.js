@@ -1,5 +1,5 @@
-//const URL = "http://localhost:8000";
-const URL = "https://menusapi.nesjes.com";
+const URL = "http://localhost:8000";
+//const URL = "https://menusapi.nesjes.com";
 
 const generateConfig = (body) => {
   return {
@@ -21,5 +21,6 @@ export const createRestaurant = async (body) => {
 export const listRestaurant = async () => {
   const response = await fetch(`${URL}/restaurants`);
   const data = await response.json();
+  console.log("en funcion listREstaurants")
   return data;
 };

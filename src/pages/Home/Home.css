@@ -15,7 +15,7 @@
 .p-home {
 	font-family: Georgia, 'Times New Roman', Times, serif;
 	text-align: center;
-	color: #fb7b05;
+	color: #d82533;;
 }
 
 #active {
@@ -29,28 +29,29 @@
 .btn-prim {
 	padding: 4px 12px;
 	border-radius: 8px;
-	border: 2px solid #ff7b2c;
-	background-color: #ff7b2c;
+	border: 2px solid #a5366b;
+	background-color: #a5366b;
 	font-weight: bold;
 	color: #fff;
 }
 
 .btn-prim:hover {
 	background-color: #fff;
-	color: #000;
+	color: #a5366b;
 }
 
 .btn-second {
 	padding: 4px 12px;
 	border-radius: 8px;
-	border: 2px solid #ff7b2c;
+	border: 2px solid #a5366b;
+	color: #a5366b;
 	background-color: #fff;
 	font-weight: bold;
 	margin-left: 12px;
 }
 
 .btn-second:hover {
-	background-color: #ff7b2c;
+	background-color: #a5366b;
 	color: #fff;
 }
 

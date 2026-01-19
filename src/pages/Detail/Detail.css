@@ -6,6 +6,8 @@
 .title {
   margin: 0px;
   background-color: #ff7b2c;
+  background-color: #893e88;
+  background-color: #a5366b;
   color: #ffffff;
   padding: 6px;
 }
@@ -30,12 +32,18 @@
 }
 
 #textOtherRec {
-  margin-top: 7px;
+  /* margin-top: 7px; */
+  margin-top: -93px;
   margin-bottom: 10px;
-  background-color: #ff7b2c;
+  /* background-color: #ff7b2c; */
+  background-color: #a5366b;
   font-size: 18px;
   color: #fff;
   padding: 3px;
+}
+
+.fixSpace {
+  margin-top: -93px !important;
 }
 
 .footer {
